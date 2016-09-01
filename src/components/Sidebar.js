@@ -18,8 +18,8 @@ export const NavItem = ({ label, grouped = false, expanded = false, linkTo }) =>
 };
 
 
-export const NavGroup = ({ expanded, label, open, children, onNavGroupClick }) => {
-  const arrowClasses = 'fa fa-fw fa-caret-' + (expanded ? 'down' : 'right');
+export const NavGroup = ({ label, open, children, onNavGroupClick }) => {
+  const arrowClasses = 'fa fa-fw fa-caret-' + (open? 'down' : 'right');
   let navOptions;
   if (open) {
     navOptions = children;

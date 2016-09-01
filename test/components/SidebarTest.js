@@ -28,10 +28,19 @@ describe('Sidebar', () => {
       beforeEach(() => {
         hasBeenClicked = false;
         navItem = <NavItem label="something"/>;
-        shallowWrapper = shallow(<NavGroup label="something" expanded={true}>{navItem}</NavGroup>);
+        shallowWrapper = shallow(<NavGroup label="something" open={true}>{navItem}</NavGroup>);
       });
       it('should render internal NavItem', () => {
-        shallowWrapper.contains(navItem);
+        equal(shallowWrapper.contains(navItem), true);
+      });
+    });
+    describe('should render no children if open prop passed in is false', () => {
+      beforeEach(() => {
+        navItem = <NavItem label="something"/>;
+        shallowWrapper = shallow(<NavGroup label="something" open={false}>{navItem}</NavGroup>);
+      });
+      it('should render internal NavItem', () => {
+        equal(shallowWrapper.contains(navItem), false);
       });
     });
   });
