@@ -1,18 +1,44 @@
+
 .sidenav {
-  background-color: #222830;
+  background-color: #263238;
   width: 200px;
   border-right: 0px solid #d0d0d0;
+  list-style: none;
+}
+
+.sidenav>li ul {
+  list-style: none;
+}
+
+.sidenav ul li a {
+  padding-left: 30px;
 }
 
 .sidenav a {
+  padding: 7px 15px;
   text-decoration: none;
   display: block;
-  font-variant: small-caps;
   color: #bbb;
-  padding: 7px 15px;
 }
 
+.sidenav a:focus,
 .sidenav a:hover {
-  background-color: #5f6671;
-  color: #ddd;
+  background-color: rgba(0,0,0,.1);
+  color: #FFFFFF;
 }
+
+.sidenav-active {
+  background-color: blue;
+}
+
+.sidenav .sidenav-entry {
+
+}
+
+.sidenav .sidenav-header {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  font-size: 11px;
+}
+

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link as RRLink } from 'react-router';
 import './App.css';
-import { SideNav } from '../../lib/components/SideNav';
+import { SideNav, Header, Container, Link } from '../../lib/components/SideNav';
 
 
 class App extends Component {
@@ -18,14 +18,27 @@ class App extends Component {
         <div className="app-container">
 
           <SideNav>
-            <Link to="/">home</Link>
-            <Link to="/components/button">button</Link>
-            <Link to="/about">about</Link>
+            <Header label="First Things"/>
+            <Link><RRLink to="/components/button">Top Level Link</RRLink></Link>
+            <Container label="Dashboards">
+              <Link><RRLink to="/">Program Overview</RRLink></Link>
+            </Container>
+            <Container label="Sprints">
+              <Link><RRLink to="/">Eagle Eye</RRLink></Link>
+              <Link><RRLink to="/">Dogs (woof!)</RRLink></Link>
+            </Container>
+            <Header label="Other Things"/>
+            <Link><RRLink to="/about">About</RRLink></Link>
+            <Link><a href="http://www.google.com" target="_blank">Google</a></Link>
           </SideNav>
+
+
 
           <div className="app-content-container">
 
+
             <div className="app-content">
+
               { this.props.children }
             </div>
 
