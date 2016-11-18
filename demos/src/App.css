@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 #root {
     height: 100%;
 }
@@ -32,7 +31,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .app-logo {
@@ -49,8 +47,6 @@ body {
   flex: 1;
   border-bottom: 1px solid #ddd;
 }
-
-
 
 .app-container {
   display: flex;
