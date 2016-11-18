@@ -1,51 +1,55 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var env = process.env.NODE_ENV;
-var cssFileName = env === 'production' ? 'visual-stack.min.css' : 'visual-stack.css';
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-var config = {
+const min = process.env.NODE_ENV === 'production' ? '.min' : '';
+
+const config = {
+  entry: {
+    'visual-stack': './src/index.js',
+  },
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /\.png$|\.svg$/, loaders: ['url-loader'] },
-      { test: /\.eot$|\.ttf$|\.woff(2)?/, loaders: ['url-loader'] }
-    ]
+      { test: /\.eot$|\.ttf$|\.woff(2)?/, loaders: ['url-loader'] },
+    ],
   },
   output: {
+    path: './dist',
+    filename: `[name]${min}.js`,
     library: 'VisualStack',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   externals: {
-    'react': 'umd react'
+    react: 'umd react',
   },
 
   // quiet the log output from the ExtractTextPlugin
   stats: { children: false },
 
   plugins: [
-    new ExtractTextPlugin(cssFileName),
+    new ExtractTextPlugin(`[name]${min}.css`),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
-    })
-  ]
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
 };
 
-if (env === 'production') {
+if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
-        warnings: false
+        warnings: false,
       },
       output: {
-        comments: false
+        comments: false,
       },
       sourceMap: false,
     })
   );
 }
 
-module.exports = config;
+export default config;
 

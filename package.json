@@ -10,8 +10,8 @@
   "scripts": {
     "build": "gulp build && npm run dist",
     "dist": "npm run dist:umd && npm run dist:min",
-    "dist:umd": "NODE_ENV=dev webpack src/index.js dist/visual-stack.js",
-    "dist:min": "NODE_ENV=production webpack src/index.js dist/visual-stack.min.js",
+    "dist:umd": "NODE_ENV=dev webpack",
+    "dist:min": "NODE_ENV=production webpack",
     "clean": "rimraf lib && rimraf dist",
     "lint": "eslint src test",
     "prepublish": "npm run clean && npm run lint && npm run build && npm run test",
