@@ -5,6 +5,24 @@ import { SideNav, Header, Container, Link } from '../../lib/components/SideNav';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      "Dashboards": false,
+      "Sprints": false
+    };
+
+    // This binding is necessary to make `this` work in the callback
+    this.onContainerClick = this.onContainerClick.bind(this);
+  }
+
+  onContainerClick(e, label) {
+    e.preventDefault();
+    this.setState({
+      [label]: !this.state[label]
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -20,10 +38,10 @@ class App extends Component {
           <SideNav>
             <Header label="First Things"/>
             <Link><RRLink to="/components/button">Top Level Link</RRLink></Link>
-            <Container label="Dashboards">
+            <Container active={this.state["Dashboards"]} label="Dashboards" onClick={this.onContainerClick}>
               <Link><RRLink to="/">Program Overview</RRLink></Link>
             </Container>
-            <Container label="Sprints">
+            <Container active={this.state["Sprints"]} label="Sprints" onClick={this.onContainerClick}>
               <Link><RRLink to="/">Eagle Eye</RRLink></Link>
               <Link><RRLink to="/">Dogs (woof!)</RRLink></Link>
             </Container>

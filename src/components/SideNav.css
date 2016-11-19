@@ -27,12 +27,33 @@
   color: #FFFFFF;
 }
 
-.sidenav-active {
-  background-color: blue;
+.sidenav .active>a {
+  background-color: #34c6d8;
+  color: #FFFFFF;
 }
 
-.sidenav .sidenav-entry {
+.sidenav a.sidenav-container-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.sidenav .sidenav-container-label i {
+  transform: rotate(0);
+  transition: -webkit-transform .2s ease-in-out;
+}
+.sidenav .active .sidenav-container-label i {
+  transform: rotate(90deg);
+}
+
+.sidenav .sidenav-container ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-out;
+}
+
+.sidenav .sidenav-container.active ul {
+  max-height: 500px;
 }
 
 .sidenav .sidenav-header {
@@ -41,4 +62,3 @@
   color: rgba(255,255,255,.5);
   font-size: 11px;
 }
-
