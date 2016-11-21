@@ -1,9 +1,16 @@
 
 .sidenav {
   background-color: #263238;
+  display: none;
   width: 200px;
   border-right: 0px solid #d0d0d0;
   list-style: none;
+}
+
+@media (min-width: 50em) {
+  .sidenav {
+    display: block;
+  }
 }
 
 .sidenav>li ul {
