@@ -11,8 +11,12 @@ const config = {
     loaders: [
       { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-      { test: /\.png$|\.svg$/, loaders: ['url-loader'] },
-      { test: /\.eot$|\.ttf$|\.woff(2)?/, loaders: ['url-loader'] },
+
+      // { test: /\.png$|\.svg$/, loaders: ['url-loader'] },
+      // { test: /\.eot$|\.ttf$|\.woff(2)?/, loaders: ['url-loader'] },
+
+     { test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/, loader: 'url?limit=10000' },
+     { test: /\.((ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9]))|(ttf|eot)$/, loader: 'file' }
     ],
   },
   output: {
@@ -52,4 +56,3 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default config;
-
