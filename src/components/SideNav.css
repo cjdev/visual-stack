@@ -2,6 +2,7 @@
 .sidenav {
   background-color: #263238;
   border-right: 0px solid #d0d0d0;
+  list-style: none;
   width: 200px;
   height: 100%;
   overflow-y: scroll;
