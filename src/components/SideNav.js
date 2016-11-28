@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './SideNav.css';
 
 export const Header = ({ label }) =>
   <li className="sidenav-entry sidenav-header">{label}</li>;
+Header.propTypes = {
+  label: PropTypes.string.isRequired,
+};
 
 export const Container = ({ label, children, expanded, onClick }) => {
   const classes = 'sidenav-entry sidenav-container' + (expanded ? ' expanded' : '');
@@ -17,6 +20,11 @@ export const Container = ({ label, children, expanded, onClick }) => {
       </ul>
     </li>
   );
+};
+Container.propTypes = {
+  expanded: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export const Link = ({ children }) => {
@@ -34,3 +42,7 @@ export const SideNav = ({ children, active }) => {
       </ul>
   );
 };
+SideNav.propTypes = {
+  active: PropTypes.bool,
+};
+
