@@ -7,7 +7,7 @@ Header.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-export const Container = ({ label, children, expanded, onClick }) => {
+export const LinkGroup = ({ label, children, expanded, onClick }) => {
   const classes = 'sidenav-entry sidenav-container' + (expanded ? ' expanded' : '');
   return (
     <li className={classes}>
@@ -21,7 +21,7 @@ export const Container = ({ label, children, expanded, onClick }) => {
     </li>
   );
 };
-Container.propTypes = {
+LinkGroup.propTypes = {
   expanded: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
