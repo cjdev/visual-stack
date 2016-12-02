@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import './SideNav.css';
 
-export const Header = ({ label }) =>
-  <li className="sidenav-entry sidenav-header">{label}</li>;
+export const Header = ({ children }) =>
+  <li className="sidenav-entry sidenav-header">{children}</li>;
 Header.propTypes = {
-  label: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export const LinkGroup = ({ label, children, expanded, onClick }) => {
