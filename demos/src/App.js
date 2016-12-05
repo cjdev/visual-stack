@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link as RRLink } from 'react-router';
 import './App.css';
 import { SideNav, Header, LinkGroup, Link } from '../../lib/components/SideNav';
+import { TopNav, LeftTopNav } from '../../lib/components/TopNav'
 
 
 class App extends Component {
@@ -35,16 +36,13 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="app-header">
-          <div className="app-header-left">
+        <TopNav>
+          <LeftTopNav>
             <div className="app-logo">[VV]</div>
             <div className="app-name">visual stack</div>
-
-          </div>
-          <div className="app-header-right">
-              <button onClick={this.onSideNavActiveClick}> Come back sidenav!  </button>
-          </div>
-        </div>
+          </LeftTopNav>
+          <button onClick={this.onSideNavActiveClick}> Come back sidenav!  </button>
+        </TopNav>
         <div className="app-container">
 
           <SideNav active={this.state.sidenavActive}>

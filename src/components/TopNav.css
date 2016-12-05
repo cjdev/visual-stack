@@ -1,0 +1,18 @@
+
+.topnav {
+  min-height: 50px;
+  background-color: #fff;
+  color: #ccc;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.topnav.left {
+  min-width: 200px;
+  background-color: #0f1519;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #0f1519;
+}
