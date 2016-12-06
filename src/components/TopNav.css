@@ -4,15 +4,24 @@
   background-color: #fff;
   color: #ccc;
   display: flex;
-  border-bottom: 1px solid #ddd;
 }
 
-.topnav.left {
+.topnav-left {
   min-width: 200px;
   background-color: #0f1519;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #0f1519;
 }
+
+.topnav-left-logo {
+  font-size: 1.5em;
+  padding: .3em;
+}
+
+.topnav-left-app-name {
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+

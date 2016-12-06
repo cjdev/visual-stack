@@ -38,16 +38,6 @@ a {
   align-items: center;
 }
 
-.app-logo {
-  font-size: 1.5em;
-  padding: .3em;
-}
-
-.app-name {
-  font-variant: small-caps;
-  font-size: 1.2em;
-}
-
 .app-header-right {
   flex: 1;
   border-bottom: 1px solid #ddd;
