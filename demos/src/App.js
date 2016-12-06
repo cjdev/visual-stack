@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link as RRLink } from 'react-router';
 import './App.css';
 import { SideNav, Header, LinkGroup, Link } from '../../lib/components/SideNav';
-import { TopNav } from '../../lib/components/TopNav'
+import { TopNav, IconGroup, UserMenu } from '../../lib/components/TopNav'
 
 
 class App extends Component {
@@ -34,19 +34,27 @@ class App extends Component {
   }
 
   render() {
-    const LogoComponent = <span>[VV]</span>;
+    const logoComponent = <span>[VV]</span>;
+    const userMenu = <UserMenu> </UserMenu>;
+    const iconGroup =
+      <IconGroup>
+
+        <a onClick={this.onSideNavActiveClick}><i className="fa fa-bars"></i></a>
+      </IconGroup>;
+
     return (
       <div className="app">
         <TopNav
-          Logo={LogoComponent}
-          AppName="visual stack"
-        >
+          logo={logoComponent}
+          userMenu={userMenu}
+          iconGroup={iconGroup}
+          appName="visual stack">
 
-          <button onClick={this.onSideNavActiveClick}> Come back sidenav!  </button>
+
 
         </TopNav>
-        <div className="app-container">
 
+        <div className="app-container">
           <SideNav active={this.state.sidenavActive}>
             <Header>First Things</Header>
             <Link><RRLink to="/components/button">Top Level Link</RRLink></Link>

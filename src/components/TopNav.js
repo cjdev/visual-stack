@@ -1,15 +1,35 @@
 import React from 'react';
 import './TopNav.css';
 
+export const IconGroup = ({ children }) => {
+  return (
+    <div>
+      { children }
+    </div>
+  );
+};
 
-export const TopNav = ({ Logo, AppName, children }) => {
+export const UserMenu = () => {
+  return (
+    <div>UserMenu</div>
+  );
+};
+
+export const TopNav = ({ logo, appName, iconGroup, userMenu }) => {
   return (
     <div className="topnav">
       <div className="topnav-left">
-        <div className="topnav-left-logo">{ Logo }</div>
-        <div className="topnav-left-app-name">{ AppName }</div>
+        <div className="topnav-left-logo">{ logo }</div>
+        <div className="topnav-left-app-name">{ appName }</div>
       </div>
-        { children }
+      <div className="topnav-right">
+        <div>
+          { iconGroup }
+        </div>
+        <div>
+          { userMenu }
+        </div>
+      </div>
     </div>
   );
 };
