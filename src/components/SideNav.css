@@ -80,3 +80,10 @@
   color: rgba(255,255,255,.5);
   font-size: 11px;
 }
+
+@media (min-width: 40em) {
+  .sidenav-toggle-icon {
+      display:none;
+  }
+}
+

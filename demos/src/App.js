@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link as RRLink } from 'react-router';
 import './App.css';
-import { SideNav, Header, LinkGroup, Link } from '../../lib/components/SideNav';
+import { SideNav, Header, LinkGroup, Link, ToggleIcon } from '../../lib/components/SideNav';
 import { TopNav, IconGroup, UserMenu } from '../../lib/components/TopNav'
 
 
@@ -38,8 +38,7 @@ class App extends Component {
     const userMenu = <UserMenu> </UserMenu>;
     const iconGroup =
       <IconGroup>
-
-        <a onClick={this.onSideNavActiveClick}><i className="fa fa-bars"></i></a>
+        <ToggleIcon onClick={this.onSideNavActiveClick} />
       </IconGroup>;
 
     return (
