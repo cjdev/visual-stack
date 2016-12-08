@@ -9,18 +9,41 @@
 .topnav-left {
   min-width: 200px;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 40em) {
+  .topnav-left {
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .topnav-left-logo {
   font-size: 1.5em;
-  padding: .3em;
+  padding: .5em;
+}
+
+@media (min-width: 40em) {
+  .topnav-left-logo {
+    font-size: 1.5em;
+    padding: .3em;
+  }
 }
 
 .topnav-left-app-name {
-  font-variant: small-caps;
-  font-size: 1.2em;
+  display:none;
+}
+
+@media (min-width: 40em) {
+  .topnav-left-app-name {
+    display:block;
+    font-variant: small-caps;
+    font-size: 1.2em;
+  }
+
 }
 
 .topnav-right {
