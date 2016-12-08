@@ -4,7 +4,7 @@ import './TopNav.css';
 
 export const IconGroup = ({ children }) => {
   return (
-    <div>
+    <div className="topnav-icongroup">
       { children }
     </div>
   );
@@ -16,9 +16,19 @@ export const UserMenu = () => {
   );
 };
 
-export const TopNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle }) => {
+const SecondaryNav = ({ active }) => {
   return (
-    <div className="topnav">
+    <div className={`topnav topnav-secondary ${active ? 'active' : ''}`}>
+      <div className="topnav-left">
+        SECONDARY
+      </div>
+    </div>
+  );
+};
+
+const MainNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle, onSecondNavToggle }) => {
+  return (
+    <div className="topnav topnav-main">
       <div className="topnav-left">
         <div className="topnav-left-logo">{ logo }</div>
         <div className="topnav-left-app-name">{ appName }</div>
@@ -33,12 +43,27 @@ export const TopNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle }) 
           { iconGroup }
         </div>
         <div className="topnav-right-right">
-          <div className="topnav-icon">
-            <a ><i className="fa fa-ellipsis-v"></i></a>
-          </div>
+          <IconGroup>
+            <a onClick={onSecondNavToggle}><i className="fa fa-ellipsis-v"></i></a>
+          </IconGroup>
           { userMenu }
         </div>
       </div>
+    </div>
+  );
+};
+
+export const TopNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle, secondNavActive, onSecondNavToggle }) => {
+  return (
+    <div className="topnav-wrapper">
+      <MainNav
+        logo={logo}
+        appName={appName}
+        iconGroup={iconGroup}
+        onSideNavToggle={onSideNavToggle}
+        onSecondNavToggle={onSecondNavToggle}
+        userMenu={userMenu} />
+      <SecondaryNav active={secondNavActive} />
     </div>
   );
 };

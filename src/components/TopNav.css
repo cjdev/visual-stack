@@ -4,12 +4,35 @@
   display: flex;
   background-color:#38474f;
   color: #ccc;
+  padding: 0 1em;
 }
 
 .topnav a,
 .topnav a:visited
 {
   color: #ccc;
+}
+
+.topnav-main {
+  position: relative;
+  z-index: 100;
+}
+
+.topnav-secondary {
+  border-top: 1px solid #666;
+  z-index: 99;
+  height: 0px;
+  width:100%;
+  overflow-x: scroll;
+  top: 50;
+  transform: translateY(-100%);
+  position: fixed;
+  transition: transform 0.3s;
+}
+
+.topnav-secondary.active {
+  transform: translateY(0);
+  display: flex;
 }
 
 .topnav-left {
@@ -29,7 +52,6 @@
 
 .topnav-left-logo {
   font-size: 1.5em;
-  padding: .5em;
 }
 
 @media (min-width: 40em) {
@@ -56,10 +78,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
-}
-
-.topnav-right-left {
 }
 
 .topnav-right-right {
@@ -68,8 +86,8 @@
   align-items: center;
 }
 
-.topnav-icon {
-  padding: 0 12px;
+.topnav-icongroup {
+  padding: 0 10px;
   font-size: 1.5em;
 }
 

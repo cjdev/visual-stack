@@ -11,12 +11,14 @@ class App extends Component {
     this.state = {
       "Dashboards": false,
       "Sprints": false,
-      sidenavActive: false
+      sidenavActive: false,
+      secondNavActive: false
     };
 
     // This binding is necessary to make `this` work in the callback
     this.onLinkGroupClick = this.onLinkGroupClick.bind(this);
     this.onSideNavActiveClick = this.onSideNavActiveClick.bind(this);
+    this.onSecondNavActiveClick = this.onSecondNavActiveClick.bind(this);
   }
 
   onLinkGroupClick(e, label) {
@@ -33,6 +35,13 @@ class App extends Component {
     });
   }
 
+  onSecondNavActiveClick(e) {
+    e.preventDefault();
+    this.setState({
+      secondNavActive: !this.state.secondNavActive
+    });
+  }
+
   render() {
     const logoComponent = <span>[VV]</span>;
     const userMenu = <UserMenu> </UserMenu>;
@@ -43,7 +52,10 @@ class App extends Component {
           logo={logoComponent}
           userMenu={userMenu}
           onSideNavToggle={this.onSideNavActiveClick}
-          appName="visual stack">
+          appName="visual stack"
+          secondNavActive={this.state.secondNavActive}
+          onSecondNavToggle={this.onSecondNavActiveClick}
+        >
         </TopNav>
 
         <div className="app-container">
