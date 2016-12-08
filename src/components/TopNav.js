@@ -29,10 +29,13 @@ export const TopNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle }) 
         }
       </div>
       <div className="topnav-right">
-        <div>
+        <div className="topnav-right-left">
           { iconGroup }
         </div>
-        <div>
+        <div className="topnav-right-right">
+          <div className="topnav-icon">
+            <a ><i className="fa fa-ellipsis-v"></i></a>
+          </div>
           { userMenu }
         </div>
       </div>
