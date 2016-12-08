@@ -48,9 +48,6 @@ class App extends Component {
           userMenu={userMenu}
           iconGroup={iconGroup}
           appName="visual stack">
-
-
-
         </TopNav>
 
         <div className="app-container">

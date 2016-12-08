@@ -2,16 +2,15 @@
   min-height: 50px;
   background-color: #fff;
   display: flex;
+  background-color:#38474f;
+  color: #ccc;
 }
 
 .topnav-left {
   min-width: 200px;
-  background-color: #0f1519;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #0f1519;
-  color: #ccc;
 }
 
 .topnav-left-logo {
@@ -25,9 +24,7 @@
 }
 
 .topnav-right {
-  color: #000;
   flex: 1;
-  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
