@@ -19,7 +19,7 @@ export const UserMenu = () => {
 const SecondaryNav = ({ active }) => {
   return (
     <div className={`topnav topnav-secondary ${active ? 'active' : ''}`}>
-      <div className="topnav-left">
+      <div className="topnav-secondary-left">
         SECONDARY
       </div>
     </div>

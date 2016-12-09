@@ -24,7 +24,7 @@
   height: 0px;
   width:100%;
   overflow-x: scroll;
-  top: 50;
+  top: 50px;
   transform: translateY(-100%);
   position: fixed;
   transition: transform 0.3s;
@@ -32,14 +32,9 @@
 
 @media (min-width: 40em) {
   .topnav-secondary {
-    border-top: 1px solid #666;
-    width:100%;
-    top: 50px;
-    z-index: 101;
-    position: fixed;
     transform: translateY(0);
     display: flex;
-    overflow-x: scroll;
+    margin-left: 200px; /* === sidenav width */
   }
 }
 
@@ -67,6 +62,11 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.topnav-secondary-left {
+  display: flex;
+  align-items: center;
 }
 
 .topnav-left-logo {
