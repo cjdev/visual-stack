@@ -20,7 +20,7 @@ const SecondaryNav = ({ active }) => {
   return (
     <div className={`topnav topnav-secondary ${active ? 'active' : ''}`}>
       <div className="topnav-secondary-left">
-        SECONDARY
+        Secondary Nav
       </div>
     </div>
   );

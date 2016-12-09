@@ -19,7 +19,6 @@
 }
 
 .topnav-secondary {
-  border-top: 1px solid #666;
   z-index: 99;
   height: 0px;
   width:100%;
@@ -28,6 +27,10 @@
   transform: translateY(-100%);
   position: fixed;
   transition: transform 0.3s;
+  background-color: #EFF4F7;
+  color: #263238;
+  border-bottom:1px solid #DBE5EA
+
 }
 
 @media (min-width: 40em) {
