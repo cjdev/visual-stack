@@ -44,7 +44,9 @@ const MainNav = ({ logo, appName, iconGroup, userMenu, onSideNavToggle, onSecond
         </div>
         <div className="topnav-right-right">
           <IconGroup>
-            <a onClick={onSecondNavToggle}><i className="fa fa-ellipsis-v"></i></a>
+            <div className="secondarynav-toggle-icon">
+              <a onClick={onSecondNavToggle}><i className="fa fa-ellipsis-v"></i></a>
+            </div>
           </IconGroup>
           { userMenu }
         </div>

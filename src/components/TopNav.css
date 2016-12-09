@@ -35,6 +35,12 @@
   display: flex;
 }
 
+@media (min-width: 40em) {
+  .secondarynav-toggle-icon a {
+    display: none;
+  }
+}
+
 .topnav-left {
   min-width: 200px;
   display: flex;
@@ -90,4 +96,3 @@
   padding: 0 10px;
   font-size: 1.5em;
 }
-
