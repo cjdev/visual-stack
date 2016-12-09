@@ -31,13 +31,15 @@ class App extends Component {
   onSideNavActiveClick(e) {
     e.preventDefault();
     this.setState({
-      sidenavActive: !this.state.sidenavActive
+      sidenavActive: !this.state.sidenavActive,
+      secondNavActive: false
     });
   }
 
   onSecondNavActiveClick(e) {
     e.preventDefault();
     this.setState({
+      sidenavActive: false,
       secondNavActive: !this.state.secondNavActive
     });
   }
