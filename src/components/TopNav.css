@@ -45,10 +45,14 @@
 }
 
 .topnav-app-header {
-  min-width: 200px;
   padding-left: 1em;
 }
 
+@media (min-width: 40em) {
+  .topnav-app-header {
+    min-width: 200px;
+  }
+}
 .topnav-app-header > li {
 }
 
