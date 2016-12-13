@@ -7,13 +7,13 @@ export const DropdownItem = ({ children }) =>
 
 export const UserMenu = ({ title, children }) => {
   return (
-    <li>
+    <li className="user-menu">
       <a>
-        <i className="fa fa-user-circle"></i>
-        {title}
+        <i className="topnav-icon fa fa-user-circle"></i>
+        <span className="username">{title}</span>
         <i className="fa fa-chevron-down"></i>
       </a>
-      <ul className="topnav-dropdown topnav-dropdown-active">
+      <ul className="topnav-dropdown">
         {children}
       </ul>
     </li>
@@ -29,53 +29,10 @@ const SecondaryNav = ({ active }) => {
     </div>
   );
 };
-
-const MainNav2 = ({ logo, appName, iconGroup, userMenu, onSideNavToggle, onSecondNavToggle }) => {
-  return (
-    <div className="topnav topnav-main">
-      <div className="topnav-left">
-        <div className="topnav-left-logo">{ logo }</div>
-        <div className="topnav-left-app-name">{ appName }</div>
-        { onSideNavToggle &&
-          <IconGroup>
-            <ToggleIcon onClick={onSideNavToggle} />
-          </IconGroup>
-        }
-      </div>
-      <div className="topnav-right">
-        <div className="topnav-right-left">
-          { iconGroup }
-        </div>
-
-
-        <div className="topnav-right">
-          <IconGroup>
-            <div className="secondarynav-toggle-icon">
-              <a onClick={onSecondNavToggle}><i className="fa fa-ellipsis-v"></i></a>
-            </div>
-          </IconGroup>
-          { userMenu }
-        </div>
-
-        <ul>
-          <li>
-              <a onClick={onSecondNavToggle}><i className="fa fa-ellipsis-v"></i></a>
-          </li>
-          <li>
-            usermenu
-          </li>
-        </ul>
-
-
-
-      </div>
-    </div>
-  );
-};
-
 const MainNav = ({ logo, appName, userMenu, onSideNavToggle, onSecondNavToggle }) => {
   return (
     <div className="topnav topnav-main">
+
       <ul className="topnav-nav topnav-app-header">
         <li className="topnav-left-logo">{ logo }</li>
         <li className="topnav-left-app-name">{ appName }</li>
@@ -83,6 +40,7 @@ const MainNav = ({ logo, appName, userMenu, onSideNavToggle, onSecondNavToggle }
           <li className="topnav-icon"><ToggleIcon onClick={onSideNavToggle} /></li>
         }
       </ul>
+
       <ul className="topnav-nav">
         <li className="topnav-icon"><i className="fa fa-bell"></i></li>
         <li className="topnav-icon"><i className="fa fa-envelope"></i></li>
@@ -94,6 +52,7 @@ const MainNav = ({ logo, appName, userMenu, onSideNavToggle, onSecondNavToggle }
         </li>
         {userMenu}
       </ul>
+
     </div>
 
   );
