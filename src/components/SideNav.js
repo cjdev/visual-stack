@@ -3,9 +3,9 @@ import './SideNav.css';
 
 export const ToggleIcon = ({ onClick }) => {
   return (
-    <div className=" sidenav-toggle-icon">
-      <a onClick={onClick}><i className="fa fa-bars"></i></a>
-    </div>
+    <a className=" sidenav-toggle-icon" onClick={onClick}>
+      <i className="fa fa-bars"></i>
+    </a>
   );
 };
 
