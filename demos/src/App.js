@@ -12,13 +12,15 @@ class App extends Component {
       "Dashboards": false,
       "Sprints": false,
       sidenavActive: false,
-      secondNavActive: false
+      secondNavActive: false,
+      userMenuOpen: false
     };
 
     // This binding is necessary to make `this` work in the callback
     this.onLinkGroupClick = this.onLinkGroupClick.bind(this);
     this.onSideNavActiveClick = this.onSideNavActiveClick.bind(this);
     this.onSecondNavActiveClick = this.onSecondNavActiveClick.bind(this);
+    this.onUserMenuClick = this.onUserMenuClick.bind(this);
   }
 
   onLinkGroupClick(e, label) {
@@ -44,10 +46,17 @@ class App extends Component {
     });
   }
 
+  onUserMenuClick(e) {
+    e.preventDefault();
+    this.setState({
+      userMenuOpen: !this.state.userMenuOpen
+    });
+  }
+
   render() {
     const logoComponent = <span>[VV]</span>;
     const userMenu = (
-      <UserMenu title="First Last">
+      <UserMenu onClick={this.onUserMenuClick} open={this.state.userMenuOpen} title="First Last">
         <DropdownItem>123</DropdownItem>
         <DropdownItem>789</DropdownItem>
       </UserMenu>

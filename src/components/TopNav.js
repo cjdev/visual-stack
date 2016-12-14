@@ -5,10 +5,10 @@ import './TopNav.css';
 export const DropdownItem = ({ children }) =>
   <li>{children}</li>;
 
-export const UserMenu = ({ title, children }) => {
+export const UserMenu = ({ title, open, onClick, children }) => {
   return (
-    <li className="user-menu">
-      <a>
+    <li className={`user-menu ${open ? 'active' : ''}`}>
+      <a onClick={onClick}>
         <i className="topnav-icon fa fa-user-circle"></i>
         <span className="username">{title}</span>
         <i className="fa fa-chevron-down"></i>
