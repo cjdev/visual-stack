@@ -55,10 +55,12 @@ class App extends Component {
 
   render() {
     const logoComponent = <span>[VV]</span>;
+    const settingsIcon = <i className="fa fa-cog" aria-hidden="true"></i>
+    const logoutIcon = <i className="fa fa-sign-in" aria-hidden="true"></i>
     const userMenu = (
       <UserMenu onClick={this.onUserMenuClick} open={this.state.userMenuOpen} title="First Last">
-        <DropdownItem>123</DropdownItem>
-        <DropdownItem>789</DropdownItem>
+        <DropdownItem logo={settingsIcon} title='Account Settings'></DropdownItem>
+        <DropdownItem logo={logoutIcon} title='789'></DropdownItem>
       </UserMenu>
     );
 

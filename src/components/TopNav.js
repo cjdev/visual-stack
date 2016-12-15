@@ -2,8 +2,14 @@ import React from 'react';
 import { ToggleIcon } from './SideNav';
 import './TopNav.css';
 
-export const DropdownItem = ({ children }) =>
-  <li>{children}</li>;
+export const DropdownItem = ({ logo, title, children }) => {
+  return (
+    <li>
+      <li className="topnav-dropdown-logo">{ logo }</li>
+      <li className="topnav-dropdown-title">{ title }</li>
+    </li>
+  );
+};
 
 export const UserMenu = ({ title, open, onClick, children }) => {
   return (
