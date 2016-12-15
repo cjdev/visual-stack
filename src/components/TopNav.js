@@ -5,13 +5,15 @@ import './TopNav.css';
 export const DropdownItem = ({ logo, title, children }) => {
   return (
     <li>
-      <li className="topnav-dropdown-logo">{ logo }</li>
-      <li className="topnav-dropdown-title">{ title }</li>
+      <a>
+        <div className="topnav-dropdown-logo">{ logo }</div>
+        <div className="topnav-dropdown-title">{ title }</div>
+      </a>
     </li>
   );
 };
 
-export const UserMenu = ({ title, open, onClick, children }) => {
+export const UserMenu = ({ title, open, name, email, onClick, children }) => {
   return (
     <li className={`user-menu ${open ? 'active' : ''}`}>
       <a onClick={onClick}>
@@ -20,6 +22,13 @@ export const UserMenu = ({ title, open, onClick, children }) => {
         <i className="fa fa-chevron-down"></i>
       </a>
       <ul className="topnav-dropdown">
+        <li className="user-dropdown-item">
+          <i className="fa fa-circle"></i>
+          <ul className="user-info">
+            <li className="name">{name}</li>
+            <li className="email">{email}</li>
+          </ul>
+        </li>
         {children}
       </ul>
     </li>

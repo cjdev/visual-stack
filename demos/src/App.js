@@ -58,9 +58,9 @@ class App extends Component {
     const settingsIcon = <i className="fa fa-cog" aria-hidden="true"></i>
     const logoutIcon = <i className="fa fa-sign-in" aria-hidden="true"></i>
     const userMenu = (
-      <UserMenu onClick={this.onUserMenuClick} open={this.state.userMenuOpen} title="First Last">
+      <UserMenu onClick={this.onUserMenuClick} open={this.state.userMenuOpen} title="First Last" name="First Name" email="email@cj.com">
         <DropdownItem logo={settingsIcon} title='Account Settings'></DropdownItem>
-        <DropdownItem logo={logoutIcon} title='789'></DropdownItem>
+        <DropdownItem logo={logoutIcon} title='Logout'></DropdownItem>
       </UserMenu>
     );
 
