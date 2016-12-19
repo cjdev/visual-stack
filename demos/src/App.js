@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link as RRLink } from 'react-router';
 import './App.css';
 import { SideNav, Header, LinkGroup, Link } from '../../lib/components/SideNav';
-import { TopNav, UserMenu, DropdownItem } from '../../lib/components/TopNav'
+import { TopNav, UserMenu, DropdownItem, UserDropdownItem } from '../../lib/components/TopNav'
 
 
 class App extends Component {
@@ -59,6 +59,7 @@ class App extends Component {
     const logoutIcon = <i className="fa fa-sign-in" aria-hidden="true"></i>
     const userMenu = (
       <UserMenu onClick={this.onUserMenuClick} open={this.state.userMenuOpen} title="First Last" name="First Name" email="email@cj.com">
+        <UserDropdownItem name="First Name" email="email@cj.com"></UserDropdownItem>
         <DropdownItem logo={settingsIcon} title='Account Settings'></DropdownItem>
         <DropdownItem logo={logoutIcon} title='Logout'></DropdownItem>
       </UserMenu>
