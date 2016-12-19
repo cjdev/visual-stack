@@ -2,7 +2,7 @@ import React from 'react';
 import { ToggleIcon } from './SideNav';
 import './TopNav.css';
 
-export const DropdownItem = ({ logo, title, onClick, children }) => {
+export const DropdownItem = ({ logo, title, onClick }) => {
   return (
     <li>
       <a onClick={onClick}>
@@ -13,8 +13,8 @@ export const DropdownItem = ({ logo, title, onClick, children }) => {
   );
 };
 
-export const UserDropdownItem = ({ name, email, children }) => {
-  return(
+export const UserDropdownItem = ({ name, email }) => {
+  return (
       <li className="user-dropdown-item">
         <i className="fa fa-circle"></i>
         <ul className="user-info">
@@ -25,7 +25,7 @@ export const UserDropdownItem = ({ name, email, children }) => {
   );
 };
 
-export const UserMenu = ({ title, open, name, email, onClick, children }) => {
+export const UserMenu = ({ title, open, onClick, children }) => {
   return (
     <li className={`user-menu ${open ? 'active' : ''}`}>
       <a onClick={onClick}>
