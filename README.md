@@ -32,7 +32,7 @@ ReactDOM.render(
   <Panel>
     <Body>
       <h1>Hello, world!</h1>
-      <Button onClick={() => console.log('clicked!')}>Click Me</Button>
+      <Button type="primary" onClick={() => console.log('clicked!')}>Click Me</Button>
     </Body>
   </Panel>,
   document.getElementById('application')
