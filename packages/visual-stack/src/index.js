@@ -14,7 +14,6 @@ import * as MenuBar from './components/MenuBar';
 import * as Modal from './components/Modal';
 import * as PageHeader from './components/PageHeader';
 import * as Panel from './components/Panel';
-import * as Sidebar from './components/Sidebar';
 import * as SideNav from './components/SideNav';
 
 export {
@@ -25,7 +24,6 @@ export {
   Modal,
   PageHeader,
   Panel,
-  Sidebar,
   SideNav,
 };
 
