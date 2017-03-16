@@ -7,7 +7,7 @@
     "copyfiles": "^1.2.0",
     "eslint": "^3.14.1",
     "npm-watch": "^0.1.8",
-    "react-scripts": "0.8.5"
+    "react-scripts": "^0.9.5"
   },
   "dependencies": {
     "@cjdev/visual-stack": "^0.10.0",
