@@ -13,7 +13,7 @@ class SlidingPanelFilterDemo extends React.Component {
         super();
         /* s1:start */
         this.state = {
-            panelActive: false,
+            panelActive: true,
             filterActive: false,
         };
         /* s1:end */
@@ -48,7 +48,8 @@ class SlidingPanelFilterDemo extends React.Component {
                                     <SlidingPanelSection>
                                         <div>
                                             <ChangeMeLater
-                                                label="CLICK ME"
+                                                label="My CIDs"
+                                                active={this.state.filterActive}
                                                 onClick={() => this.setState({filterActive: !this.state.filterActive})}
                                             >
                                                 <Filter

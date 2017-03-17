@@ -1,4 +1,39 @@
-.filter-panel {
+.filter-container .filter-container-label i {
+  transform: rotate(0);
+  transition: -webkit-transform .2s ease-in-out;
+}
+
+.filter-container .active .filter-container-label i {
+  transform: rotate(180deg);
+}
+
+.filter-container-label a {
+  padding: 7px 15px;
+  text-decoration: none;
+  display: block;
+  color: #bbb;
+}
+
+.filters-container-label a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select:none;
+}
+
+
+.filter-options a:focus,
+.filter-options a:hover {
+  background-color: rgba(0,0,0,.1);
+  color: #FFFFFF;
+}
+
+.filter-options.active {
+    height: 100px;
+}
+
+.filter-options {
     background-color: #EFF4F7;
     border-top: 1px solid #666;
     border-left: 1px solid #ddd;
@@ -10,6 +45,3 @@
     overflow: hidden;
 }
 
-.filter-panel.active {
-    height: 100px;
-}
