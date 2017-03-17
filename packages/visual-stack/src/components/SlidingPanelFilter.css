@@ -1,10 +1,29 @@
-.filter-container .filter-container-label i {
-  transform: rotate(0);
-  transition: -webkit-transform .2s ease-in-out;
+/* .filter-container .filter-container-label i { */
+/*   transform: rotate(0); */
+/*   transition: -webkit-transform .2s ease-in-out; */
+/* } */
+
+/* .filter-container .active .filter-container-label i { */
+/*   transform: rotate(180deg); */
+/* } */
+
+
+.filter-container ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-out;
 }
 
-.filter-container .active .filter-container-label i {
-  transform: rotate(180deg);
+.filter-container.active ul {
+  max-height: 500px;
+}
+
+a.filter-container-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select:none;
 }
 
 .filter-container-label a {
@@ -14,24 +33,15 @@
   color: #bbb;
 }
 
-.filters-container-label a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  user-select:none;
+.filter-container-label i {
+  transform: rotate(0);
+  transition: -webkit-transform .2s ease-in-out;
 }
 
-
-.filter-options a:focus,
-.filter-options a:hover {
-  background-color: rgba(0,0,0,.1);
-  color: #FFFFFF;
+.filter-conatiner .filter-container-label .active i {
+  transform: rotate(90deg);
 }
 
-.filter-options.active {
-    height: 100px;
-}
 
 .filter-options {
     background-color: #EFF4F7;
@@ -43,5 +53,9 @@
     padding: 0;
     transition: height 0.3s;
     overflow: hidden;
+}
+
+.filter-options.active {
+    height: 100px;
 }
 
