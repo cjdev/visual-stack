@@ -1,0 +1,15 @@
+.filter-panel {
+    background-color: #EFF4F7;
+    border-top: 1px solid #666;
+    border-left: 1px solid #ddd;
+    width: 100%;
+    height: 0px;
+    z-index: 200;
+    padding: 0;
+    transition: height 0.3s;
+    overflow: hidden;
+}
+
+.filter-panel.active {
+    height: 100px;
+}
