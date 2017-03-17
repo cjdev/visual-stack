@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import './SlidingPanelFilter.css';
+import ramda from 'ramda';
 
 export const ChangeMeLater = ({ label, children, onClick, expanded, active}) => {
     const classes = classNames('filter-container', { active });
@@ -18,8 +19,9 @@ export const ChangeMeLater = ({ label, children, onClick, expanded, active}) => 
     );
 };
 
-export const Filter = ({ active }) => {
+export const Filter = ({ active, values }) => {
     const classes = classNames('filter-options', { active });
+    console.log(values);
     return (
         <div className={classes}>WOW COOL FILTER</div>
     );
