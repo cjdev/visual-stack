@@ -1,11 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import './SlidingPanelFilter.css';
-import ramda from 'ramda';
+import R from 'ramda';
 
-export const ChangeMeLater = ({ label, children, onClick, expanded, active}) => {
+export const FilterDropdown = ({ label, children, onClick, expanded, active}) => {
     const classes = classNames('filter-container', { active });
-    console.log(classes);
     return (
       <li className={classes}>
             <a className="filter-container-label" onClick={onClick}>
@@ -13,7 +12,7 @@ export const ChangeMeLater = ({ label, children, onClick, expanded, active}) => 
                 <i className="fa fa-chevron-down"></i>
             </a>
             <ul>
-                { children }
+              { R.map(children)}
             </ul>
         </li>
     );
@@ -21,8 +20,13 @@ export const ChangeMeLater = ({ label, children, onClick, expanded, active}) => 
 
 export const Filter = ({ active, values }) => {
     const classes = classNames('filter-options', { active });
-    console.log(values);
+    const createCheckboxes = (val) => {
+      return <input type="checkbox" value="{val.value}"><label>{val.label}</label></input>;
+    };
+    const names = R.map(createCheckboxes, values);
     return (
-        <div className={classes}>WOW COOL FILTER</div>
+      <div className={classes}>
+        { names }
+      </div>
     );
 };

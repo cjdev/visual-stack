@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { SlidingPanel, SlidingPanelSection, SlidingPanelHeader, ToggleIcon } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 /* s5:start */
 // import { SlidingPanel as VSRSlidingPanel, ToggleIcon as VSRToggleIcon } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
-import { ChangeMeLater, Filter } from '@cjdev/visual-stack/lib/components/SlidingPanelFilter';
+import { FilterDropdown, Filter } from '@cjdev/visual-stack/lib/components/SlidingPanelFilter';
 /* s5:end */
 
 class SlidingPanelFilterDemo extends React.Component {
@@ -16,8 +16,8 @@ class SlidingPanelFilterDemo extends React.Component {
       panelActive: true,
       filterActive: false,
       companies: [
-        { id: 1234, name: 'my company'},
-        { id: 5667, name: 'my other company'}
+        { label: '1234 - my company', value: 1234 },
+        { label: '5667 - my other company', value: 5667 },
       ]
     };
     /* s1:end */
@@ -51,7 +51,7 @@ class SlidingPanelFilterDemo extends React.Component {
                     </SlidingPanelHeader>
                     <SlidingPanelSection>
                       <div>
-                        <ChangeMeLater
+                        <FilterDropdown
                           label="My CIDs"
                           active={this.state.filterActive}
                           onClick={() => this.setState({filterActive: !this.state.filterActive})}
@@ -60,7 +60,7 @@ class SlidingPanelFilterDemo extends React.Component {
                             active={this.state.filterActive}
                             values={this.state.companies}
                           />
-                        </ChangeMeLater>
+                        </FilterDropdown>
                       </div>
                     </SlidingPanelSection>
                     <SlidingPanelSection>
