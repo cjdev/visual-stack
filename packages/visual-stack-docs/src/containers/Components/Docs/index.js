@@ -15,7 +15,6 @@ import ListDocs from './list';
 import PanelDocs from './panel';
 import PageHeaderDocs from './pageheader';
 import SlidingPanelDocs from './slidingpanel';
-import SlidingPanelFilterDocs from './slidingpanelfilter';
 import SpinnerDocs from './spinner';
 import TopNavDocs from './topnav';
 
@@ -26,7 +25,6 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
-addComponentRoute('slidingpanelfilter', 'Sliding Panel Filter', <SlidingPanelFilterDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('topnav', 'TopNav', <TopNavDocs />);
 

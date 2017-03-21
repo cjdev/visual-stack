@@ -3,30 +3,33 @@ import classNames from 'classnames';
 import './SlidingPanelFilter.css';
 import R from 'ramda';
 
-export const FilterDropdown = ({ label, children, onClick, expanded, active}) => {
-    const classes = classNames('filter-container', { active });
+export const CheckboxFilter = ({ active, values, onSelect }) => {
+  const classes = classNames('filter-options', { active });
+  const domCheckboxes = [];
+  const createCheckboxes = (val, idx) => {
     return (
-      <li className={classes}>
-            <a className="filter-container-label" onClick={onClick}>
-                <div>{ label }</div>
-                <i className="fa fa-chevron-down"></i>
-            </a>
-            <ul>
-              { R.map(children)}
-            </ul>
-        </li>
-    );
-};
+      <label key={idx}>
+        <input ref={ checkbox => domCheckboxes.push(checkbox) } key={idx} type="checkbox" value={val.value} onChange={ () => { onSelect([val]); } }/>{ val.label }
+      </label>);
+  };
+  const mapIndexes = R.addIndex(R.map);
+  const checkboxes = mapIndexes(createCheckboxes, values);
+  const checkAll = element => {
+    const isSelectAll = element.target.checked;
 
-export const Filter = ({ active, values }) => {
-    const classes = classNames('filter-options', { active });
-    const createCheckboxes = (val) => {
-      return <input type="checkbox" value="{val.value}"><label>{val.label}</label></input>;
-    };
-    const names = R.map(createCheckboxes, values);
-    return (
-      <div className={classes}>
-        { names }
+    R.forEach(checkbox => {
+      checkbox.checked = isSelectAll;
+    }, domCheckboxes);
+
+    return isSelectAll ? onSelect(values)
+      : onSelect([]);
+  };
+  return (
+    <div className={classes}>
+      <div className="select-all"><label><input type="checkbox" value="" onClick={ e => checkAll(e)} />All</label></div>
+      <div className="checkboxes">
+        { checkboxes }
       </div>
-    );
+    </div>
+  );
 };

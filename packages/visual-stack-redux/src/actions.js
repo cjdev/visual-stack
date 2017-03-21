@@ -42,6 +42,9 @@ export const toggleTopNavDropDown = createAction(TOGGLE_TOPNAV_DROPDOWN, dropDow
 const TOGGLE_SLIDING_PANEL = '@cjdev/visual-stack-redux/TOGGLE_SLIDING_PANEL';
 export const toggleSlidingPanel = createAction(TOGGLE_SLIDING_PANEL);
 
+const TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN = '@cjdev/visual-stack-redux/TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN';
+export const toggleFilterDropdown = createAction(TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN, filterLabel => ({ filterLabel }));
+
 export default handleActions({
   [OPEN_DROPDOWN]: (state, { payload: { menuBarName, dropDownName } }) =>
     set(lensPath(['menuBar', menuBarName, dropDownName, 'open']), true, state),
@@ -81,6 +84,10 @@ export default handleActions({
 
   [TOGGLE_SLIDING_PANEL]: state =>
     over(lensPath(['slidingPanel', 'active']), not, state),
+
+  [TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN]: (state, { payload: { filterLabel } }) =>
+    over(lensPath(['slidingPanel', filterLabel, 'active']), not, state),
+
 }, {
   menuBar: {},
   modal: emptyModalState,

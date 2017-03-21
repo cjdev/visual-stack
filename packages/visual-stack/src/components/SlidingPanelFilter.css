@@ -1,68 +1,29 @@
-.filter-container ul {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease-out;
-}
-
-.filter-container a {
-  text-decoration: none;
-  display: block;
-  color: #444;
-}
-
-.filter-container.active ul {
-  max-height: 500px;
-}
-
-.filter-container-label {
-  padding: 7px 15px;
-}
-
-.filter-container-label a {
-  padding: 7px 15px;
-  text-decoration: none;
-  display: block;
-  color: #bbb;
-}
-
-a.filter-container-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  user-select:none;
-}
-
-.filter-container .filter-container-label i {
-  transform: rotate(0);
-  transition: -webkit-transform .35s ease-in-out;
-}
-
-.filter-container.active .filter-container-label i {
-  transform: rotate(-180deg);
-}
-
-.filter-container.active a {
-  color: #bbb;
-}
-
-.filter-container.active {
-  background-color: rgb(56, 71, 79);
-  color: #bbb;
-}
-
 .filter-options {
     background-color: #EFF4F7;
     width: 100%;
-    height: 0px;
+    max-height: 0px;
     z-index: 200;
-    padding: 7px 15px;
-    transition: height 0.3s;
+    transition: max-height 0.2s;
     overflow: hidden;
 }
 
 .filter-options.active {
-    height: 100px;
+    max-height: 100px;
 }
 
+.filter-options.active label {
+    color: #263238;
+}
+
+.filter-options input {
+    margin-right: 5px;
+}
+
+.filter-options .select-all {
+  border-bottom: solid 1px #ddd;
+}
+
+.filter-options .select-all,
+.filter-options .checkboxes{
+    padding: 5px 15px;
+}

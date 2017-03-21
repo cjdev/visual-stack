@@ -38,6 +38,22 @@ export const SlidingPanel = ({ children, active }) => {
     </div>
   );
 };
+
+export const SlidingPanelDropdown = ({ label, children, onClick, active }) => {
+  const classes = classNames('filter-container', { active });
+  return (
+    <li className={classes}>
+      <a className="filter-container-label" onClick={onClick}>
+        <div>{ label }</div>
+        <i className="fa fa-chevron-left"></i>
+      </a>
+      <ul>
+        { children }
+      </ul>
+    </li>
+  );
+};
+
 SlidingPanel.propTypes = {
   active: React.PropTypes.bool,
 };
