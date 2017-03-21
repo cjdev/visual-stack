@@ -52,7 +52,7 @@ class SlidingPanelDemo extends React.Component {
                     <SlidingPanelSection>
                       <SlidingPanelDropdown
                         label="My CIDs"
-                        active={this.state.filterActive}
+                        expanded={this.state.filterActive}
                         onClick={() => this.setState({ filterActive: !this.state.filterActive })}
                         >
                         <MultiSelectFilter

@@ -60,7 +60,7 @@
     transition: background-color 0.2s;
 }
 
-.filter-container.active ul {
+.filter-container.expanded ul {
   max-height: 500px;
 }
 
@@ -89,15 +89,15 @@ a.filter-container-label {
   transition: -webkit-transform .2s ease-in-out;
 }
 
-.filter-container.active .filter-container-label i {
+.filter-container.expanded .filter-container-label i {
   transform: rotate(-90deg);
 }
 
-.filter-container.active a {
+.filter-container.expanded a {
   color: #bbb;
 }
 
-.filter-container.active {
+.filter-container.expanded {
   background-color: rgb(56, 71, 79);
   color: #bbb;
     transition: background-color 0.2s;
@@ -112,11 +112,11 @@ a.filter-container-label {
     overflow: hidden;
 }
 
-.filter-options.active {
+.filter-options.expanded {
     max-height: 100px;
 }
 
-.filter-options.active label {
+.filter-options.expanded label {
     color: #263238;
 }
 

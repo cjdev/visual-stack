@@ -86,7 +86,7 @@ export default handleActions({
     over(lensPath(['slidingPanel', 'active']), not, state),
 
   [TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN]: (state, { payload: { filterLabel } }) =>
-    over(lensPath(['slidingPanel', filterLabel, 'active']), not, state),
+    over(lensPath(['slidingPanel', filterLabel, 'expanded']), not, state),
 
 }, {
   menuBar: {},
