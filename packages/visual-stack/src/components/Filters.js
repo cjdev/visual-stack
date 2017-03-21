@@ -1,10 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import './SlidingPanelFilter.css';
+import './Filters.css';
 import R from 'ramda';
 
-export const MultiSelectFilter = ({ active, values, onSelect }) => {
-  const classes = classNames('filter-options', { active });
+export const MultiSelectFilter = ({ values, onSelect }) => {
   const domCheckboxes = [];
   const createCheckboxes = (val, idx) => {
     return (
@@ -25,7 +24,7 @@ export const MultiSelectFilter = ({ active, values, onSelect }) => {
       : onSelect([]);
   };
   return (
-    <div className={classes}>
+    <div>
       <div className="select-all"><label><input type="checkbox" value="" onClick={ e => checkAll(e)} />All</label></div>
       <div className="checkboxes">
         { checkboxes }

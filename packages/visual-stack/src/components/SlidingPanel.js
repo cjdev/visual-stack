@@ -40,15 +40,18 @@ export const SlidingPanel = ({ children, active }) => {
 };
 
 export const SlidingPanelDropdown = ({ label, children, onClick, active }) => {
-  const classes = classNames('filter-container', { active });
+  const containerClasses = classNames('filter-container', { active });
+  const optionsClasses = classNames('filter-options', { active });
   return (
-    <li className={classes}>
+    <li className={containerClasses}>
       <a className="filter-container-label" onClick={onClick}>
         <div>{ label }</div>
         <i className="fa fa-chevron-left"></i>
       </a>
       <ul>
-        { children }
+        <div className={optionsClasses}>
+          { children }
+        </div>
       </ul>
     </li>
   );

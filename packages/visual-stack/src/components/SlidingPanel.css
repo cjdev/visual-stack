@@ -103,3 +103,32 @@ a.filter-container-label {
     transition: background-color 0.2s;
 }
 
+.filter-options {
+    background-color: #EFF4F7;
+    width: 100%;
+    max-height: 0px;
+    z-index: 200;
+    transition: max-height 0.2s;
+    overflow: hidden;
+}
+
+.filter-options.active {
+    max-height: 100px;
+}
+
+.filter-options.active label {
+    color: #263238;
+}
+
+.filter-options input {
+    margin-right: 5px;
+}
+
+.filter-options .select-all {
+  border-bottom: solid 1px #ddd;
+}
+
+.filter-options .select-all,
+.filter-options .checkboxes{
+    padding: 5px 15px;
+}
