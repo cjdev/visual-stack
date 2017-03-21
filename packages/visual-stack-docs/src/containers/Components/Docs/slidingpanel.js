@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { SlidingPanel, SlidingPanelSection, SlidingPanelHeader, ToggleIcon, SlidingPanelDropdown } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 /* s5:start */
 import { SlidingPanel as VSRSlidingPanel, ToggleIcon as VSRToggleIcon, SlidingPanelDropdown as VSRSlidingPanelDropdown } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
-import { CheckboxFilter } from '@cjdev/visual-stack/lib/components/SlidingPanelFilter';
+import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/SlidingPanelFilter';
 /* s5:end */
 
 class SlidingPanelDemo extends React.Component {
@@ -55,7 +55,7 @@ class SlidingPanelDemo extends React.Component {
                         active={this.state.filterActive}
                         onClick={() => this.setState({ filterActive: !this.state.filterActive })}
                         >
-                        <CheckboxFilter
+                        <MultiSelectFilter
                           active={this.state.filterActive}
                           values={this.state.companies}
                           onSelect={val => console.log(val)}
@@ -118,7 +118,7 @@ class VSRSlidingPanelDemo extends React.Component {
                       <VSRSlidingPanelDropdown
                         label="My Redux CIDs"
                         >
-                        <CheckboxFilter
+                        <MultiSelectFilter
                           active={this.state.filterActive}
                           values={this.state.companies}
                           onSelect={val => console.log(val)}

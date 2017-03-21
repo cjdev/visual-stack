@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './SlidingPanelFilter.css';
 import R from 'ramda';
 
-export const CheckboxFilter = ({ active, values, onSelect }) => {
+export const MultiSelectFilter = ({ active, values, onSelect }) => {
   const classes = classNames('filter-options', { active });
   const domCheckboxes = [];
   const createCheckboxes = (val, idx) => {
