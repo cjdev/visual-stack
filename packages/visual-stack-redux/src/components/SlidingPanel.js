@@ -69,11 +69,11 @@ export class InternalSlidingPanelDropdown extends Component {
     super(props);
   }
   render() {
-    const active = R.view(R.lensPath([this.props.label, 'active']), this.props.slidingPanel)
+    const expanded = R.view(R.lensPath([this.props.label, 'active']), this.props.slidingPanel)
     return (
       <BaseSlidingPanelDropdown
         label={this.props.label}
-        active={active}
+        active={expanded}
         onClick={() => this.props.toggleFilterDropdown(this.props.label)}
         >
         { this.props.children }
