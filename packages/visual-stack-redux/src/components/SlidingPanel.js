@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import R  from 'ramda';
+import R from 'ramda';
 import { connect } from 'react-redux';
 import {
   SlidingPanel as BaseSlidingPanel,
@@ -69,7 +69,7 @@ export class InternalSlidingPanelDropdown extends Component {
     super(props);
   }
   render() {
-    const expanded = R.view(R.lensPath([this.props.label, 'expanded']), this.props.slidingPanel)
+    const expanded = R.view(R.lensPath([this.props.label, 'expanded']), this.props.slidingPanel);
     return (
       <BaseSlidingPanelDropdown
         label={this.props.label}

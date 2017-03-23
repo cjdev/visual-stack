@@ -51,12 +51,12 @@ describe('SlidingPanel', () => {
 
   describe('SlidingPanelDropdown', () => {
     it('should render VisualStack SlidingPanelDropdown with label', () => {
-      const title = 'My CIDs'
+      const title = 'My CIDs';
       const slidingPanel = shallow(
         <InternalSlidingPanel>
           <InternalSlidingPanelDropdown label={title}/>
         </InternalSlidingPanel>
-      )
+      );
       const dropdown = slidingPanel.find(InternalSlidingPanelDropdown);
       expect(dropdown).to.have.length(1);
       expect(dropdown.props().label).to.equal(title);
@@ -70,12 +70,12 @@ describe('SlidingPanel', () => {
           toggleFilterDropdown={handleDropdown}>
           <div>Something</div>
         </InternalSlidingPanelDropdown>
-      )
+      );
       const dropdown = slidingPanel.find(SlidingPanelDropdown);
       dropdown.find('a.filter-container-label').simulate('click');
       expect(dropdown.find('div.filter-options')).to.have.length(1);
       expect(handleDropdown).to.have.property('callCount', 1);
-    })
-  })
+    });
+  });
 });
 

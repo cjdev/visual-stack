@@ -1,17 +1,21 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 
+/* s7:start */
 import { SlidingPanel, SlidingPanelSection, SlidingPanelHeader, ToggleIcon, SlidingPanelDropdown } from '@cjdev/visual-stack/lib/components/SlidingPanel';
+/* s7:end */
 /* s5:start */
 import { SlidingPanel as VSRSlidingPanel, ToggleIcon as VSRToggleIcon, SlidingPanelDropdown as VSRSlidingPanelDropdown } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
-import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/Filters';
 /* s5:end */
+import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/Filters';
 
 class SlidingPanelDemo extends React.Component {
   constructor() {
     super();
     /* s1:start */
+    // mock state for 'visual-stack' sliding component
     this.state = {
       panelActive: false,
       filterActive: false,
@@ -36,7 +40,6 @@ class SlidingPanelDemo extends React.Component {
                   </div>
                 </Header>
                 <Body>
-
                   { /* s2:start */ }
                   <ToggleIcon
                     onClick={() => {
@@ -55,26 +58,31 @@ class SlidingPanelDemo extends React.Component {
                         expanded={this.state.filterActive}
                         onClick={() => this.setState({ filterActive: !this.state.filterActive })}
                         >
+                        { /* example of a Filter to populate the Dropdown */ }
                         <MultiSelectFilter
                           values={this.state.companies}
                           onSelect={val => console.log(val)}
                         />
                       </SlidingPanelDropdown>
                     </SlidingPanelSection>
-                    <SlidingPanelSection>
-                      <div>
-                        Section #3 in div
-                      </div>
-                    </SlidingPanelSection>
                   </SlidingPanel>
                   { /* s3:end */ }
+                  <div>
+                    Import from visual-stack
+                  </div>
+                  <Snippet tag="s7" src={snippets} />
+                  <div>
+                    Set up mock state for 'visual stack' sliding component and dropdown
+                  </div>
                   <Snippet tag="s1" src={snippets} />
+                  <div>Implement Toggle icon for Sliding Panel</div>
                   <Snippet tag="s2" src={snippets} />
+                  <div>Mock structure of Panel, with Dropdown</div>
                   <Snippet tag="s3" src={snippets} />
                 </Body>
               </Panel>
             </div>
-            );
+          );
         }}
       </Demo>
     );
@@ -85,7 +93,6 @@ class SlidingPanelDemo extends React.Component {
 class VSRSlidingPanelDemo extends React.Component {
   constructor() {
     super();
-    /* s4:start */
     this.state = {
       panelActive: false,
       filterActive: true,
@@ -94,7 +101,6 @@ class VSRSlidingPanelDemo extends React.Component {
         { label: '5667 - my other company', value: 5667 },
       ],
     };
-    /* s4:end */
   }
   render() {
     return (
@@ -124,8 +130,10 @@ class VSRSlidingPanelDemo extends React.Component {
                       </VSRSlidingPanelDropdown>
                     </VSRSlidingPanel>
                     { /* s6:end */ }
+                    <div>Import Sliding Panel component from visual-stack-redux</div>
                     <Snippet tag="s5" src={snippets} />
-                    <Snippet tag="s4" src={snippets} />
+                    <div>Implementation (similar to presentational components)</div>
+                    <Snippet tag="s6" src={snippets} />
                   </Body>
                 </Panel>
               </div>
