@@ -13,6 +13,7 @@ import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/Filters';
 
 class SlidingPanelDemo extends React.Component {
   constructor() {
+    super();
     /* s1:start */
     // mock state for 'visual-stack' sliding component
     this.state = {
@@ -60,7 +61,7 @@ class SlidingPanelDemo extends React.Component {
                         { /* example of a Filter to populate the Dropdown */ }
                         <MultiSelectFilter
                           values={this.state.companies}
-                          onSelect={val => console.log(val)}
+                          onFilterChange={val => console.log(val)}
                         />
                       </SlidingPanelDropdown>
                     </SlidingPanelSection>
@@ -91,6 +92,7 @@ class SlidingPanelDemo extends React.Component {
 
 class VSRSlidingPanelDemo extends React.Component {
   constructor() {
+    super(); // cannot call this before super
     this.state = {
       panelActive: false,
       filterActive: true,
@@ -123,7 +125,7 @@ class VSRSlidingPanelDemo extends React.Component {
                         >
                         <MultiSelectFilter
                           values={this.state.companies}
-                          onSelect={val => console.log(val)}
+                          onFilterChange={val => console.log(val)}
                         />
                       </VSRSlidingPanelDropdown>
                     </VSRSlidingPanel>
