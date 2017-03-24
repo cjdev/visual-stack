@@ -2,7 +2,7 @@ import React from 'react';
 import './Filters.css';
 import R from 'ramda';
 
-export const MultiSelectFilter = ({ values, onFilterChange }) => {
+export const MultiSelectFilter = ({ values, onFilterChange, defaultChecked }) => {
   const domCheckboxes = [];
   const onChangeCheckbox = () => {
     const selectedValues =
@@ -19,7 +19,7 @@ export const MultiSelectFilter = ({ values, onFilterChange }) => {
   const createCheckboxes = (val, idx) => {
     return (
       <label key={idx}>
-        <input ref={ checkbox => domCheckboxes.push(checkbox) } key={idx} type="checkbox" value={val.value} onChange={ onChangeCheckbox }/>{ val.label }
+        <input ref={ checkbox => domCheckboxes.push(checkbox) } key={idx} type="checkbox" value={val.value} onChange={ onChangeCheckbox } checked={defaultChecked}/>{ val.label }
       </label>);
   };
 
@@ -35,7 +35,7 @@ export const MultiSelectFilter = ({ values, onFilterChange }) => {
 
   return (
     <div>
-      <div className="select-all"><label><input type="checkbox" value="" onChange={ checkAll } />All</label></div>
+      <div className="select-all"><label><input type="checkbox" value="" onChange={ checkAll } checked={defaultChecked} />All</label></div>
       <div className="checkboxes">
         { checkboxes }
       </div>

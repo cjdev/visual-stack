@@ -62,6 +62,7 @@ class SlidingPanelDemo extends React.Component {
                         <MultiSelectFilter
                           values={this.state.companies}
                           onFilterChange={val => console.log(val)}
+                          defaultChecked={true}
                         />
                       </SlidingPanelDropdown>
                     </SlidingPanelSection>
