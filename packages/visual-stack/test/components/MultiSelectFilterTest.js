@@ -1,15 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { equal } from 'assert';
+import { equal, deepEqual } from 'assert';
 import { MultiSelectFilter } from '../../src/components/Filters';
 
 describe('Filters', () => {
   describe('MultiSelectFilter', () => {
     it('should render all values passed in as checkboxes', () => {
       const checkboxList = [
-        { label: 'Company1', value: '1234' },
-        { label: 'Company2', value: '5678' },
-        { label: 'Company3', value: '9101' },
+        { label: 'Company1', value: 1234 },
+        { label: 'Company2', value: 5678 },
+        { label: 'Company3', value: 9101 },
       ];
       const filter = mount(<MultiSelectFilter
         values={checkboxList}
@@ -22,9 +22,9 @@ describe('Filters', () => {
 
     it('should render all values as selected by default', () => {
       const checkboxList = [
-        { label: 'Company1', value: '1234' },
-        { label: 'Company2', value: '5678' },
-        { label: 'Company3', value: '9101' },
+        { label: 'Company1', value: 1234 },
+        { label: 'Company2', value: 5678 },
+        { label: 'Company3', value: 9101 },
       ];
       const filter = mount(<MultiSelectFilter
         values={checkboxList}
@@ -34,21 +34,22 @@ describe('Filters', () => {
       equal(filter.find('[type="checkbox"]').first().props().checked, true);
     });
 
-    // it('should toggle the values correctly when clicked', () => {
-    //   const checkboxList = [
-    //     { label: 'company1', value: '1234' },
-    //     { label: 'company2', value: '5678' },
-    //     { label: 'company3', value: '9101' }
-    //   ]
+    it('should toggle the values correctly when clicked', () => {
+      const checkboxList = [
+        { label: 'company1', value: 1234 },
+        { label: 'company2', value: 5678 },
+        { label: 'company3', value: 9101 }
+      ];
 
-    //   const filter = mount(<MultiSelectFilter
-    //     values={checkboxList}
-    //     onFilterChange={(val) => console.log(val)}
-    //     defaultChecked={true}/>);
+      const assertOnValues = values => deepEqual(values, []);
+      const filter = mount(<MultiSelectFilter
+        values={checkboxList}
+        onFilterChange={assertOnValues}
+        defaultChecked={true}/>);
 
-    //   const selectAll = filter.find('[type="checkbox"]').first();
-    //   equal(selectAll.props().checked, true);
-    //   selectAll.simulate('click')
-    // });
+      const selectAllCheckbox = filter.find('[type="checkbox"]').first();
+      equal(selectAllCheckbox.props().checked, true);
+      selectAllCheckbox.simulate('change');
+    });
   });
 });
