@@ -4,41 +4,49 @@ import R from 'ramda';
 
 export const MultiSelectFilter = ({ values, onFilterChange, defaultChecked }) => {
   const domCheckboxes = [];
-  const onChangeCheckbox = () => {
-    const selectedValues =
+  let allCheckbox = null;
+
+  const onAllChange = event => {
+    const isAllChecked = event.target.checked;
+    R.forEach(checkbox => (checkbox.checked = isAllChecked), domCheckboxes);
+
+    return isAllChecked
+      ? onFilterChange(R.pluck('value', values))
+      : onFilterChange([]);
+  };
+  const onOptionChange = event => {
+    if (!event.target.checked) {
+      allCheckbox.checked = false;
+    }
+
+    allCheckbox.checked = R.all(domCheckbox => domCheckbox.checked, domCheckboxes);
+    const selectedValuesAsStrings =
       R.pipe(
         R.filter(checkbox => checkbox.checked),
-        R.map(checkbox => checkbox.value)
-      )(domCheckboxes);
+          R.map(checkbox => checkbox.value)
+    )(domCheckboxes);
+    const selectedValues = R.filter(({ value }) => R.contains('' + value, selectedValuesAsStrings), values);
 
-    return onFilterChange(
-              R.map(({ value }) => value,
-                R.filter(({ value }) => R.contains('' + value, selectedValues), values)));
+    return onFilterChange(R.pluck('value', selectedValues));
   };
 
   const createCheckboxes = (val, idx) => {
     return (
       <label key={idx}>
-        <input ref={ checkbox => domCheckboxes.push(checkbox) } key={idx} type="checkbox" value={val.value} onChange={ onChangeCheckbox } checked={defaultChecked}/>{ val.label }
+        <input ref={ checkbox => domCheckboxes.push(checkbox) } key={idx} type="checkbox" value={val.value}
+          onChange={ onOptionChange } defaultChecked={defaultChecked} />{ val.label }
       </label>);
   };
 
   const mapIndexes = R.addIndex(R.map);
   const checkboxes = mapIndexes(createCheckboxes, values);
-  const checkAll = element => {
-    const isSelectAll = element.target.checked;
-    R.forEach(checkbox => (checkbox.checked = isSelectAll), domCheckboxes);
-    return isSelectAll
-      ? onFilterChange(R.map(({ value }) => value, values))
-      : onFilterChange([]);
-  };
 
   return (
     <div>
-      <div className="select-all"><label><input type="checkbox" value="" onChange={ checkAll } checked={defaultChecked} />All</label></div>
-      <div className="checkboxes">
-        { checkboxes }
+      <div className="select-all">
+        <label><input ref={ checkbox => (allCheckbox = checkbox)} type="checkbox" value="" onChange={ onAllChange } defaultChecked={defaultChecked} />All</label>
       </div>
+      <div className="checkboxes">{ checkboxes }</div>
     </div>
   );
 };
