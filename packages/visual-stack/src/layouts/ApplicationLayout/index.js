@@ -3,14 +3,18 @@ import './style.css';
 
 const ApplicationLayout = ({ topNav, sideNav, children }) => {
   return (
-    <div className="application-layout">
-      { topNav }
-      <div className="application-layout-container">
-        { sideNav }
-        <div className="application-layout-content">
-          { children }
+      <div className="application-layout">
+        <div>
+          { topNav }
         </div>
-      </div>
+        <div className="application-layout-container">
+          <div>
+            { sideNav }
+          </div>
+          <div className="application-layout-content">
+            { children }
+          </div>
+        </div>
     </div>
   );
 };

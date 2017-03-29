@@ -1,15 +1,38 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
 .application-layout {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.application-layout > * {
+  flex: 0 0 auto;
+  overflow: scroll;
 }
 
 .application-layout-container {
+  flex: 1 1 auto;
   display: flex;
-  height: 100%;
+  overflow: hidden
+}
+
+.application-layout-container > * {
+  flex: 0 0 auto;
+  overflow: scroll;
 }
 
 .application-layout-content {
-  width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
   background-color: #FDFDFD;
 }
 
