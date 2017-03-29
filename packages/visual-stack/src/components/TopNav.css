@@ -1,7 +1,7 @@
 .topnav {
   min-height: 50px;
   background-color: #37474F;
-  color: #ADBBC2;
+  color: #c4d2d9;
   padding: 0;
   user-select: none;
   font-weight: 400;
@@ -47,7 +47,7 @@
 }
 
 .topnav-app-header {
-  padding-left: 1em;
+  padding-left: .3em;
 }
 
 @media (min-width: 40em) {
@@ -188,14 +188,9 @@
 }
 
 .topnav-left-logo {
-  font-size: 1.5em;
-}
+  width: 35px;
+  fill: blue;
 
-@media (min-width: 40em) {
-  .topnav-left-logo {
-    font-size: 1.5em;
-    padding: .3em;
-  }
 }
 
 .topnav-nav > li.topnav-left-app-name {
@@ -206,6 +201,7 @@
   .topnav-nav > li.topnav-left-app-name {
     display:inherit;
     font-size: 1.1em;
+    letter-spacing: .03em;
   }
 }
 

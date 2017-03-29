@@ -29,18 +29,18 @@
 }
 
 .sidenav .sidenav-container ul li a {
-  padding-left: 30px;
+  padding-left: 56px;
 }
 
 .sidenav-icon {
   font-size: 14px;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 20px;
   width: 14px;
 }
 
 .sidenav a {
-  padding: 7px 15px;
+  padding: 9px 21px;
   text-decoration: none;
   display: block;
   color: #ADBBC2;
@@ -48,7 +48,7 @@
 
 .sidenav a:focus,
 .sidenav a:hover {
-  background-color: #222D32;
+  background-color: #1f292d;
   color: #FFFFFF;
 }
 
@@ -104,6 +104,5 @@
 }
 
 .sidenav .sidenav-container .sidenav-link {
-  padding-left: 10px;
 }
 
