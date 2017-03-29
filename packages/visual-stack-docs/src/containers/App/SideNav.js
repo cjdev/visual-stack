@@ -1,12 +1,17 @@
 import React from 'react';
 import R from 'ramda';
 import { Link } from 'react-router';
-import { SideNav, Link as SideNavLink, LinkGroup } from '@cjdev/visual-stack-redux/lib/components/SideNav';
+import { SideNav, SideNavIcon, Link as SideNavLink, LinkGroup } from '@cjdev/visual-stack-redux/lib/components/SideNav';
 import { routeComponentMap } from '../Components/Docs/';
+
+const componentIcon = <SideNavIcon type="square" />;
+const iconIcon = <SideNavIcon type="font-awesome" />;
+const layoutIcon = <SideNavIcon type="th-list" />;
+// const emptyIcon = <SideNavIcon />;
 
 export default () =>
   <SideNav>
-    <LinkGroup label="Components">
+    <LinkGroup label="Components" icon={componentIcon}>
       {
         R.pipe(
           R.mapObjIndexed((val, key) => ({ key, ...val })),
@@ -21,8 +26,19 @@ export default () =>
         )(routeComponentMap)
       }
     </LinkGroup>
-    <SideNavLink><Link to="/icons">Icons</Link></SideNavLink>
-    <SideNavLink><Link to="/layouts">Layouts</Link></SideNavLink>
-  </SideNav>;
 
+    <SideNavLink>
+      <Link to="/icons">
+        {iconIcon}
+        Icons
+      </Link>
+    </SideNavLink>
+    <SideNavLink>
+      <Link to="/layouts">
+        {layoutIcon}
+        Layouts
+      </Link>
+    </SideNavLink>
+
+  </SideNav>;
 

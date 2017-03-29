@@ -15,13 +15,16 @@ Header.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-export const LinkGroup = ({ label, children, expanded, onClick }) => {
+export const LinkGroup = ({ label, icon, children, expanded, onClick }) => {
   const classes = 'sidenav-entry sidenav-container' + (expanded ? ' expanded' : '');
   return (
     <li className={classes}>
-      <a className="sidenav-container-label" onClick={e => onClick(e, label)}>
-        <div>{ label }</div>
-        <i className="fa fa-chevron-right"></i>
+      <a className="sidenav-container-row" onClick={e => onClick(e, label)}>
+        <div className="sidenav-container-row-left">
+          { icon }
+          <span className="sidenav-container-label">{ label }</span>
+        </div>
+        <i className="fa fa-chevron-right sidenav-container-chevron"></i>
       </a>
       <ul>
         { children }
@@ -37,10 +40,14 @@ LinkGroup.propTypes = {
 
 export const Link = ({ children }) => {
   return (
-  <li className="sidenav-entry sidenav-link">
-    {children}
-  </li>
+    <li className="sidenav-entry sidenav-link">
+      {children}
+    </li>
   );
+};
+
+export const SideNavIcon = ({ type }) => {
+  return <i className={`fa fa-${type} sidenav-icon`}></i>;
 };
 
 export const SideNav = ({ children, active }) => {

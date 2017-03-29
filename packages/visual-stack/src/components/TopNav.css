@@ -1,10 +1,10 @@
 .topnav {
   min-height: 50px;
   background-color: #37474F;
-  color: #ccc;
+  color: #ADBBC2;
   padding: 0;
   user-select: none;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 
@@ -205,8 +205,7 @@
 @media (min-width: 40em) {
   .topnav-nav > li.topnav-left-app-name {
     display:inherit;
-    font-variant: small-caps;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 

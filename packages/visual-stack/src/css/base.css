@@ -2,6 +2,7 @@
 
 body, p, div, td, th, span {
   font-family: "Open Sans",sans-serif;
+  font-size: 13px;
 }
 
 body, p, td, th, h1, h2, h3, h4, h5 {

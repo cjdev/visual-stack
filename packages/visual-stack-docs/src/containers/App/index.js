@@ -5,7 +5,7 @@ import AppSideNav from './SideNav';
 import './styles.css';
 
 const AppTopNav = () =>
-  <TopNav appName="VISUAL STACK" />;
+  <TopNav appName="VISUAL stack" />;
 
 export default class App extends Component {
   render() {

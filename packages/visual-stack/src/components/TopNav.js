@@ -52,12 +52,13 @@ export const SecondaryNav = ({ active, children }) => {
 };
 
 const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, onSecondNavToggle }) => {
+  const capAppName = appName ? appName.toUpperCase() : '';
   return (
     <div className="topnav topnav-main">
 
       <ul className="topnav-nav topnav-app-header">
         <li className="topnav-left-logo">{ logo }</li>
-        <li className="topnav-left-app-name">{ appName }</li>
+        <li className="topnav-left-app-name">{ capAppName }</li>
         { onSideNavToggle &&
           <li className="topnav-icon"><ToggleIcon onClick={onSideNavToggle} /></li>
         }

@@ -1,7 +1,7 @@
 .sidenav {
   background-color: #263238;
   list-style: none;
-  min-width: 200px;
+  min-width: 260px;
   height: 100%;
   overflow-y: scroll;
   left: 0;
@@ -9,7 +9,7 @@
   position: fixed;
   z-index: 200;
   transition: transform 0.3s;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .sidenav.active {
@@ -32,16 +32,23 @@
   padding-left: 30px;
 }
 
+.sidenav-icon {
+  font-size: 14px;
+  text-align: center;
+  margin-right: 10px;
+  width: 14px;
+}
+
 .sidenav a {
   padding: 7px 15px;
   text-decoration: none;
   display: block;
-  color: #bbb;
+  color: #ADBBC2;
 }
 
 .sidenav a:focus,
 .sidenav a:hover {
-  background-color: rgba(0,0,0,.1);
+  background-color: #222D32;
   color: #FFFFFF;
 }
 
@@ -50,7 +57,7 @@
   color: #FFFFFF;
 }
 
-.sidenav a.sidenav-container-label {
+.sidenav a.sidenav-container-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,11 +65,18 @@
   user-select:none;
 }
 
-.sidenav .sidenav-container-label i {
+.sidenav .sidenav-container-row-left {
+  display: flex;
+  align-items: center;
+}
+
+.sidenav .sidenav-container-chevron {
   transform: rotate(0);
   transition: -webkit-transform .2s ease-in-out;
+  font-size: 0.8em;
 }
-.sidenav .expanded .sidenav-container-label i {
+
+.sidenav .expanded .sidenav-container-chevron {
   transform: rotate(90deg);
 }
 
@@ -87,5 +101,9 @@
   .sidenav-toggle-icon {
       display:none;
   }
+}
+
+.sidenav .sidenav-container .sidenav-link {
+  padding-left: 10px;
 }
 

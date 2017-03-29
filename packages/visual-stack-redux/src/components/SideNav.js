@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   SideNav as BaseSideNav,
   Header as BaseHeader,
+  SideNavIcon as BaseIcon,
   Link as BaseLink,
   LinkGroup as BaseLinkGroup,
 } from '@cjdev/visual-stack/lib/components/SideNav';
@@ -39,6 +40,7 @@ export class InternalLinkGroup extends Component {
     const expanded = R.view(R.lensPath([this.props.label, 'expanded']), this.props.linkGroups) || false;
     return (
       <BaseLinkGroup
+        icon={this.props.icon}
         label={this.props.label}
         expanded={expanded}
         onClick={() => this.props.toggleSideNavLinkGroup(this.props.label) }
@@ -57,4 +59,5 @@ export const LinkGroup = connect(
 
 export const Header = BaseHeader;
 export const Link = BaseLink;
+export const SideNavIcon = BaseIcon;
 
