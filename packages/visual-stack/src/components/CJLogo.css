@@ -1,0 +1,12 @@
+.cj-logo {
+  width: 40px;
+  margin-top: 4px;
+}
+
+.cj-logo > path {
+  fill: #596c78;
+}
+
+.cj-logo > g > path {
+  fill: #c4d2d9;
+}
