@@ -1,7 +1,6 @@
 .page-heading {
-  background-color: rgb(247, 247, 247);
-  border-bottom: 1px solid #E2E2E2;
-  margin-bottom: 1em;
+  background-color: #EFF4F7;
+  border-bottom: 1px solid #dbe5ea;
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-between;
@@ -9,8 +8,8 @@
 
 .page-heading--section,
 .page-heading--title {
-  font-size: 18px;
-  color: #777;
+  font-size: 14px;
+  color: #647388;
   font-weight: 400;
   min-height: 25px;
   padding: 0.7em 1em;
