@@ -63,15 +63,6 @@
   margin-right: 0;
 }
 
-.user-menu .username {
-  display: none;
-}
-
-@media (min-width: 40em) {
-  .user-menu .username {
-    display: initial;
-  }
-}
 
 .topnav-icon {
   font-size: 1.3em;
@@ -82,10 +73,6 @@
   text-align: center;
 }
 
-.user-menu {
-  height: 100%;
-	padding: 0 3px;
-}
 
 .topnav .fa-ellipsis-v {
   font-size: 1.1em;
@@ -93,8 +80,32 @@
 }
 
 
+
+.user-menu {
+  height: 100%;
+  padding: 0 3px;
+}
+
+.user-menu.active {
+  background-color: #41535C;
+}
+
+.user-menu .username {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .user-menu .username {
+    display: initial;
+  }
+}
+
+
+.user-menu.active .topnav-dropdown {
+  display: block;
+}
+
 .user-menu .fa-user-circle{
-  font-size: 1.5em;
 }
 
 
@@ -113,10 +124,6 @@
 
 .user-menu > a > * {
   padding: 0 5px;
-}
-
-.user-menu.active {
-  background-color: #41535C;
 }
 
 .user-menu.active .topnav-dropdown {
@@ -138,27 +145,48 @@
 
 .topnav-dropdown .user-dropdown-item {
   display: flex;
-  min-height: 80px;
+  min-height: 72px;
   align-items: center;
 }
 
-.topnav-dropdown .user-dropdown-item > i {
-  color: #38C498;
-  font-size: 2.75em;
+.topnav-dropdown .user-dropdown-item .circle {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  margin-right: 5px;
+  background-color: #38C498;
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+}
+
+.circle .first,
+.circle .last {
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .topnav-dropdown .user-dropdown-item .user-info {
-  font-size: .85em;
   padding-left: 10px;
- }
+  font-size: 12px;
+  line-height: 16px;
+}
 
 .topnav-dropdown .user-dropdown-item .user-info .name {
-  font-weight: bold;
-  margin-bottom: 2px;
+  font-weight: 600;
+  user-select: auto;
+}
+
+.topnav-dropdown .user-dropdown-item .user-info .email {
+  color: #647388;
+  font-weight: 300;
+  user-select: auto;
 }
 
 .topnav-dropdown > li {
-  padding: 0 10px;
+  padding: 0 14px;
   background-color: #fff;
   color: #333;
   border-bottom:1px solid #ddd;

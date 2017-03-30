@@ -14,10 +14,13 @@ export const DropdownItem = ({ logo, title, onClick }) => {
   );
 };
 
-export const UserDropdownItem = ({ name, email }) => {
+export const UserDropdownItem = ({ name, firstInitial, lastInitial, email }) => {
   return (
       <li className="user-dropdown-item">
-        <i className="fa fa-circle"></i>
+        <div className="circle">
+          <span className="first">{firstInitial.toUpperCase()}</span>
+          <span className="last">{lastInitial.toUpperCase()}</span>
+        </div>
         <ul className="user-info">
           <li className="name">{name}</li>
           <li className="email">{email}</li>
