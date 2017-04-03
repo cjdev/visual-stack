@@ -5,7 +5,7 @@ import './TopNav.css';
 
 export const DropdownItem = ({ logo, title, onClick }) => {
   return (
-    <li>
+    <li className="dropdown-item">
       <a onClick={onClick}>
         <div className="topnav-dropdown-logo">{ logo }</div>
         <div className="topnav-dropdown-title">{ title }</div>
