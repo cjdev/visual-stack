@@ -4,15 +4,17 @@
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-between;
+  align-items: center;
+
+  min-height: 60px;
+  padding: 0 20px;
+  color: #647388;
 }
 
 .page-heading--section,
 .page-heading--title {
   font-size: 14px;
-  color: #647388;
   font-weight: 400;
-  min-height: 25px;
-  padding: 0.7em 1em;
 }
 
 .page-heading--description {
