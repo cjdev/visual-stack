@@ -40,6 +40,28 @@
   border-bottom: 1px solid #ddd;
 }
 
+.sliding-panel-toggle-icon {
+  margin: 0 3px;
+  padding: 1px 4px;
+
+  display: flex;
+  align-items: center;
+}
+
+.sliding-panel-toggle-icon .toggle-icon-circle {
+  color: #FFFFFF;
+}
+.sliding-panel-toggle-icon:hover .toggle-icon-circle {
+  color: #34C6DC;
+}
+
+.sliding-panel-toggle-icon .toggle-icon-fg {
+  color: #8C9BA9;
+}
+.sliding-panel-toggle-icon:hover .toggle-icon-fg {
+  color: #FFFFFF;
+}
+
 .sliding-panel-toggle-icon:hover {
   cursor: pointer;
 }

@@ -5,7 +5,10 @@ import './SlidingPanel.css';
 export const ToggleIcon = ({ onClick }) => {
   return (
     <a className="sliding-panel-toggle-icon" onClick={onClick}>
-      <i className="fa fa-sliders"></i>
+        <span className="fa-stack fa-lg">
+          <i className="fa fa-circle fa-stack-2x toggle-icon-circle"></i>
+          <i className="fa fa-sliders fa-stack-1x toggle-icon-fg"></i>
+        </span>
     </a>
   );
 };
