@@ -15,15 +15,11 @@ body {
   overflow: hidden;
 }
 
-.application-layout > * {
-  flex: 0 0 auto;
-  overflow: scroll;
-}
-
 .application-layout-container {
   flex: 1 1 auto;
   display: flex;
-  overflow: hidden
+  overflow: hidden;
+  background-color: #EFF4F7;
 }
 
 .application-layout-container > * {
@@ -33,6 +29,5 @@ body {
 
 .application-layout-content {
   flex: 1 1 auto;
-  background-color: #FDFDFD;
 }
 
