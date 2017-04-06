@@ -33,7 +33,10 @@ export const UserMenu = ({ title, open, onClick, children }) => {
   return (
     <li className={`user-menu ${open ? 'active' : ''}`}>
       <a onClick={onClick}>
-        <i className="topnav-icon fa fa-user-circle"></i>
+        <span className="fa-stack fa-lg user-menu-icon">
+          <i className="fa fa-circle fa-stack-2x"></i>
+          <i className="fa fa-user fa-stack-1x fa-inverse"></i>
+        </span>
         <span className="username">{title}</span>
         <i className="fa fa-chevron-down"></i>
       </a>
@@ -58,7 +61,6 @@ const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, on
   const capAppName = appName ? appName.toUpperCase() : '';
   return (
     <div className="topnav topnav-main">
-
       <ul className="topnav-nav topnav-app-header">
         <li className="topnav-left-logo">{ logo }</li>
         <li className="topnav-left-app-name">{ capAppName }</li>
@@ -66,10 +68,8 @@ const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, on
           <li className="topnav-icon"><ToggleIcon onClick={onSideNavToggle} /></li>
         }
       </ul>
-
       <ul className="topnav-nav">
       </ul>
-
       <ul className="topnav-nav topnav-nav-right">
         { hasSecondaryNav &&
           <li className="secondarynav-toggle-icon topnav-icon">
