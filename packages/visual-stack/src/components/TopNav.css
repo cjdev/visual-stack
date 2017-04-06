@@ -81,8 +81,10 @@
 .user-menu {
   height: 100%;
   padding: 0 10px;
+  cursor: pointer;
 }
 
+.user-menu:hover,
 .user-menu.active {
   background-color: #41535C;
 }
