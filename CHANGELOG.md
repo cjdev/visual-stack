@@ -1,3 +1,9 @@
+# 0.16.0 (April 7, 2017)
+
+## Breaking Change
+
+- Updated Sliding Panel Dropdown to take mandatory id to allow for label translations.
+
 # 0.15.3 (March 31, 2017)
 
 ## Bugfixes
