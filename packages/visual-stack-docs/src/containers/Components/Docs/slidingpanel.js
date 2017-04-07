@@ -125,7 +125,17 @@ class VSRSlidingPanelDemo extends React.Component {
                         reduxified sliding panel header
                       </SlidingPanelHeader>
                       <VSRSlidingPanelDropdown
+                        id="id1"
                         label="My Redux CIDs"
+                        >
+                        <MultiSelectFilter
+                          values={this.state.companies}
+                          onFilterChange={val => console.log(val)}
+                        />
+                      </VSRSlidingPanelDropdown>
+                      <VSRSlidingPanelDropdown
+                        id="id2"
+                        label="My Other Redux CIDs"
                         >
                         <MultiSelectFilter
                           values={this.state.companies}
