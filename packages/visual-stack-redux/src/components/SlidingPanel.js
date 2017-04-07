@@ -64,6 +64,7 @@ export class InternalToggleIcon extends Component {
 export class InternalSlidingPanelDropdown extends Component {
   static propTypes = {
     slidingPanel: PropTypes.object,
+    id: PropTypes.string.isRequired,
   };
   constructor(props) {
     super(props);
