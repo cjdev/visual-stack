@@ -37,7 +37,9 @@ const PageHeader2Section = ({ snippets }) =>
       { /* s2:start */ }
       <PageHeader>
         <PageTitle>
-          Title
+          <span>
+            Title
+          </span>
         </PageTitle>
         <PageHeaderSection>
           Right

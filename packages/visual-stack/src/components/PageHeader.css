@@ -12,7 +12,9 @@
 }
 
 .page-heading--section,
-.page-heading--title {
+.page-heading--title,
+.page-heading--section > *,
+.page-heading--title > * {
   font-size: 14px;
   font-weight: 400;
 }
