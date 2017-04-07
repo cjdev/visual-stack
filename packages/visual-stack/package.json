@@ -27,7 +27,7 @@
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "ramda": "^0.19.1",
-    "react-svg": "^2.1.19"
+    "react-svg": "1.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
@@ -51,6 +51,7 @@
     "gulp-filter": "^4.0.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.1.0",
+    "ignore-loader": "^0.1.2",
     "jsdom": "^9.9.1",
     "jsdom-global": "^2.1.0",
     "mocha": "^2.4.5",
