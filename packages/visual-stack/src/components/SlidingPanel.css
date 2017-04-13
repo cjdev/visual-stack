@@ -112,7 +112,7 @@ a.filter-container-label {
 }
 
 .filter-container.expanded .filter-container-label i {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 .filter-container.expanded a {

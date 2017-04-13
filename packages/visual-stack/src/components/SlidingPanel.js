@@ -49,7 +49,7 @@ export const SlidingPanelDropdown = ({ label, children, onClick, expanded }) => 
     <ul className={containerClasses}>
       <a className="filter-container-label" onClick={onClick}>
         <div>{ label }</div>
-        <i className="fa fa-chevron-left"></i>
+        <i className="fa fa-chevron-right"></i>
       </a>
       <ul>
         <div className={optionsClasses}>
