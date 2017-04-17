@@ -3,7 +3,7 @@
   list-style: none;
   min-width: 260px;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   left: 0;
   transform: translateX(-100%);
   position: fixed;
