@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopNav } from '@cjdev/visual-stack/lib/components/TopNav';
+import { TopNav } from '@cjdev/visual-stack-redux/lib/components/TopNav';
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import Layout from '@cjdev/visual-stack/lib/layouts/ApplicationLayout';
 import AppSideNav from './SideNav';

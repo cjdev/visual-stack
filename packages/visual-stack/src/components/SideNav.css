@@ -3,7 +3,7 @@
   list-style: none;
   min-width: 260px;
   height: 100%;
-  overflow-y: scroll;
+  overflow: scroll;
   left: 0;
   transform: translateX(-100%);
   position: fixed;
@@ -18,9 +18,7 @@
 
 @media (min-width: 40em) {
   .sidenav {
-    overflow-y: hidden;
     transform: inherit;
-    position: inherit;
   }
 }
 

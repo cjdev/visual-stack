@@ -8,7 +8,7 @@ const ApplicationLayout = ({ topNav, sideNav, children }) => {
           { topNav }
         </div>
         <div className="application-layout-container">
-          <div>
+          <div className="application-layout-side">
             { sideNav }
           </div>
           <div className="application-layout-content">

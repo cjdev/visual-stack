@@ -22,12 +22,19 @@ body {
   background-color: #EFF4F7;
 }
 
-.application-layout-container > * {
+.application-layout-side {
   flex: 0 0 auto;
-  overflow: scroll;
+  overflow: auto;
+}
+
+@media (min-width: 40em) {
+  .application-layout-side {
+    flex: 0 0 260px;
+  }
 }
 
 .application-layout-content {
   flex: 1 1 auto;
+  overflow: auto;
 }
 
