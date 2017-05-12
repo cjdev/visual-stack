@@ -16,6 +16,7 @@ import PanelDocs from './panel';
 import PageHeaderDocs from './pageheader';
 import SlidingPanelDocs from './slidingpanel';
 import SpinnerDocs from './spinner';
+import TableDocs from './table';
 import TopNavDocs from './topnav';
 
 // 2. add your demo to the routeComponentMap
@@ -25,6 +26,7 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
+addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('topnav', 'TopNav', <TopNavDocs />);
 

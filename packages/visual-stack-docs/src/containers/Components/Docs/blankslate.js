@@ -1,5 +1,5 @@
-import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
+import React from 'react';
 import { Demo, Snippet } from '../../../components/Demo';
 
 import BlankSlate from '@cjdev/visual-stack/lib/components/BlankSlate';
