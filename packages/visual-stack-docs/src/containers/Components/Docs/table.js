@@ -2,7 +2,7 @@ import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 
-import { Table, Row, Cell } from '@cjdev/visual-stack/lib/components/Table';
+import { Table, Row, Cell, Header as TableHeader  } from '@cjdev/visual-stack/lib/components/Table';
 
 export default () =>
   <Demo srcFile="/samples/table.js">
@@ -16,9 +16,12 @@ export default () =>
             <Body>
               { /* s1:start */ }
               <Table>
+                <TableHeader>
+                  Table Name
+                </TableHeader>
                 <Row
                   onClick={() => { alert('click'); }}
-                  selected={true}
+                  selected
                 >
                   <Cell>123456789</Cell>
                   <Cell>456</Cell>
@@ -31,9 +34,7 @@ export default () =>
                   <Cell>987654321</Cell>
                   <Cell>987</Cell>
                 </Row>
-                <Row
-                  onClick={() => { alert('click'); }}
-                >
+                <Row>
                   <Cell>321</Cell>
                   <Cell>654</Cell>
                   <Cell>987654321</Cell>

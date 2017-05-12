@@ -4,7 +4,7 @@ import './Table.css';
 
 export const Table = ({ children }) =>
   <table className="table">
-    { children }
+    {children}
   </table>;
 
 export const Row = ({ children, selected, onClick }) => {
@@ -15,15 +15,22 @@ export const Row = ({ children, selected, onClick }) => {
   };
   return (
     <tr className={classnames(cnames)} onClick={onClick}>
-      { children }
+      {children}
     </tr>
   );
 };
+
 Row.propTypes = {
   selected: PropTypes.bool,
 };
 
+export const Header = ({ children }) => (
+  <div className="table-header">
+    {children}
+  </div>
+);
+
 export const Cell = ({ children }) =>
   <td className="table-cell">
-    { children }
+    {children}
   </td>;
