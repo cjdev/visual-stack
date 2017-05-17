@@ -70,6 +70,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height .2s ease-out;
+  border-bottom: solid 1px #ddd;
 }
 
 .filter-container a {
@@ -83,7 +84,7 @@
 }
 
 .filter-container.expanded ul {
-  max-height: 100%;
+  display: inline;
 }
 
 .filter-container-label {
@@ -132,6 +133,7 @@ a.filter-container-label {
     z-index: 200;
     transition: max-height 0.2s;
     overflow: hidden;
+    border-bottom: solid 1px #ddd;
 }
 
 .filter-options.expanded {

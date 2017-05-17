@@ -10,3 +10,11 @@
 .filter-options .checkboxes {
     padding: 5px 15px;
 }
+
+.filter-options.expanded .selection {
+    max-height: 24em;
+    position: relative;
+    overflow-y: auto;
+    background-color: #EFF4F7;
+    width: 100%;
+}

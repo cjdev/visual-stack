@@ -41,11 +41,11 @@ export const MultiSelectFilter = ({ values, onFilterChange, defaultChecked }) =>
   const checkboxes = mapIndexes(createCheckboxes, values);
 
   return (
-    <div>
+    <div className="selection">
       <div className="select-all">
         <label><input ref={ checkbox => (allCheckbox = checkbox)} type="checkbox" value="" onChange={ onAllChange } defaultChecked={defaultChecked} />All</label>
       </div>
       <div className="checkboxes">{ checkboxes }</div>
-    </div>
+      </div>
   );
 };
