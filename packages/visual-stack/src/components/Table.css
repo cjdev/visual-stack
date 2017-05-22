@@ -1,0 +1,23 @@
+.table-row:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.table-row.table-row-selectable:hover {
+  cursor: pointer;
+  background-color: #F9F9F9;
+}
+
+.table-row.table-row-selected {
+  border: 1.7px solid #00AF66;
+  background-color: #F9F9F9;
+}
+
+.table-cell {
+  padding: 10px;
+}
+
+.table-header {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}

@@ -15,6 +15,7 @@ import * as Modal from './components/Modal';
 import * as PageHeader from './components/PageHeader';
 import * as Panel from './components/Panel';
 import * as SideNav from './components/SideNav';
+import * as Table from './components/Table';
 
 export {
   BlankSlate,
@@ -25,5 +26,7 @@ export {
   PageHeader,
   Panel,
   SideNav,
+  Table,
 };
+
 
