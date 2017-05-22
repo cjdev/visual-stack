@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import './SlidingPanel.css';
 
-export const ToggleIcon = ({ onClick }) => {
+export const ToggleIcon = ({ onClick, hoverText }) => {
   return (
-    <a className="sliding-panel-toggle-icon" onClick={onClick}>
+    <a className="sliding-panel-toggle-icon" onClick={onClick} title={hoverText}>
         <span className="fa-stack fa-lg">
           <i className="fa fa-circle fa-stack-2x toggle-icon-circle"></i>
           <i className="fa fa-sliders fa-stack-1x toggle-icon-fg"></i>

@@ -48,6 +48,7 @@ class SlidingPanelDemo extends React.Component {
                     onClick={() => {
                       this.setState({ panelActive: !this.state.panelActive });
                     }}
+                    hoverText={'hey look at me!'}
                   />
                   { /* s2:end */ }
                   { /* s3:start */ }

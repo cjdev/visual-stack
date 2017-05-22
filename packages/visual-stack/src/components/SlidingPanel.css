@@ -33,9 +33,6 @@
   font-weight: 300;
 }
 
-.sliding-panel-section {
-}
-
 .sliding-panel-section:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
