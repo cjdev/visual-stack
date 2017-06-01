@@ -15,11 +15,13 @@ export const MultiSelectFilter = ({ values, onFilterChange, selectAllCheckbox, d
       : onFilterChange([]);
   };
   const onOptionChange = event => {
-    if (!event.target.checked) {
-      allCheckbox.checked = false;
+    if (selectAllCheckbox) {
+      if (!event.target.checked) {
+        allCheckbox.checked = false;
+      }
+      allCheckbox.checked = R.all(domCheckbox => domCheckbox.checked, domCheckboxes);
     }
 
-    allCheckbox.checked = R.all(domCheckbox => domCheckbox.checked, domCheckboxes);
     const selectedValuesAsStrings =
       R.pipe(
         R.filter(checkbox => checkbox.checked),
