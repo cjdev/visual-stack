@@ -2,7 +2,7 @@ import React from 'react';
 import './Filters.css';
 import R from 'ramda';
 
-export const MultiSelectFilter = ({ values, onFilterChange, defaultChecked }) => {
+export const MultiSelectFilter = ({ values, onFilterChange, selectAllCheckbox, defaultChecked }) => {
   const domCheckboxes = [];
   let allCheckbox = null;
 
@@ -39,15 +39,26 @@ export const MultiSelectFilter = ({ values, onFilterChange, defaultChecked }) =>
 
   const mapIndexes = R.addIndex(R.map);
   const checkboxes = mapIndexes(createCheckboxes, values);
-  const selectAll = (!R.isEmpty(values))
-    ?  <div className="select-all">
-        <label><input ref={ checkbox => (allCheckbox = checkbox)} type="checkbox" value="" onChange={ onAllChange } defaultChecked={defaultChecked} />All</label>
-      </div>
-    : <div className="filter-error">No Filters Available</div>;
+  const selectAll = () => {
+    let selectDiv = <div></div>;
+    if (selectAllCheckbox) {
+      if (!R.isEmpty(values)) {
+        selectDiv = (
+                <div className="select-all">
+                    <label>
+                        <input ref={ checkbox => (allCheckbox = checkbox)} type="checkbox" value="" onChange={ onAllChange } defaultChecked={defaultChecked} />All
+                    </label>
+                </div>);
+      } else {
+        selectDiv = (<div className="filter-error">No Filters Available</div>);
+      }
+    }
+    return selectDiv;
+  };
 
   return (
     <div className="selection">
-      { selectAll }
+      { selectAll() }
       <div className="checkboxes">{ checkboxes }</div>
      </div>
   );

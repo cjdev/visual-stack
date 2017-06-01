@@ -9,7 +9,7 @@ chai.use(chaiEnzyme());
 
 describe('Filters', () => {
   describe('MultiSelectFilter', () => {
-    it('should render all values passed in as checkboxes', () => {
+    it('should render all values passed in as checkboxes, including select all checkbox', () => {
       const options = [
         { label: 'Company1', value: 1234 },
         { label: 'Company2', value: 5678 },
@@ -17,6 +17,7 @@ describe('Filters', () => {
       ];
       const filter = mount(<MultiSelectFilter
         values={options}
+        selectAllCheckbox={true}
         onFilterChange={() => {
         }}/>);
 
@@ -25,7 +26,7 @@ describe('Filters', () => {
       equal(checkboxes.find('[type="checkbox"]').length, options.length);
     });
 
-    it('should render all values as visually selected by default', () => {
+    it('should render all values as visually selected when default checked is true and select all checkbox is added', () => {
       const options = [
         { label: 'Company1', value: 1234 },
         { label: 'Company2', value: 5678 },
@@ -33,8 +34,9 @@ describe('Filters', () => {
       ];
       const filter = mount(<MultiSelectFilter
         values={options}
-        onFilterChange={ () => {} }
-        defaultChecked={true}/>);
+        selectAllCheckbox={true}
+        defaultChecked={true}
+        onFilterChange={ () => {} }/>);
 
       filter.find('[type="checkbox"]').forEach(checkbox => {
         equal(checkbox.props().defaultChecked, true);
@@ -52,6 +54,7 @@ describe('Filters', () => {
       const filter = mount(<MultiSelectFilter
         values={options}
         onFilterChange={assertOnValues}
+        selectAllCheckbox={true}
         defaultChecked={true} />);
 
       const checkboxes = filter.find('[type="checkbox"]');
@@ -73,6 +76,7 @@ describe('Filters', () => {
       const filter = mount(<MultiSelectFilter
         values={options}
         onFilterChange={assertOnValues}
+        selectAllCheckbox={true}
         defaultChecked={false} />);
 
       const checkboxes = filter.find('[type="checkbox"]');

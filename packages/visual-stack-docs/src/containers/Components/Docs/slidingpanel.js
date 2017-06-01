@@ -66,6 +66,7 @@ class SlidingPanelDemo extends React.Component {
                         <MultiSelectFilter
                           values={this.state.companies}
                           onFilterChange={val => console.log(val)}
+                          selectAllCheckbox={true}
                           defaultChecked={true}
                         />
                       </SlidingPanelDropdown>
@@ -78,6 +79,7 @@ class SlidingPanelDemo extends React.Component {
                         <MultiSelectFilter
                           values={[]}
                           onFilterChange={val => console.log(val)}
+                          selectAllCheckbox={true}
                           defaultChecked={true}
                         />
                       </SlidingPanelDropdown>
@@ -144,11 +146,12 @@ class VSRSlidingPanelDemo extends React.Component {
                         <MultiSelectFilter
                           values={this.state.companies}
                           onFilterChange={val => console.log(val)}
+                          selectAllCheckbox={true}
                         />
                       </VSRSlidingPanelDropdown>
                       <VSRSlidingPanelDropdown
                         id="id2"
-                        label="My Other Redux CIDs"
+                        label="My CIDs w/o Select All checkbox"
                         >
                         <MultiSelectFilter
                           values={this.state.companies}
