@@ -13,6 +13,7 @@ import { toggleSlidingPanel, toggleFilterDropdown } from '../actions';
 export class InternalSlidingPanel extends Component {
   static propTypes = {
     active: PropTypes.bool,
+    initialActive: PropTypes.bool
   };
   constructor(props) {
     super(props);
@@ -22,6 +23,9 @@ export class InternalSlidingPanel extends Component {
         this.props.toggleSlidingPanel();
       }
     };
+    if (this.props.initialActive)  {
+      this.props.toggleSlidingPanel();
+    }
   }
   componentDidMount() {
     document.addEventListener('click', this.handleClick, false);
@@ -65,9 +69,13 @@ export class InternalSlidingPanelDropdown extends Component {
   static propTypes = {
     slidingPanel: PropTypes.object,
     id: PropTypes.string.isRequired,
+    initialActive: PropTypes.bool,
   };
   constructor(props) {
     super(props);
+    if (this.props.initialActive)  {
+      this.props.toggleFilterDropdown(this.props.id);
+    }
   }
   render() {
     const expanded = R.view(R.lensPath([this.props.id, 'expanded']), this.props.slidingPanel);

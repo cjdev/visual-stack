@@ -135,13 +135,16 @@ class VSRSlidingPanelDemo extends React.Component {
                   <Body>
                     { /* s6:start */ }
                     <VSRToggleIcon />
-                    <VSRSlidingPanel>
+                    <VSRSlidingPanel
+                        initialActive={false}
+                    >
                       <SlidingPanelHeader>
                         reduxified sliding panel header
                       </SlidingPanelHeader>
                       <VSRSlidingPanelDropdown
                         id="id1"
                         label="My Redux CIDs"
+                        initialActive={true}
                         >
                         <MultiSelectFilter
                           values={this.state.companies}
