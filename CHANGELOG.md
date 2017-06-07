@@ -1,4 +1,10 @@
-# 0.17.9 (June 7, 2017)
+# 0.17.11 (June 7, 2017)
+
+## Bug Fix
+
+- Fixed bug in zero state for MultiSelectFilter
+
+# 0.17.10 (June 7, 2017)
 
 ## Bug Fix
 
