@@ -1,3 +1,9 @@
+# 0.17.9 (June 7, 2017)
+
+## Bug Fix
+
+- Made sliding panel icon remain highlighted when sliding panel is active.
+
 # 0.17.9 (June 5, 2017)
 
 ## New Feature
