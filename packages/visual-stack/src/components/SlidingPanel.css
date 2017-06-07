@@ -45,6 +45,14 @@
   align-items: center;
 }
 
+.sliding-panel-toggle-icon.active .toggle-icon-circle {
+  color: #34C6DC;
+}
+
+.sliding-panel-toggle-icon.active .toggle-icon-fg {
+  color: #FFFFFF;
+}
+
 .sliding-panel-toggle-icon .toggle-icon-circle {
   color: #FFFFFF;
 }

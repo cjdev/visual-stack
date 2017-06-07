@@ -13,7 +13,7 @@ import { toggleSlidingPanel, toggleFilterDropdown } from '../actions';
 export class InternalSlidingPanel extends Component {
   static propTypes = {
     active: PropTypes.bool,
-    initialActive: PropTypes.bool
+    initialActive: PropTypes.bool,
   };
   constructor(props) {
     super(props);
@@ -60,7 +60,7 @@ export class InternalToggleIcon extends Component {
   }
   render() {
     return (
-      <BaseToggleIcon onClick={this.handleClick} />
+      <BaseToggleIcon onClick={this.handleClick} toggleIconState={this.props.toggleIconState}/>
     );
   }
 }
@@ -97,7 +97,7 @@ export const SlidingPanelDropdown = connect(
 
 
 export const ToggleIcon = connect(
-  null,
+  state => ({ toggleIconState: state.visualStack.slidingPanel.active }),
   { toggleSlidingPanel }
 )(InternalToggleIcon);
 
