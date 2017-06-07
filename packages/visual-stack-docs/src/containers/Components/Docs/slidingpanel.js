@@ -161,6 +161,16 @@ class VSRSlidingPanelDemo extends React.Component {
                           onFilterChange={val => console.log(val)}
                         />
                       </VSRSlidingPanelDropdown>
+                      <VSRSlidingPanelDropdown
+                        id="id2"
+                        label="Error Example"
+                        >
+                        <MultiSelectFilter
+                          values={[]}
+                          onFilterChange={val => console.log(val)}
+                          selectAllCheckbox={false}
+                        />
+                      </VSRSlidingPanelDropdown>
                     </VSRSlidingPanel>
                     { /* s6:end */ }
                     <div>Import Sliding Panel component from visual-stack-redux</div>
