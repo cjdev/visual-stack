@@ -134,7 +134,9 @@ class VSRSlidingPanelDemo extends React.Component {
                   </Header>
                   <Body>
                     { /* s6:start */ }
-                    <VSRToggleIcon />
+                    <VSRToggleIcon
+                      hoverText={'hey look at me!'}
+                    />
                     <VSRSlidingPanel
                         initialActive={false}
                     >

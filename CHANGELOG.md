@@ -1,3 +1,9 @@
+# 0.17.12 (June 7, 2017)
+
+## Bug Fix
+
+- Added Sliding Panel Tooltip to Visual Stack Redux
+
 # 0.17.11 (June 7, 2017)
 
 ## Bug Fix
