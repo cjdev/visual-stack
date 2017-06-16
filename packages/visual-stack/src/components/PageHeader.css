@@ -2,6 +2,9 @@
   background-color: #EFF4F7;
   border-bottom: 1px solid #dbe5ea;
   display: flex;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
   flex-wrap: no-wrap;
   justify-content: space-between;
   align-items: center;
