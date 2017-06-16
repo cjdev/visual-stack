@@ -1,5 +1,5 @@
 .topnav {
-  min-height: 50px;
+  min-height: 60px;
   background-color: #37474F;
   color: #c4d2d9;
   padding: 0;
@@ -36,13 +36,13 @@
 }
 
 .topnav-nav > * {
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
 
 .topnav-app-header {
-  padding-left: .3em;
+  padding-left: .6em;
 }
 
 .topnav-app-header > li {
@@ -227,20 +227,27 @@
 }
 
 .topnav-left-logo {
-  width: 35px;
-  fill: blue;
-
+  width: 30px;
 }
 
 .topnav-nav > li.topnav-left-app-name {
   display:none;
 }
 
+.logo-pipe {
+  height: 25px;
+  width: .06em;
+  background-color: #FFFFFF;
+  margin: 0 1em 0 0;
+}
+
 @media (min-width: 40em) {
   .topnav-nav > li.topnav-left-app-name {
     display:inherit;
-    font-size: 1.1em;
-    letter-spacing: .03em;
+    font-size: 1.4em;
+    letter-spacing: .15em;
+    font-family: gibson-light;
+    color: #FFFFFF;
   }
 }
 
@@ -284,4 +291,3 @@
   align-items: center;
   padding: 1em;
 }
-

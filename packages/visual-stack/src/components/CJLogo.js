@@ -15,4 +15,3 @@ CJLogo.propTypes = {
 };
 
 export default CJLogo;
-

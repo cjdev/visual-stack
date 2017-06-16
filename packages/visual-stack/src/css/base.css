@@ -1,4 +1,31 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800');
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+/* @license
+ * MyFonts Webfont Build ID 2691808, 2013-11-19T16:06:51-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Gibson Light by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/light/
+
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2691808
+ * Licensed pageviews: 250,000
+ * Webfonts copyright: Copyright &#x00A9; 2011 Rod McDonald. Published by Canada Type. All rights reserved.
+ *
+ * Â© 2013 MyFonts Inc
+*/
+
+@font-face {
+    font-family: 'gibson-light';
+    src: url('../fonts/gibson/gibson-light-webfont.woff2') format('woff2'),
+         url('../fonts/gibson/gibson-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body, p, div, td, th, span {
   font-family: "Open Sans",sans-serif;

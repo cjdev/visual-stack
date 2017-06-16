@@ -20,4 +20,3 @@ const ApplicationLayout = ({ topNav, sideNav, children }) => {
 };
 
 export default ApplicationLayout;
-

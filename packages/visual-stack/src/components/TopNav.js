@@ -63,7 +63,7 @@ const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, on
     <div className="topnav topnav-main">
       <ul className="topnav-nav topnav-app-header">
         <li className="topnav-left-logo">{ logo }</li>
-        <li className="topnav-left-app-name">{ capAppName }</li>
+        <li className="topnav-left-app-name"><span className="logo-pipe"/>{ capAppName }</li>
         { onSideNavToggle &&
           <li className="topnav-icon"><ToggleIcon onClick={onSideNavToggle} /></li>
         }
@@ -98,4 +98,3 @@ export const TopNav = ({ logo, appName, userMenu, onSideNavToggle, secondaryNav,
     </div>
   );
 };
-
