@@ -1,3 +1,9 @@
+# 0.17.13 (June 16, 2017)
+
+## Bug Fix
+
+- Fixed but so that right aligned Page Header content is not cut off.
+
 # 0.17.12 (June 16, 2017)
 
 ## Stying Update

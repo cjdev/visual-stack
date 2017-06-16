@@ -138,7 +138,7 @@ class VSRSlidingPanelDemo extends React.Component {
                       hoverText={'hey look at me!'}
                     />
                     <VSRSlidingPanel
-                        initialActive={false}
+                        initialActive={true}
                     >
                       <SlidingPanelHeader>
                         reduxified sliding panel header
