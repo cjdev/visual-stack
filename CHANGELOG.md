@@ -6,10 +6,9 @@
 
 # 0.17.11 (June 7, 2017)
 
-## Bug Fix
+## Styling Update
 
-- Added Sliding Panel Tooltip to Visual Stack Redux
-- Fixed bug in zero state for MultiSelectFilter
+- Made PageHeader component fixed.
 
 # 0.17.10 (June 7, 2017)
 
