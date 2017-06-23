@@ -7,7 +7,7 @@ const Spinner = ({ size, ...propsToPassOn }) => {
 
   return (
      <span className={className} {...propsToPassOn}>
-        <i className="fa fa-spinner cj-i-spin"></i>
+        <i className="fa fa-spinner fa-spin"></i>
      </span>
   );
 };
