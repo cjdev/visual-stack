@@ -52,7 +52,7 @@ export const MultiSelectFilter = ({ values, onFilterChange, selectAllCheckbox, d
             </label>
           </div>);
       }
-    }else{
+    } else {
       selectDiv = (<div className="filter-error">No Filters Available</div>);
     }
     return selectDiv;

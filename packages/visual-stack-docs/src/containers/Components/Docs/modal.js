@@ -47,14 +47,17 @@ export default () =>
               Modal
             </Header>
             <Body>
+
               { /* s4:start */ }
               { /* Render the mount point somewhere in the page */ }
               <ModalMountPoint />
               { /* s4:end */ }
+
               { /* s5:start */ }
               { /* Render the button / link / etc. to launch the modal */ }
-              <OpenModalButton takeAction={() => { console.log('action taken!'); }} />
+              <OpenModalButton takeAction={() => { /* console.log('action taken!'); */ }} />
               { /* s5:end */ }
+
               <Snippet tag="s1" src={snippets} />
               <Snippet tag="s2" src={snippets} />
               <Snippet tag="s3" src={snippets} />
