@@ -119,15 +119,18 @@ a:hover{
 
 @media (min-width: 768px) {
   .modal-content {
-    box-shadow: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
   }
 }
+
 .modal-content {
-  border-radius: 2px;
+  border-radius: 4px;
 }
+
 .modal-header {
   padding: 0;
 }
+
 .modal-header legend {
   padding: 10px;
   margin-bottom: 0;
