@@ -12,6 +12,7 @@ const addComponentRoute = (path, linkName, component) => {
 import BlankSlateDocs from './blankslate';
 import ButtonDocs from './button';
 import ListDocs from './list';
+import ModalDocs from './modal';
 import PanelDocs from './panel';
 import PageHeaderDocs from './pageheader';
 import SlidingPanelDocs from './slidingpanel';
@@ -22,6 +23,7 @@ import TopNavDocs from './topnav';
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
 addComponentRoute('button', 'Button', <ButtonDocs />);
 addComponentRoute('list', 'List', <ListDocs />);
+addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);

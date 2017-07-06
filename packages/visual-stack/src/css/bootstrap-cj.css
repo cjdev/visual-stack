@@ -117,6 +117,21 @@ a:hover{
   border-left-color: #00AF66;
 }
 
-
+@media (min-width: 768px) {
+  .modal-content {
+    box-shadow: 0;
+  }
+}
+.modal-content {
+  border-radius: 2px;
+}
+.modal-header {
+  padding: 0;
+}
+.modal-header legend {
+  padding: 10px;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
 
 /*! --- END CJ Bootstrap Overrides --- */
