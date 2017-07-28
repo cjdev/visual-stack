@@ -33,11 +33,13 @@
 
 .sidenav.collapsed .sidenav-container ul li a {
   padding-left: 56px;
+  transition: all .3s ease-out;
 }
 
-.sidenav .sidenav-link span,
-.sidenav .sidenav-container-chevron,
-.sidenav .sidenav-container-label {
+.sidenav.collapsed .sidenav-link span,
+.sidenav.collapsed .sidenav-container-chevron,
+.sidenav.collapsed .link-group-children,
+.sidenav.collapsed .sidenav-container-label {
   opacity: 0;
   transition: opacity .3s ease-out;
 }
@@ -48,7 +50,7 @@
   opacity: 1;
   color: #ADBBC2;
   display: inline-block;
-  transition: opacity .5s ease-out;
+  transition: all .5s ease-out;
 }
 
 .sidenav.active .sidenav-link span {
@@ -122,19 +124,28 @@
 
 .sidenav .sidenav-container.expanded ul {
   max-height: 500px;
-  padding: 0 35px;
 }
 
+.sidenav.collapsed .sidenav-header,
 .sidenav .sidenav-header {
-  padding: 10px 20px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-  font-size: 11px;
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: all .3s ease-in;
 }
 
 @media (min-width: 40em) {
   .sidenav-toggle-icon {
       display:none;
+  }
+  .sidenav .sidenav-header {
+    padding: 10px 20px;
+    height: 35px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    font-size: 11px;
+    transition: all .3s ease-in;
+    opacity: 1;
   }
 }
 

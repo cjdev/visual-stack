@@ -52,7 +52,7 @@ export class LinkGroup extends React.Component {
           </div>
           <i className="fa fa-chevron-right sidenav-container-chevron"></i>
         </a>
-        <ul>
+        <ul className="link-group-children">
           { mappedChildren }
         </ul>
       </li>
