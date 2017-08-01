@@ -20,19 +20,28 @@ body {
   display: flex;
   overflow: hidden;
   background-color: #EFF4F7;
+  transition: all .5s ease-out;
 }
 
+.application-layout-side-collapsed,
 .application-layout-side {
   flex: 0 0 auto;
   overflow: auto;
   margin-left: 50px;
+  transition: all .5s ease-out;
 }
 
 @media (min-width: 40em) {
   .application-layout-side {
     flex: 0 0 240px;
     margin-left: 0px;
-    transition: margin .5s ease-out;
+    transition: all .5s ease-out;
+  }
+
+  .application-layout-side-collapsed {
+    flex: 0 0 50px;
+    margin-left: 0px;
+    transition: all .5s ease-out;
   }
 }
 

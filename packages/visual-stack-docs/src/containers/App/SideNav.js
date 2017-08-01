@@ -7,7 +7,6 @@ import { routeComponentMap } from '../Components/Docs/';
 const componentIcon = <SideNavIcon type="square" />;
 const iconIcon = <SideNavIcon type="font-awesome" />;
 const layoutIcon = <SideNavIcon type="th-list" />;
-// const emptyIcon = <SideNavIcon />;
 
 export default () =>
   <SideNav>
@@ -39,4 +38,3 @@ export default () =>
       </Link>
     </SideNavLink>
   </SideNav>;
-
