@@ -3,10 +3,11 @@ import MediaQuery from 'react-responsive';
 import R from 'ramda';
 import './SideNav.css';
 
-export const ToggleIcon = ({ onClick }) => {
+export const ToggleIcon = ({ sideNavState, onClick }) => {
+  const sideNavIcon = (sideNavState) ? 'fa fa-chevron-right' : 'fa fa-chevron-left';
   return (
-    <a className=" sidenav-toggle-icon" onClick={onClick}>
-      <i className="fa fa-bars"></i>
+    <a className="sidenav-toggle-icon" onClick={onClick}>
+      <i className={sideNavIcon}></i>
     </a>
   );
 };
@@ -135,7 +136,7 @@ class SideNavP extends React.Component {
     return (
             <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
               { mappedChildren }
-              <ul className="toggle-icon"><ToggleIcon onClick={toggle}/></ul>
+              <ul className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></ul>
             </ul>
     );
   }

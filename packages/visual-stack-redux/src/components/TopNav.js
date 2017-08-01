@@ -8,7 +8,7 @@ import {
   DropdownItem as BaseDropdownItem,
   UserDropdownItem as BaseUserDropdownItem,
 } from '@cjdev/visual-stack/lib/components/TopNav';
-import { toggleSecondNav, toggleSideNav, openTopNavDropdown, closeTopNavDropdown } from '../actions';
+import { toggleSecondNav, openTopNavDropdown, closeTopNavDropdown } from '../actions';
 
 export class InternalTopNav extends Component {
   render() {
@@ -17,7 +17,6 @@ export class InternalTopNav extends Component {
           appName={this.props.appName}
           logo={this.props.logo}
           onSecondNavToggle={this.props.toggleSecondNav}
-          onSideNavToggle={this.props.toggleSideNav}
           secondaryNav={this.props.secondaryNav}
           userMenu={this.props.userMenu}>
         </BaseTopNav>
@@ -27,7 +26,7 @@ export class InternalTopNav extends Component {
 
 export const TopNav = connect(
   state => ({ secondNavActive: state.visualStack.topNav.secondNavActive }),
-  { toggleSecondNav, toggleSideNav }
+  { toggleSecondNav }
 )(InternalTopNav);
 
 export class InternalUserMenu extends Component {

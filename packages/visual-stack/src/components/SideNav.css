@@ -29,6 +29,11 @@
 .toggle-icon {
   position: fixed;
   bottom: 0;
+  width: inherit;
+}
+
+.sidenav-toggle-icon {
+  text-align: center;
 }
 
 .sidenav.collapsed .sidenav-container ul li a {
@@ -135,9 +140,6 @@
 }
 
 @media (min-width: 40em) {
-  .sidenav-toggle-icon {
-      display:none;
-  }
   .sidenav .sidenav-header {
     padding: 10px 20px;
     height: 35px;

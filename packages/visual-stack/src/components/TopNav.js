@@ -1,6 +1,5 @@
 import React from 'react';
 import R from 'ramda';
-import { ToggleIcon } from './SideNav';
 import './TopNav.css';
 
 export const DropdownItem = ({ logo, title, onClick }) => {
@@ -57,16 +56,13 @@ export const SecondaryNav = ({ active, children }) => {
   );
 };
 
-const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, onSecondNavToggle }) => {
+const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSecondNavToggle }) => {
   const capAppName = appName ? appName.toUpperCase() : '';
   return (
     <div className="topnav topnav-main">
       <ul className="topnav-nav topnav-app-header">
         <li className="topnav-left-logo">{ logo }</li>
         <li className="topnav-left-app-name"><span className="logo-pipe"/>{ capAppName }</li>
-        { onSideNavToggle &&
-          <li className="topnav-icon"><ToggleIcon onClick={onSideNavToggle} /></li>
-        }
       </ul>
       <ul className="topnav-nav">
       </ul>
@@ -82,13 +78,12 @@ const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSideNavToggle, on
   );
 };
 
-export const TopNav = ({ logo, appName, userMenu, onSideNavToggle, secondaryNav, onSecondNavToggle }) => {
+export const TopNav = ({ logo, appName, userMenu, secondaryNav, onSecondNavToggle }) => {
   return (
     <div className="topnav-wrapper">
       <MainNav
         logo={logo}
         appName={appName}
-        onSideNavToggle={onSideNavToggle}
         hasSecondaryNav={!R.isNil(secondaryNav)}
         onSecondNavToggle={onSecondNavToggle}
         userMenu={userMenu}

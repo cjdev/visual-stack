@@ -53,17 +53,6 @@ describe('TopNav', () => {
     expect(handleSecondNavToggle).to.have.property('callCount', 1);
   });
 
-  it('should propagate sideNavToggle click handler', () => {
-    const handleSideNavToggle = sinon.spy();
-    const wrapper = mount(
-      <InternalTopNav
-        toggleSideNav={handleSideNavToggle}
-      />
-    );
-    wrapper.find('.sidenav-toggle-icon').simulate('click');
-    expect(handleSideNavToggle).to.have.property('callCount', 1);
-  });
-
   it('should propagate userMenu', () => {
     const userMenu = <span>USERMENU</span>;
     const wrapper = mount(
