@@ -46,7 +46,7 @@ export class InternalLinkGroup extends Component {
     return (
       <BaseLinkGroup
         expanded={expanded}
-        onClick={() => this.props.toggleSideNavLinkGroup(this.props.label) }
+        onClick={ this.props.toggleSideNavLinkGroup }
         { ...this.props}
       >
         { this.props.children }

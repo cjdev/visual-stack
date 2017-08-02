@@ -27,15 +27,18 @@ export class LinkGroup extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.expanded === false) {
+    if(nextProps.expanded === false) {
       this.setState({ sideNavState: nextProps.matches });
+    }
+    if((nextProps.matches !== this.props.matches) && (this.props.matches === false)) {
+      this.props.onClick(false, this.props.label);
     }
   }
 
   render() {
     const classes = 'sidenav-entry sidenav-container' + (this.props.expanded ? ' expanded' : '');
     const expandRow = e => {
-      this.props.onClick(e, this.props.label);
+      this.props.onClick(!this.props.expanded, this.props.label);
       if (this.props.expanded === false) {
         this.props.toggleSideNav(this.props.expanded);
       } else {
@@ -132,12 +135,12 @@ class SideNavP extends React.Component {
   render() {
     const toggle = () => this.props.onClick(!this.props.collapsed);
     const mappedChildren =
-      React.Children.map(this.props.children, child => React.cloneElement(child, { matches: this.props.collapsed }));
+      React.Children.map(this.props.children, child => React.cloneElement(child, { matches: this.props.collapsed, toggleSideNav: this.props.onClick }));
     return (
-            <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
-              { mappedChildren }
-              <ul className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></ul>
-            </ul>
+        <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
+          { mappedChildren }
+          <ul className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></ul>
+        </ul>
     );
   }
 }

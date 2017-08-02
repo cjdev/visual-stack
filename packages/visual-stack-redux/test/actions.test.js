@@ -46,7 +46,7 @@ describe('reducer', () => {
         },
       },
     };
-    expect(reducer(beforeState, toggleSideNavLinkGroup('linkGroup1'))).to.deep.equal(afterState);
+    expect(reducer(beforeState, toggleSideNavLinkGroup(true, 'linkGroup1'))).to.deep.equal(afterState);
   });
 
   it('should toggle SecondNav', () => {

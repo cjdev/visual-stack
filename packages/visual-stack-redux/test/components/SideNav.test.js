@@ -65,7 +65,7 @@ describe('LinkGroup', () => {
     expect(wrapper.find(LinkGroup).prop('expanded')).to.be.false;
   });
 
-  it('should toggle itself when clicked', () => {
+  it('should toggle itself when clicked with given state', () => {
     const label = 'LABEL';
     const faker = sinon.spy();
     const toggleFake = sinon.spy();
@@ -80,7 +80,7 @@ describe('LinkGroup', () => {
     );
 
     wrapper.find(LinkGroup).find('.sidenav-container-label').simulate('click');
-    expect(faker).to.have.been.calledWith(label);
+    expect(faker).to.have.been.calledWith(true, label);
     expect(toggleFake).to.have.been.calledOnce;
     expect(toggleFake).to.have.been.calledWith(false);
   });

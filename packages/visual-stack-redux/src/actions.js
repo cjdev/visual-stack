@@ -25,7 +25,7 @@ const TOGGLE_SIDENAV = '@cjdev/visual-stack-redux/TOGGLE_SIDENAV';
 export const toggleSideNav = createAction(TOGGLE_SIDENAV, collapsed => ({ collapsed }));
 
 const TOGGLE_SIDENAV_LINKGROUP = '@cjdev/visual-stack-redux/TOGGLE_SIDENAV_LINKGROUP';
-export const toggleSideNavLinkGroup= createAction(TOGGLE_SIDENAV_LINKGROUP, linkGroupName => ({ linkGroupName }));
+export const toggleSideNavLinkGroup= createAction(TOGGLE_SIDENAV_LINKGROUP, (expanded, linkGroupName) => ({ expanded, linkGroupName }));
 
 const TOGGLE_SECONDNAV = '@cjdev/visual-stack-redux/TOGGLE_SECONDNAV';
 export const toggleSecondNav = createAction(TOGGLE_SECONDNAV);
@@ -65,10 +65,10 @@ export default handleActions({
     over(lensPath(['navGroupDropdown', payload]), not, state),
 
   [TOGGLE_SIDENAV]: (state, { payload: { collapsed } }) =>
-     set(lensPath(['sideNav', 'collapsed']), collapsed, state),
+    set(lensPath(['sideNav', 'collapsed']), collapsed, state),
 
-  [TOGGLE_SIDENAV_LINKGROUP]: (state, { payload: { linkGroupName } }) =>
-    over(lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']), not, state),
+  [TOGGLE_SIDENAV_LINKGROUP]: (state, { payload: { expanded, linkGroupName } }) =>
+    set(lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']), expanded, state),
 
   [TOGGLE_SECONDNAV]: state =>
     over(lensPath(['topNav', 'secondNavActive']), not, state),
