@@ -20,7 +20,7 @@ export class InternalSideNav extends Component {
   render() {
     const mappedChildren =
       React.Children.map(this.props.children,
-                         child => React.cloneElement(child, { toggleSideNav: this.props.toggleSideNav, matches: this.props.collapsed }));
+                         child => React.cloneElement(child, { toggleSideNav: this.props.toggleSideNav, collapsed: this.props.collapsed }));
     return (
       <BaseSideNav
         collapsed={this.props.collapsed}
