@@ -124,12 +124,19 @@ class SideNavP extends React.Component {
   constructor(props) {
     super(props);
     this.props.onClick(this.props.matches);
+    this.state = {
+      sideNavPreviousState: this.props.matches,
+    };
   }
 
   componentWillReceiveProps(nextProps) {
-    const resizeSet = R.not(R.equals(this.props.matches, nextProps.matches));
-    if (resizeSet) {
-      this.props.onClick(nextProps.matches);
+    const resizePage = R.not(R.equals(this.props.matches, nextProps.matches));
+    if (resizePage) {
+      this.setState({
+        sideNavPreviousState: nextProps.collapsed,
+      });
+      const resizeVar = (!nextProps.matches && this.state.sideNavPreviousState) ? nextProps.collapsed : nextProps.matches;
+      this.props.onClick(resizeVar);
     }
   }
 
