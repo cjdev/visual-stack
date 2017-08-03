@@ -78,9 +78,7 @@ ReactDOM.render(
 ```
 
 ###### Application Layout
-* *Import for this presentational component in visual-stack has changed*, it no longer is the default export, but instead named. If things are borked, look there first.
-* Now has a redux component, which should be used if with the Redux SideNav. This will allow for your page container to resize correctly when the SideNav is collapsed.
-* The Redux Wrapper for this component is a *default export* not named like the presentational component.
+* Now has a redux component, which should be used if with the Redux SideNav. This will allow for your *page container to resize correctly when the SideNav is collapsed.*
 
 ```js
 // example code below is for use of the redux Applcation Layout (default export),
