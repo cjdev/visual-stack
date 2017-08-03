@@ -28,19 +28,19 @@ export class LinkGroup extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.expanded === false) {
+    if (!nextProps.expanded) {
       this.setState({ sideNavState: nextProps.collpased });
     }
-    if((nextProps.collpased !== this.props.collpased) && (this.props.collpased === false)) {
+    if ((nextProps.collpased !== this.props.collpased) && (!this.props.collpased)) {
       this.props.onClick(false, this.props.label);
     }
   }
 
   render() {
     const classes = 'sidenav-entry sidenav-container' + (this.props.expanded ? ' expanded' : '');
-    const expandRow = e => {
+    const expandRow = () => {
       this.props.onClick(!this.props.expanded, this.props.label);
-      if (this.props.expanded === false) {
+      if (!this.props.expanded) {
         this.props.toggleSideNav(this.props.expanded);
       } else {
         this.props.toggleSideNav(this.state.sideNavState);

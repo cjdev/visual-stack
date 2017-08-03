@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ApplicationLayout as BaseApplicationLayout } from '@cjdev/visual-stack/lib/layouts/ApplicationLayout';
+import BaseApplicationLayout from '@cjdev/visual-stack/lib/layouts/ApplicationLayout';
 
 export class InternalApplicationLayout extends React.Component {
   render() {
