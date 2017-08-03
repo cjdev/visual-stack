@@ -87,6 +87,7 @@
   color: #FFFFFF;
 }
 
+.sidenav .expanded .sidenav-container-label,
 .sidenav .expanded>a {
   background-color: #34c6d8;
   color: #FFFFFF;
