@@ -100,7 +100,7 @@ export const SideNavIcon = ({ type, text }) => {
 export class SideNav extends React.Component {
   render() {
     return (
-      <MediaQuery maxWidth={640} minDeviceWidth={640}>
+      <MediaQuery maxWidth={1224}>
         {
           matches => {
             return (
