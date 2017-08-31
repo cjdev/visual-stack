@@ -1,9 +1,10 @@
 .sidenav {
-  background-color: #263238;
+  background-color: #33495F;
   list-style: none;
   width: 55px;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   left: 0;
   transition: width .5s ease-out;
   position: fixed;
@@ -30,6 +31,7 @@
   position: fixed;
   bottom: 0;
   width: inherit;
+  background-color: #283a4d;
 }
 
 .sidenav-toggle-icon {
@@ -53,9 +55,12 @@
 .sidenav.active .sidenav-container-chevron,
 .sidenav.active .sidenav-container-label {
   opacity: 1;
-  color: #ADBBC2;
   display: inline-block;
   transition: all .5s ease-out;
+}
+
+.sidenav .sidenav-link a:active span {
+  color: #FFFFFF;
 }
 
 .sidenav.active .sidenav-link span {
@@ -74,22 +79,27 @@
 }
 
 .sidenav a {
-  padding: 12px 21px;
+  padding: 12px 18px;
   text-decoration: none;
   display: block;
   height: 45px;
-  color: #ADBBC2;
+  color: #B2C4D7;
+}
+
+.sidenav .link-group-children a {
+  padding: 12px 12px 12px 55px;
 }
 
 .sidenav a:focus,
 .sidenav a:hover {
-  background-color: #1f292d;
+  background-color: #283a4d;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .sidenav .expanded .sidenav-container-label,
 .sidenav .expanded>a {
-  background-color: #34c6d8;
+  background-color: #506b86;
   color: #FFFFFF;
 }
 
@@ -125,7 +135,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease-out;
-  padding: 0 35px;
+  padding: 0;
 }
 
 .sidenav .sidenav-container.expanded ul {
@@ -170,4 +180,3 @@
 .stacked-icon {
   margin-right: 9px;
 }
-
