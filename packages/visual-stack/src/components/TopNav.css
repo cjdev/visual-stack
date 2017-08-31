@@ -1,5 +1,5 @@
 .topnav {
-  min-height: 60px;
+  min-height: 50px;
   background-color: #30c392;
   color: #c4d2d9;
   padding: 0;
@@ -36,7 +36,7 @@
 }
 
 .topnav-nav > * {
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
 }
@@ -244,7 +244,7 @@
 @media (min-width: 40em) {
   .topnav-nav > li.topnav-left-app-name {
     display:inherit;
-    font-size: 1.4em;
+    font-size: 1.2em;
     letter-spacing: .15em;
     font-family: gibson-light;
     color: #FFFFFF;
