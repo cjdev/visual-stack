@@ -1,12 +1,10 @@
 import React from 'react';
 import { TopNav } from '@cjdev/visual-stack-redux/lib/components/TopNav';
-import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import Layout from '@cjdev/visual-stack-redux/lib/layouts/ApplicationLayout/index';
 import AppSideNav from './SideNav';
 import './styles.css';
 
-const AppTopNav = () =>
-  <TopNav appName="VISUAL stack" logo={<CJLogo />} />;
+const AppTopNav = () => <TopNav appName="VISUAL stack" />;
 
 export default ({ children }) =>
   <Layout
