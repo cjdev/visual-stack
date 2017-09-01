@@ -7,6 +7,7 @@
   overflow-x: hidden;
   left: 0;
   transition: width .5s ease-out;
+  margin-top: -50px;
   position: fixed;
   z-index: 200;
   font-weight: 400;
@@ -25,6 +26,23 @@
 
 .sidenav>li ul {
   list-style: none;
+}
+
+.sideNav-left-logo {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.center-logo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.center-logo .cj-logo {
+  width: 35px;
 }
 
 .toggle-icon {

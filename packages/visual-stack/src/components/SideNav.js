@@ -106,6 +106,7 @@ export class SideNav extends React.Component {
             return (
               <SideNavP
                 matches={matches}
+                logo={this.props.logo}
                 onClick={this.props.onClick}
                 collapsed={this.props.collapsed}
                 >
@@ -146,6 +147,7 @@ class SideNavP extends React.Component {
       React.Children.map(this.props.children, child => React.cloneElement(child, { collpased: this.props.collapsed, toggleSideNav: this.props.onClick }));
     return (
         <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
+          <ul className="sideNav-left-logo"><li className="center-logo">{ this.props.logo }</li></ul>
           { mappedChildren }
           <ul className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></ul>
         </ul>

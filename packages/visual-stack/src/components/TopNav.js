@@ -56,13 +56,13 @@ export const SecondaryNav = ({ active, children }) => {
   );
 };
 
-const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSecondNavToggle }) => {
+const MainNav = ({ appName, userMenu, hasSecondaryNav, onSecondNavToggle, sideNavState }) => {
   const capAppName = appName ? appName.toUpperCase() : '';
+  const topNavClasses = (sideNavState) ? 'topnav topnav-collapsed' : 'topnav topnav-expanded';
   return (
-    <div className="topnav topnav-main">
+    <div className={topNavClasses}>
       <ul className="topnav-nav topnav-app-header">
-        <li className="topnav-left-logo">{ logo }</li>
-        <li className="topnav-left-app-name"><span className="logo-pipe"/>{ capAppName }</li>
+        <li className="topnav-left-app-name">{ capAppName }</li>
       </ul>
       <ul className="topnav-nav">
       </ul>
@@ -78,15 +78,15 @@ const MainNav = ({ logo, appName, userMenu, hasSecondaryNav, onSecondNavToggle }
   );
 };
 
-export const TopNav = ({ logo, appName, userMenu, secondaryNav, onSecondNavToggle }) => {
+export const TopNav = ({ appName, userMenu, secondaryNav, onSecondNavToggle, sideNavState }) => {
   return (
     <div className="topnav-wrapper">
       <MainNav
-        logo={logo}
         appName={appName}
         hasSecondaryNav={!R.isNil(secondaryNav)}
         onSecondNavToggle={onSecondNavToggle}
         userMenu={userMenu}
+        sideNavState={sideNavState}
       />
       { secondaryNav }
 

@@ -3,6 +3,8 @@
   background-color: #30c392;
   color: #c4d2d9;
   padding: 0;
+  margin-left: 55px;
+  transition: margin-left .5s ease-out;
   user-select: none;
   font-weight: 400;
 }
@@ -15,9 +17,16 @@
   text-decoration: none;
 }
 
-.topnav-main {
+.topnav-collapsed {
   position: relative;
   z-index: 100;
+}
+
+.topnav-expanded{
+  position: relative;
+  z-index: 100;
+  margin-left: 240px;
+  transition: margin-left .5s ease-out;
 }
 
 .topnav ul {
@@ -226,19 +235,8 @@
   color: #263238;
 }
 
-.topnav-left-logo {
-  width: 30px;
-}
-
 .topnav-nav > li.topnav-left-app-name {
   display:none;
-}
-
-.logo-pipe {
-  height: 25px;
-  width: .06em;
-  background-color: #FFFFFF;
-  margin: 0 1em 0 0;
 }
 
 @media (min-width: 40em) {

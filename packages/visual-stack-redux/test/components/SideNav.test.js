@@ -23,6 +23,14 @@ describe('SideNav', () => {
     expect(wrapper.find(SideNav).find(Header)).to.have.length(1);
     expect(wrapper.find(SideNav).find(Header).prop('label')).to.equal('whatever');
   });
+
+  it('should propagate the logo to the SideNav', () => {
+    const logo = <span>LOGO</span>;
+    const wrapper = mount(
+      <InternalSideNav logo={logo} toggleSideNav={() => {}} />
+    );
+    expect(wrapper.contains(logo)).to.equal(true);
+  });
 });
 
 describe('LinkGroup', () => {

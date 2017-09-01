@@ -25,6 +25,7 @@ export class InternalSideNav extends Component {
       <BaseSideNav
         collapsed={this.props.collapsed}
         onClick={this.props.toggleSideNav}
+        logo={this.props.logo}
         >
         { mappedChildren }
       </BaseSideNav>

@@ -18,6 +18,7 @@ export class InternalTopNav extends Component {
           logo={this.props.logo}
           onSecondNavToggle={this.props.toggleSecondNav}
           secondaryNav={this.props.secondaryNav}
+          sideNavState={this.props.sideNavState}
           userMenu={this.props.userMenu}>
         </BaseTopNav>
     );
@@ -25,7 +26,7 @@ export class InternalTopNav extends Component {
 }
 
 export const TopNav = connect(
-  state => ({ secondNavActive: state.visualStack.topNav.secondNavActive }),
+  state => ({ secondNavActive: state.visualStack.topNav.secondNavActive, sideNavState: state.visualStack.sideNav.collapsed }),
   { toggleSecondNav }
 )(InternalTopNav);
 

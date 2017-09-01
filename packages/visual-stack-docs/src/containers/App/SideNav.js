@@ -1,6 +1,7 @@
 import React from 'react';
 import R from 'ramda';
 import { Link } from 'react-router';
+import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import { SideNav, SideNavIcon, Link as SideNavLink, LinkGroup } from '@cjdev/visual-stack-redux/lib/components/SideNav';
 import { routeComponentMap } from '../Components/Docs/';
 
@@ -9,7 +10,7 @@ const iconIcon = <SideNavIcon type="font-awesome" />;
 const layoutIcon = <SideNavIcon type="th-list" />;
 
 export default () =>
-  <SideNav>
+  <SideNav logo={<CJLogo />} >
     <LinkGroup label="Components" icon={componentIcon}>
       {
         R.pipe(

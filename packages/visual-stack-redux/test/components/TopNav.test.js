@@ -24,14 +24,6 @@ describe('TopNav', () => {
     expect(wrapper.find('.topnav-secondary.active')).to.have.length(0);
   });
 
-  it('should propagate the logo to the MainNav', () => {
-    const logo = <span>LOGO</span>;
-    const wrapper = mount(
-      <InternalTopNav logo={logo} />
-    );
-    expect(wrapper.contains(logo)).to.equal(true);
-  });
-
   it('should propagate the appName to the MainNav', () => {
     const appName = 'APP_NAME';
     const wrapper = mount(
