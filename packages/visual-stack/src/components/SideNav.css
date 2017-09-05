@@ -39,6 +39,7 @@
 .center-logo {
   text-align: center;
   margin: 0 auto;
+  list-style-type: none;
 }
 
 .center-logo .cj-logo {
@@ -137,6 +138,7 @@
 .sidenav .sidenav-container-row-left {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .sidenav .sidenav-container-chevron {
