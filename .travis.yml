@@ -6,6 +6,7 @@ node_js:
 script:
 - npm run bootstrap
 - npm test
+before_deploy: "cd packages/visual-stack-docs && sh package.sh"
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAJ3ZDUB6H4CDR4COA
@@ -14,7 +15,6 @@ deploy:
   region: us-east-2
   app: visual-stack
   env: visual-stack
-  before_deploy: "cd packages/visual-stack-docs && sh package.sh"
   zip_file: deploy.zip
   skip_cleanup: true
   bucket_name: elasticbeanstalk-us-east-2-570360634027
