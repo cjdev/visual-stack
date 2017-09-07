@@ -1,9 +1,21 @@
 language: node_js
 node_js:
-  - stable
-  - '6'
-  - '5'
-
+- stable
+- '6'
+- '5'
 script:
-  - npm run bootstrap
-  - npm test
+- npm run bootstrap
+- npm test
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAJ3ZDUB6H4CDR4COA
+  secret_access_key:
+    secure: g+i3lA3z+bRramQ7jiNygB83DtGvE1EmvuqtlDbRzs5pEuQa8aNzlJSPC9PbIiesgqjozadgnGMfzwKN62ecYkXGBr+/GRsaQ9rPnG+zc3EO6msHmcAczYwq+HSgTI/06CaFpl/DfFwv+38yGRGnJXqhinAphF+B4Z10mCid3O6ZNlIoHSUK8ffKoI24yVJlZJTbkBFwaVgwKN2LI+ejNQj31rREF22MSKO8bTHdHo0aBiZM23IurN6tXrUpFBa0BaIZzwlqXFdbz75bFH7FvSJhUNHwITRgbURXJ9MoexwinySPDNnyTJ+alF6o2ZuFnxH23A5O1ATq2fP5jeKo2/xtiCnJq5i11Gb8Gyrxi5OTQyASbbsObJ8sl+wOdgHuKx9gv/5diu963J7KVOlhteF5HHfN+ia8IJujouwRg0Hl2EfbqT6Wb25VXcRG1HvTDbOJ4rz+zzllhJzQD7hAjl8sTv+xGiwUmneWOvYw6dhblH4EoDXXMF/cwdIq5vhUBxl5bI2K/t6GXrsL282yKafC+Xhj3X5AYnDTtwlOlGX505qIsLvQ5olVNTJ7kvniKHFfr4LQknvxiEUIsNBDKIor5Ep4hEfA1Ov55WXsVk6xPGOlBSMhshd1XyPT9XZsGHENz5wa/4dddlhq8kdUGsVxtsDZsizzxWJcxo365To=
+  region: us-east-2
+  app: visual-stack
+  env: visual-stack
+  before_deploy: "cd packages/visual-stack-docs && sh package.sh"
+  zip_file: deploy.zip
+  on:
+    repo: cjdev/visual-stack
+    branch: deployment
