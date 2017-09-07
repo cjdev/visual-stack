@@ -6,19 +6,15 @@ node_js:
 script:
 - npm run bootstrap
 - npm test
-before_deploy: "cd packages/visual-stack-docs && ./package.sh"
+before_deploy: cd packages/visual-stack-docs && npm run build
 deploy:
-  provider: elasticbeanstalk
-  access_key_id: AKIAJ3ZDUB6H4CDR4COA
+  provider: s3
+  access_key_id: AKIAI324CJP3XVNEJNJA
   secret_access_key:
-    secure: g+i3lA3z+bRramQ7jiNygB83DtGvE1EmvuqtlDbRzs5pEuQa8aNzlJSPC9PbIiesgqjozadgnGMfzwKN62ecYkXGBr+/GRsaQ9rPnG+zc3EO6msHmcAczYwq+HSgTI/06CaFpl/DfFwv+38yGRGnJXqhinAphF+B4Z10mCid3O6ZNlIoHSUK8ffKoI24yVJlZJTbkBFwaVgwKN2LI+ejNQj31rREF22MSKO8bTHdHo0aBiZM23IurN6tXrUpFBa0BaIZzwlqXFdbz75bFH7FvSJhUNHwITRgbURXJ9MoexwinySPDNnyTJ+alF6o2ZuFnxH23A5O1ATq2fP5jeKo2/xtiCnJq5i11Gb8Gyrxi5OTQyASbbsObJ8sl+wOdgHuKx9gv/5diu963J7KVOlhteF5HHfN+ia8IJujouwRg0Hl2EfbqT6Wb25VXcRG1HvTDbOJ4rz+zzllhJzQD7hAjl8sTv+xGiwUmneWOvYw6dhblH4EoDXXMF/cwdIq5vhUBxl5bI2K/t6GXrsL282yKafC+Xhj3X5AYnDTtwlOlGX505qIsLvQ5olVNTJ7kvniKHFfr4LQknvxiEUIsNBDKIor5Ep4hEfA1Ov55WXsVk6xPGOlBSMhshd1XyPT9XZsGHENz5wa/4dddlhq8kdUGsVxtsDZsizzxWJcxo365To=
-  region: us-east-2
-  app: visual-stack
-  env: visual-stack
-  zip_file: deploy.zip
-  skip_cleanup: true
-  bucket_name: elasticbeanstalk-us-east-2-570360634027
+    secure: XVBeDBrjIId6smPoWqv6O2lZ8l+BIQGwkDnNg4gaNKjcH4tfsGrT0JuyB6mT7jrbtPxagUx0eH+AI49qGbW5Apx608LqJLu6b0Y/UPneZKmWSrott2xownUoR+WGg+JYtumR6BU6ScT5ZfUv66+rgVZG0w52rULOzcwW8k4myiM701QhvrMMyB2rtFOylUTwxjSU0UxSsAptRSc/axeZylv2q5War31DhOreNABFsIN82IYxwWqFclPbY7wxllL9xS1OmI01tqE/8bMFCuZIkWcLN90zwC6c0ctnpbCpkoxABvwCRjgYF9Uggsk2TeFe/gNeyTJ0HN4WBIUtyHai+S/4NxOdsIqPQKdyPruU0ovprzG8tS58/gX9B6Fd0Bgp8rMUCA8iMvH7GcPu9/NqMX8UgBvbhARQwFEXu4AB+CYZNl40qyv2d32c8F+P90xCZYASvZ7lM1c+I+5QKoHrywU3NCuDZcEtt5FTEcG0sUfW2NOn3aKbBG+tkLWK5io/zU6NdE5gvFQXpbGs4rJ3Br5bcgW3jZlSZeSi3tXrbd+hZ7nVE78Wf9M4IwFwGuTf6f5MH5OX2DaKK84ytoYW2WC6xTIY4Z8K9FvJu6fQ40EhVYOhKnbtfSKSdUEAAQ/BbN09JqxdkthMjK0PMNiAAHaZLAriNXQZwSBOW8BvBpk=
+  bucket: visual-stack
+  local-dir: packages/visual-stack-docs/build
+  acl: public_read
   on:
     repo: cjdev/visual-stack
-    branch: master
-    node: stable
+    branch: deployment
