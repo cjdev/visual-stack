@@ -6,7 +6,7 @@ node_js:
 script:
 - npm run bootstrap
 - npm test
-before_deploy: "cd packages/visual-stack-docs && sh package.sh"
+before_deploy: "cd packages/visual-stack-docs && ./package.sh"
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAJ3ZDUB6H4CDR4COA
