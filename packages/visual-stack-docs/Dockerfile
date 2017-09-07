@@ -9,6 +9,6 @@ RUN cp -r /tmp/dependencies/* /app
 COPY server ./server
 COPY public ./public
 COPY src ./src
-RUN npm run samples && npm run build
+RUN npm run build && npm run samples
 EXPOSE 5000
 CMD serve -s build/

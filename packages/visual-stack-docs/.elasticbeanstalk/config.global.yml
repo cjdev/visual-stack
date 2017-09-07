@@ -1,0 +1,21 @@
+branch-defaults:
+  default:
+    environment: visual-stack
+environment-defaults:
+  visual-stack:
+    branch: null
+    repository: null
+global:
+  application_name: visual-stack
+  default_ec2_keyname: null
+  default_platform: arn:aws:elasticbeanstalk:us-east-2::platform/Docker running on
+    64bit Amazon Linux/2.7.3
+  default_region: us-east-2
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: null
+  workspace_type: Application
+deploy:
+  artifact: deploy.zip

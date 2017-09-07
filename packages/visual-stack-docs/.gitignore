@@ -9,7 +9,15 @@ coverage
 # production
 build
 
+#deployment
+deploy.zip
+
 # misc
 .DS_Store
 .env
 npm-debug.log
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
