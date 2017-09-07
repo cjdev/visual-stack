@@ -21,3 +21,4 @@ deploy:
   on:
     repo: cjdev/visual-stack
     branch: deployment
+    node: stable
