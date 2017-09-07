@@ -6,7 +6,6 @@ import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHe
 const Home = () =>
   <div>
     <PageHeader>
-      <div>Test Travis Deployment</div>
       <PageTitle>Home</PageTitle>
     </PageHeader>
     <PageContent>
