@@ -20,5 +20,5 @@ deploy:
   bucket_name: elasticbeanstalk-us-east-2-570360634027
   on:
     repo: cjdev/visual-stack
-    branch: deployment
+    branch: master
     node: stable
