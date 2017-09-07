@@ -9,9 +9,6 @@ coverage
 # production
 build
 
-#deployment
-deploy.zip
-
 # misc
 .DS_Store
 .env
