@@ -16,6 +16,7 @@ deploy:
   env: visual-stack
   before_deploy: "cd packages/visual-stack-docs && sh package.sh"
   zip_file: deploy.zip
+  bucket_name: elasticbeanstalk-us-east-2-570360634027
   on:
     repo: cjdev/visual-stack
     branch: deployment
