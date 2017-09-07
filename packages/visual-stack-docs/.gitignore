@@ -13,8 +13,3 @@ build
 .DS_Store
 .env
 npm-debug.log
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
