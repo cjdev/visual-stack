@@ -8,6 +8,7 @@ script:
 - npm test
 before_deploy: cd packages/visual-stack-docs && npm run build
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id: AKIAI324CJP3XVNEJNJA
   secret_access_key:
@@ -17,4 +18,5 @@ deploy:
   acl: public_read
   on:
     repo: cjdev/visual-stack
+    node: stable
     branch: deployment
