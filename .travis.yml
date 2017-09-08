@@ -19,4 +19,4 @@ deploy:
   on:
     repo: cjdev/visual-stack
     node: stable
-    branch: deployment
+    branch: master
