@@ -6,11 +6,11 @@ import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHe
 const Home = () =>
   <div>
     <PageHeader>
-      <div>Testing Deployment</div>
       <PageTitle>Home</PageTitle>
     </PageHeader>
     <PageContent>
     </PageContent>
   </div>;
+
 
 export default Home;
