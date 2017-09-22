@@ -11,9 +11,11 @@ import IconsIcon from 'mdi-react/ShapePlusIcon';
 
 export default () =>
 <SideNav
-  initializedCollapsed={true}
-  logoBackground="#33b59d"
-  logo={<CJLogo />} >
+  initializedCollapsed={false}
+  logoBackground="#00AF66"
+  logo={<CJLogo />}
+  appName="VISUAL STACK"
+>
     <LinkGroup label="Components" svgIcon={<ComponentIcon />}>
       {
         R.pipe(

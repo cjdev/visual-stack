@@ -1,5 +1,7 @@
 .icon-grid {
   display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
 }
 
 .icon-display {
@@ -10,9 +12,14 @@
   padding: 1em;
 }
 
+
 .icon-display-icon {
   margin-right: 1em;
 }
+.icon-display-icon .mdi-icon {
+  width: 24px;
+}
+
 .icon-display-name {
   font-family: Consolas,monospace;
 }
@@ -24,3 +31,8 @@
 
 .icon-graph-square {
 }
+
+.vsd-icon {
+  fill: red;
+}
+

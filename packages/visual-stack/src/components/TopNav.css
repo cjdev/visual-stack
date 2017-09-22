@@ -30,7 +30,7 @@
 .topnav-expanded{
   position: relative;
   z-index: 100;
-  margin-left: 240px;
+  margin-left: 255px;
   transition: margin-left .5s ease-out;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import R from 'ramda';
-import { AccountIcon } from '../components/Icons/Nav';
+import { AccountIcon } from '../components/Icons';
 import './TopNav.css';
 
 export const DropdownItem = ({ logo, title, onClick }) => {

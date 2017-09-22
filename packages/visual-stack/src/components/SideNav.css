@@ -7,14 +7,13 @@
   overflow-x: hidden;
   left: 0;
   transition: width .5s ease-out;
-  margin-top: -50px;
   position: fixed;
   z-index: 200;
   font-weight: 400;
 }
 
 .sidenav.active {
-  width: 240px;
+  width: 255px;
 }
 
 @media (min-width: 40em) {
@@ -30,19 +29,24 @@
 
 .sideNav-left-logo {
   display: flex;
-  align-items: center;
-  width: auto;
-  margin: 0 auto;
-  height: 50px;
+  height: 45px;
 }
 
-.center-logo {
-  text-align: center;
-  margin: 0 auto;
+.logo {
+  padding: 10px;
 }
 
-.center-logo .cj-logo {
+.logo .cj-logo {
   width: 35px;
+}
+
+.app-name {
+  display:inherit;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: gibson-light;
+  white-space: nowrap;
 }
 
 .toggle-icon {
@@ -66,6 +70,7 @@
 .sidenav.collapsed .sidenav-link span,
 .sidenav.collapsed .sidenav-container-chevron,
 .sidenav.collapsed .link-group-children,
+.sidenav.collapsed .app-name,
 .sidenav.collapsed .sidenav-container-label {
   opacity: 0;
   transition: opacity .3s ease-out;
@@ -73,6 +78,7 @@
 
 .sidenav.active .sidenav-link span,
 .sidenav.active .sidenav-container-chevron,
+.sidenav.active .app-name,
 .sidenav.active .sidenav-container-label {
   opacity: 1;
   display: inline-block;
@@ -131,13 +137,17 @@
   height: 45px;
 }
 
-.sidenav a.sidenav-container-row {
+.sidenav .sidenav-container-row {
   display: flex;
   height: 45px;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   user-select:none;
+}
+
+.sidenav a.sidenav-container-row {
+  cursor: pointer;
 }
 
 .sidenav .sidenav-container-row-left {

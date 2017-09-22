@@ -33,13 +33,13 @@ body {
 
 @media (min-width: 40em) {
   .application-layout-side {
-    flex: 0 0 240px;
+    flex: 0 0 255px;
     margin-left: 0px;
     transition: all .5s ease-out;
   }
 
   .application-layout-side-collapsed {
-    flex: 0 0 50px;
+    flex: 0 0 55px;
     margin-left: 0px;
     transition: all .5s ease-out;
   }

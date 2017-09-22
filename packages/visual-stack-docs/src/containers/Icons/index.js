@@ -4,8 +4,7 @@ import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHe
 import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
 import './index.css';
 
-import * as IconSet from '@cjdev/visual-stack/lib/components/Icons/Nav';
-import { BarGraphIcon } from '@cjdev/visual-stack/lib/components/Icons/Nav';
+import * as IconSet from '@cjdev/visual-stack/lib/components/Icons';
 
 const IconDisplay = ({ icon, name }) => {
   return (
@@ -26,10 +25,12 @@ const Icons = () =>
         <Panel>
           <Body>
             <div className="icon-grid">
-              <IconDisplay icon={ <IconSet.AccountIcon/>} name="AccountIcon" />
+              <IconDisplay icon={ <IconSet.AccountIcon/>} name="<AccountIcon />" />
               <IconDisplay icon={ <IconSet.LogoutIcon/>} name="LogoutIcon" />
-              <IconDisplay icon={ <BarGraphIcon/>} name="BarGraphIcon" />
+              <IconDisplay icon={ <IconSet.BarGraphIcon/>} name="BarGraphIcon" />
               <IconDisplay icon={ <IconSet.ProductIcon/>} name="ProductIcon" />
+              <IconDisplay icon={ <IconSet.PercentIcon/>} name="PercentIcon" />
+              <IconDisplay icon={ <IconSet.CountedIcon className="vsd-icon"/>} name="CountedIcon" />
             </div>
           </Body>
         </Panel>

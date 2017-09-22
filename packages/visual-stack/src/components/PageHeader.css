@@ -18,7 +18,7 @@
 
 @media (min-width: 40em) {
   .page-heading--title {
-    width: calc(100% - 240px);
+    width: calc(100% - 255px);
   }
 
   .application-layout-side-collapsed+.application-layout-content .page-heading--title {

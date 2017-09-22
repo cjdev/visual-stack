@@ -127,16 +127,13 @@ export class SideNav extends React.Component {
     return (
       <MediaQuery maxWidth={1224}>
         {
-          matches => {
-            return (
-              <SideNavP
-                matches={matches}
-                {...this.props}
-                >
-                {this.props.children}
-              </SideNavP>
-            );
-          }
+          matches =>
+            <SideNavP
+              matches={matches}
+              {...this.props}
+              >
+              {this.props.children}
+            </SideNavP>
         }
       </MediaQuery>
       );
@@ -168,17 +165,27 @@ class SideNavP extends React.Component {
   }
 
   render() {
-    const logoBg = this.props.logoBackground ? this.props.logoBackground : 'transparent';
-    const toggle = () => this.props.onClick(!this.props.collapsed);
+    const { logoBackground, appName, onClick, collapsed, children } = this.props;
+    const logoBg = logoBackground ? logoBackground : 'transparent';
+    const toggle = () => onClick(!collapsed);
+    const capAppName = appName ? appName.toUpperCase() : '';
     const mappedChildren =
-      React.Children.map(this.props.children, child => React.cloneElement(child, { collpased: this.props.collapsed, toggleSideNav: this.props.onClick }));
+      React.Children.map(children, child =>
+        React.cloneElement(child, { collpased: collapsed, toggleSideNav: onClick })
+      );
     return (
-        <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
+        <ul className={'sidenav' + (collapsed ? ' collapsed' : ' active')}>
+
           <li className="sideNav-left-logo" style={{ backgroundColor: logoBg }} >
-            <div className="center-logo">{ this.props.logo }</div>
+            <div className="sidenav-container-row">
+              <div className="logo">
+                { this.props.logo }
+              </div>
+              <span className="app-name">{capAppName}</span>
+            </div>
           </li>
           { mappedChildren }
-          <li className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></li>
+          <li className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={collapsed}/></li>
         </ul>
     );
   }
