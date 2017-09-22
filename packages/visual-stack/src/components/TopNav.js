@@ -1,5 +1,6 @@
 import React from 'react';
 import R from 'ramda';
+import { AccountIcon } from '../components/Icons/Nav';
 import './TopNav.css';
 
 export const DropdownItem = ({ logo, title, onClick }) => {
@@ -32,10 +33,9 @@ export const UserMenu = ({ title, open, onClick, children }) => {
   return (
     <li className={`user-menu ${open ? 'active' : ''}`}>
       <a onClick={onClick}>
-        <span className="fa-stack fa-lg user-menu-icon">
-          <i className="fa fa-circle fa-stack-2x"></i>
-          <i className="fa fa-user fa-stack-1x fa-inverse"></i>
-        </span>
+
+        <AccountIcon className="mdi-account" />
+
         <span className="username">{title}</span>
         <i className="fa fa-chevron-down"></i>
       </a>
