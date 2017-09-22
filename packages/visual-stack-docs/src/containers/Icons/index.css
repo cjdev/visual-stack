@@ -1,0 +1,26 @@
+.icon-grid {
+  display: flex;
+}
+
+.icon-display {
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+}
+
+.icon-display-icon {
+  margin-right: 1em;
+}
+.icon-display-name {
+  font-family: Consolas,monospace;
+}
+
+.asdf {
+  border: 1px solid black;
+  margin: 1em;
+}
+
+.icon-graph-square {
+}
