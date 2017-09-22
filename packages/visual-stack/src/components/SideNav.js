@@ -168,14 +168,17 @@ class SideNavP extends React.Component {
   }
 
   render() {
+    const logoBg = this.props.logoBackground ? this.props.logoBackground : 'transparent';
     const toggle = () => this.props.onClick(!this.props.collapsed);
     const mappedChildren =
       React.Children.map(this.props.children, child => React.cloneElement(child, { collpased: this.props.collapsed, toggleSideNav: this.props.onClick }));
     return (
         <ul className={'sidenav' + (this.props.collapsed ? ' collapsed' : ' active')}>
-          <ul className="sideNav-left-logo"><li className="center-logo">{ this.props.logo }</li></ul>
+          <li className="sideNav-left-logo" style={{ backgroundColor: logoBg }} >
+            <div className="center-logo">{ this.props.logo }</div>
+          </li>
           { mappedChildren }
-          <ul className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></ul>
+          <li className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={this.props.collapsed}/></li>
         </ul>
     );
   }

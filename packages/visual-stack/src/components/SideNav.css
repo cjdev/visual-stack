@@ -1,5 +1,5 @@
 .sidenav {
-  background-color: #33495F;
+  background-color: #333;
   list-style: none;
   width: 55px;
   height: 100%;
@@ -39,7 +39,6 @@
 .center-logo {
   text-align: center;
   margin: 0 auto;
-  list-style-type: none;
 }
 
 .center-logo .cj-logo {
@@ -50,11 +49,13 @@
   position: fixed;
   bottom: 0;
   width: inherit;
-  background-color: #283a4d;
+  background-color: #333;
+  opacity: 0.9;
 }
 
 .sidenav-toggle-icon {
   text-align: center;
+  border-top: 1px solid #4a4a4a;
 }
 
 .sidenav.collapsed .sidenav-container ul li a {
@@ -102,7 +103,7 @@
   text-decoration: none;
   display: block;
   height: 45px;
-  color: #B2C4D7;
+  color: #ddd;
 }
 
 .sidenav .link-group-children a {
@@ -111,7 +112,7 @@
 
 .sidenav a:focus,
 .sidenav a:hover {
-  background-color: #283a4d;
+  background-color: #555;
   color: #FFFFFF;
   cursor: pointer;
 }
@@ -122,7 +123,7 @@
 
 .sidenav .expanded .sidenav-container-label,
 .sidenav .expanded>a {
-  background-color: #506b86;
+  background-color: #444;
   color: #FFFFFF;
 }
 

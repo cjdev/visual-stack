@@ -1,5 +1,6 @@
 .page-heading {
-  background-color: #FFFFFF;
+  background-color: rgba(248,250,252,0.9);
+  border-top: 1px solid #eee;
   display: flex;
   position: fixed;
   width: 100%;
@@ -11,8 +12,8 @@
   min-height: 45px;
   padding: 0 20px;
   color: #647388;
-  box-shadow: 0px 1px 3px 0px rgba(51, 73, 95, 0.1);
-  -webkit-box-shadow: 0px 1px 3px 0px rgba(51, 73, 95, 0.1);
+  box-shadow: 0px 4px 30px 0px rgba(51, 73, 95, 0.1);
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(51, 73, 95, 0.1);
 }
 
 @media (min-width: 40em) {
