@@ -38,7 +38,7 @@ const OpenModalButton = connect(null, { openModal, closeModal })(ModalButton);
 /* s3:end */
 
 export default () =>
-  <Demo srcFile="/samples/modal.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/modal.js">
     { snippets => {
       return (
         <div>

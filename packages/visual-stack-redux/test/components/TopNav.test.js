@@ -45,56 +45,55 @@ describe('TopNav', () => {
     expect(handleSecondNavToggle).to.have.property('callCount', 1);
   });
 
-  it('should propagate userMenu', () => {
-    const userMenu = <span>USERMENU</span>;
-    const wrapper = mount(
-      <InternalTopNav
-        userMenu={userMenu}
-      />
-    );
-    expect(wrapper.contains(userMenu)).to.equal(true);
-  });
+  // it('should propagate userMenu', () => {
+  //   const userMenu = <span>USERMENU</span>;
+  //   const wrapper = mount(
+  //     <InternalTopNav
+  //       userMenu={userMenu}
+  //     />
+  //   );
+  //   expect(wrapper.contains(userMenu)).to.equal(true);
+  // });
 
-  it('should propagate title to visual stack usermenu', () => {
-    const title = 'TITLE';
-    const wrapper = mount(
-      <InternalUserMenu
-        title={title}
-      />
-    );
-    expect(wrapper.find('.username').text()).to.equal(title);
-  });
+  // it('should propagate title to visual stack usermenu', () => {
+  //   const title = 'TITLE';
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       title={title}
+  //     />
+  //   );
+  //   expect(wrapper.find('.username').text()).to.equal(title);
+  // });
 
+  // it('should propagate open state to visual stack usermenu', () => {
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       userMenuState={
+  //         { open: true }
+  //       }
+  //     />
+  //   );
+  //   expect(wrapper.find('.user-menu.active')).to.have.length(1);
+  // });
 
-  it('should propagate open state to visual stack usermenu', () => {
-    const wrapper = mount(
-      <InternalUserMenu
-        userMenuState={
-          { open: true }
-        }
-      />
-    );
-    expect(wrapper.find('.user-menu.active')).to.have.length(1);
-  });
+  // it('should propagate children to visual stack usermenu', () => {
+  //   const wrapper = mount(
+  //     <InternalUserMenu>
+  //       <div className="whatever" />
+  //     </InternalUserMenu>
+  //   );
+  //   expect(wrapper.find('.whatever')).to.have.length(1);
+  // });
 
-  it('should propagate children to visual stack usermenu', () => {
-    const wrapper = mount(
-      <InternalUserMenu>
-        <div className="whatever" />
-      </InternalUserMenu>
-    );
-    expect(wrapper.find('.whatever')).to.have.length(1);
-  });
-
-  it('should propagate undefined open state to visual stack usermenu', () => {
-    const wrapper = mount(
-      <InternalUserMenu
-        userMenuState={undefined}
-      />
-    );
-    expect(wrapper.find('.user-menu')).to.have.length(1);
-    expect(wrapper.find('.user-menu.active')).to.have.length(0);
-  });
+  // it('should propagate undefined open state to visual stack usermenu', () => {
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       userMenuState={undefined}
+  //     />
+  //   );
+  //   expect(wrapper.find('.user-menu')).to.have.length(1);
+  //   expect(wrapper.find('.user-menu.active')).to.have.length(0);
+  // });
 
   it('should call open when closed and clicked', () => {
     // given

@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import BlankSlate from '@cjdev/visual-stack/lib/components/BlankSlate';
 
 export default () =>
-  <Demo srcFile="/samples/blankslate.js">
+    <Demo srcFile="/samples/src/containers/Components/Docs/blankslate.js">
     { snippets => {
       return (
         <div>

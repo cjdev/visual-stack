@@ -5,12 +5,21 @@ import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import { SideNav, Link as SideNavLink, LinkGroup, LinkContentWrapper } from '@cjdev/visual-stack-redux/lib/components/SideNav';
 import { routeComponentMap } from '../Components/Docs/';
 
+import { UserMenu, UserDropdownItem, DropdownItem } from '@cjdev/visual-stack-redux/lib/components/TopNav';
+import { LogoutIcon } from '@cjdev/visual-stack/lib/components/Icons';
 import LayoutIcon from 'mdi-react/TelevisionGuideIcon';
 import ComponentIcon from 'mdi-react/HexagonMultipleIcon';
 import IconsIcon from 'mdi-react/ShapePlusIcon';
 
+const AppUserMenu = () =>
+  <UserMenu>
+    <UserDropdownItem name="Visual Stack" firstInitial="V" lastInitial="S" email="visualstack@cj.com" />
+    <DropdownItem icon={LogoutIcon} title="Dropdown Item" />
+  </UserMenu>;
+
 export default () =>
 <SideNav
+  userMenu={<AppUserMenu />}
   initializedCollapsed={false}
   logoBackground="#00AF66"
   logo={<CJLogo />}

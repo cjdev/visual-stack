@@ -4,9 +4,9 @@ import { Demo, Snippet } from '../../../components/Demo';
 
 import {
   PageHeader,
-    PageTitle,
-    PageHeaderSection,
-    PageDescription,
+  PageTitle,
+  PageHeaderSection,
+  PageDescription,
 } from '@cjdev/visual-stack/lib/components/PageHeader';
 
 
@@ -50,37 +50,13 @@ const PageHeader2Section = ({ snippets }) =>
     </Body>
   </Panel>;
 
-const PageHeader3Section = ({ snippets }) =>
-  <Panel>
-    <Header>
-      Page Header: 3 sections
-    </Header>
-    <Body>
-      { /* s3:start */ }
-      <PageHeader>
-        <PageTitle>
-          Title
-        </PageTitle>
-        <PageHeaderSection>
-          Center
-        </PageHeaderSection>
-        <PageHeaderSection>
-          Right
-        </PageHeaderSection>
-      </PageHeader>
-      { /* s3:end */ }
-      <Snippet tag="s3" src={snippets} />
-    </Body>
-  </Panel>;
-
 export default () =>
-  <Demo srcFile="/samples/pageheader.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/pageheader.js">
     { snippets => {
       return (
         <div>
           <PageHeader1Section snippets={snippets} />
           <PageHeader2Section snippets={snippets} />
-          <PageHeader3Section snippets={snippets} />
         </div>
       );
     }}

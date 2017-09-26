@@ -165,7 +165,8 @@ class SideNavP extends React.Component {
   }
 
   render() {
-    const { logoBackground, appName, onClick, collapsed, children } = this.props;
+    const { logoBackground, appName, onClick, collapsed, children, userMenu } = this.props;
+
     const logoBg = logoBackground ? logoBackground : 'transparent';
     const toggle = () => onClick(!collapsed);
     const capAppName = appName ? appName.toUpperCase() : '';
@@ -185,6 +186,7 @@ class SideNavP extends React.Component {
             </div>
           </li>
           { mappedChildren }
+          { userMenu }
           <li className="toggle-icon"><ToggleIcon onClick={toggle} sideNavState={collapsed}/></li>
         </ul>
     );

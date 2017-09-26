@@ -27,15 +27,15 @@
   },
   "proxy": "http://localhost:3001/",
   "watch": {
-    "samples": "src/containers/Components/Docs/*.js"
+    "samples": "src/containers/**/*.js"
   },
   "scripts": {
-    "samples": "copyfiles -f src/containers/Components/Docs/*.js build/samples/",
-    "start": "react-scripts start",
+    "samples": "copyfiles src/containers/{Components/Docs,Icons}/*.js build/samples",
     "build": "react-scripts build && npm run samples",
+    "lint": "eslint src",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src",
+    "start": "react-scripts start",
     "server": "concurrently npm-watch \"node ./server\"",
     "docs": "concurrently \"npm run start\" \"npm run server\""
   }

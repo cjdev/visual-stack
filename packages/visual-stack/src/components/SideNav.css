@@ -49,6 +49,11 @@
   white-space: nowrap;
 }
 
+.sidenav-user-menu {
+  position: fixed;
+  bottom: 60px;
+}
+
 .toggle-icon {
   position: fixed;
   bottom: 0;

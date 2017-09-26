@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { List, Header, Rows, Row, Cell } from '@cjdev/visual-stack/lib/components/List';
 
 export default () =>
-  <Demo srcFile="/samples/list.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/list.js">
     { snippets => {
       return (
         <div>

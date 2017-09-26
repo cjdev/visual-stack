@@ -32,7 +32,7 @@ class SlidingPanelDemo extends React.Component {
 
   render() {
     return (
-      <Demo srcFile="/samples/slidingpanel.js">
+      <Demo srcFile="/samples/src/containers/Components/Docs/slidingpanel.js">
         { snippets => {
           return (
             <div>

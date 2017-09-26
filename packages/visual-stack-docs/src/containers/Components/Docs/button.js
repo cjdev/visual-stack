@@ -4,7 +4,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
 
 export default () =>
-  <Demo srcFile="/samples/button.js">
+    <Demo srcFile="/samples/src/containers/Components/Docs/button.js">
     { snippets => {
       return (
         <div>

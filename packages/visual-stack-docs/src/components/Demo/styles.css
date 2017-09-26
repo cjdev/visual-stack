@@ -1,3 +1,7 @@
 .snippet {
   padding-top: 10px;
 }
+
+.inline-snippet {
+  margin: 0;
+}

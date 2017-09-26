@@ -3,6 +3,16 @@ import R from 'ramda';
 import { parse, trimLeadingWhiteSpace } from './snippetParser';
 import './styles.css';
 
+export const InlineSnippet = ({ tag, src }) => {
+  const srcTag = R.view(R.lensPath([tag]))(src);
+  if (!srcTag) return null;
+  return (
+    <pre className="inline-snippet">
+      { trimLeadingWhiteSpace(src[tag]).join(' ') }
+    </pre>
+  );
+};
+
 export const Snippet = ({ tag, src }) => {
   const srcTag = R.view(R.lensPath([tag]))(src);
   if (!srcTag) return null;

@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import Spinner from '@cjdev/visual-stack/lib/components/Spinner';
 
 export default () =>
-  <Demo srcFile="/samples/spinner.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/spinner.js">
     { snippets => {
       return (
         <div>

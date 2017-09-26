@@ -3,7 +3,7 @@ import { Panel, Body, Header, Footer } from '@cjdev/visual-stack/lib/components/
 import { Demo, Snippet } from '../../../components/Demo';
 
 export default () =>
-  <Demo srcFile="/samples/panel.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/panel.js">
     { snippets => {
       return (
         <div>

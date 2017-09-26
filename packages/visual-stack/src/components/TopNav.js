@@ -31,7 +31,7 @@ export const UserDropdownItem = ({ name, firstInitial, lastInitial, email }) => 
 
 export const UserMenu = ({ title, open, onClick, children }) => {
   return (
-    <li className={`user-menu ${open ? 'active' : ''}`}>
+    <li className={`sidenav-user-menu ${open ? 'active' : ''}`}>
       <a onClick={onClick}>
 
         <AccountIcon className="mdi-account" />
