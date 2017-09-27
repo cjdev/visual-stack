@@ -15,6 +15,13 @@ export const UserMenu = ({ name }) => {
   );
 };
 
+export const UserIcon = ({ firstInitial, lastInitial }) => (
+  <div className="user-icon-circle">
+    <span className="user-icon-first">{firstInitial}</span>
+    <span className="user-icon-last">{lastInitial}</span>
+  </div>
+);
+
 // export const UserMenu2 = ({ title, open, onClick, children }) => {
 //   return (
 //     <div className={`sidenav-user-menu ${open ? 'active' : ''}`}>

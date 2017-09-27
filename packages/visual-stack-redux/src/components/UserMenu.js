@@ -8,6 +8,8 @@ import {
 } from '@cjdev/visual-stack/lib/components/UserMenu';
 import { openTopNavDropdown, closeTopNavDropdown } from '../actions';
 
+export { UserIcon } from '@cjdev/visual-stack/lib/components/UserMenu';
+
 export class InternalUserMenu extends Component {
   constructor(props) {
     super(props);
