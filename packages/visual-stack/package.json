@@ -17,7 +17,7 @@
     "prepublish": "npm run clean && npm run lint && npm run build && npm run test",
     "test": "mocha --compilers js:babel-register,css:./test/utils/css-null-compiler -r jsdom-global/register --recursive test/components",
     "test:watch": "npm run test -- --watch",
-    "watch": "gulp watch"
+    "watch": "gulp build && gulp watch"
   },
   "peerDependencies": {
     "react": ">=15.3.1"
