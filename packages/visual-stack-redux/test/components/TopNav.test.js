@@ -95,64 +95,64 @@ describe('TopNav', () => {
   //   expect(wrapper.find('.user-menu.active')).to.have.length(0);
   // });
 
-  it('should call open when closed and clicked', () => {
-    // given
-    const fakeOpenTopNavDropdown = sinon.spy();
-    const fakeListener = sinon.spy(document, 'addEventListener');
-    const wrapper = mount(
-      <InternalUserMenu
-        userMenuState={{ open: false }}
-        openTopNavDropdown={fakeOpenTopNavDropdown}
-      />
-    );
-    // when
-    const callback = fakeListener.lastCall.args[1];
-    const target = ReactDOM.findDOMNode(wrapper.find('.topnav-icon.fa-user-circle').root.component);
-    const click = { target };
-    callback(click);
+  // it('should call open when closed and clicked', () => {
+  //   // given
+  //   const fakeOpenTopNavDropdown = sinon.spy();
+  //   const fakeListener = sinon.spy(document, 'addEventListener');
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       userMenuState={{ open: false }}
+  //       openTopNavDropdown={fakeOpenTopNavDropdown}
+  //     />
+  //   );
+  //   // when
+  //   const callback = fakeListener.lastCall.args[1];
+  //   const target = ReactDOM.findDOMNode(wrapper.find('.topnav-icon.fa-user-circle').root.component);
+  //   const click = { target };
+  //   callback(click);
 
-    // then
-    expect(fakeOpenTopNavDropdown).to.have.property('callCount', 1);
-    document.addEventListener.restore();
-  });
+  //   // then
+  //   expect(fakeOpenTopNavDropdown).to.have.property('callCount', 1);
+  //   document.addEventListener.restore();
+  // });
 
-  it('should call close when open and clicked', () => {
-    const fakeCloseTopNavDropdown = sinon.spy();
-    const fakeListener = sinon.spy(document, 'addEventListener');
-    const wrapper = mount(
-      <InternalUserMenu
-        userMenuState={{ open: true }}
-        closeTopNavDropdown={fakeCloseTopNavDropdown}
-        />
-    );
-    // when
-    const callback = fakeListener.lastCall.args[1];
-    const target = ReactDOM.findDOMNode(wrapper.find('.topnav-icon.fa-user-circle').root.component);
-    const click = { target };
-    callback(click);
+  // it('should call close when open and clicked', () => {
+  //   const fakeCloseTopNavDropdown = sinon.spy();
+  //   const fakeListener = sinon.spy(document, 'addEventListener');
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       userMenuState={{ open: true }}
+  //       closeTopNavDropdown={fakeCloseTopNavDropdown}
+  //       />
+  //   );
+  //   // when
+  //   const callback = fakeListener.lastCall.args[1];
+  //   const target = ReactDOM.findDOMNode(wrapper.find('.topnav-icon.fa-user-circle').root.component);
+  //   const click = { target };
+  //   callback(click);
 
-    // then
-    expect(fakeCloseTopNavDropdown).to.have.property('callCount', 1);
-    document.addEventListener.restore();
-  });
+  //   // then
+  //   expect(fakeCloseTopNavDropdown).to.have.property('callCount', 1);
+  //   document.addEventListener.restore();
+  // });
 
-  it('should call close when open and something else is clicked', () => {
-    const fakeCloseTopNavDropdown = sinon.spy();
-    const fakeListener = sinon.spy(document, 'addEventListener');
-    const wrapper = mount(
-      <InternalUserMenu
-        userMenuState={{ open: true }}
-        closeTopNavDropdown={fakeCloseTopNavDropdown}
-      />
-    );
-    // wrapper.find('.topnav-dropdown').simulate('click');
-    const callback = fakeListener.lastCall.args[1];
-    const target = ReactDOM.findDOMNode(wrapper.find('.topnav-dropdown').root.component);
-    const click = { target };
-    callback(click);
+  // it('should call close when open and something else is clicked', () => {
+  //   const fakeCloseTopNavDropdown = sinon.spy();
+  //   const fakeListener = sinon.spy(document, 'addEventListener');
+  //   const wrapper = mount(
+  //     <InternalUserMenu
+  //       userMenuState={{ open: true }}
+  //       closeTopNavDropdown={fakeCloseTopNavDropdown}
+  //     />
+  //   );
+  //   // wrapper.find('.topnav-dropdown').simulate('click');
+  //   const callback = fakeListener.lastCall.args[1];
+  //   const target = ReactDOM.findDOMNode(wrapper.find('.topnav-dropdown').root.component);
+  //   const click = { target };
+  //   callback(click);
 
-    expect(fakeCloseTopNavDropdown).to.have.property('callCount', 1);
-    document.addEventListener.restore();
-  });
+  //   expect(fakeCloseTopNavDropdown).to.have.property('callCount', 1);
+  //   document.addEventListener.restore();
+  // });
 });
 

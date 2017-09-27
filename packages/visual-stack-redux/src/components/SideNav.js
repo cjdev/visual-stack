@@ -18,8 +18,11 @@ export class InternalSideNav extends Component {
   }
   render() {
     const mappedChildren =
-      React.Children.map(this.props.children,
-                         child => React.cloneElement(child, { toggleSideNav: this.props.toggleSideNav, collapsed: this.props.collapsed }));
+      React.Children.map(this.props.children, child =>
+        React.cloneElement(child, {
+          toggleSideNav: this.props.toggleSideNav,
+          collapsed: this.props.collapsed,
+        }));
     return (
       <BaseSideNav
         collapsed={this.props.collapsed}
@@ -33,7 +36,11 @@ export class InternalSideNav extends Component {
   }
 }
 
-export const SideNav = connect(state => ({ collapsed: state.visualStack.sideNav.collapsed }), { toggleSideNav })(InternalSideNav);
+export const SideNav = connect(state => ({
+  collapsed: state.visualStack.sideNav.collapsed,
+}), {
+  toggleSideNav,
+})(InternalSideNav);
 
 export class InternalLinkGroup extends Component {
   static propTypes = {

@@ -2,20 +2,35 @@ import React from 'react';
 import R from 'ramda';
 import { Link } from 'react-router';
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
-import { SideNav, Link as SideNavLink, LinkGroup, LinkContentWrapper } from '@cjdev/visual-stack-redux/lib/components/SideNav';
+import {
+  SideNav,
+  Link as SideNavLink,
+  LinkGroup,
+  LinkContentWrapper,
+} from '@cjdev/visual-stack-redux/lib/components/SideNav';
 import { routeComponentMap } from '../Components/Docs/';
 
-import { UserMenu, UserDropdownItem, DropdownItem } from '@cjdev/visual-stack-redux/lib/components/TopNav';
-import { LogoutIcon } from '@cjdev/visual-stack/lib/components/Icons';
+// import { DropdownItem } from '@cjdev/visual-stack-redux/lib/components/TopNav';
+// import { UserMenu, UserDropdownItem } from '@cjdev/visual-stack-redux/lib/components/UserMenu';
 import LayoutIcon from 'mdi-react/TelevisionGuideIcon';
 import ComponentIcon from 'mdi-react/HexagonMultipleIcon';
 import IconsIcon from 'mdi-react/ShapePlusIcon';
 
+const UserIcon = ({ firstInitial, lastInitial }) =>
+  <div className="user-icon-circle">
+    <span className="user-icon-first">{firstInitial}</span>
+    <span className="user-icon-last">{lastInitial}</span>
+  </div>;
+
 const AppUserMenu = () =>
-  <UserMenu>
-    <UserDropdownItem name="Visual Stack" firstInitial="V" lastInitial="S" email="visualstack@cj.com" />
-    <DropdownItem icon={LogoutIcon} title="Dropdown Item" />
-  </UserMenu>;
+  <LinkGroup
+    className="sidenav-user-menu"
+    label="Visual Stack"
+    icon={<UserIcon firstInitial="V" lastInitial="S" />}>
+    <SideNavLink>
+      <a>Logout</a>
+    </SideNavLink>
+  </LinkGroup>;
 
 export default () =>
 <SideNav

@@ -32,7 +32,6 @@ export const ToggleIcon = ({ sideNavState, onClick }) => {
 
 export const Header = ({ children }) =>
   <li className="sidenav-entry sidenav-header">{children}</li>;
-
 Header.propTypes = {
   children: PropTypes.string.isRequired,
 };
@@ -55,7 +54,7 @@ export class LinkGroup extends React.Component {
   }
 
   render() {
-    const classes = 'sidenav-entry sidenav-container' + (this.props.expanded ? ' expanded' : '');
+    const classes = `${this.props.className} sidenav-entry sidenav-container` + (this.props.expanded ? ' expanded' : '');
     const expandRow = () => {
       this.props.onClick(!this.props.expanded, this.props.label);
       if (!this.props.expanded) {
@@ -88,7 +87,6 @@ export class LinkGroup extends React.Component {
     );
   }
 }
-
 LinkGroup.propTypes = {
   expanded: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
@@ -96,6 +94,8 @@ LinkGroup.propTypes = {
 };
 
 export const Link = ({ hoverText, children, inLinkGroup }) => {
+
+  console.log('children: ', children);
   const childrenWithProps = React.Children.map(children, child => {
     const children = child.props.children;
     const mappedChildren = (!inLinkGroup && React.Children.count(children) === 1)
@@ -103,6 +103,7 @@ export const Link = ({ hoverText, children, inLinkGroup }) => {
       : child.props.children;
     return React.cloneElement(child, { children: mappedChildren });
   });
+
   return (
     <li className="sidenav-entry sidenav-link" title={hoverText}>
       {childrenWithProps}
@@ -122,23 +123,22 @@ export const LinkContentWrapper = ({ icon, label }) => {
 };
 
 
+
+
+
 export class SideNav extends React.Component {
   render() {
     return (
       <MediaQuery maxWidth={1224}>
         {
           matches =>
-            <SideNavP
-              matches={matches}
-              {...this.props}
-              >
+            <SideNavP matches={matches} {...this.props} >
               {this.props.children}
             </SideNavP>
         }
       </MediaQuery>
       );
   }
-
 }
 
 class SideNavP extends React.Component {
@@ -176,7 +176,6 @@ class SideNavP extends React.Component {
       );
     return (
         <ul className={'sidenav' + (collapsed ? ' collapsed' : ' active')}>
-
           <li className="sideNav-left-logo" style={{ backgroundColor: logoBg }} >
             <div className="sidenav-container-row">
               <div className="logo">

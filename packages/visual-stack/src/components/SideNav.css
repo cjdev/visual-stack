@@ -49,17 +49,18 @@
   white-space: nowrap;
 }
 
-.sidenav-user-menu {
+.sidenav-user-menu, .toggle-icon {
   position: fixed;
-  bottom: 60px;
+  width: inherit;
+  background-color: #333;
+}
+
+.sidenav-user-menu {
+  bottom: 45px;
 }
 
 .toggle-icon {
-  position: fixed;
   bottom: 0;
-  width: inherit;
-  background-color: #333;
-  opacity: 0.9;
 }
 
 .sidenav-toggle-icon {
@@ -130,6 +131,9 @@
 
 .sidenav-container-label {
   white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 165px;
+  overflow: hidden;
 }
 
 .sidenav .expanded .sidenav-container-label,
