@@ -14,10 +14,11 @@
     "dist:min": "NODE_ENV=production webpack src/index.js dist/visual-stack-redux.min.js",
     "clean": "rimraf lib",
     "lint": "eslint src test",
+    "format": "prettier ./src/**/*.js --write",
     "prepublish": "npm run clean && npm run lint && npm run build && npm run test",
     "test": "mocha --compilers js:babel-register,css:./test/support/css-null-compiler -r jsdom-global/register test/setup.js test/**/*.test.js test/*.test.js",
     "test:watch": "npm run test -- --watch",
-    "watch": "gulp watch"
+    "watch": "gulp build && gulp watch"
   },
   "peerDependencies": {
     "@cjdev/visual-stack": "^1.2.2",
@@ -54,6 +55,7 @@
     "jsdom": "^8.3.0",
     "jsdom-global": "^1.7.0",
     "mocha": "^2.4.5",
+    "prettier": "^1.7.0",
     "react": "^15.6.1",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",

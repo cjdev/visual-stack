@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
 
 // import { TopNav, SecondaryNav, DropdownItem } from '@cjdev/visual-stack/lib/components/TopNav';
-import { InternalTopNav, InternalUserMenu } from '../../src/components/TopNav';
+import { InternalTopNav } from '../../src/components/TopNav';
 
 describe('TopNav', () => {
   it('should propagate secondaryNav', () => {

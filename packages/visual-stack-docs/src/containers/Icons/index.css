@@ -1,3 +1,4 @@
+/** @prettier */
 .icon-grid {
   display: flex;
  flex-wrap: wrap;
@@ -25,15 +26,10 @@
   font-family: Consolas,monospace;
 }
 
-.asdf {
-  border: 1px solid black;
-  margin: 1em;
-}
-
 .icon-graph-square {
 }
 
-.cj-green {
+.mdi-icon.cj-green {
   fill: #00AF66;
 }
 

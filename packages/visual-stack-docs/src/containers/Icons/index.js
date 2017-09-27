@@ -28,7 +28,7 @@ const IconDisplay = ({ icon, snippets, tag }) => {
 
 /*
 s8:start
-.cj-green {
+.mdi-icon.cj-green {
   fill: #00AF66;
 }
 s8:end

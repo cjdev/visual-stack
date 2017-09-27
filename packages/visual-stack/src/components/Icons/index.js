@@ -1,9 +1,14 @@
 import React from 'react';
+import './style.css';
+import SvgIcon from 'material-ui/SvgIcon';
+
 import Account from 'mdi-react/AccountCircleIcon';
 import Logout from 'mdi-react/LogoutIcon';
 import Product from 'mdi-react/PackageVariantClosedIcon';
-import SvgIcon from 'material-ui/SvgIcon';
-import './style.css';
+
+export const AccountIcon = Account;
+export const LogoutIcon = Logout;
+export const ProductIcon = Product;
 
 const Icon = ({ className, children }) =>
   <SvgIcon className="mdi-icon" height="24" viewBox="0 0 24 24">
@@ -32,6 +37,3 @@ export const CountedIcon = ({ className }) => {
   );
 };
 
-export const AccountIcon = Account;
-export const LogoutIcon = Logout;
-export const ProductIcon = Product;

@@ -6,7 +6,9 @@
     "concurrently": "^3.1.0",
     "copyfiles": "^1.2.0",
     "eslint": "^3.14.1",
+    "eslint-plugin-react": "^7.4.0",
     "npm-watch": "^0.1.8",
+    "prettier": "^1.7.0",
     "react-scripts": "^0.9.5"
   },
   "dependencies": {
@@ -33,6 +35,7 @@
     "samples": "copyfiles src/containers/{Components/Docs,Icons}/*.js build/samples",
     "build": "react-scripts build && npm run samples",
     "lint": "eslint src",
+    "format": "prettier {src,server}/**/*.js --write",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
