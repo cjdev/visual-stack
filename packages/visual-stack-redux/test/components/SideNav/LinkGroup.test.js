@@ -1,37 +1,10 @@
 /** @prettier */
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
+import { mount, shallow } from 'enzyme';
 
-import { InternalSideNav, InternalLinkGroup } from '../../src/components/SideNav';
-import { SideNav, Header, LinkGroup, Link } from '@cjdev/visual-stack/lib/components/SideNav';
-
-describe('SideNav', () => {
-  it('should propagate the active state to VisualStack SideNav', () => {
-    const wrapper = shallow(
-      <InternalSideNav collapsed={true} />
-    );
-    expect(wrapper.find(SideNav).prop('collapsed')).to.be.true;
-  });
-
-  it('should propagate children to VisualStack SideNav', () => {
-    const wrapper = shallow(
-      <InternalSideNav>
-          <Header label="whatever" />
-      </InternalSideNav>
-    );
-    expect(wrapper.find(SideNav).find(Header)).to.have.length(1);
-    expect(wrapper.find(SideNav).find(Header).prop('label')).to.equal('whatever');
-  });
-
-  it('should propagate the logo to the SideNav', () => {
-    const logo = <span>LOGO</span>;
-    const wrapper = mount(
-      <InternalSideNav logo={logo} toggleSideNav={() => {}} />
-    );
-    expect(wrapper.contains(logo)).to.equal(true);
-  });
-});
+import { InternalLinkGroup } from '../../../src/components/SideNav/LinkGroup';
+import { LinkGroup, Link } from '@cjdev/visual-stack/lib/components/SideNav';
 
 describe('LinkGroup', () => {
   it('should propagate label to visual stack link group', () => {
@@ -51,13 +24,11 @@ describe('LinkGroup', () => {
         expanded: true,
       },
     };
-
     const wrapper = mount(
       <InternalLinkGroup label={label} linkGroups={state} />
     );
     expect(wrapper.find(LinkGroup).prop('expanded')).to.be.false;
   });
-
 
   it('should calculate expanded value when not in state', () => {
     const label = 'LABEL';

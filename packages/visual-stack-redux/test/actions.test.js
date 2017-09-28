@@ -49,6 +49,31 @@ describe('reducer', () => {
     expect(reducer(beforeState, toggleSideNavLinkGroup(true, 'linkGroup1'))).to.deep.equal(afterState);
   });
 
+  it('should collapse existing expanded LinkGroups', () => {
+    const beforeState = {
+      sideNav: {
+        linkGroups: {
+          linkGroupShouldBeReset: {
+            expanded: true,
+          },
+        },
+      },
+    };
+    const afterState = {
+      sideNav: {
+        linkGroups: {
+          linkGroup1: {
+            expanded: true,
+          },
+          linkGroupShouldBeReset: {
+            expanded: false,
+          },
+        },
+      },
+    };
+    expect(reducer(beforeState, toggleSideNavLinkGroup(true, 'linkGroup1'))).to.deep.equal(afterState);
+  });
+
   it('should toggle SecondNav', () => {
     const beforeState = {
       topNav: {

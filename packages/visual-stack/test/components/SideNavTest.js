@@ -72,7 +72,6 @@ describe('SideNav', () => {
         </Link>
       );
       equal(wrapper.find('.sidenav-entry').length, 1);
-      equal(wrapper.find('.stacked-icon').length, 1);
     });
   });
 

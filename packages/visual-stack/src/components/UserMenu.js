@@ -1,19 +1,8 @@
 import React from 'react';
-import { AccountIcon } from '../components/Icons';
+// import { AccountIcon } from '../components/Icons';
 import { Link, LinkGroup, LinkContentWrapper } from '../components/SideNav';
 import './UserMenu.css';
 import { LogoutIcon } from '../components/Icons';
-
-export const UserMenu = ({ name }) => {
-  return (
-    <LinkGroup label={name} expanded={true}>
-      <Link>
-        <a href="">child link</a>
-      </Link>
-      <LinkContentWrapper icon={<LogoutIcon />} label="Logout" />
-    </LinkGroup>
-  );
-};
 
 export const UserIcon = ({ firstInitial, lastInitial }) => (
   <div className="user-icon-circle">
@@ -21,6 +10,17 @@ export const UserIcon = ({ firstInitial, lastInitial }) => (
     <span className="user-icon-last">{lastInitial}</span>
   </div>
 );
+
+export const UserMenu = ({ name, open }) => {
+  return (
+    <LinkGroup label={name} expanded={open}>
+      <Link>
+        <a href="">child link</a>
+      </Link>
+      <LinkContentWrapper icon={<LogoutIcon />} label="Logout" />
+    </LinkGroup>
+  );
+};
 
 // export const UserMenu2 = ({ title, open, onClick, children }) => {
 //   return (

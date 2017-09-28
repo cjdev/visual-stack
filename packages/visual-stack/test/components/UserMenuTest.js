@@ -1,6 +1,6 @@
 import React from 'react';
 // import { shallow } from 'enzyme';
-import { equal, notEqual } from 'assert';
+import { notEqual } from 'assert';
 import { UserMenu } from '../../src/components/UserMenu';
 
 describe('UserMenu', () => {
@@ -8,5 +8,4 @@ describe('UserMenu', () => {
     const userMenu = <UserMenu />;
     notEqual(userMenu, null);
   });
-
 });

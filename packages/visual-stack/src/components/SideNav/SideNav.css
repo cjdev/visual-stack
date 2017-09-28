@@ -11,6 +11,7 @@
   position: fixed;
   z-index: 200;
   font-weight: 400;
+  user-select:none;
 }
 
 .sidenav.active {
@@ -120,7 +121,7 @@
 }
 
 .sidenav .link-group-children a {
-  padding: 12px 12px 12px 55px;
+  /* padding: 12px 12px 12px 12px; */
 }
 
 .sidenav a:focus,
@@ -137,8 +138,7 @@
   overflow: hidden;
 }
 
-.sidenav .expanded .sidenav-container-label,
-.sidenav .expanded>a {
+.sidenav .expanded > a.sidenav-container-row {
   background-color: #444;
   color: #FFFFFF;
 }
@@ -241,8 +241,11 @@
   display: flex;
 }
 
+.placeholder-icon,
 .sidenav-svg-icon svg {
-  fill: currentColor;
   width: 22px;
 }
 
+.sidenav-svg-icon svg {
+  fill: currentColor;
+}

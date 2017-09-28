@@ -1,5 +1,8 @@
-import { lensPath, lensProp, set, assoc, not, over } from 'ramda';
+import R, { lensPath, lensProp, set, assoc, not, over } from 'ramda';
 import { createAction, handleActions } from 'redux-actions';
+
+const defaultToEmpty = R.defaultTo({});
+const collapse = set(lensProp('expanded'), false);
 
 const OPEN_DROPDOWN = '@cjdev/visual-stack-redux/OPEN_DROPDOWN';
 const CLOSE_DROPDOWN = '@cjdev/visual-stack-redux/CLOSE_DROPDOWN';
@@ -67,8 +70,17 @@ export default handleActions({
   [TOGGLE_SIDENAV]: (state, { payload: { collapsed } }) =>
     set(lensPath(['sideNav', 'collapsed']), collapsed, state),
 
-  [TOGGLE_SIDENAV_LINKGROUP]: (state, { payload: { expanded, linkGroupName } }) =>
-    set(lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']), expanded, state),
+  [TOGGLE_SIDENAV_LINKGROUP]: (state, { payload: { expanded, linkGroupName } }) => {
+    const linkGroups = defaultToEmpty(R.view(lensPath(['sideNav', 'linkGroups']), state));
+    const stateWithResetLinkGroups = set(
+      lensPath(['sideNav', 'linkGroups']),
+      R.map(v => collapse(v))(linkGroups),
+      state);
+    return set(
+      lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']),
+      expanded,
+      stateWithResetLinkGroups);
+  },
 
   [TOGGLE_SECONDNAV]: state =>
     over(lensPath(['topNav', 'secondNavActive']), not, state),

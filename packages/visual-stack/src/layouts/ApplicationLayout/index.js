@@ -2,7 +2,7 @@ import React from 'react';
 import R from 'ramda';
 import './style.css';
 
-const ApplicationLayout = ({ topNav, sideNav, sideNavState, children }) => {
+const ApplicationLayout = ({ sideNav, sideNavState, children }) => {
   const contentStyles = (sideNavState || R.isNil(sideNavState)) ? 'application-layout-side' : 'application-layout-side-collapsed';
   return (
       <div className="application-layout">
