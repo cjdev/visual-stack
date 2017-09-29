@@ -120,8 +120,8 @@
   color: #ddd;
 }
 
-.sidenav .link-group-children a {
-  /* padding: 12px 12px 12px 12px; */
+.sidenav .link-group-children {
+  background-color: rgb(45,45,45);
 }
 
 .sidenav a:focus,
