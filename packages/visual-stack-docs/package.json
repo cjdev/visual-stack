@@ -29,10 +29,10 @@
   },
   "proxy": "http://localhost:3001/",
   "watch": {
-    "samples": "src/containers/**/*.js"
+    "samples": "src/**/*.js"
   },
   "scripts": {
-    "samples": "copyfiles src/containers/{Components/Docs,Icons}/*.js build/samples",
+    "samples": "copyfiles \"src/containers/{App,Components/Docs,Icons}/**/*.{js,css}\" build/samples",
     "build": "react-scripts build && npm run samples",
     "lint": "eslint src",
     "format": "prettier {src,server}/**/*.js --write",

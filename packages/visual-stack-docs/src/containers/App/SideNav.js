@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /** @prettier */
 import React from 'react';
 import R from 'ramda';
@@ -16,6 +17,12 @@ import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import { UserIcon } from '@cjdev/visual-stack/lib/components/UserMenu';
 import { routeComponentMap } from '../Components/Docs/';
 
+const componentLinks = R.pipe(
+  R.mapObjIndexed((val, key) => ({ key, ...val })),
+  R.values,
+  R.sortBy(R.prop('linkName'))
+)(routeComponentMap);
+
 const AppUserMenu = ({ onLogout }) => (
   <LinkGroup
     className="sidenav-user-menu"
@@ -30,19 +37,17 @@ const AppUserMenu = ({ onLogout }) => (
   </LinkGroup>
 );
 
-class AppSideNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleLogout.bind(this);
-  }
-
+export default class AppSideNav extends React.Component {
+  /* s1:start */
   handleLogout() {
-    // eslint-disable-next-line
-    alert('handleLogout called');
+    alert('handleLogout');
   }
+  /* s1:end */
 
   render() {
     return (
+    <div>
+    {/* s2:start */}
       <SideNav
         userMenu={<AppUserMenu onLogout={this.handleLogout} />}
         initializedCollapsed={false}
@@ -51,18 +56,13 @@ class AppSideNav extends React.Component {
         appName="VISUAL STACK"
       >
         <LinkGroup label="Components" svgIcon={<ComponentIcon />}>
-          {R.pipe(
-            R.mapObjIndexed((val, key) => ({ key, ...val })),
-            R.values,
-            R.sortBy(R.prop('linkName')),
-            R.map(val => (
-              <Link key={val.key}>
-                <RRLink to={`/components/${val.key}`}>
-                  <LinkContentWrapper label={val.linkName} />
-                </RRLink>
-              </Link>
-            ))
-          )(routeComponentMap)}
+          {componentLinks.map(link => (
+            <Link key={link.key}>
+              <RRLink to={`/components/${link.key}`}>
+                <LinkContentWrapper label={link.linkName} />
+              </RRLink>
+            </Link>
+          ))}
         </LinkGroup>
         <Link hoverText="Icons">
           <RRLink to="/icons">
@@ -75,7 +75,8 @@ class AppSideNav extends React.Component {
           </RRLink>
         </Link>
       </SideNav>
+    {/* s2:end */}
+    </div>
     );
   }
 }
-export default AppSideNav;

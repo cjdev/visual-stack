@@ -41,13 +41,14 @@ const AppTopNav = () => {
 };
 
 export default () => (
-  <Demo srcFile="/samples/src/containers/Components/Docs/sidenav.js">
+  <Demo srcFile="/samples/src/containers/App/SideNav.js">
     {snippets => {
       return (
         <Panel>
           <Header>SideNav</Header>
           <Body>
             <Snippet tag="s1" src={snippets} />
+            <Snippet tag="s2" src={snippets} />
           </Body>
         </Panel>
       );
