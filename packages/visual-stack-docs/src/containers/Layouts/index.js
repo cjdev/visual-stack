@@ -16,7 +16,7 @@ const Layouts = () =>
           Application Layout
         </Header>
         <Body>
-          ApplicationLayout includes the SideNav and the TopNav components.
+          ApplicationLayout includes the SideNav component and necessary CSS to render a full page application.
         </Body>
       </Panel>
     </PageContent>

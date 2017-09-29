@@ -18,7 +18,6 @@ import PageHeaderDocs from './pageheader';
 import SideNavDocs from './sidenav';
 import SlidingPanelDocs from './slidingpanel';
 import SpinnerDocs from './spinner';
-import TopNavDocs from './topnav';
 
 // 2. add your demo to the routeComponentMap
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
@@ -30,7 +29,6 @@ addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
-addComponentRoute('topnav', 'TopNav', <TopNavDocs />);
 
 const ComponentDocs = ({ params }) => {
   const routeData = routeComponentMap[params.componentName];

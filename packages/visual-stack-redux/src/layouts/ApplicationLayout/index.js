@@ -7,7 +7,6 @@ export class InternalApplicationLayout extends React.Component {
     return (
       <BaseApplicationLayout
         sideNav={this.props.sideNav}
-        topNav={this.props.topNav}
         sideNavState={!this.props.collapsed}
         >
           { this.props.children }

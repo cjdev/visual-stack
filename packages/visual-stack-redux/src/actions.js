@@ -30,18 +30,6 @@ export const toggleSideNav = createAction(TOGGLE_SIDENAV, collapsed => ({ collap
 const TOGGLE_SIDENAV_LINKGROUP = '@cjdev/visual-stack-redux/TOGGLE_SIDENAV_LINKGROUP';
 export const toggleSideNavLinkGroup= createAction(TOGGLE_SIDENAV_LINKGROUP, (expanded, linkGroupName) => ({ expanded, linkGroupName }));
 
-const TOGGLE_SECONDNAV = '@cjdev/visual-stack-redux/TOGGLE_SECONDNAV';
-export const toggleSecondNav = createAction(TOGGLE_SECONDNAV);
-
-const OPEN_TOPNAV_DROPDOWN = '@cjdev/visual-stack-redux/OPEN_TOPNAV_DROPDOWN';
-export const openTopNavDropdown = createAction(OPEN_TOPNAV_DROPDOWN, dropDownName => ({ dropDownName }));
-
-const CLOSE_TOPNAV_DROPDOWN = '@cjdev/visual-stack-redux/CLOSE_TOPNAV_DROPDOWN';
-export const closeTopNavDropdown = createAction(CLOSE_TOPNAV_DROPDOWN, dropDownName => ({ dropDownName }));
-
-const TOGGLE_TOPNAV_DROPDOWN = '@cjdev/visual-stack-redux/TOGGLE_TOPNAV_DROPDOWN';
-export const toggleTopNavDropDown = createAction(TOGGLE_TOPNAV_DROPDOWN, dropDownName => ({ dropDownName }));
-
 const TOGGLE_SLIDING_PANEL = '@cjdev/visual-stack-redux/TOGGLE_SLIDING_PANEL';
 export const toggleSlidingPanel = createAction(TOGGLE_SLIDING_PANEL);
 
@@ -82,18 +70,6 @@ export default handleActions({
       stateWithResetLinkGroups);
   },
 
-  [TOGGLE_SECONDNAV]: state =>
-    over(lensPath(['topNav', 'secondNavActive']), not, state),
-
-  [OPEN_TOPNAV_DROPDOWN]: (state, { payload: { dropDownName } }) =>
-    set(lensPath(['topNav', dropDownName, 'open']), true, state),
-
-  [CLOSE_TOPNAV_DROPDOWN]: (state, { payload: { dropDownName } }) =>
-    set(lensPath(['topNav', dropDownName, 'open']), false, state),
-
-  [TOGGLE_TOPNAV_DROPDOWN]: (state, { payload: { dropDownName } }) =>
-    over(lensPath(['topNav', dropDownName, 'open']), not, state),
-
   [TOGGLE_SLIDING_PANEL]: state =>
     over(lensPath(['slidingPanel', 'active']), not, state),
 
@@ -105,7 +81,6 @@ export default handleActions({
   modal: emptyModalState,
   navGroupDropdown: {},
   sideNav: {},
-  topNav: {},
   slidingPanel: {},
 });
 
