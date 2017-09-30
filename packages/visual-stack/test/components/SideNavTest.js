@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { equal } from 'assert';
-import { SideNav, ToggleIcon, Header, LinkGroup, Link } from '../../src/components/SideNav';
+import { SideNav, ToggleIcon, Header, LinkGroup, Link, UserIcon } from '../../src/components/SideNav';
 
 describe('SideNav', () => {
   it('should render', () => {
@@ -81,6 +81,13 @@ describe('SideNav', () => {
         <ToggleIcon />
       );
       equal(wrapper.find('.sidenav-toggle-icon').length, 1);
+    });
+  });
+
+  describe('UserIcon', () => {
+    it('should render first and last', () => {
+      const wrapper = shallow(<UserIcon firstInitial="A" lastInitial="B" />);
+      equal(wrapper.text(), 'AB');
     });
   });
 });

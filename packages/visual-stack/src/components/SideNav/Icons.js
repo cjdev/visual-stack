@@ -2,6 +2,8 @@
 import React from 'react';
 import R from 'ramda';
 
+export { LogoutIcon } from '../../components/Icons';
+
 export const makeDefaultIcon = label => (
   <SideNavIcon type="circle-thin custom" text={R.head(label)} />
 );

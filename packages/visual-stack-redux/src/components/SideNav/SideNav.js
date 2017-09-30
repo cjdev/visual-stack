@@ -1,8 +1,19 @@
 /** @prettier */
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { SideNav as BaseSideNav } from '@cjdev/visual-stack/lib/components/SideNav';
+import { LogoutLink, SideNav as BaseSideNav, UserIcon } from '@cjdev/visual-stack/lib/components/SideNav';
+import { LinkGroup } from './LinkGroup';
 import { toggleSideNav } from '../../actions';
+
+export const UserMenu = ({ onLogout, label, firstInitial, lastInitial }) => (
+  <LinkGroup
+    className="sidenav-user-menu"
+    label={label}
+    icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} />}
+  >
+    <LogoutLink onLogout={onLogout} />
+  </LinkGroup>
+);
 
 export class InternalSideNav extends Component {
   static propTypes = {
@@ -33,3 +44,4 @@ export const SideNav = connect(
     toggleSideNav,
   }
 )(InternalSideNav);
+

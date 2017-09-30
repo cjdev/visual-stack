@@ -249,3 +249,25 @@
 .sidenav-svg-icon svg {
   fill: currentColor;
 }
+
+.user-icon-circle {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+  margin-left: -6px;
+  background-color: #00AF66;
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+}
+
+
+.user-icon-first,
+.user-icon-last {
+  font-size: 13px;
+  font-weight: 300;
+}
+
