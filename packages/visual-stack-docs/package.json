@@ -9,7 +9,8 @@
     "eslint-plugin-react": "^7.4.0",
     "npm-watch": "^0.1.8",
     "prettier": "^1.7.0",
-    "react-scripts": "^0.9.5"
+    "react-scripts": "^0.9.5",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "@cjdev/visual-stack": "^2.1.3",
@@ -33,6 +34,7 @@
   },
   "scripts": {
     "samples": "copyfiles \"src/containers/{App,Components/Docs,Icons}/**/*.{js,css}\" build/samples",
+    "clean": "rimraf build",
     "build": "react-scripts build && npm run samples",
     "lint": "eslint src",
     "format": "prettier {src,server}/**/*.js --write",
