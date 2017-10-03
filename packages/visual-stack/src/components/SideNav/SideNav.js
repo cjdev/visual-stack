@@ -61,7 +61,7 @@ class SideNavP extends React.Component {
     const capAppName = appName ? appName.toUpperCase() : '';
     const mappedChildren = React.Children.map(children, child =>
       React.cloneElement(child, {
-        collpased: collapsed,
+        collapsed: collapsed,
         toggleSideNav: onClick,
       })
     );
