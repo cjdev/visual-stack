@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactSVG from 'react-svg';
 import classNames from 'classnames';
 import logoSvg from '../../src/images/ui-kit/new-cj-logo-icon.svg';
@@ -11,7 +12,7 @@ const CJLogo = ({ className }) =>
   />;
 
 CJLogo.propTypes = {
-  className: React.PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default CJLogo;

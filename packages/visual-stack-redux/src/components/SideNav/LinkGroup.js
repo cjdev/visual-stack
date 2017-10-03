@@ -1,5 +1,6 @@
 /** @prettier */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import R from 'ramda';
 import { connect } from 'react-redux';
 import { toggleSideNavLinkGroup, toggleSideNav } from '../../actions';

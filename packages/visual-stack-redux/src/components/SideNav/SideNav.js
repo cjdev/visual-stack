@@ -1,5 +1,6 @@
 /** @prettier */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { LogoutLink, SideNav as BaseSideNav, UserIcon } from '@cjdev/visual-stack/lib/components/SideNav';
 import { LinkGroup } from './LinkGroup';

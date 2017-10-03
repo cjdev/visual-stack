@@ -1,7 +1,7 @@
-import './MenuBar.css';
-
-import React, { PropTypes, createElement } from 'react';
+import React, { createElement } from 'react';
+import PropTypes from 'prop-types';
 import { always } from 'ramda';
+import './MenuBar.css';
 
 export const MenuBarItem = ({ children }) =>
   <li>

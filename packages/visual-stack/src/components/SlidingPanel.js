@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './SlidingPanel.css';
 
@@ -14,7 +15,7 @@ export const ToggleIcon = ({ onClick, hoverText, toggleIconState }) => {
   );
 };
 ToggleIcon.propTypes = {
-  onClick: React.PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export const SlidingPanelHeader = ({ children }) => {
@@ -62,5 +63,5 @@ export const SlidingPanelDropdown = ({ label, children, onClick, expanded }) => 
 };
 
 SlidingPanel.propTypes = {
-  active: React.PropTypes.bool,
+  active: PropTypes.bool,
 };

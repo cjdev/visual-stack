@@ -1,7 +1,7 @@
-import './Button.css';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { concat, reduce, unapply } from 'ramda';
-import React, { PropTypes } from 'react';
+import './Button.css';
 
 const concatAll = unapply(reduce(concat, []));
 

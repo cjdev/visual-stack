@@ -1,6 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Panel.css';
-
-import React, { PropTypes } from 'react';
 
 export const Panel = ({ children }) =>
   <div className="cj-panel panel panel-default">

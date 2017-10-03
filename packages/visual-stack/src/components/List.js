@@ -1,7 +1,8 @@
-import './List.css';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { map, omit } from 'ramda';
-import React, { PropTypes } from 'react';
+
+import './List.css';
 
 export const List = ({ children }) =>
   <div>{children}</div>;
@@ -21,9 +22,9 @@ export const ActionButton = ({ icon, className, onClick }) => {
   );
 };
 ActionButton.propTypes = {
-  icon: React.PropTypes.string.isRequired,
-  className: React.PropTypes.string,
-  onClick: React.PropTypes.func.isRequired,
+  icon: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
 ActionButton.defaultProps = {
   className: '',

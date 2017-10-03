@@ -1,5 +1,6 @@
 /** @prettier */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Header = ({ children }) => (
   <li className="sidenav-entry sidenav-header">{children}</li>

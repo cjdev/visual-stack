@@ -1,6 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
-
-import React, { PropTypes } from 'react';
 
 export const Input = ({ className, type, ...otherProps }) =>
   <input

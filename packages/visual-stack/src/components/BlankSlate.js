@@ -1,7 +1,7 @@
-import './BlankSlate.css';
-
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Button as BaseButton } from './Button';
+import './BlankSlate.css';
 
 export const Wrapper = ({ children, title, subTitle, subTitle2, bubbleImg }) => {
   const imgSrc = bubbleImg || require('../images/visual-stack/default-list-bs-img.png');

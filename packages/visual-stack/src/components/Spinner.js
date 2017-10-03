@@ -1,6 +1,6 @@
-import './spinner.css';
-
 import React from 'react';
+import PropTypes from 'prop-types';
+import './spinner.css';
 
 const Spinner = ({ size, ...propsToPassOn }) => {
   const className = `spinner spinner-${size || 'small'}`;
@@ -13,7 +13,7 @@ const Spinner = ({ size, ...propsToPassOn }) => {
 };
 
 Spinner.propTypes = {
-  size: React.PropTypes.oneOf(['small', 'large', 'extra-large', 'button']),
+  size: PropTypes.oneOf(['small', 'large', 'extra-large', 'button']),
 };
 
 export default Spinner;

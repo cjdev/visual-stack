@@ -1,6 +1,6 @@
 import React from 'react';
-import './Filters.css';
 import R from 'ramda';
+import './Filters.css';
 
 export const MultiSelectFilter = ({ values, onFilterChange, selectAllCheckbox, defaultChecked }) => {
   const domCheckboxes = [];
