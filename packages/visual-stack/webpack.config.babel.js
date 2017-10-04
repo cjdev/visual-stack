@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const min = process.env.NODE_ENV === 'production' ? '.min' : '';
@@ -8,19 +9,28 @@ const config = {
     'visual-stack': './src/index.js',
   },
   module: {
-    loaders: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-
-      // { test: /\.png$|\.svg$/, loaders: ['url-loader'] },
-      // { test: /\.eot$|\.ttf$|\.woff(2)?/, loaders: ['url-loader'] },
-
-     { test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/, loader: 'url?limit=10000' },
-     { test: /\.((ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9]))|(ttf|eot)$/, loader: 'file' }
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+      },
+      {
+        test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/,
+        use: [{ loader: 'url-loader', options: { limit: 10000 } }],
+      },
+      {
+        test: /\.((ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9]))|(ttf|eot)$/,
+        loader: 'file-loader',
+      },
     ],
   },
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: `[name]${min}.js`,
     library: 'VisualStack',
     libraryTarget: 'umd',
@@ -33,8 +43,7 @@ const config = {
   stats: { children: false },
 
   plugins: [
-    new ExtractTextPlugin(`[name]${min}.css`),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new ExtractTextPlugin({ filename: `[name]${min}.css` }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
@@ -44,13 +53,9 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
-      },
       output: {
         comments: false,
       },
-      sourceMap: false,
     })
   );
 }
