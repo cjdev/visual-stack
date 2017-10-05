@@ -4,10 +4,15 @@ var env = process.env.NODE_ENV;
 
 var config = {
   module: {
-    loaders: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'ignore-loader' }
-
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      { test: /\.css$/,
+        use: 'ignore-loader',
+      }
     ]
   },
   output: {
@@ -22,23 +27,18 @@ var config = {
       '@cjdev/visual-stack': 'VisualStack'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
     })
   ]
 };
 
-if (env === 'production') {
+if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      },
       output: {
-        comments: false
+        comments: false,
       },
-      sourceMap: false,
     })
   );
 }
