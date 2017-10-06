@@ -1,6 +1,6 @@
 /** @prettier */
 .sidenav {
-  background-color: #333;
+  background-color: #151c23;
   list-style: none;
   width: 55px;
   height: 100%;
@@ -54,7 +54,7 @@
 .sidenav-user-menu, .toggle-icon {
   position: fixed;
   width: inherit;
-  background-color: #333;
+  background-color: #151c23;
 }
 
 .sidenav-user-menu {
@@ -117,18 +117,19 @@
   text-decoration: none;
   display: block;
   height: 45px;
-  color: #ddd;
+  color: #cfd5dc;
 }
 
 .sidenav .link-group-children {
-  background-color: rgb(45,45,45);
+  background-color: #090c11;
 }
 
 .sidenav a:focus,
 .sidenav a:hover {
-  background-color: #555;
+  background-color: #4e545c;
   color: #FFFFFF;
   cursor: pointer;
+  transition-duration: .1s;
 }
 
 .sidenav-container-label {
@@ -139,7 +140,7 @@
 }
 
 .sidenav .expanded > a.sidenav-container-row {
-  background-color: #444;
+  background-color: #30343a;
   color: #FFFFFF;
 }
 
@@ -270,4 +271,3 @@
   font-size: 13px;
   font-weight: 300;
 }
-
