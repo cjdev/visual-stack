@@ -14,6 +14,7 @@ import {
   CountedIcon,
   LogoutIcon,
   PercentIcon,
+  CompareIcon,
   ProductIcon,
 } from '@cjdev/visual-stack/lib/components/Icons';
 
@@ -54,6 +55,10 @@ const percentIcon =
   /* s5:start */
   <PercentIcon />
   /* s5:end */;
+const compareIcon =
+  /* s9:start */
+  <CompareIcon />
+  /* s9:end */;
 const countedIcon =
   /* s6:start */
   <CountedIcon />
@@ -84,6 +89,7 @@ const Icons = () => (
                     { makeDisplay(countedIcon, 's6') }
                     { makeDisplay(logoutIcon, 's2') }
                     { makeDisplay(percentIcon, 's5') }
+                    { makeDisplay(compareIcon, 's9') }
                     { makeDisplay(productIcon, 's4') }
                   </div>
                 </Body>
