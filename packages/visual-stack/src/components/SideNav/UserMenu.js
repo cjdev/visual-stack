@@ -3,8 +3,8 @@ import React from 'react';
 import { Link, LinkContentWrapper } from './Link';
 import { LogoutIcon } from './Icons';
 
-export const UserIcon = ({ firstInitial, lastInitial }) => (
-  <div className="user-icon-circle">
+export const UserIcon = ({ firstInitial, lastInitial, color }) => (
+  <div className="user-icon-circle" style={{ backgroundColor: color }}>
     <span className="user-icon-first">{firstInitial}</span>
     <span className="user-icon-last">{lastInitial}</span>
   </div>

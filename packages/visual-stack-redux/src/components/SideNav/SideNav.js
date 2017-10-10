@@ -6,11 +6,11 @@ import { LogoutLink, SideNav as BaseSideNav, UserIcon } from '@cjdev/visual-stac
 import { LinkGroup } from './LinkGroup';
 import { toggleSideNav } from '../../actions';
 
-export const UserMenu = ({ onLogout, label, firstInitial, lastInitial }) => (
+export const UserMenu = ({ onLogout, label, firstInitial, lastInitial, color }) => (
   <LinkGroup
     className="sidenav-user-menu"
     label={label}
-    icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} />}
+    icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} color={color} />}
   >
     <LogoutLink onLogout={onLogout} />
   </LinkGroup>
@@ -24,11 +24,16 @@ export class InternalSideNav extends Component {
     super(props);
   }
   render() {
+    const userMenuWithColor =
+      React.cloneElement(this.props.userMenu, {
+        color: this.props.logoBackground,
+      });
     return (
       <BaseSideNav
         collapsed={this.props.collapsed}
         onClick={this.props.toggleSideNav}
         logo={this.props.logo}
+        userMenu={userMenuWithColor}
         {...this.props}
       >
         {this.props.children}

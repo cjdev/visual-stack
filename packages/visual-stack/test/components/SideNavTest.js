@@ -8,6 +8,7 @@ describe('SideNav', () => {
     const wrapper = mount(
       <SideNav
         onClick={() => {}}
+        userMenu={<div/>}
       />
     );
     equal(wrapper.find('.sidenav').length, 1);
@@ -17,6 +18,7 @@ describe('SideNav', () => {
     const wrapper = mount(
       <SideNav
         onClick={() => {}}
+        userMenu={<div/>}
         collapsed={false}
         />
     );
@@ -27,6 +29,7 @@ describe('SideNav', () => {
     const wrapper = mount(
       <SideNav
         onClick={() => {}}
+        userMenu={<div/>}
         collapsed={true}
         />
     );

@@ -60,12 +60,10 @@ class SideNavP extends React.Component {
     const logoBg = logoBackground ? logoBackground : 'transparent';
     const toggle = () => onClick(!collapsed);
     const capAppName = appName ? appName.toUpperCase() : '';
-    const mappedChildren = React.Children.map(children, child =>
-      React.cloneElement(child, {
-        collapsed: collapsed,
-        toggleSideNav: onClick,
-      })
-    );
+    const userMenuWithColor =
+      React.cloneElement(userMenu, {
+        color: logoBg,
+      });
     return (
       <ul className={'sidenav' + (collapsed ? ' collapsed' : ' active')}>
         <li className="sideNav-left-logo" style={{ backgroundColor: logoBg }}>
@@ -74,8 +72,8 @@ class SideNavP extends React.Component {
             <span className="app-name">{capAppName}</span>
           </div>
         </li>
-        {mappedChildren}
-        {userMenu}
+        {children}
+        {userMenuWithColor}
         <li className="toggle-icon">
           <ToggleIcon onClick={toggle} sideNavState={collapsed} />
         </li>
