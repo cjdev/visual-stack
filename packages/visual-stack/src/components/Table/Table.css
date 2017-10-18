@@ -1,0 +1,49 @@
+.table-style {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+.table-style > tbody > tr:hover {
+    background-color: #f6f6f6;
+ }
+
+.cell {
+    border: 1px;
+    border-top: 1px solid #eee;
+    vertical-align: top;
+    padding: 4px 5px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.panel {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.panelTitle {
+    line-height: 1em;
+    font-variant: all-small-caps;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #333;
+    padding-bottom: 3px;
+    border-bottom: 0px solid #f0f0f0;
+    margin-bottom: 3px;
+}
+
+@media (max-width: 800px) {
+    .cell th.table-header {
+        width: 20px !important;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
