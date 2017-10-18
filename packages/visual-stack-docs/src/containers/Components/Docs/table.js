@@ -1,7 +1,9 @@
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
+/* s1:start */
 import { Table, TableContainer, Th, Tr, Td, TdRight, TableTitle, TrHead } from '@cjdev/visual-stack/lib/components/Table';
+/* s1:end */
 
 export default () =>
     <Demo srcFile="/samples/src/containers/Components/Docs/table.js">
@@ -46,6 +48,7 @@ export default () =>
               </Table>
             </TableContainer>
             { /* s2:end */ }
+            <Snippet tag="s1" src={snippets} />
             <Snippet tag="s2" src={snippets} />
             </Body>
           </Panel>

@@ -11,6 +11,7 @@ export default () => (
         <Panel>
           <Header>SideNav</Header>
           <Body>
+            <Snippet tag="s3" src={snippets} />
             <Snippet tag="s1" src={snippets} />
             <Snippet tag="s2" src={snippets} />
           </Body>

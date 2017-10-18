@@ -8,6 +8,7 @@ import LayoutIcon from 'mdi-react/TelevisionGuideIcon';
 import ComponentIcon from 'mdi-react/HexagonMultipleIcon';
 import IconsIcon from 'mdi-react/ShapePlusIcon';
 
+/* s3:start */
 import {
   Link,
   LinkContentWrapper,
@@ -16,6 +17,7 @@ import {
   UserMenu,
 } from '@cjdev/visual-stack-redux/lib/components/SideNav';
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
+/* s3:end */
 import { routeComponentMap } from '../Components/Docs/';
 
 const componentLinks = R.pipe(
