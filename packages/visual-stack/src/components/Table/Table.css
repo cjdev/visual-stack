@@ -14,7 +14,6 @@
     vertical-align: top;
     padding: 4px 5px;
     margin: 0;
-    white-space: nowrap;
 }
 
 .right-align {
@@ -38,12 +37,14 @@
     margin-bottom: 3px;
 }
 
-@media (max-width: 800px) {
-    .cell th.table-header {
-        width: 20px !important;
-        font-weight: 600;
+@media (max-width: 600px) {
+    .cell {
+        max-width: 60px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .cell:first-child {
+      max-width: 100px;
     }
 }
