@@ -141,7 +141,6 @@ a.filter-container-label {
     max-height: 0;
     z-index: 200;
     transition: max-height 0.2s;
-    overflow: hidden;
     border-bottom: solid 1px #ddd;
 }
 
