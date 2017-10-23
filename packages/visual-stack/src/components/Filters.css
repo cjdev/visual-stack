@@ -19,7 +19,7 @@
 
 .checkboxes > label {
     display: flex;
-    align-items: self-start;
+    align-items: flex-start;
 }
 
 .filter-options.expanded .selection {
