@@ -24,10 +24,11 @@ export class InternalSideNav extends Component {
     super(props);
   }
   render() {
-    const userMenuWithColor =
-      React.cloneElement(this.props.userMenu, {
+    const userMenuWithColor = (this.props.userMenu)
+      ?  React.cloneElement(this.props.userMenu, {
         color: this.props.logoBackground,
-      });
+      })
+      : null;
     return (
       <BaseSideNav
         collapsed={this.props.collapsed}
