@@ -26,7 +26,7 @@ describe('SideNav', () => {
 
   it('should propagate children to VisualStack SideNav', () => {
     const wrapper = shallow(
-      <InternalSideNav userMenu={<div/>}>
+      <InternalSideNav>
           <Header label="whatever" />
       </InternalSideNav>
     );
@@ -37,7 +37,7 @@ describe('SideNav', () => {
   it('should propagate the logo to the SideNav', () => {
     const logo = <span>LOGO</span>;
     const wrapper = mount(
-      <InternalSideNav logo={logo} userMenu={<div/>} toggleSideNav={() => {}} />
+      <InternalSideNav logo={logo} toggleSideNav={() => {}} />
     );
     expect(wrapper.contains(logo)).to.equal(true);
   });
