@@ -135,7 +135,7 @@ class VSRSlidingPanelDemo extends React.Component {
                   <Body>
                     <div>The Redux Sliding Panel must be passed in as a prop to the Application Layout component, similar to the SideNav component.</div>
                     <div>The Toggle Icon can then be placed where ever in the application you want it to be.</div>
-                    <div>So the recommended usage is to build you Sliding Panel component, then pass it into your Application Layout, so it can slide and not cover your page layout like the non Redux Sliding Panel will.</div>
+                    <div>So the recommended usage is to build your Sliding Panel component, then pass it into your Application Layout, so it can slide and not cover your page layout like the non Redux Sliding Panel will.</div>
                     <VSRToggleIcon hoverText={'hey look at me!'} />
                   <Snippet tag="s0" src={snippets} />
                   <Snippet tag="s1" src={snippets} />

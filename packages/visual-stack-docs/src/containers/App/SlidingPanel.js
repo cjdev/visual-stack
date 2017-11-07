@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 /** @prettier */
 import React from 'react';
 
