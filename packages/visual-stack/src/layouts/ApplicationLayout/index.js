@@ -4,7 +4,7 @@ import './style.css';
 
 const ApplicationLayout = ({ sideNav, sideNavState, slidingPanel, slidingPanelState, children }) => {
   const sideNavStyles = (sideNavState || R.isNil(sideNavState)) ? 'application-layout-side' : 'application-layout-side-collapsed';
-  const filterStyles = (slidingPanelState) ? 'application-layout-filter' : 'application-layout-filter-collapsed';
+  const filterStyles = (slidingPanelState && slidingPanel) ? 'application-layout-filter' : 'application-layout-filter-collapsed';
   return (
       <div className="application-layout">
         <div className="application-layout-container">
