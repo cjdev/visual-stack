@@ -8,6 +8,8 @@ export class InternalApplicationLayout extends React.Component {
       <BaseApplicationLayout
         sideNav={this.props.sideNav}
         sideNavState={!this.props.collapsed}
+        slidingPanel={this.props.slidingPanel}
+        slidingPanelState={this.props.slidingPanelState}
         >
           { this.props.children }
       </BaseApplicationLayout>
@@ -15,7 +17,12 @@ export class InternalApplicationLayout extends React.Component {
   }
 }
 
-export const ApplicationLayout = connect(state => ({ collapsed: state.visualStack.sideNav.collapsed }))(InternalApplicationLayout);
+const mapStateToProps = (state) => ({
+  collapsed: state.visualStack.sideNav.collapsed,
+  slidingPanelState: state.visualStack.slidingPanel.active
+});
+
+export const ApplicationLayout = connect(mapStateToProps, state => ({}))(InternalApplicationLayout);
 
 export default ApplicationLayout;
 

@@ -7,7 +7,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { SlidingPanel, SlidingPanelSection, SlidingPanelHeader, ToggleIcon, SlidingPanelDropdown } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 /* s7:end */
 /* s5:start */
-import { SlidingPanel as VSRSlidingPanel, ToggleIcon as VSRToggleIcon, SlidingPanelDropdown as VSRSlidingPanelDropdown } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
+import { ToggleIcon as VSRToggleIcon } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
 /* s5:end */
 import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/Filters';
 
@@ -123,7 +123,7 @@ class VSRSlidingPanelDemo extends React.Component {
   }
   render() {
     return (
-      <Demo srcFile="/samples/src/containers/Components/Docs/slidingpanel.js">
+      <Demo srcFile="/samples/src/containers/App/SlidingPanel.js">
         {
           snippets => {
             return (
@@ -133,52 +133,12 @@ class VSRSlidingPanelDemo extends React.Component {
                     SlidingPanel (redux)
                   </Header>
                   <Body>
-                    { /* s6:start */ }
-                    <VSRToggleIcon
-                      hoverText={'hey look at me!'}
-                    />
-                    <VSRSlidingPanel
-                        initialActive={false}
-                    >
-                      <SlidingPanelHeader>
-                        reduxified sliding panel header
-                      </SlidingPanelHeader>
-                      <VSRSlidingPanelDropdown
-                        id="id1"
-                        label="My Redux CIDs"
-                        initialActive={true}
-                        >
-                        <MultiSelectFilter
-                          values={this.state.companies}
-                          onFilterChange={val => console.log(val)}
-                          selectAllCheckbox={true}
-                        />
-                      </VSRSlidingPanelDropdown>
-                      <VSRSlidingPanelDropdown
-                        id="id2"
-                        label="My CIDs w/o Select All checkbox"
-                        >
-                        <MultiSelectFilter
-                          values={this.state.companies}
-                          onFilterChange={val => console.log(val)}
-                        />
-                      </VSRSlidingPanelDropdown>
-                      <VSRSlidingPanelDropdown
-                        id="id2"
-                        label="Error Example"
-                        >
-                        <MultiSelectFilter
-                          values={[]}
-                          onFilterChange={val => console.log(val)}
-                          selectAllCheckbox={false}
-                        />
-                      </VSRSlidingPanelDropdown>
-                    </VSRSlidingPanel>
-                    { /* s6:end */ }
-                    <div>Import Sliding Panel component from visual-stack-redux</div>
-                    <Snippet tag="s5" src={snippets} />
-                    <div>Implementation (similar to presentational components)</div>
-                    <Snippet tag="s6" src={snippets} />
+                    <div>The Redux Sliding Panel must be passed in as a prop to the Application Layout component, similar to the SideNav component.</div>
+                    <div>The Toggle Icon can then be placed where ever in the application you want it to be.</div>
+                    <div>So the recommended usage is to build you Sliding Panel component, then pass it into your Application Layout, so it can slide and not cover your page layout like the non Redux Sliding Panel will.</div>
+                    <VSRToggleIcon hoverText={'hey look at me!'} />
+                  <Snippet tag="s0" src={snippets} />
+                  <Snippet tag="s1" src={snippets} />
                   </Body>
                 </Panel>
               </div>

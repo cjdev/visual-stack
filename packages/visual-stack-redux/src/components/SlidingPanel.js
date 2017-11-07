@@ -18,25 +18,14 @@ export class InternalSlidingPanel extends Component {
   };
   constructor(props) {
     super(props);
-    this.handleClick = e => {
-      const clickInPanel = this.panelRef.contains(e.target);
-      if (!clickInPanel && this.props.active) {
-        this.props.toggleSlidingPanel();
-      }
-    };
     if (this.props.initialActive)  {
       this.props.toggleSlidingPanel();
     }
   }
-  componentDidMount() {
-    document.addEventListener('click', this.handleClick, false);
-  }
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleClick, false);
-  }
+
   render() {
     return (
-      <div ref={panel => { this.panelRef = panel; }}>
+      <div >
         <BaseSlidingPanel
           active={this.props.active || false} >
           { this.props.children }

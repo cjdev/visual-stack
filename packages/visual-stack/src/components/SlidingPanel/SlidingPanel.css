@@ -11,7 +11,7 @@
   z-index: 89;
   padding: 0;
   transform: translateX(0);
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .sliding-panel.active {
@@ -38,13 +38,13 @@
 
 .filter-container.expanded {
   background-color: #fff;
-	transition: 0.3s all ease-in-out;
+	transition: 0.5s all ease-in-out;
 }
 
 .filter-container ul {
   max-height: 0;
   overflow: hidden;
-  transition: .3s max-height ease-out;
+  transition: .5s max-height ease-out;
   border-bottom: 1px solid #e6e6e6;
 }
 

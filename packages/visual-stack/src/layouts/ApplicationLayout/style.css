@@ -31,6 +31,19 @@ body {
   transition: all .5s ease-out;
 }
 
+.application-layout-filter {
+  flex: 0 0 auto;
+  overflow: auto;
+  margin-left: 50px;
+  transition: all .5s ease-out;
+}
+
+.application-layout-filter-collapsed {
+  flex: 0 0 auto;
+  margin-left: 0px;
+  transition: all .5s ease-out;
+}
+
 @media (min-width: 40em) {
   .application-layout-side {
     flex: 0 0 255px;
@@ -42,6 +55,18 @@ body {
     flex: 0 0 55px;
     margin-left: 0px;
     transition: all .5s ease-out;
+  }
+
+  .application-layout-filter {
+    flex: 0 0 255px;
+    margin-left: 0px;
+    transition: all .4s ease-out;
+  }
+
+  .application-layout-filter-collapsed {
+    flex: 0 0 5px;
+    margin-left: 0px;
+    transition: all .4s ease-out;
   }
 }
 
