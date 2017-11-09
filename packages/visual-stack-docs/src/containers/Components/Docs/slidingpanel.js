@@ -6,9 +6,11 @@ import { Demo, Snippet } from '../../../components/Demo';
 /* s7:start */
 import { SlidingPanel, SlidingPanelSection, SlidingPanelHeader, ToggleIcon, SlidingPanelDropdown } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 /* s7:end */
+
 /* s5:start */
-import { ToggleIcon as VSRToggleIcon } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
+import { SlidingPanel as VSPanel, SlidingPanelHeader as VSHeader, SlidingPanelDropdown as VSDropdown, ToggleIcon as VSRToggleIcon } from '@cjdev/visual-stack-redux/lib/components/SlidingPanel';
 /* s5:end */
+
 import { MultiSelectFilter } from '@cjdev/visual-stack/lib/components/Filters';
 
 class SlidingPanelDemo extends React.Component {
@@ -123,7 +125,7 @@ class VSRSlidingPanelDemo extends React.Component {
   }
   render() {
     return (
-      <Demo srcFile="/samples/src/containers/App/SlidingPanel.js">
+      <Demo srcFile="/samples/src/containers/Components/Docs/slidingpanel.js">
         {
           snippets => {
             return (
@@ -133,12 +135,30 @@ class VSRSlidingPanelDemo extends React.Component {
                     SlidingPanel (redux)
                   </Header>
                   <Body>
-                    <div>The Redux Sliding Panel must be passed in as a prop to the Application Layout component, similar to the SideNav component.</div>
-                    <div>The Toggle Icon can then be placed where ever in the application you want it to be.</div>
-                    <div>So the recommended usage is to build your Sliding Panel component, then pass it into your Application Layout, so it can slide and not cover your page layout like the non Redux Sliding Panel will.</div>
+                    <div>When using the Redux Sliding Panel, the Redux Application Layout will be subscribe to its expanded redux state.</div>
+                    <div>Meaning, you can create and render your Sliding Panel anywhere. The caveat with this is that, if your Toggle Panel is clicked, and there is no Sliding Panel to display, the Application Layout will still change the size of the Page Conent, and everything will Look Ugly.</div>
+                    { /* s9:start */ }
                     <VSRToggleIcon hoverText={'hey look at me!'} />
-                  <Snippet tag="s0" src={snippets} />
-                  <Snippet tag="s1" src={snippets} />
+                    { /* s9:end*/ }
+                    <Snippet tag="s5" src={snippets} />
+                    <Snippet tag="s9" src={snippets} />
+                    <Snippet tag="s8" src={snippets} />
+                    { /* s8:start */ }
+                    <VSPanel
+                      initialActive={false}
+                      >
+                      <VSHeader>
+                        reduxified sliding panel header
+                      </VSHeader>
+                      <VSDropdown
+                        id="id1"
+                        label="My Redux CIDs"
+                        initialActive={true}
+                        >
+                        <div>something</div>
+                      </VSDropdown>
+                    </VSPanel>
+                    { /* s8:end*/ }
                   </Body>
                 </Panel>
               </div>
