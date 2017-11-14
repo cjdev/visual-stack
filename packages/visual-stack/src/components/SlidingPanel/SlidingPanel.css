@@ -3,12 +3,13 @@
   border-top: 1px solid #eee;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0);
   color: #333;
-  width: 240px;
+  width: 300px;
   height: 100%;
   position: fixed;
-  right: -240px;
+  right: -300px;
   top: 45px;
   z-index: 89;
+  overflow: scroll;
   padding: 0;
   transform: translateX(0);
   transition: all 0.5s;

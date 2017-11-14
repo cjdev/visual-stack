@@ -1,4 +1,3 @@
-
 .filter-options {
   border-bottom: solid 1px #e6e6e6;
   max-height: 0;
@@ -24,6 +23,8 @@
 
 .filter-options input {
   margin-right: 16px;
+  flex: none; /* this is a fix for checkboxes sizing oddly when label text wraps
+                 https://github.com/philipwalton/flexbugs/issues/68#issuecomment-121789212 */
 }
 
 .filter-options .select-all {

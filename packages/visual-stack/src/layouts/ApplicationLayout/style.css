@@ -58,7 +58,7 @@ body {
   }
 
   .application-layout-filter {
-    flex: 0 0 255px;
+    flex: 0 0 310px;
     margin-left: 0px;
     transition: all .4s ease-out;
   }
