@@ -4,7 +4,7 @@
   box-shadow: 0 0 60px rgba(0, 0, 0, 0);
   color: #333;
   width: 300px;
-  height: 100%;
+  height: calc(100vh - 45px);
   position: fixed;
   right: -300px;
   top: 45px;
@@ -96,32 +96,9 @@ a.filter-container-label {
   align-items: center;
 }
 
-.sliding-panel-toggle-icon.active .toggle-icon-circle {
-  color: #34C6DC;
-}
-
-.sliding-panel-toggle-icon.active .toggle-icon-fg {
-  color: #FFFFFF;
-}
-
-.sliding-panel-toggle-icon .toggle-icon-circle {
-  color: #FFFFFF;
-}
-
-.sliding-panel-toggle-icon:hover .toggle-icon-circle {
-  color: #34C6DC;
-}
-
-.sliding-panel-toggle-icon .toggle-icon-fg {
-  color: #8C9BA9;
-}
-
-.sliding-panel-toggle-icon:hover .toggle-icon-fg {
-  color: #FFFFFF;
-}
-
 .sliding-panel-toggle-icon:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .filter-container .filter-container-label i {
@@ -135,4 +112,33 @@ a.filter-container-label {
 .filter-container.expanded .filter-container-label i {
   opacity: 1;
   transform: rotate(90deg);
+}
+
+.filter-icn-btn {
+  min-width: 50px;
+  width: auto;
+  border-collapse: separate;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 20px;
+  overflow: hidden;
+  padding: 6px 12px 6px 7px;
+  border: 1px solid #CCC;
+  color: #262626;
+  display: inline-flex;
+  align-items: center;
+}
+
+.filter-icn-btn:hover {
+  background-color: #f5f5f5;
+	transition: 0.2s all ease-in-out;
+}
+
+.filterIcon {
+  height: 14px;
+  fill: #748aa1;
+}
+
+.active .filterIcon {
+  fill: #3ABDA7;
 }
