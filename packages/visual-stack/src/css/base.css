@@ -36,11 +36,6 @@ body, p, td, th, h1, h2, h3, h4, h5 {
   color: #585858;
 }
 
-h1, ul, li {
-  margin:0;
-  padding:0;
-}
-
 th, b, strong {
   font-weight: 600;
 }

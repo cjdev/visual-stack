@@ -17,6 +17,12 @@
   margin-bottom: 0;
 }
 
+.navbar ul,
+.navbar li {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-brand {
   height: 20px;
 }
