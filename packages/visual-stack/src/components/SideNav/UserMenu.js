@@ -1,7 +1,7 @@
 /** @prettier */
 import React from 'react';
 import { Link, LinkContentWrapper } from './Link';
-import { LogoutIcon } from './Icons';
+import { LogoutIcon, SettingsIcon } from './Icons';
 
 export const UserIcon = ({ firstInitial, lastInitial, color }) => (
   <div className="user-icon-circle" style={{ backgroundColor: color }}>
@@ -20,3 +20,12 @@ export const LogoutLink = ({ onLogout }) => {
   );
 };
 
+export const SettingsLink = ({ onSettingsClick }) => {
+  return (
+    <Link>
+      <a onClick={onSettingsClick}>
+        <LinkContentWrapper icon={<SettingsIcon />} label="Settings" />
+      </a>
+    </Link>
+  );
+};

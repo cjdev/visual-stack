@@ -4,10 +4,12 @@ import SvgIcon from 'material-ui/SvgIcon';
 
 import Account from 'mdi-react/AccountCircleIcon';
 import Logout from 'mdi-react/LogoutIcon';
+import Settings from 'mdi-react/SettingsIcon';
 import Product from 'mdi-react/PackageVariantClosedIcon';
 
 export const AccountIcon = Account;
 export const LogoutIcon = Logout;
+export const SettingsIcon = Settings;
 export const ProductIcon = Product;
 
 const Icon = ({ children }) =>

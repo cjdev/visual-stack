@@ -4,6 +4,7 @@ export {
   Link,
   LinkContentWrapper,
   LogoutLink,
+  SettingsLink,
   SideNavIcon,
 } from '@cjdev/visual-stack/lib/components/SideNav';
 export { LinkGroup } from './LinkGroup';

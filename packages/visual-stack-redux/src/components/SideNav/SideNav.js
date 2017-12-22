@@ -6,13 +6,14 @@ import { LogoutLink, SideNav as BaseSideNav, UserIcon } from '@cjdev/visual-stac
 import { LinkGroup } from './LinkGroup';
 import { toggleSideNav } from '../../actions';
 
-export const UserMenu = ({ onLogout, label, firstInitial, lastInitial, color }) => (
+export const UserMenu = ({ onLogout, label, firstInitial, lastInitial, color, children }) => (
   <LinkGroup
     className="sidenav-user-menu"
     label={label}
     icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} color={color} />}
   >
     <LogoutLink onLogout={onLogout} />
+    {children}
   </LinkGroup>
 );
 
@@ -51,4 +52,3 @@ export const SideNav = connect(
     toggleSideNav,
   }
 )(InternalSideNav);
-
