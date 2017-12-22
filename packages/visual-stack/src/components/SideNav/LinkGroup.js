@@ -43,9 +43,6 @@ export class LinkGroup extends React.Component {
       makeDefaultIcon(this.props.label)
     );
 
-    const mappedChildren = React.Children.map(this.props.children, child =>
-      React.cloneElement(child, { inLinkGroup: true })
-    );
     return (
       <li className={classes}>
         <a
@@ -59,7 +56,7 @@ export class LinkGroup extends React.Component {
           </div>
           <i className="fa fa-chevron-right sidenav-container-chevron" />
         </a>
-        <ul className="link-group-children">{mappedChildren}</ul>
+        <ul className="link-group-children">{this.props.children}</ul>
       </li>
     );
   }
