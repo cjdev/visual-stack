@@ -37,7 +37,7 @@ export default class AppSideNav extends React.Component {
         firstInitial="V"
         lastInitial="S">
             <SettingsLink
-                onSettingsClick={() => {alert('handleSettings!');}}
+                onSettingsClick={() => {alert('handleSettings');}}
             />;
       </UserMenu>;
   /* s1:end */
