@@ -2,7 +2,8 @@ import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 /* s1:start */
-import { Table, TableContainer, Th, Tr, Td, TdRight, TableTitle, TrHead } from '@cjdev/visual-stack/lib/components/Table';
+import { Table, TableContainer, Th, Tr, Td, TableTitle, TrHead } from '@cjdev/visual-stack/lib/components/Table';
+import './table.css';
 /* s1:end */
 
 export default () =>
@@ -16,33 +17,34 @@ export default () =>
             </Header>
             <Body>
             { /* s2:start */ }
-            <TableContainer>
-              <TableTitle>Title of your Table</TableTitle>
-              <Table>
+            <TableContainer className="custom-table-container">
+              <div>Custom container with a extra top padding</div>
+              <TableTitle className="custom-table-title">Title Table</TableTitle>
+              <Table className="custom-table">
                 <TrHead>
                     <Th>Header Section 1</Th>
                     <Th>Header Section 2</Th>
                     <Th>Header Section 3</Th>
                     <Th>Header Section 4</Th>
                     <Th>Header Section 5</Th>
-                    <Th>Header Section 6</Th>
+                    <Th className="custom-th">Header with className</Th>
                 </TrHead>
                 <tbody>
                   <Tr>
-                    <TdRight>1</TdRight>
+                    <Td>1</Td>
                     <Td>2</Td>
                     <Td>3</Td>
                     <Td>4</Td>
                     <Td>5</Td>
-                    <Td>6</Td>
+                    <Td className="custom-td">Cell with className</Td>
                   </Tr>
-                  <Tr>
+                  <Tr className="custom-tr">
                     <Td>no</Td>
                     <Td>yes</Td>
                     <Td>no</Td>
                     <Td>yes</Td>
-                    <Td>no</Td>
-                    <Td>yes</Td>
+                    <Td>with className on Row</Td>
+                    <Td right className="custom-td">Right aligned with className</Td>
                   </Tr>
                 </tbody>
               </Table>

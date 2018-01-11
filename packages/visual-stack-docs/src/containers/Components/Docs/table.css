@@ -1,0 +1,27 @@
+.custom-table {
+}
+
+.custom-th {
+  background-color: #369;
+  color: #eee;
+}
+
+.custom-tr td:nth-child(5) {
+  color: red;
+  background-color: rgba(255,0,0,.2)
+}
+
+.custom-td {
+  background-color: #eee;
+  color: #369;
+}
+
+.custom-table-container {
+  padding-top: 40px;
+
+}
+
+.custom-table-title {
+  color: #369;
+}
+

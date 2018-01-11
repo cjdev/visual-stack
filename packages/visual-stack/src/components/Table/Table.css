@@ -1,32 +1,31 @@
-.table-style {
+.vs-table {
     border-collapse: collapse;
     text-align: left;
     width: 100%;
 }
 
-.table-style > tbody > tr:hover {
+.vs-table > tbody > tr:hover {
     background-color: #f6f6f6;
  }
 
-.cell {
-    border: 1px;
+.vs-cell {
     border-top: 1px solid #eee;
     vertical-align: top;
     padding: 4px 5px;
     margin: 0;
 }
 
-.right-align {
+.vs-cell-right {
     text-align: right;
 }
 
-.panel {
+.vs-table-container {
     border: 1px solid #ddd;
     padding: 5px 10px;
     margin-bottom: 10px;
 }
 
-.panelTitle {
+.vs-table-title {
     line-height: 1em;
     font-variant: all-small-caps;
     font-weight: 600;
@@ -38,13 +37,13 @@
 }
 
 @media (max-width: 600px) {
-    .cell {
+    .vs-cell {
         max-width: 60px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .cell:first-child {
+    .vs-cell:first-child {
       max-width: 100px;
     }
 }

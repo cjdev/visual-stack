@@ -1,18 +1,29 @@
 import React from 'react';
+import cn from 'classnames';
 import './Table.css';
 
-export const Table = ({ children }) => <table className="table-style">{children}</table>;
+export const Table = ({ className, children }) =>
+  <table className={cn('vs-table', className)}>{children}</table>;
 
-export const Th = ({ children }) => <th className="cell table-header">{children}</th>;
+export const Th = ({ className, children }) =>
+  <th className={cn('vs-cell', 'vs-table-header', className)}>{children}</th>;
 
-export const Tr = ({ children }) => <tr className="cell">{children}</tr>;
+export const Tr = ({ className, children }) =>
+  <tr className={cn(className)}>{children}</tr>;
 
 export const TrHead = ({ children }) => <thead><Tr>{children}</Tr></thead>;
 
-export const Td = ({ children }) => <td className="cell">{children}</td>;
+export const Td = ({ right, className, children }) =>
+  <td className={
+    cn('vs-cell', className, { 'vs-cell-right': right })
+  }>{children}</td>;
 
-export const TdRight = ({ children }) => <td className="cell right-align">{children}</td>;
+export const TdRight = ({ className, children }) =>
+  <Td className={cn('vs-cell-right', className)}>{children}</Td>;
 
-export const TableContainer = ({ children }) => <div className="panel">{children}</div>;
+export const TableContainer = ({ className, children }) =>
+  <div className={cn('vs-table-container', className)}>{children}</div>;
 
-export const TableTitle = ({ children }) => <div className="panelTitle">{children}</div>;
+export const TableTitle = ({ className, children }) =>
+  <div className={cn('vs-table-title', className)}>{children}</div>;
+
