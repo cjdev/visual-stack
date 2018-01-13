@@ -1,1 +1,12 @@
-export { Table, Th, Tr, Td, TableContainer, TableTitle, TdRight, TrHead } from './Table.js';
+export {
+  TableContainer,
+  TableTitle,
+  Table,
+  THead,
+  TBody,
+  TFoot,
+  Th,
+  Tr,
+  Td,
+} from './Table.js';
+

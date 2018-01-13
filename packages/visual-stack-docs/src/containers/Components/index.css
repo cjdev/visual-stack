@@ -1,0 +1,15 @@
+.docs {
+  padding: .5em;
+}
+
+.docs ul {
+  padding-left: 20px;
+}
+
+.docs li:first-child {
+  /* background-color: red; */
+  padding-top: 8px;
+}
+.docs li {
+  padding: 5px;
+}

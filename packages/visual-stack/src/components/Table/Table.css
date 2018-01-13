@@ -1,49 +1,74 @@
-.vs-table {
-    border-collapse: collapse;
-    text-align: left;
-    width: 100%;
-}
-
-.vs-table > tbody > tr:hover {
-    background-color: #f6f6f6;
- }
-
-.vs-cell {
-    border-top: 1px solid #eee;
-    vertical-align: top;
-    padding: 4px 5px;
-    margin: 0;
-}
-
-.vs-cell-right {
-    text-align: right;
-}
-
 .vs-table-container {
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 10px 0;
 }
 
 .vs-table-title {
-    line-height: 1em;
-    font-variant: all-small-caps;
-    font-weight: 600;
-    font-size: 1.5em;
-    color: #333;
-    padding-bottom: 3px;
-    border-bottom: 0px solid #f0f0f0;
-    margin-bottom: 3px;
+  line-height: 1em;
+  font-variant: all-small-caps;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #333;
+  padding-bottom: 3px;
+  border-bottom: 0px solid #f0f0f0;
+  margin-bottom: 3px;
+}
+
+.vs-table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+.vs-table > tbody > tr:hover {
+  background-color: #f6f6f6;
+ }
+
+.vs-tbody {
+}
+
+.vs-tfoot {
+}
+
+.vs-row {
+}
+
+.vs-thead .vs-cell {
+  border-bottom: 1px solid #ccc;
+}
+
+.vs-tfoot .vs-cell {
+  border-top: 1px solid #ccc;
+}
+
+
+.vs-cell {
+  border-top: 1px solid #eee;
+  vertical-align: top;
+  padding: 4px 5px;
+  margin: 0;
+}
+
+.vs-cell-right {
+  text-align: right;
+}
+
+.vs-cell-center {
+  text-align: center;
+}
+.vs-cell-nowrap {
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-    .vs-cell {
-        max-width: 60px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .vs-cell:first-child {
-      max-width: 100px;
-    }
+  .vs-cell {
+    max-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .vs-cell:first-child {
+    max-width: 100px;
+  }
 }

@@ -1,14 +1,15 @@
-.custom-table {
+.custom-table-title {
+  color: #369;
 }
 
 .custom-th {
-  background-color: #369;
+  background-color: #69c;
   color: #eee;
 }
 
 .custom-tr td:nth-child(5) {
-  color: red;
-  background-color: rgba(255,0,0,.2)
+  background-color: #69c;
+  color: #eee;
 }
 
 .custom-td {
@@ -16,12 +17,15 @@
   color: #369;
 }
 
-.custom-table-container {
-  padding-top: 40px;
-
+.custom-td-colspan {
+  background-color: #eee;
+  border: 1px solid #ddd;
 }
 
-.custom-table-title {
-  color: #369;
+.custom-td-rowspan {
+  background-color: #69c;
+  color: #eee;
+  border: 1px solid #ddd;
 }
+
 
