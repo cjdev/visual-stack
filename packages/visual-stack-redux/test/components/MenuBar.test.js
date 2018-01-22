@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import { spy } from 'sinon';
 import { mount } from 'enzyme';
 
@@ -30,7 +29,7 @@ describe('MenuBarDropdown', () => {
     const props = { menuBars: {}, openDropdown };
     wrapper = mount(component(props), options);
 
-    $(ReactDOM.findDOMNode(wrapper.instance())).click();
+    ReactDOM.findDOMNode(wrapper.instance()).click();
     expect(openDropdown).to.have.been.calledOnce;
   });
 
@@ -42,7 +41,7 @@ describe('MenuBarDropdown', () => {
     };
     wrapper = mount(component(props), options);
 
-    $(ReactDOM.findDOMNode(wrapper.instance())).click();
+    ReactDOM.findDOMNode(wrapper.instance()).click();
     expect(closeDropdown).to.have.been.calledOnce;
   });
 
@@ -51,7 +50,7 @@ describe('MenuBarDropdown', () => {
     const props = { menuBars: {}, closeDropdown };
     wrapper = mount(component(props), options);
 
-    $(document.body).click();
+    document.querySelector('body').click();
     expect(closeDropdown).to.have.been.calledOnce;
   });
 });
