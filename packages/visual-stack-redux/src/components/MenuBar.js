@@ -45,6 +45,7 @@ export class InternalMenuBarDropdown extends Component {
       if (node.contains(e.target) && !this.isOpen()) {
         openDropdown(menuBarName, name);
       } else {
+        // close dropdown if clicking outside
         closeDropdown(menuBarName, name);
       }
     };
