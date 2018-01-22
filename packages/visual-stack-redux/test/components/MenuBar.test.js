@@ -50,7 +50,7 @@ describe('MenuBarDropdown', () => {
     const props = { menuBars: {}, closeDropdown };
     wrapper = mount(component(props), options);
 
-    document.querySelector('body').click();
+    document.body.click();
     expect(closeDropdown).to.have.been.calledOnce;
   });
 });
