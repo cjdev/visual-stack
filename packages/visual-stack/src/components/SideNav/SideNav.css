@@ -12,12 +12,17 @@
   z-index: 200;
   font-weight: 400;
   user-select:none;
+  margin: 0;
+  padding: 0 0 100px 0;
+}
+
+.sidenav ul {
+  padding-bottom: 100px;
 }
 
 .sidenav h1,
 .sidenav ul,
-.sidenav li,
-.sidenav {
+.sidenav li {
   margin: 0;
   padding: 0;
 }
