@@ -98,27 +98,9 @@ const AppLayout = ({children}) =>
 
 ## Contributing
 
-Initial scripts to start:
-`npm install`
-`npm run bootstrap`
+See the CONTRIBUTING.md file.
 
-To run Visual Stack Documentation site:
-
-`cd packages/visual-stack-docs/`
-`npm run docs`
-
-A new server should run and open the site
-
-Watch scripts for visual-stack and visual-stack-redux
-- While developing, these scripts will automatically build and update your code on the visual-stack-docs site
-
-`cd packages/visual-stack/`
-`npm run watch`
-
-`cd packages/visual-stack-redux/`
-`npm run watch`
-
-Publishing
+## Publishing
 
 To publish, you must have lerna installed globally
 `npm install lerna -g`

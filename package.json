@@ -2,7 +2,7 @@
   "private": "true",
   "name": "visual-stack-monorepo",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && lerna run build",
     "test": "lerna run test",
     "precommit": "CI=true lerna run test && lerna run lint"
   },
