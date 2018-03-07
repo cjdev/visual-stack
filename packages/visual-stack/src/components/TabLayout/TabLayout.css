@@ -1,0 +1,15 @@
+.cj-tab .cj-tab-header div {
+  box-shadow: 0 0px 32px 0 rgba(136,136,136,0.25);
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  width: 100%;
+  background-color: white;
+}
+
+.cj-tab .cj-tab-header .cj-tab-header-floating div {
+  position: fixed;
+}
+
+.cj-tab {
+  border: 1px solid grey;
+}
