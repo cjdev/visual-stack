@@ -1,15 +1,43 @@
-.cj-tab .cj-tab-header div {
-  box-shadow: 0 0px 32px 0 rgba(136,136,136,0.25);
+.cj-tab-header {
   border-bottom: 1px solid #e1e1e1;
   display: flex;
   width: 100%;
   background-color: white;
 }
 
-.cj-tab .cj-tab-header .cj-tab-header-floating div {
+.cj-tab-header.cj-tab-header-floating {
   position: fixed;
+  box-shadow: 0 0px 32px 0 rgba(136,136,136,0.25);
 }
 
-.cj-tab {
-  border: 1px solid grey;
+.cj-tab-label {
+  border-right: 1px solid #e1e1e1;
+  padding-bottom: 4px;
+  background-color: #fff;
+  transition: 0.2s color ease-in-out;
+  user-select: none;
+  display: flex;
+}
+
+.cj-tab-label.cj-tab-label-disabled {
+  color: #cecece;
+  background-color: white;
+}
+
+.cj-tab-label.cj-tab-label-clicked  {
+  color: #555;
+  padding-bottom: 0px;
+}
+
+.cj-tab-label.cj-tab-label-clicked > div {
+  border-bottom: 4px solid #048BC6;
+}
+
+.cj-tab-label.cj-tab-label-inactive {
+  color: #888;
+}
+
+.cj-tab-label.cj-tab-label-inactive:hover {
+  color: #048BC6;
+  cursor: pointer;
 }
