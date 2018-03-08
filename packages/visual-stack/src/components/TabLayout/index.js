@@ -86,16 +86,20 @@ class TabLabel extends React.Component {
 
   render() {
     const { children, disabled, tabIndex, onTabClick, onSelectClick, isSelected, themeColor } = this.props;
+    const selected = isSelected(tabIndex);
+
     const labelStateClassName = disabled
       ? 'cj-tab-label-disabled'
-      : isSelected(tabIndex) ? 'cj-tab-label-clicked' : '';
+      : selected ? 'cj-tab-label-clicked' : '';
     const labelClassName = `cj-tab-label ${labelStateClassName}`;
 
     const accentColor = themeColor || '#00af65';
-    const hoverStyle = disabled
-      ? {}
-      : this.state.hover ? { color: accentColor, cursor: 'pointer' } : { color: '#888' };
-    const labelStyle = isSelected(tabIndex) ? { borderBottom: `4px solid ${accentColor}` } : hoverStyle;
+
+    const hoverStyle = !disabled
+      ? this.state.hover && !selected ? { color: accentColor, cursor: 'pointer' } : { color: '#888' }
+      : {};
+
+    const labelStyle = selected ? { borderBottom: `4px solid ${accentColor}` } : {};
 
     return (
       <div className={labelClassName}
@@ -108,9 +112,11 @@ class TabLabel extends React.Component {
         }}
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
-        style={labelStyle}
+        style={hoverStyle}
       >
-        {children}
+        <div style={labelStyle}>
+          {children}
+        </div>
       </div>
     );
   }
@@ -126,7 +132,7 @@ const TabHeader = ({ children, floatingHeader, headerWidth }) => {
 };
 
 const TabBody = ({ children, floatingHeader, headerHeight }) => {
-  const headerHeightCss = floatingHeader ? { 'padding-top': `${headerHeight}` } : {};
+  const headerHeightCss = floatingHeader ? { paddingTop: `${headerHeight}` } : {};
   return (<div style={ headerHeightCss }>
     {children}
   </div>);
