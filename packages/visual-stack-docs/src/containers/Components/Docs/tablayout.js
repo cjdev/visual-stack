@@ -51,12 +51,14 @@ export default () => (
               </Body>
             </Panel>
             <Panel>
-              <Header>TabLayout can take an additional onTabClick function prop</Header>
+              <Header>
+                <div>TabLayout can take additional props: onTabClick, themeColor</div>
+                </Header>
               <Body>
                 <Snippet tag="s5" src={snippets} />
                 {/* s5:start */}
                 <div style={{ border: '1px solid #e1e1e1' }}>
-                  <TabLayout onTabClick={() => { /* function body */ }}>
+                  <TabLayout onTabClick={() => { /* function body */ }} themeColor={'#048BC6'}>
                     <Tab label={<TabLabelContent>Tab 1</TabLabelContent>} content={<TabContent>Tab Content 1</TabContent>} />
                     <Tab label={<TabLabelContent>Tab 2</TabLabelContent>} content={<TabContent>Tab Content 2</TabContent>} />
                     <Tab label={<TabLabelContent>Tab 3</TabLabelContent>} content={<TabContent>Tab Content 3</TabContent>} />

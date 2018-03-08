@@ -28,16 +28,3 @@
   color: #555;
   padding-bottom: 0px;
 }
-
-.cj-tab-label.cj-tab-label-clicked > div {
-  border-bottom: 4px solid #048BC6;
-}
-
-.cj-tab-label.cj-tab-label-inactive {
-  color: #888;
-}
-
-.cj-tab-label.cj-tab-label-inactive:hover {
-  color: #048BC6;
-  cursor: pointer;
-}

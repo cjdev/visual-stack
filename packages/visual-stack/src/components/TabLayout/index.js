@@ -2,7 +2,7 @@ import React from 'react';
 import R from 'ramda';
 import './TabLayout.css';
 
-const toArray = (maybeArray) => R.flatten([maybeArray]);
+const toArray = maybeArray => R.flatten([maybeArray]);
 
 export class TabLayout extends React.Component {
   constructor(props) {
@@ -41,6 +41,7 @@ export class TabLayout extends React.Component {
           {...tab.props}
           key={index}
           tabIndex={index}
+          themeColor={this.props.themeColor}
           onTabClick={this.props.onTabClick}
           onSelectClick={this.onSelectClick}
           isSelected={this.isSelected}>
@@ -65,25 +66,55 @@ export class TabLayout extends React.Component {
 
 export const Tab = ({ label, content, disabled }) => {};
 
-const TabLabel = ({ children, disabled, tabIndex, onTabClick, onSelectClick, isSelected }) => {
-  const labelStateClassName = disabled
-    ? 'cj-tab-label-disabled'
-    : isSelected(tabIndex) ? 'cj-tab-label-clicked' : 'cj-tab-label-inactive';
-  const labelClassName = `cj-tab-label ${labelStateClassName}`;
-  return (
-    <div className={labelClassName}
-      onClick={event => {
-        if (!disabled) {
-          onSelectClick(event, tabIndex);
-          if (onTabClick)
-            onTabClick();
-        }
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+class TabLabel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: false,
+    };
+    this.onMouseOver = this.onMouseOver.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+  }
+
+  onMouseOver() {
+    this.setState({ hover: true });
+  }
+
+  onMouseLeave() {
+    this.setState({ hover: false });
+  }
+
+  render() {
+    const { children, disabled, tabIndex, onTabClick, onSelectClick, isSelected, themeColor } = this.props;
+    const labelStateClassName = disabled
+      ? 'cj-tab-label-disabled'
+      : isSelected(tabIndex) ? 'cj-tab-label-clicked' : '';
+    const labelClassName = `cj-tab-label ${labelStateClassName}`;
+
+    const accentColor = themeColor || '#00af65';
+    const hoverStyle = disabled
+      ? {}
+      : this.state.hover ? { color: accentColor, cursor: 'pointer' } : { color: '#888' };
+    const labelStyle = isSelected(tabIndex) ? { borderBottom: `4px solid ${accentColor}` } : hoverStyle;
+
+    return (
+      <div className={labelClassName}
+        onClick={event => {
+          if (!disabled) {
+            onSelectClick(event, tabIndex);
+            if (onTabClick)
+              onTabClick();
+          }
+        }}
+        onMouseOver={this.onMouseOver}
+        onMouseLeave={this.onMouseLeave}
+        style={labelStyle}
+      >
+        {children}
+      </div>
+    );
+  }
+}
 
 const TabHeader = ({ children, floatingHeader, headerWidth }) => {
   const floatingClassName = floatingHeader ? 'cj-tab-header-floating' : '';
