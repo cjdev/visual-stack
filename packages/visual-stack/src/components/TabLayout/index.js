@@ -7,28 +7,11 @@ const toArray = maybeArray => R.flatten([maybeArray]);
 export class TabLayout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedIndex: 0,
-    };
-    this.onSelectClick = this.onSelectClick.bind(this);
     this.isSelected = this.isSelected.bind(this);
   }
 
-  componentDidMount() {
-    const children = toArray(this.props.children);
-    this.setState({
-      selectedIndex: R.findIndex(child => !child.props.disabled, children),
-    });
-  }
-
-  onSelectClick(event, index) {
-    this.setState({
-      selectedIndex: index,
-    });
-  }
-
   isSelected(index) {
-    return index === this.state.selectedIndex;
+    return index === this.props.selectedIndex;
   }
 
   render() {
@@ -43,7 +26,7 @@ export class TabLayout extends React.Component {
           tabIndex={index}
           themeColor={this.props.themeColor}
           onTabClick={this.props.onTabClick}
-          onSelectClick={this.onSelectClick}
+          onSelectClick={this.props.selectTab}
           isSelected={this.isSelected}>
             {tab.props.label}
         </TabLabel>);
