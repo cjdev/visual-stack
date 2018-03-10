@@ -78,9 +78,13 @@ class TabLabel extends React.Component {
 
     const accentColor = themeColor || '#00af65';
 
-    const hoverStyle = !disabled
-      ? this.state.hover && !selected ? { color: accentColor, cursor: 'pointer' } : { color: '#888' }
-      : {};
+    const hoverStyle = disabled
+      ? {}
+      : selected
+        ? { }
+        : this.state.hover
+          ? { color: accentColor, cursor: 'pointer' }
+          : { color: '#888' };
 
     const labelStyle = selected ? { borderBottom: `4px solid ${accentColor}` } : {};
 
@@ -116,7 +120,7 @@ const TabHeader = ({ children, floatingHeader, headerWidth }) => {
 
 const TabBody = ({ children, floatingHeader, headerHeight }) => {
   const headerHeightCss = floatingHeader ? { paddingTop: `${headerHeight}` } : {};
-  return (<div style={ headerHeightCss }>
+  return (<div className="cj-tab-body" style={ headerHeightCss }>
     {children}
   </div>);
 };
