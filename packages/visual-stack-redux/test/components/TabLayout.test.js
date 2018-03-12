@@ -86,7 +86,6 @@ describe('mapDispatchToProps', () => {
     expect(dispatchSpy).to.have.been.calledOnce;
     expect(dispatchSpy.firstCall.args[0].payload).to.deep.equal({ tabLayoutId: 'ID123', index: 1 });
     expect(dispatchSpy.firstCall.args[0].type).to.deep.equal('@cjdev/visual-stack-redux/SELECT_TAB');
-
   });
 });
 
