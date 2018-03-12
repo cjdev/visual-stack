@@ -61,7 +61,7 @@ export class InternalTabLayout extends Component {
 export const Tab = ({ ...props }) => <BaseTab {...props}/>;
 
 export const mapDispatchToProps = dispatch => ({
-  selectTab: () => dispatch(selectTab()),
+  selectTab: index => dispatch(selectTab(index)),
 });
 
 export const mapStateToProps = state => ({
