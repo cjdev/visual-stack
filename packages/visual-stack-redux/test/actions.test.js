@@ -2,6 +2,7 @@ import reducer, {
   toggleSideNav,
   toggleSideNavLinkGroup,
   toggleSlidingPanel,
+  selectTab,
 } from '../src/actions';
 
 describe('reducer', () => {
@@ -83,5 +84,19 @@ describe('reducer', () => {
     };
     expect(reducer(beforeState, toggleSlidingPanel())).to.deep.equal(afterState);
     expect(reducer(afterState, toggleSlidingPanel())).to.deep.equal(beforeState);
+  });
+
+  it('should update index by tabLayoutId', () => {
+    const beforeState = {
+      tabLayout: {},
+    };
+    const afterState = {
+      tabLayout: {
+        ID123: {
+          index: 0,
+        },
+      },
+    };
+    expect(reducer(beforeState, selectTab({tabLayoutId: 'ID123', index: 0}))).to.deep.equal(afterState);
   });
 });

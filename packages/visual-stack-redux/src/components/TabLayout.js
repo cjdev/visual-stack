@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import R from 'ramda';
 import { TabLayout as BaseTabLayout, Tab as BaseTab } from '@cjdev/visual-stack/lib/components/TabLayout';
 import { connect } from 'react-redux';
-import { selectTab } from '../../actions';
+import { selectTab } from '../actions';
 import PropTypes from 'prop-types';
 
 const toArray = maybeArray => R.flatten([maybeArray]);
@@ -60,11 +60,15 @@ export class InternalTabLayout extends Component {
 
 export const Tab = ({ ...props }) => <BaseTab {...props}/>;
 
+export const mapDispatchToProps = dispatch => ({
+  selectTab: () => dispatch(selectTab()),
+});
+
+export const mapStateToProps = state => ({
+  tabLayouts: state.visualStack.tabLayout,
+});
+
 export const TabLayout = connect(
-  state => ({
-    tabLayouts: state.visualStack.tabLayout,
-  }),
-  {
-    selectTab,
-  }
+  mapStateToProps,
+  mapDispatchToProps
 )(InternalTabLayout);
