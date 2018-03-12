@@ -6,9 +6,7 @@ import { TabLayout, Tab } from '../../src/components/TabLayout';
 
 
 describe('TabLayout', () => {
-
   describe('functionality', () => {
-
     it('should render', () => {
       const wrapper = mount(
         <TabLayout/>
@@ -118,7 +116,6 @@ describe('TabLayout', () => {
   });
 
   describe('styling', () => {
-
     it('should render tab underline with theme color when tab selected', () => {
       const wrapper = mount(
         <TabLayout tabLayoutId={'tabLayout1'} selectedIndex={0}>
@@ -211,7 +208,6 @@ describe('TabLayout', () => {
       equal(floatingHeader.at(0).props().style.width, headerWidth);
 
       equal(tabBody.at(0).props().style.paddingTop, headerHeight);
-
     });
   });
 });

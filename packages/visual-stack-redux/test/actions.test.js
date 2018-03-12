@@ -97,6 +97,6 @@ describe('reducer', () => {
         },
       },
     };
-    expect(reducer(beforeState, selectTab({tabLayoutId: 'ID123', index: 0}))).to.deep.equal(afterState);
+    expect(reducer(beforeState, selectTab({ tabLayoutId: 'ID123', index: 0 }))).to.deep.equal(afterState);
   });
 });

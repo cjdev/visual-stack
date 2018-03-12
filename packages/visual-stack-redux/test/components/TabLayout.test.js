@@ -6,7 +6,6 @@ import sinon from 'sinon';
 import { InternalTabLayout, mapDispatchToProps, mapStateToProps } from '../../src/components/TabLayout';
 import { TabLayout as BaseTabLayout, Tab as BaseTab } from '@cjdev/visual-stack/lib/components/TabLayout';
 
-
 describe('TabLayout', () => {
   const makeProps = override => (
     {
@@ -78,7 +77,6 @@ describe('TabLayout', () => {
     expect(selectTabSpy).to.have.been.calledTwice;
     expect(selectTabSpy.secondCall.args[0]).to.deep.equal({ tabLayoutId: 'ID123', index: 1 });
   });
-
 });
 
 describe('mapDispatchToProps', () => {
@@ -87,7 +85,6 @@ describe('mapDispatchToProps', () => {
     mapDispatchToProps(dispatchSpy).selectTab();
     expect(dispatchSpy).to.have.been.calledOnce;
   });
-
 });
 
 describe('mapStateToProps', () => {
