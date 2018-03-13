@@ -109,6 +109,12 @@ class TabLabel extends React.Component {
   }
 }
 
+export const TabLabelContent = props => (
+  <div className="cj-tab-label-content standard">
+    {props.children}
+  </div>
+);
+
 const TabHeader = ({ children, floatingHeader, headerWidth }) => {
   const floatingClassName = floatingHeader ? 'cj-tab-header-floating' : '';
   const headerClassName = `cj-tab-header ${floatingClassName}`;
@@ -124,3 +130,9 @@ const TabBody = ({ children, floatingHeader, headerHeight }) => {
     {children}
   </div>);
 };
+
+export const TabContent = props => (
+  <div className="cj-tab-content standard">
+    {props.children}
+  </div>
+);

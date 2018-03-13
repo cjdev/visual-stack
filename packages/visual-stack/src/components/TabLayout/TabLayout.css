@@ -28,3 +28,12 @@
   color: #555;
   padding-bottom: 0px;
 }
+
+.cj-tab-label-content.standard {
+  padding: 15px 32px 11px;
+  text-align: center;
+}
+
+.cj-tab-content.standard {
+  padding: 20px;
+}

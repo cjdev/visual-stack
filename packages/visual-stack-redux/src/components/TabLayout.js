@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import R from 'ramda';
-import { TabLayout as BaseTabLayout, Tab as BaseTab } from '@cjdev/visual-stack/lib/components/TabLayout';
+import { TabLayout as BaseTabLayout, Tab as BaseTab, TabLabelContent as BaseTabLabelContent, TabContent as BaseTabContent } from '@cjdev/visual-stack/lib/components/TabLayout';
 import { connect } from 'react-redux';
 import { selectTab } from '../actions';
 import PropTypes from 'prop-types';
@@ -58,7 +58,11 @@ export class InternalTabLayout extends Component {
   }
 }
 
-export const Tab = ({ ...props }) => <BaseTab {...props}/>;
+export const Tab = props => <BaseTab {...props}/>;
+
+export const TabLabelContent = props => <BaseTabLabelContent {...props}/>;
+
+export const TabContent = props => <BaseTabContent {...props}/>;
 
 export const mapDispatchToProps = dispatch => ({
   selectTab: index => dispatch(selectTab(index)),
