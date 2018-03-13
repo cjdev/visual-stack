@@ -10,7 +10,7 @@ export default () => (
     {
       snippets => {
         const FullPageWrapper = ({ ...props }) => <div style={{ margin: '-15px -1em -1em' }}>{props.children}</div>;
-
+        const DivWithBorder = props => <div style={{border: '1px solid #e1e1e1'}} >{props.children}</div>;
         return (
           <FullPageWrapper>
             {/* s7:start */}
@@ -48,13 +48,13 @@ export default () => (
                         <div>Standard Label / Content Example</div>
                         <Snippet tag="s5" src={snippets} />
                         {/* s5:start */}
-                        <div style={{ border: '1px solid #e1e1e1' }}>
-                        <TabLayout tabLayoutId={'tabLayout2'}>
+                        <DivWithBorder>
+                          <TabLayout tabLayoutId={'tabLayout2'}>
                             <Tab label={<TabLabelContent>Tab 1</TabLabelContent>} content={<TabContent>Tab Content 1</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 2</TabLabelContent>} content={<TabContent>Tab Content 2</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 3</TabLabelContent>} content={<TabContent>Tab Content 3</TabContent>} />
                           </TabLayout>
-                        </div>
+                        </DivWithBorder>
                         {/* s5:end */}
                       </Body>
                     </Panel>
@@ -65,13 +65,13 @@ export default () => (
                       <Body>
                         <Snippet tag="s6" src={snippets} />
                         {/* s6:start */}
-                        <div style={{ border: '1px solid #e1e1e1' }}>
+                        <DivWithBorder>
                           <TabLayout tabLayoutId={'tabLayout3'} onTabClick={() => { /* function body */ }} themeColor={'#048BC6'}>
                             <Tab label={<TabLabelContent>Tab 1</TabLabelContent>} content={<TabContent>Tab Content 1</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 2</TabLabelContent>} content={<TabContent>Tab Content 2</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 3</TabLabelContent>} content={<TabContent>Tab Content 3</TabContent>} />
                           </TabLayout>
-                        </div>
+                        </DivWithBorder>
                         {/* s6:end */}
                       </Body>
                     </Panel>
