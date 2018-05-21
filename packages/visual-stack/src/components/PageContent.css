@@ -1,4 +1,7 @@
 .page-content {
-  background-color: #F1F4F8;
-  padding: 60px 1em 1em;
+  /* background-color: #F1F4F8; */
+  /* background-color: #fff; */
+  padding: 96px 48px 48px;
+  position: relative;
+  /* top: 48px; */
 }

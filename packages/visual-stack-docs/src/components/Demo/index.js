@@ -8,7 +8,9 @@ export const InlineSnippet = ({ tag, src }) => {
   if (!srcTag) return null;
   return (
     <pre className="inline-snippet">
-      { trimLeadingWhiteSpace(src[tag]).join(' ') }
+      <code>
+        { trimLeadingWhiteSpace(src[tag]).join(' ') }
+      </code>
     </pre>
   );
 };
@@ -19,7 +21,9 @@ export const Snippet = ({ tag, src }) => {
   return (
     <div className="snippet">
       <pre>
-        { trimLeadingWhiteSpace(src[tag]).join('\n') }
+        <code>
+          { trimLeadingWhiteSpace(src[tag]).join('\n') }
+        </code>
       </pre>
     </div>
   );
