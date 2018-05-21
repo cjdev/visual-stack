@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import './Panel.css';
 
 export const Panel = ({ children }) =>
-  <div className="cj-panel panel panel-default">
+  <div className="panel panel-default">
     {children}
   </div>;
 
 export const Footer = ({ children }) =>
-  <div className="cj-panel panel-footer">
+  <div className="panel-footer">
     {children}
   </div>;
 
 export const Body = ({ children }) =>
-  <div className="cj-panel panel-body">
+  <div className="panel-body">
     {children}
   </div>;
 
 export const Header = ({ title, children }) =>
-  <div className="cj-panel panel-heading">
+  <div className="panel-heading">
     {title && <legend>{title}</legend>}
     {children}
   </div>;

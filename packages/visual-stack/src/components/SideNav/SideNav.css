@@ -1,22 +1,25 @@
 /** @prettier */
 .sidenav {
+  color: #cfd5dc;
   background-color: #151c23;
-  list-style: none;
-  width: 55px;
+  font-size: 13px;
+  font-weight: 400;
   height: 100%;
+  left: 0;
+  list-style: none;
   overflow-y: auto;
   overflow-x: hidden;
-  left: 0;
-  transition: width .5s ease-out;
-  position: fixed;
-  z-index: 200;
-  font-weight: 400;
-  user-select:none;
   margin: 0;
   padding: 0 0 100px 0;
+  position: fixed;
+  transition: width .2s ease-in-out;
+  user-select:none;
+  width: 48px;
+  z-index: 200;
 }
 
 .sidenav ul {
+  list-style: none;
   padding-bottom: 100px;
 }
 
@@ -27,143 +30,91 @@
   padding: 0;
 }
 
+
 .sidenav.active {
-  width: 255px;
+  width: 256px;
 }
 
-@media (min-width: 40em) {
-  .sidenav.collapsed {
-    width: 55px;
-    transition: width .5s ease-out;
-  }
+
+.sidenav > li ul {
 }
 
-.sidenav>li ul {
-  list-style: none;
-}
+
+
 
 .sideNav-left-logo {
   display: flex;
-  height: 45px;
+  height: 48px;
 }
 
 .logo {
-  padding: 10px;
-}
-
-.logo .cj-logo {
-  width: 35px;
+  height: 48px;
+  padding: 12px;
+  width: 48px;
 }
 
 .app-name {
-  display:inherit;
   color: #fff;
-  font-size: 14px;
-  letter-spacing: 2px;
+  display:inherit;
   font-family: gibson-light;
+  font-size: 15px;
+  letter-spacing: 2px;
+  line-height: 48px;
+  margin-top: 1px;
   white-space: nowrap;
 }
 
-.sidenav-user-menu, .toggle-icon {
-  position: fixed;
-  width: inherit;
-  background-color: #151c23;
-}
 
-.sidenav-user-menu {
-  bottom: 45px;
-}
-
-.toggle-icon {
-  bottom: 0;
-}
-
-.sidenav-toggle-icon {
-  text-align: center;
-  border-top: 1px solid #4a4a4a;
-}
-
-.sidenav.collapsed .sidenav-container ul li a {
-  padding-left: 56px;
-  transition: all .3s ease-out;
-}
-
-.sidenav.collapsed .sidenav-link span,
-.sidenav.collapsed .sidenav-container-chevron,
-.sidenav.collapsed .link-group-children,
-.sidenav.collapsed .app-name,
-.sidenav.collapsed .sidenav-container-label {
-  opacity: 0;
-  transition: opacity .3s ease-out;
-}
-
-.sidenav.active .sidenav-link span,
-.sidenav.active .sidenav-container-chevron,
-.sidenav.active .app-name,
-.sidenav.active .sidenav-container-label {
-  opacity: 1;
-  display: inline-block;
-  transition: all .5s ease-out;
-}
-
-.sidenav .sidenav-link a:active span {
-  color: #FFFFFF;
-}
-
-.sidenav.active .sidenav-link span {
-  position: absolute;
-}
-
-.sidenav.active .sidenav-link div ~ span {
-  margin-top: 3px;
-}
-
-.sidenav-icon {
-  font-size: 1.3em;
-  text-align: center;
-  margin-right: 20px;
-  width: 18px;
-}
-
-.sidenav a {
-  padding: 12px 18px;
-  text-decoration: none;
-  display: block;
-  height: 45px;
+.sidenav li a {
   color: #cfd5dc;
+  display: block;
+  height: 48px;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sidenav li a:hover {
+  background-color: #20262D;
+  color: #FFFFFF;
 }
 
 .sidenav .link-group-children {
-  background-color: #090c11;
+  background-color: #0D0F12;
 }
 
-.sidenav a:focus,
-.sidenav a:hover {
-  background-color: #4e545c;
-  color: #FFFFFF;
-  cursor: pointer;
-  transition-duration: .1s;
+.sidenav .link-group-children a {
+  color: #cfd5dc;
+  display: block;
+  text-decoration: none;
 }
+
+.sidenav .link-group-children a:hover {
+  background-color: #20262D;
+  color: #FFFFFF;
+}
+
 
 .sidenav-container-label {
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 165px;
+  /* width: 165px; */
+  width: auto;
   overflow: hidden;
 }
 
 .sidenav .expanded > a.sidenav-container-row {
   background-color: #30343a;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .sidenav-link {
-  height: 45px;
+  height: 48px;
 }
 
 .sidenav .sidenav-container-row {
   display: flex;
-  height: 45px;
+  height: 48px;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -184,6 +135,7 @@
   transform: rotate(0);
   transition: -webkit-transform .2s ease-in-out;
   font-size: 0.8em;
+  margin-right: 24px;
 }
 
 .sidenav .expanded .sidenav-container-chevron {
@@ -193,12 +145,14 @@
 .sidenav .sidenav-container ul {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s ease-out;
+  transition: max-height .2s ease-out;
   padding: 0;
 }
 
 .sidenav .sidenav-container.expanded ul {
-  max-height: 500px;
+  /* max-height: 500px; */
+  max-height: 100%;
+  max-height: none;
 }
 
 .sidenav.collapsed .sidenav-header,
@@ -206,8 +160,80 @@
   height: 0;
   opacity: 0;
   padding: 0;
-  transition: all .3s ease-in;
+  transition: all .2s ease-in;
 }
+
+
+
+.sidenav-user-menu,
+.toggle-icon {
+  position: fixed;
+  width: inherit;
+  background-color: #151c23;
+}
+
+.sidenav-user-menu {
+  bottom: 48px;
+}
+
+.toggle-icon {
+  bottom: 0;
+}
+
+.sidenav li a.sidenav-toggle-icon {
+  align-items: center;
+  display: flex;
+  border-top: 1px solid #4a4a4a;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.sidenav.collapsed .sidenav-container ul li a {
+  padding-left: 56px;
+  transition: all .2 ease-out;
+}
+
+.sidenav.collapsed .sidenav-link span,
+.sidenav.collapsed .sidenav-container-chevron,
+.sidenav.collapsed .link-group-children,
+.sidenav.collapsed .app-name,
+.sidenav.collapsed .sidenav-container-label {
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+
+.sidenav.active .sidenav-link span,
+.sidenav.active .sidenav-container-chevron,
+.sidenav.active .app-name,
+.sidenav.active .sidenav-container-label {
+  opacity: 1;
+  display: inline-block;
+  transition: all .2s ease-out;
+}
+
+.sidenav .sidenav-link a:active span {
+  color: #fff;
+}
+
+.sidenav.active .sidenav-link span {
+  position: absolute;
+}
+
+.sidenav.active .sidenav-link div ~ span {
+  margin-top: 3px;
+}
+
+.sidenav-icon {
+  font-size: 1.3em;
+  text-align: center;
+  margin-right: 20px;
+  width: 18px;
+}
+
+
+
 
 @media (min-width: 40em) {
   .sidenav .sidenav-header {
@@ -216,8 +242,12 @@
     text-transform: uppercase;
     color: rgba(255,255,255,.5);
     font-size: 11px;
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     opacity: 1;
+  }
+  .sidenav.collapsed {
+    width: 48px;
+    transition: width .2s ease-out;
   }
 }
 
@@ -250,14 +280,18 @@
 }
 
 .sidenav-svg-icon {
-  margin-left: -2px;
-  margin-right: 19px;
   display: flex;
+  padding: 12px;
+  text-align: center;
+  width: 48px;
+  height: 48px;
 }
 
 .placeholder-icon,
 .sidenav-svg-icon svg {
-  width: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 16px;
 }
 
 .sidenav-svg-icon svg {
@@ -266,10 +300,10 @@
 
 .user-icon-circle {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  margin-right: 15px;
-  margin-left: -6px;
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+  margin-left: 12px;
   display:flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -280,6 +314,6 @@
 
 .user-icon-first,
 .user-icon-last {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 300;
 }

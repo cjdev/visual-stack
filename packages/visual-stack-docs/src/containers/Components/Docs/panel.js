@@ -13,7 +13,7 @@ export default () =>
               Panel Header
             </Header>
             <Body>
-              This is the Panel Body.
+              <p>This is the Panel Body.</p>
               <Snippet tag="s1" src={snippets} />
             </Body>
             <Footer>

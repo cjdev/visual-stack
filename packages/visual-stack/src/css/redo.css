@@ -1,0 +1,319 @@
+/* This stylsheet is in working progress.  */
+/* Includes the following css files: base.css, forms.css, layout.css */
+
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('//fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
+
+/* @license
+ * MyFonts Webfont Build ID 2691808, 2013-11-19T16:06:51-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Gibson Light by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/light/
+
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2691808
+ * Licensed pageviews: 250,000
+ * Webfonts copyright: Copyright &#x00A9; 2011 Rod McDonald. Published by Canada Type. All rights reserved.
+ *
+ * Â© 2013 MyFonts Inc
+*/
+
+@font-face {
+    font-family: 'gibson-light';
+    src: url('../fonts/gibson/gibson-light-webfont.woff2') format('woff2'),
+         url('../fonts/gibson/gibson-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*! --- START CJ Bootstrap Overrides --- */
+
+.btn {
+  display: inline-block;
+  padding: 4px 8px 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6D6E70;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background: #ffffff;
+  background: linear-gradient(to bottom,  #ffffff 0%,#e9e9e9 50%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+  -webkit-filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  border: 1px solid #DBDCDE !important;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px white,0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar */
+
+.nav {
+  margin-left: 0;
+}
+
+.navbar {
+  height: 48px;
+  margin-bottom: 5px;
+}
+
+
+
+
+/* Form Elements */
+
+label {
+  font-weight: inherit;
+  display: block;
+}
+
+input, textarea {
+  width: 220px;
+}
+
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+  width: auto;
+}
+
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  cursor: not-allowed;
+  background-color: #eee;
+}
+
+select {
+  width: 220px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  height: 30px;
+  line-height: 30px;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+.dropdown-selected-label {
+  border-right: 1px solid #E4E4E4;
+  padding-right: 12px;
+}
+
+
+
+
+
+
+/* Page Header */
+/* This hasn't been added to VS yet and needs to be converted into a styled component. */
+.page-header {
+  padding-bottom: 16px;
+  margin: 0 0 24px;
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+
+.page-header h1 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+
+
+
+
+
+
+/* Tables */
+
+table.table-clearfix td {
+  border:0;
+  padding: 2px;
+}
+
+
+/* Boostrap Popover */
+.popover {
+  padding: 0;
+  border: 2px solid #00AF66;
+  width: auto;
+  max-width: 100%;
+}
+
+.popover.bottom .arrow, .popover.bottom .arrow:after {
+  border-bottom-color: #00AF66;
+}
+
+.popover.top .arrow, .popover.top .arrow:after {
+  border-top-color: #00AF66;
+}
+
+.popover.right .arrow, .popover.right .arrow:after {
+  border-right-color: #00AF66;
+}
+
+.popover.left .arrow, .popover.left .arrow:after {
+  border-left-color: #00AF66;
+}
+
+
+
+/* Bootstrap Modal */
+@media (min-width: 768px) {
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  }
+}
+
+.modal-content {
+  border-radius: 4px;
+}
+
+.modal-header {
+  padding: 0;
+}
+
+.modal-header legend {
+  padding: 10px;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+/*! --- END CJ Bootstrap Overrides --- */
+
+
+/* forms.css */
+
+textarea, input[type="file"], input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 9px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+textarea, input, iframe, input[type="file"], input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  border: 1px solid #DDD;
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.09);
+}
+
+select, textarea, input, input[type="file"], input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  border-radius: 0;
+  color: #6d6e70;
+}
+
+textarea:focus, input:focus, input[type="file"]:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, .form-control:focus {
+  outline: none;
+  outline: thin dotted  9;
+  border: 1px solid rgba(0, 175, 102, 0.75);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(0, 175, 102, 0.4);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  border: 0;
+  box-shadow: 0;
+}
+
+fieldset p {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+p > label  {
+  float: left;
+  padding: 0 0 0 18px;
+}
+
+/* END forms.css */
+
+
+
+
+
+/* layout.css */
+#whole-page {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#contentContainer{
+    width: auto;
+    padding-bottom: 100px;
+    padding-top: 1em;
+}
+
+.content {
+    padding: 0 1em;
+}
+
+.topBar{
+    background-color:#99cb01;
+    height:8px;
+}
+
+.topLinks{
+    width:100%;
+    float:right;
+    text-align:right;
+}
+
+.grid-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid-container {
+        width: 1170px;
+    }
+}
+
+.grid-container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.grid-row:before, .grid-row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.grid-row:after {
+    clear: both;
+}
+
+@media (min-width: 1200px) {
+    .grid-row:before, .grid-row:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid-row:after {
+        clear: both;
+    }
+}
+/* END layout.css */
