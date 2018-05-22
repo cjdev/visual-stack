@@ -14,7 +14,6 @@ html, body, #root {
   flex: 1 1 auto;
   display: flex;
   overflow: hidden;
-  background-color: #fff;
   transition: all .2s ease-in-out;
 }
 

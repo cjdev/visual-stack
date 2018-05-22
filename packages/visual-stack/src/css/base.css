@@ -27,6 +27,10 @@
     font-style: normal;
 }
 
+body {
+  background: #fcfcfc;
+}
+
 body, p, div, td, th, span {
   font-family: "Open Sans",sans-serif;
   font-size: 13px;
