@@ -9,89 +9,13 @@
   margin-bottom: 5px;
 }
 
-input, textarea {
-  width: 206px;
-}
-
-input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
-  width: auto;
-}
-
-input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
-  cursor: not-allowed;
-  background-color: #eee;
-}
-
-label {
-  font-weight: inherit;
-  display: block;
-}
-
-img {
-  max-width: 100%;
-}
 
 /*Global styles to solve for other styles being removed*/
-
-table.table-clearfix td {
-  border:0;
-  padding: 2px;
-}
-
-select {
-  width: 220px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  height: 30px;
-  line-height: 30px;
-  padding: 3px;
-  margin-bottom: 5px;
-}
-
-h3 {
-  font-size:1em;
-}
-
-a:hover{
-  color:inherit; /*Bootstrap would make it an ugly shade of blue!*/
-}
-
-.btn {
-  display: inline-block;
-  padding: 4px 8px 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6D6E70;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  vertical-align: middle;
-  cursor: pointer;
-  background: #ffffff;
-  background: linear-gradient(to bottom,  #ffffff 0%,#e9e9e9 50%,#ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
-  -webkit-filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-  border: 1px solid #DBDCDE !important;
-  border-radius: 0;
-  box-shadow: inset 0 0 0 1px white,0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-selected-label {
-  border-right: 1px solid #E4E4E4;
-  padding-right: 12px;
-}
 
 .page-header {
   padding-bottom: 9px;
   margin: 20px 0 20px;
   border-bottom: 1px solid hsl(0, 0%, 93%);
-}
-
-.col-xs-1, .col-sm-1, .col-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-12, .col-lg-12 {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
 }
 
 .popover {
@@ -117,24 +41,5 @@ a:hover{
   border-left-color: #00AF66;
 }
 
-@media (min-width: 768px) {
-  .modal-content {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-  }
-}
-
-.modal-content {
-  border-radius: 4px;
-}
-
-.modal-header {
-  padding: 0;
-}
-
-.modal-header legend {
-  padding: 10px;
-  margin-bottom: 0;
-  border-bottom: 0;
-}
 
 /*! --- END CJ Bootstrap Overrides --- */

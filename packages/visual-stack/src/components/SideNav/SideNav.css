@@ -33,6 +33,7 @@
 .sidenav li a,
 .sidenav .sidenav-container-row {
   align-items: center;
+  color: #cfd5dc;
   cursor: pointer;
   display: flex;
   height: 48px;
@@ -43,15 +44,16 @@
 
 .sidenav li a:hover,
 .sidenav li a:focus {
-  background-color: #20262D;
+  /* background-color: #20262D; */
+  background-color: rgba(61, 68, 76, .1);
   color: #fff;
   outline: none;
   text-decoration: none;
+  transition: all .1s ease-in-out;
 }
 
 /* Top level link label text */
 .sidenav-container-label {
-  color: #cfd5dc;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -101,7 +103,7 @@
 
 /* Active state styles for menu items with submenus */
 .sidenav .expanded .sidenav-container-row {
-  background-color: #30343a;
+  /* background-color: #313942; */
   color: #fff;
 }
 
@@ -113,15 +115,16 @@
   white-space: nowrap;
 }
 
-.sidenav .sidenav-container-chevron {
+.sidenav .chevron-right {
   color: #cfd5dc;
   transform: rotate(0);
   transition: transform .2s ease-in-out;
-  font-size: 10px;
-  margin-right: 24px;
+  margin-right: 16px;
+  width: 20px;
+  height: 20px;
 }
 
-.sidenav .expanded .sidenav-container-chevron {
+.sidenav .expanded .chevron-right {
   color: #fff;
   transform: rotate(90deg);
 }
@@ -130,12 +133,12 @@
 .sidenav .sidenav-container ul {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .2s ease-out;
+  transition: max-height .2s ease-in-out;
   padding: 0;
 }
 
 .sidenav .sidenav-container.expanded ul {
-  max-height: 1800px;
+  max-height: 900px;
   /* need to fix this so it isnt explicit height */
 }
 
@@ -147,12 +150,15 @@
 .sidenav .link-group-children a {
   color: #cfd5dc;
   display: block;
+  outline: none;
   text-decoration: none;
+  transition: all .1s ease-in-out;
 }
 
-.sidenav .link-group-children a:hover {
-  background-color: #20262D;
-  color: #FFFFFF;
+.sidenav .link-group-children a:hover,
+.sidenav .link-group-children a:focus {
+  background-color: rgba(61, 68, 76, .1);
+  color: #fff;
 }
 
 
@@ -164,7 +170,7 @@
 .sidenav.active .sidenav-container-label {
   opacity: 1;
   display: inline-block;
-  transition: opacity .2s ease-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .sidenav .sidenav-link a:active span {
@@ -186,7 +192,7 @@
   height: 0;
   opacity: 0;
   padding: 0;
-  transition: all .2s ease-in;
+  transition: all .2s ease-in-out;
 }
 
 .sidenav.collapsed .sidenav-container ul li a {
@@ -195,12 +201,11 @@
 }
 
 .sidenav.collapsed .sidenav-link span,
-.sidenav.collapsed .sidenav-container-chevron,
 .sidenav.collapsed .link-group-children,
 .sidenav.collapsed .app-name,
 .sidenav.collapsed .sidenav-container-label {
   opacity: 0;
-  transition: opacity .2s ease-out;
+  transition: opacity .2s ease-in-out;
 }
 
 
@@ -269,27 +274,38 @@
 }
 
 .sidenav-user-menu,
-.toggle-icon {
+.sidenav .toggle-icon {
   color: #cfd5dc;
   position: fixed;
   width: inherit;
   background-color: #151c23;
 }
 
-.toggle-icon {
+.sidenav .toggle-icon {
   bottom: 0;
 }
 
-.sidenav li a.sidenav-toggle-icon {
+.sidenav .toggle-icon a {
   align-items: center;
   border-top: 1px solid #20262D;
   color: #cfd5dc;
   display: flex;
-  font-size: 10px;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
+.sidenav .toggle-icon a svg {
+  margin-left: auto;
+  margin-right: auto;
+  transform: rotate(0deg);
+  width: 20px;
+  height: 20px;
+}
+
+.sidenav.collapsed .toggle-icon a svg {
+  transform: rotate(-180deg);
+}
 
 
 
@@ -330,11 +346,11 @@
     text-transform: uppercase;
     color: rgba(255,255,255,.5);
     font-size: 11px;
-    transition: all .2s ease-in;
+    transition: all .2s ease-in-out;
     opacity: 1;
   }
   .sidenav.collapsed {
     width: 48px;
-    transition: width .2s ease-out;
+    transition: width .2s ease-in-out;
   }
 }

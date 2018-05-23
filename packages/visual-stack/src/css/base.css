@@ -1,4 +1,5 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('//fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
 /* @license
  * MyFonts Webfont Build ID 2691808, 2013-11-19T16:06:51-0500
@@ -25,21 +26,4 @@
          url('../fonts/gibson/gibson-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-body {
-  background: #fcfcfc;
-}
-
-body, p, div, td, th, span {
-  font-family: "Open Sans",sans-serif;
-  font-size: 13px;
-}
-
-body, p, td, th, h1, h2, h3, h4, h5 {
-  color: #585858;
-}
-
-th, b, strong {
-  font-weight: 600;
 }

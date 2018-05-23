@@ -1,3 +1,89 @@
+/* global button styles */
+
+.btn-d  {
+
+  border-collapse: separate;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  height: 36px;
+  line-height: 1;
+  min-width: 64px;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: none;
+  text-transform: uppercase;
+  width: auto;
+/*
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: 500;
+  letter-spacing: .08929em;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: #0000;
+  will-change: transform,opacity;
+  padding: 0 8px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 64px;
+  height: 36px;
+  border: none;
+  outline: none;
+  line-height: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 3px;
+
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-transition: -webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);
+  transition: -webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);
+  -o-transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1); */
+}
+
+.btn-d:focus, a.btn-d:focus {
+  outline: none;
+}
+
+.btn-d:active {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Button sizing */
+
+.btn-d {
+  padding: 6px 20px;
+}
+
+.lrg-btn, .lrg-btn {
+  padding: 10px 28px;
+  font-size: 1.1em;
+  height: 48px;
+  line-height: 1;
+}
+
+
+
 /* CJ Button - primary styles*/
 
 .default-btn {
@@ -74,44 +160,6 @@ a.btn-d:hover, .btn-d a:hover {
 .success-btn:hover {
   background: rgba(73, 197, 177, 0.1);
   box-shadow: none;
-}
-
-/* global button styles */
-
-.btn-d  {
-  display: inline-block;
-  margin: 5px 0;
-  min-width: 50px;
-  width: auto;
-  border-collapse: separate;
-  border-radius: 4px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 1em;
-  cursor: pointer;
-  line-height: 20px;
-  overflow: hidden;
-  box-shadow: none;
-  text-shadow: none;
-}
-
-.btn-d:focus, a.btn-d:focus {
-  outline: none;
-}
-
-.btn-d:active {
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* Button sizing */
-
-.btn-d {
-  padding: 6px 20px;
-}
-
-.lrg-btn, .lrg-btn {
-  padding: 10px 28px;
-  font-size: 1.1em;
 }
 
 /* Disabled state */

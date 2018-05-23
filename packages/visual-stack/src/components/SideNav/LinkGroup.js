@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import R from 'ramda';
 
 import { SideNavSvgIcon, makeDefaultIcon } from './Icons';
+import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 
 export class LinkGroup extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export class LinkGroup extends React.Component {
             {icon}
             <span className="sidenav-container-label">{this.props.label}</span>
           </div>
-          <i className="fa fa-chevron-right sidenav-container-chevron" />
+          {<ChevronRightIcon className="chevron-right" />}
         </a>
         <ul className="link-group-children">{this.props.children}</ul>
       </li>

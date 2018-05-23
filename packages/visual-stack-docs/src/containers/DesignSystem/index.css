@@ -1,0 +1,61 @@
+
+
+.section {
+  /* margin: 64px 0; */
+  /* padding: 64px 0; */
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+}
+
+.page-header {
+  margin-top: 0;
+}
+
+.page-title {
+  margin-top: 0;
+}
+
+
+
+
+
+
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  padding: 32px;
+}
+
+.card-header {
+
+}
+
+.card-title {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body {
+
+}
+.card-footer {
+  border-top: 1px solid #eee;
+  color: #999;
+  font-size: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+
+
+.input-container {
+  margin-bottom: 8px;
+}

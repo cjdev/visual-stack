@@ -1,0 +1,5 @@
+.cj-panel,
+.cj-panel .page-heading,
+.cj-panel .page-heading--section {
+  position: relative;
+}

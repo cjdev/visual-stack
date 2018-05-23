@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './modal.css';
 
 export const Modal = ({ children }) =>
    <div className="modal" style={{ display: 'block' }}>

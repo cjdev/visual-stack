@@ -1,8 +1,9 @@
 import React from 'react';
 
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
-import { PageHeader, PageTitle, PageHeaderSection } from '@cjdev/visual-stack/lib/components/PageHeader';
+import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHeader';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
+import './index.css';
 
 const DesignSystem = () =>
   <div>
@@ -12,20 +13,80 @@ const DesignSystem = () =>
     <PageContent>
 
       <div className="page-header">
-        <section className="row">
-          <div className="col-sm-6">
-            <h1>CJ Design System</h1>
-          </div>
-          <div className="col-sm-6 text-right">
-            <button className="primary-btn">Action</button>
-          </div>
-        </section>
+        <div className="">
+          <h1 className="page-header-title">Design System - In Progress</h1>
+        </div>
       </div>
 
-      <section className="row">
-        <div className="col-sm-12">
+
+      <div className="section">
+        <div className="">
+          <div className="card">
+            <div className="card-section">
+              <div className="card-header">
+                <h1 className="card-title">Account Settings</h1>
+              </div>
+              <div className="card-body">
+                <div className="input-container">
+                  <label>Organization Name</label>
+                  <input className="" type="text" />
+                </div>
+                <div className="input-container">
+                  <label>Street Address</label>
+                  <input className="" type="text" />
+                </div>
+                <div className="input-container">
+                  <label>City</label>
+                  <input className="" type="text" />
+                </div>
+                <div className="input-container">
+                  <label>State</label>
+                  <select>
+                    <option>Select State</option>
+                  </select>
+                </div>
+                <div className="input-container">
+                  <label>Zip</label>
+                  <input className="" type="text" />
+                </div>
+                <div className="input-container">
+                  <button className="solid-primary-btn lrg-btn">Save</button>
+                </div>
+              </div>
+              <div className="card-footer">
+                Footer
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+
+
+      <div className="section">
+        <div className="">
+          <div className="card">
+            <div className="card-section">
+              <div className="card-header">
+                <h1 className="card-title">Card Title</h1>
+              </div>
+              <div className="card-body">
+                <p>Body Text</p>
+              </div>
+              <div className="card-footer">
+                Footer
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div className="page-header">
+        <div className="">
+          <h1 className="page-header-title">Typography</h1>
+        </div>
+      </div>
 
 
       <Panel>

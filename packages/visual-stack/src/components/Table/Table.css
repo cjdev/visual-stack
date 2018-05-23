@@ -1,3 +1,9 @@
+/* From bootstrap-cj.css */
+table.table-clearfix td {
+  border:0;
+  padding: 2px;
+}
+
 .vs-table-container {
   border: 1px solid #ddd;
   padding: 5px 10px;
