@@ -1,210 +1,298 @@
 import React from 'react';
 
-import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHeader';
-import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
+import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
+import { Table, THead, TBody, Tr, Th, Td } from '@cjdev/visual-stack/lib/components/Table';
 import './index.css';
 
 const DesignSystem = () =>
-  <div>
-    <PageHeader>
-      <PageTitle>Design System</PageTitle>
-    </PageHeader>
-    <PageContent>
+<div>
 
-      <div className="page-header">
-        <div className="">
-          <h1 className="page-header-title">Design System - In Progress</h1>
-        </div>
-      </div>
+  <PageHeader>
+    <PageTitle>Design System</PageTitle>
+  </PageHeader>
+  <PageContent>
 
+    <h1>Headings</h1>
+    <Table>
+      <THead>
+        <Tr>
+          <Th>Element Name</Th>
+          <Th>Preview</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Heading 1</Td>
+          <Td><h1>Heading 1</h1></Td>
+        </Tr>
+        <Tr>
+          <Td>Heading 2</Td>
+          <Td><h2>Heading 2</h2></Td>
+        </Tr>
+        <Tr>
+          <Td>Heading 3</Td>
+          <Td><h3>Heading 3</h3></Td>
+        </Tr>
+        <Tr>
+          <Td>Heading 4</Td>
+          <Td><h4>Heading 4</h4></Td>
+        </Tr>
+        <Tr>
+          <Td>Heading 5</Td>
+          <Td><h5>Heading 6</h5></Td>
+        </Tr>
+        <Tr>
+          <Td>Heading 6</Td>
+          <Td><h6>Heading 6</h6></Td>
+        </Tr>
+      </TBody>
+    </Table>
 
-      <div className="section">
-        <div className="">
-          <div className="card">
-            <div className="card-section">
-              <div className="card-header">
-                <h1 className="card-title">Account Settings</h1>
-              </div>
-              <div className="card-body">
-                <div className="input-container">
-                  <label>Organization Name</label>
-                  <input className="" type="text" />
-                </div>
-                <div className="input-container">
-                  <label>Street Address</label>
-                  <input className="" type="text" />
-                </div>
-                <div className="input-container">
-                  <label>City</label>
-                  <input className="" type="text" />
-                </div>
-                <div className="input-container">
-                  <label>State</label>
-                  <select>
-                    <option>Select State</option>
-                  </select>
-                </div>
-                <div className="input-container">
-                  <label>Zip</label>
-                  <input className="" type="text" />
-                </div>
-                <div className="input-container">
-                  <button className="solid-primary-btn lrg-btn">Save</button>
-                </div>
-              </div>
-              <div className="card-footer">
-                Footer
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<br /><br /><br /><br />
 
+    <h1>Inline Text Elements</h1>
+    <Table>
+      <THead>
+        <Tr>
+          <Th>Element Name</Th>
+          <Th>Preview</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Bold</Td>
+          <Td><b>Bold</b></Td>
+        </Tr>
+        <Tr>
+          <Td>Italic</Td>
+          <Td><i>Italic</i></Td>
+        </Tr>
+        <Tr>
+          <Td>Emphasis</Td>
+          <Td><em>Emphasis</em></Td>
+        </Tr>
+        <Tr>
+          <Td>Link</Td>
+          <Td><a href="#" title="Link">Link</a></Td>
+        </Tr>
+        <Tr>
+          <Td>Strong</Td>
+          <Td><strong>Strong</strong></Td>
+        </Tr>
+        <Tr>
+          <Td>Small</Td>
+          <Td><small>Small</small></Td>
+        </Tr>
+        <Tr>
+          <Td>Abbr</Td>
+          <Td><abbr>Abbr</abbr></Td>
+        </Tr>
+        <Tr>
+          <Td>Timestamp</Td>
+          <Td><time>12:00 PM</time></Td>
+        </Tr>
+        <Tr>
+          <Td>Inline Code</Td>
+          <Td><code>Inline Code</code></Td>
+        </Tr>
+        <Tr>
+          <Td>Preformatted Code</Td>
+          <Td><pre><code>First line of code
+Second line of code</code></pre></Td>
+        </Tr>
+        <Tr>
+          <Td>Keyboard Shortcuts</Td>
+          <Td><kbd>ctrl + C</kbd></Td>
+        </Tr>
+      </TBody>
+    </Table>
 
-      <div className="section">
-        <div className="">
-          <div className="card">
-            <div className="card-section">
-              <div className="card-header">
-                <h1 className="card-title">Card Title</h1>
-              </div>
-              <div className="card-body">
-                <p>Body Text</p>
-              </div>
-              <div className="card-footer">
-                Footer
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<br /><br /><br /><br />
 
+    <h1>Block Elements</h1>
+    <Table>
+      <THead>
+        <Tr>
+          <Th>Element Name</Th>
+          <Th>Preview</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Paragraph</Td>
+          <Td><p>This is a paragraph.</p></Td>
+        </Tr>
+        <Tr>
+          <Td>Preformatted Text</Td>
+          <Td><pre>This is a block of preformatted text.</pre></Td>
+        </Tr>
+        <Tr>
+          <Td>Address</Td>
+          <Td><address>Address Element<br />1234 Main St. Suite 100<br />City, State, Zip<br />Country</address></Td>
+        </Tr>
+        <Tr>
+          <Td>Image</Td>
+          <Td><img className="docs-img-placeholder" alt="Alt Text" title="Image Title" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Horizontal Rule</Td>
+          <Td><hr /></Td>
+        </Tr>
+        <Tr>
+          <Td>Blockquote</Td>
+          <Td><blockquote>This is a blockquote.</blockquote></Td>
+        </Tr>
+        <Tr>
+          <Td>Ordered List</Td>
+          <Td>
+            <ol>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+            </ol>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Unordered List</Td>
+          <Td>
+            <ul>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+            </ul>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Definition List</Td>
+          <Td>
+            <dl>
+              <dt>Definition Term 1</dt>
+              <dd>Description Details</dd>
+            </dl>
+            <dl>
+              <dt>Definition Term 2</dt>
+              <dd>Description Details</dd>
+            </dl>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Figure</Td>
+          <Td><figure>Figure</figure></Td>
+        </Tr>
+        <Tr>
+          <Td>Figcaption</Td>
+          <Td><figcaption>Figcaption</figcaption></Td>
+        </Tr>
+      </TBody>
+    </Table>
 
+<br /><br /><br /><br />
 
-      <div className="page-header">
-        <div className="">
-          <h1 className="page-header-title">Typography</h1>
-        </div>
-      </div>
-
-
-      <Panel>
-        <Header>
-          Headings
-        </Header>
-        <Body>
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
-        </Body>
-      </Panel>
-
-      <Panel>
-        <Header>
-          Inline Elements
-        </Header>
-        <Body>
-          <a href="#" title="Link">Link</a>
-          <br />
-
-          <em>Emphasis</em>
-          <br />
-
-          <strong>Strong</strong>
-          <br />
-
-          <small>Small</small>
-          <br />
-
-          <abbr>Abbr</abbr>
-          <br />
-
-          <time>12:00 PM</time>
-          <br />
-
-          <code>Inline Code</code>
-          <br />
-
-          <pre><code>one line of code
-
-second line of code
-
-long line of code long line of code long line of code long line of code long line of code long line of code long line of code long line of code long line of code</code></pre>
-
-          <i>Italic</i>
-          <br />
-
-          <kbd>ctrl + C</kbd>
-          <br />
-
-          <b>Bold</b>
-          <br />
-
-          <span>Span</span>
-
-          <br />
-
-        </Body>
-      </Panel>
-
-
-
-      <Panel>
-        <Header>
-          Form Elements
-        </Header>
-        <Body>
-
-          <form>
-            <label>Label</label>
+    <h1>Form Elements</h1>
+    <Table>
+      <THead>
+        <Tr>
+          <Th>Element Name</Th>
+          <Th>Preview</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Button</Td>
+          <Td><button>Button</button></Td>
+        </Tr>
+        <Tr>
+          <Td>Checkbox</Td>
+          <Td>
+            <input type="checkbox" checked />
             <br />
-            <input type="button" placeholder="Text Input" />
-            <br />
-            <input type="checkbox" /><label>Checkbox</label>
-            <br />
-            <input type="color" />
-            <br />
-            <input type="date" />
-            <br />
-            <input type="datetime" />
-            <br />
-            <input type="email" />
-            <br />
-            <input type="file" />
-            <br />
-            <input type="image" />
-            <br />
-            <input type="month" />
-            <br />
-            <input type="number" />
-            <br />
-            <input type="password" />
+            <input type="checkbox" />
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Color</Td>
+          <Td><input type="color" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Date</Td>
+          <Td><input type="date" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Datetime</Td>
+          <Td><input type="datetime" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Datetime Local</Td>
+          <Td><input type="datetime-local" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Fieldset with Legend</Td>
+          <Td>
+            <fieldset>
+              <legend>Legend</legend>
+              <label for="field">Label</label>
+              <input id="field" />
+            </fieldset>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>File</Td>
+          <Td><input type="file" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Label</Td>
+          <Td><label>Label</label></Td>
+        </Tr>
+        <Tr>
+          <Td>Month</Td>
+          <Td><input type="month" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Number</Td>
+          <Td><input type="number" min="0" max="15" step="3" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Password</Td>
+          <Td><input type="password" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Progress</Td>
+          <Td><progress max="100" value="50"></progress></Td>
+        </Tr>
+        <Tr>
+          <Td>Radio</Td>
+          <Td>
+            <input type="radio" checked />
             <br />
             <input type="radio" />
-            <br />
-            <input type="range" />
-            <br />
-            <input type="search" />
-            <br />
-            <input type="submit" />
-            <br />
-            <br />
-            <input type="tel" />
-            <br />
-            <input type="text" placeholder="Text Input" />
-            <br />
-            <input type="time" />
-            <br />
-            <input type="url" />
-            <br />
-            <input type="week" />
-            <br />
-            <button>Button</button>
-            <br />
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Range</Td>
+          <Td><input type="range" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Reset</Td>
+          <Td><input type="reset" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Search</Td>
+          <Td><input type="search" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Select</Td>
+          <Td>
+            <select>
+              <option>Option</option>
+              <option>Option</option>
+              <option>Option</option>
+            </select>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Select Optgroups</Td>
+          <Td>
             <select>
               <optgroup label="Optgroup Label 1">
                 <option>Option</option>
@@ -217,116 +305,61 @@ long line of code long line of code long line of code long line of code long lin
                 <option>Option</option>
               </optgroup>
             </select>
-            <br />
-            <textarea>Textarea</textarea>
-            <br />
-            <progress></progress>
-            <br />
-            <meter></meter>
-            <br />
-            <fieldset>Fieldset</fieldset>
-            <br />
-            <legend>Legend</legend>
+          </Td>
+        </Tr>
+        <Tr>
+          <Td>Submit</Td>
+          <Td><input type="submit" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Tel</Td>
+          <Td><input type="tel" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Text Input</Td>
+          <Td><input type="text" placeholder="Text Input" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Textarea</Td>
+          <Td><textarea></textarea></Td>
+        </Tr>
+        <Tr>
+          <Td>Time</Td>
+          <Td><input type="time" /></Td>
+        </Tr>
+        <Tr>
+          <Td>URL</Td>
+          <Td><input type="url" /></Td>
+        </Tr>
+        <Tr>
+          <Td>Week</Td>
+          <Td><input type="week" /></Td>
+        </Tr>
+      </TBody>
+    </Table>
 
-          </form>
+<br /><br /><br /><br />
 
-
-
-          <hr />
-
-
-
-
-
-
-          <hr />
-
-          <h1>Block Elements</h1>
-
-          <article>article</article>
-          <section>section</section>
-          <nav>nav</nav>
-          <aside>aside</aside>
-          <header>header</header>
-          <footer>footer</footer>
-          <main></main>
-
-          <hr />
-
-          <h1>Content</h1>
-
-          <p>This is a paragraph.</p>
-
-          <hr></hr>
-
-          <pre>This is a block of preformatted text.</pre>
-
-          <blockquote>This is a blockquote.</blockquote>
-
-          <ol>
-            <li>Ordered List Item</li>
-            <li>Ordered List Item</li>
-            <li>Ordered List Item</li>
-          </ol>
-
-          <ul>
-            <li>Unordered List Item</li>
-            <li>Unordered List Item</li>
-            <li>Unordered List Item</li>
-          </ul>
-
-          <br />
-
-          <dl>
-            <dt>Definition Term</dt>
-            <dd>Description Details</dd>
-          </dl>
-
-          <br />
-
-          <figure>Figure</figure>
-
-          <br />
-
-          <figcaption>Figcaption</figcaption>
-
-          <br />
-
-          <address>Address Element<br />1234 Main St. Suite 100<br />City, State, Zip<br />Country</address>
-
-          <br />
-
-          <img alt="" />
-
-          <hr />
-
-          <table>
-            <thead>
-              <tr>
-                <th>Heading</th>
-                <th>Heading</th>
-                <th>Heading</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Value</td>
-                <td>Value</td>
-                <td>Value</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <hr />
+    <h1>Components</h1>
+    <div className="section">
+      <div className="card">
+        <div className="card-section">
+          <div className="card-header">
+            <h1 className="card-title">Card Title</h1>
+          </div>
+          <div className="card-body">
+            <p>Body Text</p>
+          </div>
+          <div className="card-footer">
+            Footer
+          </div>
+        </div>
+      </div>
+    </div>
 
 
+  </PageContent>
 
-
-          <hr />
-
-        </Body>
-      </Panel>
-    </PageContent>
-  </div>;
+</div>;
 
 export default DesignSystem;

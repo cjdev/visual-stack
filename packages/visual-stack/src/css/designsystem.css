@@ -1,0 +1,198 @@
+/* type.css */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2em;
+  color: #222;
+}
+
+h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6 {
+  /* margin-top: 2em; */
+}
+
+h1, .h1 { font-size: 36px; font-weight: 300;}
+h2, .h2 { font-size: 26px; }
+h3, .h3 { font-size: 22px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 16px; }
+h6, .h6 { font-size: 14px; }
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child),
+h6:not(:first-child) {
+  margin-top: 2em;
+}
+
+a {
+  color: #00af66;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  transition: .1s all ease-in-out;
+}
+a:hover {
+  color: #009054;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 120%;
+  font-weight: 400;
+}
+
+hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 0;
+  border-top: 1px solid #ccc;
+
+}
+
+ul, ol {
+  margin: 0 0 2em;
+  padding: 0 0 0 2em;
+}
+
+table td.vs-cell {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+table td p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+.page-header {
+  margin: 0 0 3em;
+  padding: 0 0 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-title {
+  margin-top: 0;
+}
+
+.docs-img-placeholder {
+  display: inline-block;
+  width: 256px;
+  background: #ddd;
+  height: 128px;
+  margin: 8px 0;
+
+  line-height: 128px;
+  font-size: 18px;
+  color: #aaa;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.input-container {
+  margin-bottom: 8px;
+}
+
+
+
+/* Cards */
+
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  padding: 32px;
+}
+
+.card-header {
+
+}
+
+.card-title {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body {
+
+}
+
+.card-footer {
+  border-top: 1px solid #eee;
+  color: #999;
+  font-size: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+
+
+
+
+
+/* Page Navigation - Scroll to anchor */
+
+.page-nav-container {
+  /* background: #F4F4F4; */
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  margin-left: 48px;
+}
+
+.page-nav {
+  font-size: 13px;
+  padding: 24px 24px 24px 0;
+}
+
+.page-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.page-nav ul li a {
+  border-left: 3px solid transparent;
+  color: #212121;
+  display: block;
+  padding: 8px 24px;
+}
+
+.page-nav ul li a:hover {
+  color: #00af66;
+  text-decoration: none;
+}
+
+.page-nav ul li a.active {
+  border-left-color: #00af66;
+  color: #00af66;
+}
+
+.page-nav .page-nav-heading {
+  border-left: 3px solid transparent;
+  font-size: 13px;
+  margin: 0;
+  padding: 8px 24px;
+}

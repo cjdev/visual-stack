@@ -23,6 +23,7 @@ import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 /* s3:end */
 import { routeComponentMap } from '../Components/Docs/';
 
+
 const componentLinks = R.pipe(
   R.mapObjIndexed((val, key) => ({ key, ...val })),
   R.values,
@@ -77,6 +78,16 @@ export default class AppSideNav extends React.Component {
         <Link hoverText="Design System">
           <RRLink to="/design-system">
             <LinkContentWrapper icon={<DesignSystemIcon />} label="Design System" />
+          </RRLink>
+        </Link>
+        <Link hoverText="Forms">
+          <RRLink to="/forms">
+            <LinkContentWrapper icon={<DesignSystemIcon />} label="Forms" />
+          </RRLink>
+        </Link>
+        <Link hoverText="Dev Portal">
+          <RRLink to="/dev-portal">
+            <LinkContentWrapper icon={<DesignSystemIcon />} label="Dev Portal" />
           </RRLink>
         </Link>
       </SideNav>
