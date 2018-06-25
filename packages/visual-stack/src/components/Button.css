@@ -17,48 +17,6 @@
   text-shadow: none;
   text-transform: uppercase;
   width: auto;
-/*
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  line-height: 1em;
-  font-weight: 500;
-  letter-spacing: .08929em;
-  text-decoration: none;
-  text-transform: uppercase;
-  -webkit-tap-highlight-color: #0000;
-  will-change: transform,opacity;
-  padding: 0 8px;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  min-width: 64px;
-  height: 36px;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-appearance: none;
-  overflow: hidden;
-  vertical-align: middle;
-  border-radius: 3px;
-
-  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-  -webkit-transition: -webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);
-  transition: -webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);
-  -o-transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
-  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
-  transition: box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1); */
 }
 
 .btn-d:focus, a.btn-d:focus {
