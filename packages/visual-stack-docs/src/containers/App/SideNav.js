@@ -80,16 +80,6 @@ export default class AppSideNav extends React.Component {
             <LinkContentWrapper icon={<DesignSystemIcon />} label="Design System" />
           </RRLink>
         </Link>
-        <Link hoverText="Forms">
-          <RRLink to="/forms">
-            <LinkContentWrapper icon={<DesignSystemIcon />} label="Forms" />
-          </RRLink>
-        </Link>
-        <Link hoverText="Dev Portal">
-          <RRLink to="/dev-portal">
-            <LinkContentWrapper icon={<DesignSystemIcon />} label="Dev Portal" />
-          </RRLink>
-        </Link>
       </SideNav>
     {/* s2:end */}
     </div>
