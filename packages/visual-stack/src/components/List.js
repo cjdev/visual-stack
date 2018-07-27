@@ -8,8 +8,8 @@ export const List = ({ children }) =>
   <div>{children}</div>;
 
 export const Toolbar = ({ title, children }) =>
-  <div className="list-toolbar toolbar-widget-header">
-    {title && <span className="list-toolbar-title">{title}</span>}
+  <div className="vs-list-toolbar vs-toolbar-widget-header">
+    {title && <span className="vs-list-toolbar-title">{title}</span>}
     {children}
   </div>;
 Toolbar.propTypes = {
@@ -33,13 +33,13 @@ ActionButton.defaultProps = {
 
 const renderHeaderCell = ({ width, alignment, text }) =>
   <Cell key={text} width={width}>
-    <div className={`list-header-label text-${alignment || 'left'}`}>
+    <div className={`vs-list-header-label text-${alignment || 'left'}`}>
       {text}
     </div>
   </Cell>;
 
 export const Header = ({ labels }) =>
-  <div className="list-header">
+  <div className="vs-list-header">
     <Row>{map(renderHeaderCell, labels)}</Row>
   </div>;
 Header.propTypes = {
@@ -51,12 +51,12 @@ Header.propTypes = {
 };
 
 export const Rows = ({ children }) =>
-  <div className="list-rows">
+  <div className="vs-list-rows">
     {children}
   </div>;
 
 export const Row = props =>
-  <div className="list-row" {...omit(['children', 'expansion'], props)}>
+  <div className="vs-list-row" {...omit(['children', 'expansion'], props)}>
     <div className="container-fluid">
       <div className="row">
         {props.children}
@@ -66,12 +66,12 @@ export const Row = props =>
   </div>;
 
 const ExpandedRowPanel = ({ children }) =>
-  <div className="list-row-expanded">
+  <div className="vs-list-row-expanded">
     {children}
   </div>;
 
 export const Cell = ({ width, children }) =>
-  <div className={`list-cell col-xs-${width || 1}`}>
+  <div className={`vs-list-cell col-xs-${width || 1}`}>
     {children}
   </div>;
 Cell.propTypes = {

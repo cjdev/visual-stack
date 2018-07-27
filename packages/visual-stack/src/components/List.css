@@ -1,56 +1,56 @@
-.list-toolbar {
+.vs-list-toolbar {
   border: 1px solid #CCC;
   padding: 0 15px 0 15px;
   border-bottom-width: 0;
 }
 
-.list-toolbar-title {
+.vs-list-toolbar-title {
   height: 45px;
   line-height: 45px;
   font-size: 12px;
   font-weight: 600;
 }
 
-.list-header {
+.vs-list-header {
   background-color: #f7f7f7;
   border: 1px solid #CCC;
   border-bottom: 0 transparent;
   pointer-events:none;
 }
 
-.list-header-label {
+.vs-list-header-label {
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.list-rows {
+.vs-list-rows {
   border: 1px solid #CCC;
 }
 
-.list-row {
+.vs-list-row {
   padding: 15px 0;
   border-top: 1px dashed #CCC;
 }
 
-.list-row:first-child {
+.vs-list-row:first-child {
   border-top-width: 0;
 }
 
-.list-row:hover {
+.vs-list-row:hover {
   background: #F9F9F9;
   cursor: hand;
 }
 
-.list-header-pull-down {
+.vs-list-header-pull-down {
   margin-top: 1em;
 }
 
-.list-cell {
+.vs-list-cell {
   border-right: 1px solid #CCC;
 }
 
-.list-cell:last-child  {
+.vs-list-cell:last-child  {
   border-right-width: 0;
 }
