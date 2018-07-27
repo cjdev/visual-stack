@@ -5,7 +5,7 @@ import './Form.css';
 export const Input = ({ className, type, ...otherProps }) =>
   <input
     type={type || 'text'}
-    className={`form-control ${className || ''}`}
+    className={`vs-form-control ${className || ''}`}
     {...otherProps} />;
 Input.propTypes = {
   className: PropTypes.string,
@@ -13,9 +13,9 @@ Input.propTypes = {
 };
 
 export const Label = ({ children, className, required, vertical, ...otherProps }) =>
-  <label className={`form-label control-label form-label-${vertical ? 'vertical' : 'horizontal'} ${className || ''}`} {...otherProps}>
+  <label className={`vs-form-label vs-control-label vs-form-label-${vertical ? 'vertical' : 'horizontal'} ${className || ''}`} {...otherProps}>
     {children}
-    {required && <span className="form-group-required-sign">*</span>}
+    {required && <span className="vs-form-group-required-sign">*</span>}
   </label>;
 Label.propTypes = {
   className: PropTypes.string,
@@ -26,17 +26,17 @@ export const Legend = ({ children, ...otherProps }) =>
   <legend {...otherProps}>{children}</legend>;
 
 export const Form = ({ children, vertical, ...otherProps }) =>
-  <form className={vertical ? 'form-vertical' : 'form-horizontal'} {...otherProps}>{children}</form>;
+  <form className={vertical ? 'vs-form-vertical' : 'vs-form-horizontal'} {...otherProps}>{children}</form>;
 
 export const FormGroup = ({ children, error, label, required, vertical }) =>
-  <div className={`form-group ${error ? 'has-error' : ''}`}>
+  <div className={`vs-form-group ${error ? 'vs-has-error' : ''}`}>
     {label ? <Label vertical={vertical} className={!vertical ? 'col-sm-3' : ''} required={required}>{label}</Label>
            : <div className={!vertical ? 'col-sm-3' : ''} />}
     <div className={!vertical ? 'col-sm-5' : ''}>
       {children}
     </div>
-    <div className={`error-container ${!vertical ? 'col-xs-4' : ''}`}>
-      {error && <div className="form-group-error-span">{error}</div>}
+    <div className={`vs-error-container ${!vertical ? 'col-xs-4' : ''}`}>
+      {error && <div className="vs-form-group-error-span">{error}</div>}
     </div>
   </div>;
 FormGroup.propTypes = {
