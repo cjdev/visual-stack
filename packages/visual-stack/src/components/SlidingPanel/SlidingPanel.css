@@ -1,4 +1,4 @@
-.sliding-panel {
+.vs-sliding-panel {
   background-color: #fff;
   border-top: 1px solid #eee;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0);
@@ -15,12 +15,12 @@
   transition: all 0.5s;
 }
 
-.sliding-panel.active {
+.vs-sliding-panel.active {
   transform: translateX(-100%);
   box-shadow: 0 0 64px rgba(0, 0, 0, .1);
 }
 
-.sliding-panel-header {
+.vs-sliding-panel-header {
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
   color: #333;
@@ -29,60 +29,60 @@
   font-weight: 600;
 }
 
-.sliding-panel-section:not(:last-child) {
+.vs-sliding-panel-section:not(:last-child) {
   border-bottom: 1px solid #e6e6e6;
 }
 
-.sliding-panel ul {
+.vs-sliding-panel ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.filter-container.expanded {
+.vs-filter-container.expanded {
   background-color: #fff;
 	transition: 0.5s all ease-in-out;
 }
 
-.filter-container ul {
+.vs-filter-container ul {
   max-height: 0;
   overflow: hidden;
   transition: .5s max-height ease-out;
   border-bottom: 1px solid #e6e6e6;
 }
 
-.filter-container.expanded ul {
+.vs-filter-container.expanded ul {
   display: inline;
 }
 
-.filter-container a {
+.vs-filter-container a {
   color: #333;
   display: block;
   text-decoration: none;
 }
 
-.filter-container-label {
+.vs-filter-container-label {
   padding: 16px;
 }
 
-.filter-container-label div {
+.vs-filter-container-label div {
   font-weight: 600;
   opacity: .54;
   transition: .3s all ease-in-out;
 }
 
-.filter-container-label:hover div,
-.filter-container.expanded .filter-container-label div {
+.vs-filter-container-label:hover div,
+.vs-filter-container.expanded .vs-filter-container-label div {
   opacity: 1;
 }
 
-.filter-container-label a {
+.vs-filter-container-label a {
   display: block;
   padding: 8px 16px;
   text-decoration: none;
 }
 
-a.filter-container-label {
+a.vs-filter-container-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,32 +91,32 @@ a.filter-container-label {
   user-select:none;
 }
 
-.sliding-panel-toggle-icon {
+.vs-sliding-panel-toggle-icon {
   margin: 0 3px;
   padding: 1px 4px;
   display: flex;
   align-items: center;
 }
 
-.sliding-panel-toggle-icon:hover {
+.vs-sliding-panel-toggle-icon:hover {
   cursor: pointer;
   text-decoration: none;
 }
 
-.filter-container .filter-container-label i {
-	color: #333;
-	font-size: 10px;
+.vs-filter-container .vs-filter-container-label i {
+  color: #333;
+  font-size: 10px;
   opacity: .54;
   transform: rotate(0);
   transition: .3s all ease-in-out;
 }
 
-.filter-container.expanded .filter-container-label i {
+.vs-filter-container.expanded .vs-filter-container-label i {
   opacity: 1;
   transform: rotate(90deg);
 }
 
-.filter-icn-btn {
+.vs-filter-icn-btn {
   min-width: 50px;
   width: auto;
   border-collapse: separate;
@@ -131,16 +131,16 @@ a.filter-container-label {
   align-items: center;
 }
 
-.filter-icn-btn:hover {
+.vs-filter-icn-btn:hover {
   background-color: #f5f5f5;
-	transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
 }
 
-.filterIcon {
+.vs-filterIcon {
   height: 14px;
   fill: #748aa1;
 }
 
-.active .filterIcon {
+.active .vs-filterIcon {
   fill: #3ABDA7;
 }

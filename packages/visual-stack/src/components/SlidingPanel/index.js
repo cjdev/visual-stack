@@ -7,8 +7,8 @@ import FilterIcon from 'mdi-react/FilterIcon';
 export const ToggleIcon = ({ onClick, hoverText, toggleIconState, label }) => {
   const iconState = (toggleIconState) ? ' active' : '';
   return (
-    <a className={'sliding-panel-toggle-icon' + iconState} onClick={onClick} title={hoverText}>
-        <div className="filter-icn-btn"><FilterIcon className="filterIcon"/><span>{ label || 'Show Filters' }</span></div>
+    <a className={'vs-sliding-panel-toggle-icon' + iconState} onClick={onClick} title={hoverText}>
+        <div className="vs-filter-icn-btn"><FilterIcon className="filterIcon"/><span>{ label || 'Show Filters' }</span></div>
     </a>
   );
 };
@@ -21,7 +21,7 @@ ToggleIcon.propTypes = {
 
 export const SlidingPanelHeader = ({ children }) => {
   return (
-    <li className="sliding-panel-header">
+    <li className="vs-sliding-panel-header">
       { children }
     </li>
   );
@@ -29,7 +29,7 @@ export const SlidingPanelHeader = ({ children }) => {
 
 export const SlidingPanelSection = ({ children }) => {
   return (
-    <li className="sliding-panel-section">
+    <li className="vs-sliding-panel-section">
       { children }
     </li>
   );
@@ -37,7 +37,7 @@ export const SlidingPanelSection = ({ children }) => {
 
 export const SlidingPanel = ({ children, active }) => {
   return (
-    <div className={ classNames('sliding-panel', { active })}>
+    <div className={ classNames('vs-sliding-panel', { active })}>
       <ul>
         { children }
       </ul>
@@ -46,11 +46,11 @@ export const SlidingPanel = ({ children, active }) => {
 };
 
 export const SlidingPanelDropdown = ({ label, children, onClick, expanded }) => {
-  const containerClasses = classNames('filter-container', { expanded });
-  const optionsClasses = classNames('filter-options', { expanded });
+  const containerClasses = classNames('vs-filter-container', { expanded });
+  const optionsClasses = classNames('vs-filter-options', { expanded });
   return (
     <ul className={containerClasses}>
-      <a className="filter-container-label" onClick={onClick}>
+      <a className="vs-filter-container-label" onClick={onClick}>
         <div>{ label }</div>
         <i className="fa fa-chevron-right"></i>
       </a>
