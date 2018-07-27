@@ -8,16 +8,16 @@ export const Wrapper = ({ children, title, subTitle, subTitle2, bubbleImg }) => 
   const titleText = title || 'You do not have any content.';
   const subTitle2El = subTitle2 && <div className="bs-subtitle">{subTitle2}</div>;
   return (
-    <div className="row blankslate">
+    <div className="row vs-blankslate">
       <div className="col-xs-2" />
-      <div className="blank-slate col-xs-8">
-        <div className="blank-slate-img-wrapper">
-          <div className="bs-bubble-img">
+      <div className="vs-blank-slate col-xs-8">
+        <div className="vs-blank-slate-img-wrapper">
+          <div className="vs-bs-bubble-img">
             <img src={imgSrc} />
           </div>
         </div>
-        <div className="blankslate-title">{titleText}</div>
-        <div className="bs-subtitle">{subTitle}</div>
+        <div className="vs-blankslate-title">{titleText}</div>
+        <div className="vs-bs-subtitle">{subTitle}</div>
         {subTitle2El}
         {children}
       </div>
@@ -32,15 +32,15 @@ Wrapper.propTypes = {
 };
 
 export const Button = ({ onClick, text }) =>
-  <div className="bs-button-wrapper">
+  <div className="vs-bs-button-wrapper">
     <div>
       <h2>Get started now!</h2>
       <BaseButton
-        className="bs-button"
+        className="vs-bs-button"
         size="lg"
         type="primary"
         onClick={onClick}>
-        <span className="bs-button-text">{text || 'Create Content'}</span>
+        <span className="vs-bs-button-text">{text || 'Create Content'}</span>
       </BaseButton>
     </div>
   </div>;

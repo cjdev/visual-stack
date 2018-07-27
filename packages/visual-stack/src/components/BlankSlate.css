@@ -1,4 +1,4 @@
-.blank-slate {
+.vs-blank-slate {
     text-align: center;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
@@ -7,57 +7,57 @@
     position: relative;
 }
 
-.blankslate-icon {
+.vs-blankslate-icon {
     font-size: 10em;
     color: #DDDDDD;
 }
 
-.blankslate-description, .blankslate-title {
+.vs-blankslate-description, .vs-blankslate-title {
     color: #858585;
 }
-.blankslate-title {
+.vs-blankslate-title {
     font-weight: 500;
     font-size: 2em;
     padding: 1.5em 0 .3em;
 }
 
-.blank-slate-img-wrapper {
+.vs-blank-slate-img-wrapper {
     position: absolute;
     width: 100%;
     top: -70px;
     left: 0;
 }
 
-.bs-bubble-img{
+.vs-bs-bubble-img{
     width: 135px;
     top: 0px;
     margin: 0 auto;
 }
 
-.bs-support-center-info {
+.vs-bs-support-center-info {
     width: 80%;
     border-top: 1px dashed #CCC;
     padding: 2em 0;
     margin: 2em auto;
 }
 
-.bs-support-center-info i{
+.vs-bs-support-center-info i{
     font-size: 18px;
     padding: 0 3px;
 }
 
-.bs-description-text {
+.vs-bs-description-text {
     color: #858585;
     white-space: normal;
 }
 
-.bs-description-wrapper {
+.vs-bs-description-wrapper {
     margin: 0 auto;
     padding: 0 2em;
     text-align: center;
 }
 
-.bs-description-bullet-wrapper {
+.vs-bs-description-bullet-wrapper {
     color: #858585;
     text-align: left;
     max-width: 50%;
@@ -66,18 +66,18 @@
     display: inline-block;
 }
 
-.bs-subtitle {
+.vs-bs-subtitle {
     color: #858585;
     margin-bottom: 2em;
     white-space: normal;
 }
 
-.bs-description-learn-more {
+.vs-bs-description-learn-more {
     margin: 2em auto 0;
     color: #858585;
 }
 
-.bs-button-wrapper {
+.vs-bs-button-wrapper {
     border-top: 1px dashed #CCC;
     padding: 2em 0 0;
     margin: 2em auto;
