@@ -72,9 +72,9 @@ class TabLabel extends React.Component {
     const selected = isSelected(tabIndex);
 
     const labelStateClassName = disabled
-      ? 'cj-tab-label-disabled'
-      : selected ? 'cj-tab-label-clicked' : '';
-    const labelClassName = `cj-tab-label ${labelStateClassName}`;
+      ? 'vs-tab-label-disabled'
+      : selected ? 'vs-tab-label-clicked' : '';
+    const labelClassName = `vs-tab-label ${labelStateClassName}`;
 
     const accentColor = themeColor || '#00af65';
 
@@ -110,14 +110,14 @@ class TabLabel extends React.Component {
 }
 
 export const TabLabelContent = props => (
-  <div className="cj-tab-label-content standard">
+  <div className="vs-tab-label-content standard">
     {props.children}
   </div>
 );
 
 const TabHeader = ({ children, floatingHeader, headerWidth }) => {
-  const floatingClassName = floatingHeader ? 'cj-tab-header-floating' : '';
-  const headerClassName = `cj-tab-header ${floatingClassName}`;
+  const floatingClassName = floatingHeader ? 'vs-tab-header-floating' : '';
+  const headerClassName = `vs-tab-header ${floatingClassName}`;
   const headerCss = floatingHeader ? { width: `${headerWidth}` } : {};
   return <div className={headerClassName} style={headerCss}>
     {children}
@@ -126,13 +126,13 @@ const TabHeader = ({ children, floatingHeader, headerWidth }) => {
 
 const TabBody = ({ children, floatingHeader, headerHeight }) => {
   const headerHeightCss = floatingHeader ? { paddingTop: `${headerHeight}` } : {};
-  return (<div className="cj-tab-body" style={ headerHeightCss }>
+  return (<div className="vs-tab-body" style={ headerHeightCss }>
     {children}
   </div>);
 };
 
 export const TabContent = props => (
-  <div className="cj-tab-content standard">
+  <div className="vs-tab-content standard">
     {props.children}
   </div>
 );
