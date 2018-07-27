@@ -1,84 +1,84 @@
 /* CJ Button - primary styles*/
 
-.default-btn {
+.vs-default-btn {
   border: 2px solid #B6B6B6;
   color: #B6B6B6;
 }
 
-.primary-btn {
+.vs-primary-btn {
   border: 2px solid #00AF66;
   color: #00AF66;
 }
 
-.info-btn {
+.vs-info-btn {
   border: 2px solid #34657F;
   color: #34657F;
 }
 
-.danger-btn {
+.vs-danger-btn {
   border: 2px solid #E1523D;
   color: #E1523D;
 }
 
-.warning-btn {
+.vs-warning-btn {
   border: 2px solid #FFB500;
   color: #FFB500;
 }
 
-.success-btn {
+.vs-success-btn {
   border: 2px solid #49C5B1;
   color: #49C5B1;
 }
 
-.default-btn, .primary-btn, .info-btn, .danger-btn, .warning-btn, .success-btn {
+.vs-default-btn, .vs-primary-btn, .vs-info-btn, .vs-danger-btn, .vs-warning-btn, .vs-success-btn {
   background: #FFFFFF;
   box-sizing: border-box;
   outline: none;
 }
 
-.solid-primary-btn {
+.vs-solid-primary-btn {
   background: #00AF66;
   border: 2px solid #00AF66;
   color: #FFFFFF;
 }
 
-a.btn-d:hover, .btn-d a:hover {
+a.vs-btn-d:hover, .vs-btn-d a:hover {
   text-decoration: none;
 }
 
-.default-btn:hover {
+.vs-default-btn:hover {
   background: rgba(133, 133, 133, 0.1);
   box-shadow: none;
 }
 
-.primary-btn:hover {
+.vs-primary-btn:hover {
   background: rgba(0, 175, 102, 0.1);
   box-shadow: none;
 }
 
-.info-btn:hover {
+.vs-info-btn:hover {
   background: rgba(52, 101, 127, 0.1);
   box-shadow: none;
 }
 
-.danger-btn:hover {
+.vs-danger-btn:hover {
   background: rgba(221, 56, 52, 0.1);
   box-shadow: none;
 }
 
-.warning-btn:hover  {
+.vs-warning-btn:hover  {
   background: rgba(255, 181, 20, 0.1);
   box-shadow: none;
 }
 
-.success-btn:hover {
+.vs-success-btn:hover {
   background: rgba(73, 197, 177, 0.1);
   box-shadow: none;
 }
 
 /* global button styles */
 
-.btn-d  {
+.vs-btn-d  {
   display: inline-block;
   margin: 5px 0;
   min-width: 50px;
@@ -95,39 +95,39 @@ a.btn-d:hover, .btn-d a:hover {
   text-shadow: none;
 }
 
-.btn-d:focus, a.btn-d:focus {
+.vs-btn-d:focus, a.vs-btn-d:focus {
   outline: none;
 }
 
-.btn-d:active {
+.vs-btn-d:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Button sizing */
 
-.btn-d {
+.vs-btn-d {
   padding: 6px 20px;
 }
 
-.lrg-btn, .lrg-btn {
+.vs-lrg-btn, .vs-lrg-btn {
   padding: 10px 28px;
   font-size: 1.1em;
 }
 
 /* Disabled state */
 
-.primary-btn.disabled, .primary-btn[disabled], .primary-btn.disabled:hover, .primary-btn[disabled]:hover,
-.default-btn.disabled, .default-btn[disabled], .default-btn.disabled:hover, .default-btn[disabled]:hover {
+.vs-primary-btn.disabled, .vs-primary-btn[disabled], .vs-primary-btn.disabled:hover, .vs-primary-btn[disabled]:hover,
+.vs-default-btn.disabled, .vs-default-btn[disabled], .vs-default-btn.disabled:hover, .vs-default-btn[disabled]:hover {
   box-shadow: none;
   opacity: 0.55;
   filter: alpha(opacity=55);
   cursor: not-allowed;
 }
 
-.primary-btn.disabled, .primary-btn[disabled], .primary-btn.disabled:hover, .primary-btn[disabled]:hover {
+.vs-primary-btn.disabled, .vs-primary-btn[disabled], .vs-primary-btn.disabled:hover, .vs-primary-btn[disabled]:hover {
   background: rgba(0, 175, 102, 0.1);
 }
 
-.default-btn.disabled, .default-btn[disabled], .default-btn.disabled:hover, .default-btn[disabled]:hover {
+.vs-default-btn.disabled, .vs-default-btn[disabled], .vs-default-btn.disabled:hover, .vs-default-btn[disabled]:hover {
   background: rgba(133, 133, 133, 0.1);
 }

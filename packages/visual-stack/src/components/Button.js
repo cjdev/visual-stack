@@ -7,8 +7,8 @@ const concatAll = unapply(reduce(concat, []));
 
 const mkButton = buttonType => ({ children, className, type, large, ...otherProps }) => {
   const classes = concatAll(
-    ['btn-d', `${type}-btn`],
-    large ? ['lrg-btn'] : [],
+    ['vs-btn-d', `vs-${type}-btn`],
+    large ? ['vs-lrg-btn'] : [],
     className ? [className] : []
   );
 
