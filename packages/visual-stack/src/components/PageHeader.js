@@ -2,21 +2,21 @@ import React from 'react';
 import './PageHeader.css';
 
 export const PageTitle = ({ children }) =>
-  <div className="page-heading--title">
+  <div className="vs-page-heading--title">
     {children}
   </div>;
 
 export const PageHeaderSection = ({ children }) =>
-  <div className="page-heading--section">
+  <div className="vs-page-heading--section">
     {children}
   </div>;
 
 export const PageDescription = ({ children }) =>
-  <span className="page-heading--description">
+  <span className="vs-page-heading--description">
     {children}
   </span>;
 
 export const PageHeader = ({ children }) =>
-  <div className="page-heading">
+  <div className="vs-page-heading">
     {children}
   </div>;

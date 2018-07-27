@@ -8,14 +8,14 @@ body {
   margin: 0;
 }
 
-.application-layout {
+.vs-application-layout {
   height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.application-layout-container {
+.vs-application-layout-container {
   flex: 1 1 auto;
   display: flex;
   overflow: hidden;
@@ -23,54 +23,54 @@ body {
   transition: all .5s ease-out;
 }
 
-.application-layout-side-collapsed,
-.application-layout-side {
+.vs-application-layout-side-collapsed,
+.vs-application-layout-side {
   flex: 0 0 auto;
   overflow: auto;
   margin-left: 50px;
   transition: all .5s ease-out;
 }
 
-.application-layout-filter {
+.vs-application-layout-filter {
   flex: 0 0 auto;
   overflow: auto;
   margin-left: 50px;
   transition: all .5s ease-out;
 }
 
-.application-layout-filter-collapsed {
+.vs-application-layout-filter-collapsed {
   flex: 0 0 auto;
   margin-left: 0px;
   transition: all .5s ease-out;
 }
 
 @media (min-width: 40em) {
-  .application-layout-side {
+  .vs-application-layout-side {
     flex: 0 0 255px;
     margin-left: 0px;
     transition: all .5s ease-out;
   }
 
-  .application-layout-side-collapsed {
+  .vs-application-layout-side-collapsed {
     flex: 0 0 55px;
     margin-left: 0px;
     transition: all .5s ease-out;
   }
 
-  .application-layout-filter {
+  .vs-application-layout-filter {
     flex: 0 0 310px;
     margin-left: 0px;
     transition: all .4s ease-out;
   }
 
-  .application-layout-filter-collapsed {
+  .vs-application-layout-filter-collapsed {
     flex: 0 0 5px;
     margin-left: 0px;
     transition: all .4s ease-out;
   }
 }
 
-.application-layout-content {
+.vs-application-layout-content {
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;

@@ -1,4 +1,4 @@
-.page-heading {
+.vs-page-heading {
   background-color: rgba(248,250,252,0.9);
   border-top: 1px solid #eee;
   display: flex;
@@ -17,31 +17,31 @@
 }
 
 @media (min-width: 40em) {
-  .page-heading--title {
+  .vs-page-heading--title {
     width: calc(100% - 255px);
   }
 
-  .application-layout-side-collapsed+.application-layout-content .page-heading--title {
+  .vs-application-layout-side-collapsed+.vs-application-layout-content .vs-page-heading--title {
     width: calc(100% - 50px);
   }
 }
 
-.page-heading--section {
+.vs-page-heading--section {
   right: 1em;
   display: flex;
   position: fixed;
 }
 
 
-.page-heading--section,
-.page-heading--title,
-.page-heading--section > *,
-.page-heading--title > * {
+.vs-page-heading--section,
+.vs-page-heading--title,
+.vs-page-heading--section > *,
+.vs-page-heading--title > * {
   font-size: 14px;
   font-weight: 400;
 }
 
-.page-heading--description {
+.vs-page-heading--description {
   padding-left: 15px;
   border-left: 1px solid rgb(195, 195, 195);
   font-size: 13px;
