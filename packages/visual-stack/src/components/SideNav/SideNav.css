@@ -1,5 +1,5 @@
 /** @prettier */
-.sidenav {
+.vs-sidenav {
   background-color: #151c23;
   list-style: none;
   width: 55px;
@@ -16,46 +16,46 @@
   padding: 0 0 100px 0;
 }
 
-.sidenav ul {
+.vs-sidenav ul {
   padding-bottom: 100px;
 }
 
-.sidenav h1,
-.sidenav ul,
-.sidenav li {
+.vs-sidenav h1,
+.vs-sidenav ul,
+.vs-sidenav li {
   margin: 0;
   padding: 0;
 }
 
-.sidenav.active {
+.vs-sidenav.active {
   width: 255px;
 }
 
 @media (min-width: 40em) {
-  .sidenav.collapsed {
+  .vs-sidenav.collapsed {
     width: 55px;
     transition: width .5s ease-out;
   }
 }
 
-.sidenav>li ul {
+.vs-sidenav>li ul {
   list-style: none;
 }
 
-.sideNav-left-logo {
+.vs-sideNav-left-logo {
   display: flex;
   height: 45px;
 }
 
-.logo {
+.vs-logo {
   padding: 10px;
 }
 
-.logo .cj-logo {
+.vs-logo .vs-cj-logo {
   width: 35px;
 }
 
-.app-name {
+.vs-app-name {
   display:inherit;
   color: #fff;
   font-size: 14px;
@@ -64,68 +64,68 @@
   white-space: nowrap;
 }
 
-.sidenav-user-menu, .toggle-icon {
+.vs-sidenav-user-menu, .vs-toggle-icon {
   position: fixed;
   width: inherit;
   background-color: #151c23;
 }
 
-.sidenav-user-menu {
+.vs-sidenav-user-menu {
   bottom: 45px;
 }
 
-.toggle-icon {
+.vs-toggle-icon {
   bottom: 0;
 }
 
-.sidenav-toggle-icon {
+.vs-sidenav-toggle-icon {
   text-align: center;
   border-top: 1px solid #4a4a4a;
 }
 
-.sidenav.collapsed .sidenav-container ul li a {
+.vs-sidenav.collapsed .vs-sidenav-container ul li a {
   padding-left: 56px;
   transition: all .3s ease-out;
 }
 
-.sidenav.collapsed .sidenav-link span,
-.sidenav.collapsed .sidenav-container-chevron,
-.sidenav.collapsed .link-group-children,
-.sidenav.collapsed .app-name,
-.sidenav.collapsed .sidenav-container-label {
+.vs-sidenav.collapsed .vs-sidenav-link span,
+.vs-sidenav.collapsed .vs-sidenav-container-chevron,
+.vs-sidenav.collapsed .vs-link-group-children,
+.vs-sidenav.collapsed .vs-app-name,
+.vs-sidenav.collapsed .vs-sidenav-container-label {
   opacity: 0;
   transition: opacity .3s ease-out;
 }
 
-.sidenav.active .sidenav-link span,
-.sidenav.active .sidenav-container-chevron,
-.sidenav.active .app-name,
-.sidenav.active .sidenav-container-label {
+.vs-sidenav.active .vs-sidenav-link span,
+.vs-sidenav.active .vs-sidenav-container-chevron,
+.vs-sidenav.active .vs-app-name,
+.vs-sidenav.active .vs-sidenav-container-label {
   opacity: 1;
   display: inline-block;
   transition: all .5s ease-out;
 }
 
-.sidenav .sidenav-link a:active span {
+.vs-sidenav .vs-sidenav-link a:active span {
   color: #FFFFFF;
 }
 
-.sidenav.active .sidenav-link span {
+.vs-sidenav.active .vs-sidenav-link span {
   position: absolute;
 }
 
-.sidenav.active .sidenav-link div ~ span {
+.vs-sidenav.active .vs-sidenav-link div ~ span {
   margin-top: 3px;
 }
 
-.sidenav-icon {
+.vs-sidenav-icon {
   font-size: 1.3em;
   text-align: center;
   margin-right: 20px;
   width: 18px;
 }
 
-.sidenav a {
+.vs-sidenav a {
   padding: 12px 18px;
   text-decoration: none;
   display: block;
@@ -133,35 +133,35 @@
   color: #cfd5dc;
 }
 
-.sidenav .link-group-children {
+.vs-sidenav .vs-link-group-children {
   background-color: #090c11;
 }
 
-.sidenav a:focus,
-.sidenav a:hover {
+.vs-sidenav a:focus,
+.vs-sidenav a:hover {
   background-color: #4e545c;
   color: #FFFFFF;
   cursor: pointer;
   transition-duration: .1s;
 }
 
-.sidenav-container-label {
+.vs-sidenav-container-label {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 165px;
   overflow: hidden;
 }
 
-.sidenav .expanded > a.sidenav-container-row {
+.vs-sidenav .expanded > a.vs-sidenav-container-row {
   background-color: #30343a;
   color: #FFFFFF;
 }
 
-.sidenav-link {
+.vs-sidenav-link {
   height: 45px;
 }
 
-.sidenav .sidenav-container-row {
+.vs-sidenav .vs-sidenav-container-row {
   display: flex;
   height: 45px;
   justify-content: space-between;
@@ -170,39 +170,39 @@
   user-select:none;
 }
 
-.sidenav a.sidenav-container-row {
+.vs-sidenav a.vs-sidenav-container-row {
   cursor: pointer;
 }
 
-.sidenav .sidenav-container-row-left {
+.vs-sidenav .vs-sidenav-container-row-left {
   display: flex;
   align-items: center;
   white-space: nowrap;
 }
 
-.sidenav .sidenav-container-chevron {
+.vs-sidenav .vs-sidenav-container-chevron {
   transform: rotate(0);
   transition: -webkit-transform .2s ease-in-out;
   font-size: 0.8em;
 }
 
-.sidenav .expanded .sidenav-container-chevron {
+.vs-sidenav .expanded .vs-sidenav-container-chevron {
   transform: rotate(90deg);
 }
 
-.sidenav .sidenav-container ul {
+.vs-sidenav .vs-sidenav-container ul {
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease-out;
   padding: 0;
 }
 
-.sidenav .sidenav-container.expanded ul {
+.vs-sidenav .vs-sidenav-container.expanded ul {
   max-height: 500px;
 }
 
-.sidenav.collapsed .sidenav-header,
-.sidenav .sidenav-header {
+.vs-sidenav.collapsed .vs-sidenav-header,
+.vs-sidenav .vs-sidenav-header {
   height: 0;
   opacity: 0;
   padding: 0;
@@ -210,7 +210,7 @@
 }
 
 @media (min-width: 40em) {
-  .sidenav .sidenav-header {
+  .vs-sidenav .vs-sidenav-header {
     padding: 10px 20px;
     height: 35px;
     text-transform: uppercase;
@@ -221,7 +221,7 @@
   }
 }
 
-.single-text {
+.vs-single-text {
   margin-top: -17px;
   margin-left: -3px;
   font-size: 12px;
@@ -231,40 +231,40 @@
   font-family: sans-serif;
 }
 
-.custom {
+.vs-custom {
   font-size: 24px;
   padding-left: -1px;
 }
 
-.stacked-icon {
+.vs-stacked-icon {
   margin-right: 9px;
 }
 
-.sidenav-link-content-wrapper {
+.vs-sidenav-link-content-wrapper {
   display:flex;
   align-items: center;
 }
 
-.sidenav-link-label {
+.vs-sidenav-link-label {
   display: inline;
 }
 
-.sidenav-svg-icon {
+.vs-sidenav-svg-icon {
   margin-left: -2px;
   margin-right: 19px;
   display: flex;
 }
 
-.placeholder-icon,
-.sidenav-svg-icon svg {
+.vs-placeholder-icon,
+.vs-sidenav-svg-icon svg {
   width: 22px;
 }
 
-.sidenav-svg-icon svg {
+.vs-sidenav-svg-icon svg {
   fill: currentColor;
 }
 
-.user-icon-circle {
+.vs-user-icon-circle {
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -278,8 +278,8 @@
 }
 
 
-.user-icon-first,
-.user-icon-last {
+.vs-user-icon-first,
+.vs-user-icon-last {
   font-size: 13px;
   font-weight: 300;
 }

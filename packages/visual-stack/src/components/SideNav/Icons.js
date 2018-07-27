@@ -13,7 +13,7 @@ export const ToggleIcon = ({ sideNavState, onClick }) => {
     ? 'fa fa-chevron-right'
     : 'fa fa-chevron-left';
   return (
-    <a className="sidenav-toggle-icon" onClick={onClick}>
+    <a className="vs-sidenav-toggle-icon" onClick={onClick}>
       <i className={sideNavIcon} />
     </a>
   );
@@ -21,10 +21,10 @@ export const ToggleIcon = ({ sideNavState, onClick }) => {
 
 export const SideNavIcon = ({ type, text }) => {
   return R.isNil(text) ? (
-    <i className={`fa fa-${type} sidenav-icon`} />
+    <i className={`fa fa-${type} vs-sidenav-icon`} />
   ) : (
-    <div className="fa-stack stacked-icon class">
-      <i className={`fa fa-${type} sidenav-icon`}>
+    <div className="fa-stack vs-stacked-icon class">
+      <i className={`fa fa-${type} vs-sidenav-icon`}>
         <span className="fa fa-stack-1x single-text">{text}</span>
       </i>
     </div>
@@ -32,5 +32,5 @@ export const SideNavIcon = ({ type, text }) => {
 };
 
 export const SideNavSvgIcon = ({ children }) => {
-  return <div className="sidenav-svg-icon">{children}</div>;
+  return <div className="vs-sidenav-svg-icon">{children}</div>;
 };

@@ -24,7 +24,7 @@ export class LinkGroup extends React.Component {
 
   render() {
     const classes =
-      `${this.props.className || ''} sidenav-entry sidenav-container` +
+      `${this.props.className || ''} vs-sidenav-entry vs-sidenav-container` +
       (this.props.expanded ? ' expanded' : '');
     const expandRow = () => {
       this.props.onClick(!this.props.expanded, this.props.label);
@@ -46,17 +46,17 @@ export class LinkGroup extends React.Component {
     return (
       <li className={classes}>
         <a
-          className="sidenav-container-row"
+          className="vs-sidenav-container-row"
           onClick={expandRow}
           title={this.props.label}
         >
-          <div className="sidenav-container-row-left">
+          <div className="vs-sidenav-container-row-left">
             {icon}
-            <span className="sidenav-container-label">{this.props.label}</span>
+            <span className="vs-sidenav-container-label">{this.props.label}</span>
           </div>
-          <i className="fa fa-chevron-right sidenav-container-chevron" />
+          <i className="fa fa-chevron-right vs-sidenav-container-chevron" />
         </a>
-        <ul className="link-group-children">{this.props.children}</ul>
+        <ul className="vs-link-group-children">{this.props.children}</ul>
       </li>
     );
   }

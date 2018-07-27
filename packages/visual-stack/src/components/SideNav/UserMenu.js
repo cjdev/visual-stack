@@ -4,9 +4,9 @@ import { Link, LinkContentWrapper } from './Link';
 import { LogoutIcon } from './Icons';
 
 export const UserIcon = ({ firstInitial, lastInitial, color }) => (
-  <div className="user-icon-circle" style={{ backgroundColor: color }}>
-    <span className="user-icon-first">{firstInitial}</span>
-    <span className="user-icon-last">{lastInitial}</span>
+  <div className="vs-user-icon-circle" style={{ backgroundColor: color }}>
+    <span className="vs-user-icon-first">{firstInitial}</span>
+    <span className="vs-user-icon-last">{lastInitial}</span>
   </div>
 );
 

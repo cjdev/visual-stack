@@ -8,7 +8,7 @@ import { toggleSideNav } from '../../actions';
 
 export const UserMenu = ({ onLogout, label, firstInitial, lastInitial, color, children, logoutLabel }) => (
   <LinkGroup
-    className="sidenav-user-menu"
+    className="vs-sidenav-user-menu"
     label={label}
     icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} color={color} />}
   >
