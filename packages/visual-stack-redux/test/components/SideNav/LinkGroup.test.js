@@ -58,7 +58,7 @@ describe('LinkGroup', () => {
       />
     );
 
-    wrapper.find(LinkGroup).find('.sidenav-container-label').simulate('click');
+    wrapper.find(LinkGroup).find('.vs-sidenav-container-label').simulate('click');
     expect(faker).to.have.been.calledWith(true, label);
     expect(toggleFake).to.have.been.calledOnce;
     expect(toggleFake).to.have.been.calledWith(false);

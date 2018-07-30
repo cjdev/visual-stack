@@ -18,7 +18,7 @@ describe('TabLayout', () => {
       const wrapper = mount(
         <TabLayout/>
       );
-      equal(wrapper.find('.cj-tab-header').length, 1);
+      equal(wrapper.find('.vs-tab-header').length, 1);
     });
 
     it('should render child tabs', () => {
@@ -30,10 +30,10 @@ describe('TabLayout', () => {
         </TabLayout>
       );
       equal(wrapper.find(TabLayout).length, 1);
-      equal(wrapper.find('.cj-tab-label').length, 3);
-      deepEqual(R.map(label => label.text(), wrapper.find('.cj-tab-label')), ['Tab1', 'Tab2', 'Tab3']);
-      equal(wrapper.find('.cj-tab-body').children().length, 3);
-      deepEqual(R.map(content => content.text(), wrapper.find('.cj-tab-body').children()), ['Tab Content 1', 'Tab Content 2', 'Tab Content 3']);
+      equal(wrapper.find('.vs-tab-label').length, 3);
+      deepEqual(R.map(label => label.text(), wrapper.find('.vs-tab-label')), ['Tab1', 'Tab2', 'Tab3']);
+      equal(wrapper.find('.vs-tab-body').children().length, 3);
+      deepEqual(R.map(content => content.text(), wrapper.find('.vs-tab-body').children()), ['Tab Content 1', 'Tab Content 2', 'Tab Content 3']);
     });
 
     it('should only show content for selected tab', () => {
@@ -44,7 +44,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab3</div>} content={<div>Tab Content 3</div>}/>
         </TabLayout>
       );
-      deepEqual(R.map(content => content.props().hidden, wrapper.find('.cj-tab-body').children()), [false, true, true]);
+      deepEqual(R.map(content => content.props().hidden, wrapper.find('.vs-tab-body').children()), [false, true, true]);
     });
 
     it('should call selectTab when tab clicked', () => {
@@ -59,7 +59,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab</div>} content={<div>Tab Content</div>}/>
         </TabLayout>
       );
-      const tabLabel = wrapper.find('.cj-tab-label').at(0);
+      const tabLabel = wrapper.find('.vs-tab-label').at(0);
       tabLabel.simulate('click');
       equal(clicks, 1);
       equal(clicksIndex.length, 1);
@@ -78,7 +78,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab</div>} content={<div>Tab Content</div>} disabled={true}/>
         </TabLayout>
       );
-      const tabLabel = wrapper.find('.cj-tab-label').at(0);
+      const tabLabel = wrapper.find('.vs-tab-label').at(0);
       tabLabel.simulate('click');
       equal(clicks, 0);
       equal(clicksIndex.length, 0);
@@ -94,7 +94,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab</div>} content={<div>Tab Content</div>}/>
         </TabLayout>
       );
-      const tabLabel = wrapper.find('.cj-tab-label').at(0);
+      const tabLabel = wrapper.find('.vs-tab-label').at(0);
       tabLabel.simulate('click');
       equal(clicks, 1);
     });
@@ -109,7 +109,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab</div>} content={<div>Tab Content</div>} disabled={true}/>
         </TabLayout>
       );
-      const tabLabel = wrapper.find('.cj-tab-label').at(0);
+      const tabLabel = wrapper.find('.vs-tab-label').at(0);
       tabLabel.simulate('click');
       equal(clicks, 0);
     });
@@ -124,12 +124,12 @@ describe('TabLayout', () => {
         </TabLayout>
       );
 
-      const tabLabelClicked = wrapper.find('.cj-tab-label.cj-tab-label-clicked');
+      const tabLabelClicked = wrapper.find('.vs-tab-label.vs-tab-label-clicked');
       const tabLabelContent = tabLabelClicked.at(0);
       const tabLabelContentWrapper = tabLabelContent.children().at(0);
       deepEqual(tabLabelContentWrapper.props().style, { borderBottom: '4px solid #00af65' });
 
-      const tabLabelInactive = wrapper.find('.cj-tab-label');
+      const tabLabelInactive = wrapper.find('.vs-tab-label');
       const tabLabelContentInactive = tabLabelInactive.at(1);
       const tabLabelContentWrapperInactive = tabLabelContentInactive.children().at(0);
       deepEqual(tabLabelContentWrapperInactive.props().style, { });
@@ -143,7 +143,7 @@ describe('TabLayout', () => {
         </TabLayout>
       );
 
-      const tabLabels = wrapper.find('.cj-tab-label');
+      const tabLabels = wrapper.find('.vs-tab-label');
       const tabLabelInactive = tabLabels.at(1);
       tabLabelInactive.simulate('mouseOver');
       deepEqual(tabLabelInactive.props().style, { color: '#00af65', cursor: 'pointer' });
@@ -162,7 +162,7 @@ describe('TabLayout', () => {
         </TabLayout>
       );
 
-      const tabLabels = wrapper.find('.cj-tab-label');
+      const tabLabels = wrapper.find('.vs-tab-label');
       const tabLabelInactive = tabLabels.at(1);
       tabLabelInactive.simulate('mouseOver');
       deepEqual(tabLabelInactive.props().style, { color: themeColor, cursor: 'pointer' });
@@ -176,7 +176,7 @@ describe('TabLayout', () => {
         </TabLayout>
       );
 
-      const tabLabels = wrapper.find('.cj-tab-label');
+      const tabLabels = wrapper.find('.vs-tab-label');
       const tabLabelInactive = tabLabels.at(0);
       tabLabelInactive.simulate('mouseOver');
       deepEqual(tabLabelInactive.props().style, { });
@@ -188,7 +188,7 @@ describe('TabLayout', () => {
           <Tab label={<div>Tab1</div>} content={<div>Tab Content 1</div>} disabled={true}/>
         </TabLayout>
       );
-      const tabLabels = wrapper.find('.cj-tab-label.cj-tab-label-disabled');
+      const tabLabels = wrapper.find('.vs-tab-label.vs-tab-label-disabled');
       equal(tabLabels.length, 1);
     });
 
@@ -201,8 +201,8 @@ describe('TabLayout', () => {
         </TabLayout>
       );
 
-      const floatingHeader = wrapper.find('.cj-tab-header.cj-tab-header-floating');
-      const tabBody = wrapper.find('.cj-tab-body');
+      const floatingHeader = wrapper.find('.vs-tab-header.vs-tab-header-floating');
+      const tabBody = wrapper.find('.vs-tab-body');
 
       equal(floatingHeader.length, 1);
       equal(floatingHeader.at(0).props().style.width, headerWidth);

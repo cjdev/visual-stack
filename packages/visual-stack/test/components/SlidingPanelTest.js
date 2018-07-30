@@ -8,14 +8,14 @@ describe('SlidingPanel', () => {
     const wrapper = shallow(
       <SlidingPanel />
     );
-    equal(wrapper.find('.sliding-panel').length, 1);
+    equal(wrapper.find('.vs-sliding-panel').length, 1);
   });
 
   it('should render active', () => {
     const wrapper = shallow(
       <SlidingPanel active={true} />
     );
-    equal(wrapper.find('.sliding-panel.active').length, 1);
+    equal(wrapper.find('.vs-sliding-panel.active').length, 1);
   });
 });
 
@@ -24,6 +24,6 @@ describe('ToggleIcon', () => {
     const wrapper = shallow(
       <ToggleIcon />
     );
-    equal(wrapper.find('.sliding-panel-toggle-icon').length, 1);
+    equal(wrapper.find('.vs-sliding-panel-toggle-icon').length, 1);
   });
 });

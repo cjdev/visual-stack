@@ -37,14 +37,14 @@ describe('SlidingPanel', () => {
       const wrapper = mount(
         <InternalToggleIcon />
       );
-      expect(wrapper.find('.sliding-panel-toggle-icon')).to.have.length(1);
+      expect(wrapper.find('.vs-sliding-panel-toggle-icon')).to.have.length(1);
     });
     it('should provide onClick to VisualStack ToggleIcon', () => {
       const handleToggleSlidingPanel = sinon.spy();
       const wrapper = mount(
         <InternalToggleIcon toggleSlidingPanel={handleToggleSlidingPanel} />
       );
-      wrapper.find('.sliding-panel-toggle-icon').simulate('click');
+      wrapper.find('.vs-sliding-panel-toggle-icon').simulate('click');
       expect(handleToggleSlidingPanel).to.have.property('callCount', 1);
     });
   });
@@ -72,8 +72,8 @@ describe('SlidingPanel', () => {
         </InternalSlidingPanelDropdown>
       );
       const dropdown = slidingPanel.find(SlidingPanelDropdown);
-      dropdown.find('a.filter-container-label').simulate('click');
-      expect(dropdown.find('div.filter-options')).to.have.length(1);
+      dropdown.find('a.vs-filter-container-label').simulate('click');
+      expect(dropdown.find('div.vs-filter-options')).to.have.length(1);
       expect(handleDropdown).to.have.property('callCount', 1);
     });
   });

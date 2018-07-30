@@ -11,7 +11,7 @@ describe('SideNav', () => {
         userMenu={<div/>}
       />
     );
-    equal(wrapper.find('.sidenav').length, 1);
+    equal(wrapper.find('.vs-sidenav').length, 1);
   });
 
   it('should render active', () => {
@@ -21,7 +21,7 @@ describe('SideNav', () => {
         collapsed={false}
         />
     );
-    equal(wrapper.find('.sidenav .active').length, 1);
+    equal(wrapper.find('.vs-sidenav .active').length, 1);
   });
 
   it('should render collapsed', () => {
@@ -31,7 +31,7 @@ describe('SideNav', () => {
         collapsed={true}
         />
     );
-    equal(wrapper.find('.sidenav .collapsed').length, 1);
+    equal(wrapper.find('.vs-sidenav .collapsed').length, 1);
   });
 
   describe('Header', () => {
@@ -41,18 +41,18 @@ describe('SideNav', () => {
           <div className="dummy">something</div>
         </Header>
       );
-      equal(wrapper.find('.sidenav-entry').length, 1);
-      equal(wrapper.find('.sidenav-entry').children().length, 1);
+      equal(wrapper.find('.vs-sidenav-entry').length, 1);
+      equal(wrapper.find('.vs-sidenav-entry').children().length, 1);
     });
   });
 
   describe('LinkGroup', () => {
-    it('should render with default icon if non is given', () => {
+    it('should render with default icon if none is given', () => {
       const wrapper = mount(
         <LinkGroup label="nothing" />
       );
-      equal(wrapper.find('.sidenav-entry').length, 1);
-      equal(wrapper.find('.fa-stack .stacked-icon').length, 1);
+      equal(wrapper.find('.vs-sidenav-entry').length, 1);
+      equal(wrapper.find('.fa-stack .vs-stacked-icon').length, 1);
     });
 
     it('should render with passed in icon', () => {
@@ -72,7 +72,7 @@ describe('SideNav', () => {
           </a>
         </Link>
       );
-      equal(wrapper.find('.sidenav-entry').length, 1);
+      equal(wrapper.find('.vs-sidenav-entry').length, 1);
     });
   });
 
@@ -81,7 +81,7 @@ describe('SideNav', () => {
       const wrapper = shallow(
         <ToggleIcon />
       );
-      equal(wrapper.find('.sidenav-toggle-icon').length, 1);
+      equal(wrapper.find('.vs-sidenav-toggle-icon').length, 1);
     });
   });
 
