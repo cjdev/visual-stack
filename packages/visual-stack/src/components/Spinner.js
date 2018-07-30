@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './spinner.css';
 
 const Spinner = ({ size, ...propsToPassOn }) => {
-  const className = `spinner spinner-${size || 'small'}`;
+  const className = `vs-spinner vs-spinner-${size || 'small'}`;
 
   return (
      <span className={className} {...propsToPassOn}>

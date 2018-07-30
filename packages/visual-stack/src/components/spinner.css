@@ -1,28 +1,28 @@
-.spinner.spinner-small {
+.vs-spinner.vs-spinner-small {
     padding: 1em;
 }
 
-.spinner.spinner-large {
+.vs-spinner.vs-spinner-large {
     padding: 1.2em;
 }
 
-.spinner.spinner-extra-large {
+.vs-spinner.vs-spinner-extra-large {
     padding: 1.4em;
 }
 
-.spinner-small i {
+.vs-spinner-small i {
     font-size: 1em;
 }
 
-.spinner-large i {
+.vs-spinner-large i {
     font-size: 2em;
 }
 
-.spinner-extra-large i {
+.vs-spinner-extra-large i {
     font-size: 3em;
 }
 
-.spinner-button {
+.vs-spinner-button {
     padding: .3em;
 }
 
