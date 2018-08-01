@@ -1,96 +1,96 @@
-.vs-form-horizontal .vs-form-group-vertical {
+.form-horizontal .form-group-vertical {
     margin-right: 0;
     margin-left: 0;
 }
 
-.vs-form-group-buttons {
+.form-group-buttons {
     text-align: right;
 }
 
-.vs-form-group-buttons .vs-form-button {
+.form-group-buttons .form-button {
     margin-left: 10px;
 }
 
-.vs-form-label-vertical {
+.form-label-vertical {
     margin-bottom: .3em;
 }
 
-.vs-form-label-text-vertical {
+.form-label-text-vertical {
     font-size: 1.1em;
 }
 
-.vs-form-group-static-text {
+.form-group-static-text {
     line-height: 32px;
     padding: 1px 6px;
 }
 
-.vs-form-group-required-sign {
+.form-group-required-sign {
     padding-left: .3em;
     color: #E1523D;
 }
 
-.vs-form-group-error-span {
+.form-group-error-span {
     display: block;
     color: #E1523D;
     top: 6px;
     position: relative;
 }
 
-.vs-has-error .vs-control-label {
+.has-error .control-label {
     color: #E1523D;
 }
 
-.vs-has-error .vs-form-control {
+.has-error .form-control {
     border-color: #E1523D;
 }
 
-.vs-form-group-radio-label {
+.form-group-radio-label {
     font-size: 1em;
     cursor: pointer;
     cursor: hand;
 }
 
-.vs-cj-form-input.vs-form-group-radio-input {
+.cj-form-input.form-group-radio-input {
     min-height: 24px;
     margin-bottom: 0;
 }
 
-.vs-has-help-icon {
+.has-help-icon {
     display: inline;
     overflow: visible;
     float: left;
 }
 
-.vs-help-icon-form-component {
+.help-icon-form-component {
     margin-left: 15px;
 }
 
-.vs-clipboard-input {
+.clipboard-input {
     color: #9E868E;
     background-color: inherit;
     cursor: default;
 }
 
-.vs-clipboard-button {
+.clipboard-button {
     padding-top: 6px;
     padding-right: 12px;
 }
 
-.vs-clipboard-button:focus {
+.clipboard-button:focus {
     outline: 0;
 }
 
-.vs-row-destinationUrl .vs-tooltip-inner {
+.row-destinationUrl .tooltip-inner {
     width: 350px;
     max-width: 350px;
 }
 
-.vs-fieldset-title {
+.fieldset-title {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 20px;
 }
 
-.vs-fieldset-panel {
+.fieldset-panel {
     border: 1px solid #e5e5e5;
     margin-bottom: 20px;
 }

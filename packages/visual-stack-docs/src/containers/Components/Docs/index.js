@@ -11,6 +11,7 @@ const addComponentRoute = (path, linkName, component) => {
 // 1. add an import for your demo
 import BlankSlateDocs from './blankslate';
 import ButtonDocs from './button';
+import FormDocs from './form';
 import ListDocs from './list';
 import ModalDocs from './modal';
 import PanelDocs from './panel';
@@ -24,6 +25,7 @@ import TabLayoutDocs from './tablayout';
 // 2. add your demo to the routeComponentMap
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
 addComponentRoute('button', 'Button', <ButtonDocs />);
+addComponentRoute('form', 'Form', <FormDocs />);
 addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
