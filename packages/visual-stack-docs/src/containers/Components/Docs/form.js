@@ -1,9 +1,10 @@
+/* eslint */
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
-{ /* s3:start */ }
+/* s3:start */
 import { Form, FormGroup, Label, Input, Legend } from '@cjdev/visual-stack/lib/components/Form';
-{ /* s3:end */ }
+/* s3:end */
 
 export default () =>
     <Demo srcFile="/samples/src/containers/Components/Docs/form.js">
