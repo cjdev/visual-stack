@@ -71,7 +71,8 @@ body {
 }
 
 .vs-application-layout-content {
+  display: flex;
   flex: 1 1 auto;
-  overflow-y: auto;
-  overflow-x: hidden;
+  flex-direction: column;
+  height: 100vh;
 }

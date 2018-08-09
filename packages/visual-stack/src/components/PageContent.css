@@ -1,4 +1,9 @@
 .vs-page-content {
   background-color: #F1F4F8;
-  padding: 60px 1em 1em;
+  margin: 0;
+  padding: 15px 1em;
+  overflow: auto;
+  height: calc(100vh - 35px);
+  width: calc(100vw - 255px);
 }
+
