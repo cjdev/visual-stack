@@ -3,5 +3,4 @@ lerna-debug.log
 node_modules
 npm-debug.log
 *.swp
-package-lock.json
 
