@@ -20,7 +20,7 @@ body {
   display: flex;
   overflow: hidden;
   background-color: #F1F4F8;
-  transition: all .5s ease-out;
+  transition: all .4s ease-out;
 }
 
 .vs-application-layout-side-collapsed,
@@ -28,27 +28,27 @@ body {
   flex: 0 0 auto;
   overflow: auto;
   margin-left: 50px;
-  transition: all .5s ease-out;
+  transition: all .4s ease-out;
 }
 
 .vs-application-layout-filter {
   flex: 0 0 auto;
   overflow: auto;
   margin-left: 0px;
-  transition: all .5s ease-out;
+  transition: all .4s ease-out;
 }
 
 @media (min-width: 40em) {
   .vs-application-layout-side {
     flex: 0 0 255px;
     margin-left: 0px;
-    transition: all .5s ease-out;
+    transition: all .4s ease-out;
   }
 
   .vs-application-layout-side-collapsed {
     flex: 0 0 55px;
     margin-left: 0px;
-    transition: all .5s ease-out;
+    transition: all .4s ease-out;
   }
 
   .vs-application-layout-filter {

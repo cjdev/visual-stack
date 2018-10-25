@@ -63,7 +63,7 @@ class SideNavP extends React.Component {
     const userMenuWithColor = (userMenu) ?  React.cloneElement(userMenu, { color: logoBg }) : null;
     return (
       <ul className={'vs-sidenav' + (collapsed ? ' collapsed' : ' active')}>
-        <li className="vs-sideNav-left-logo" style={{ backgroundColor: logoBg }}>
+        <li className="vs-sideNav-left-logo">
           <div className="vs-sidenav-container-row">
             <div className="vs-logo">{this.props.logo}</div>
             <span className="vs-app-name">{capAppName}</span>

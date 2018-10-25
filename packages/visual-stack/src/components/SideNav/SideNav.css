@@ -1,13 +1,13 @@
 /** @prettier */
 .vs-sidenav {
-  background-color: #151c23;
+  background-color: #2A3038;
   list-style: none;
   width: 55px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   left: 0;
-  transition: width .5s ease-out;
+  transition: width .4s ease-out;
   position: fixed;
   z-index: 200;
   font-weight: 400;
@@ -34,7 +34,11 @@
 @media (min-width: 40em) {
   .vs-sidenav.collapsed {
     width: 55px;
-    transition: width .5s ease-out;
+    transition: .4s width ease-out;
+/* 	  transition: .4s width cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  .vs-sidenav.collapsed .vs-sidenav-user-menu > a .vs-sidenav-container-chevron {
+	  opacity: 0;
   }
 }
 
@@ -43,6 +47,7 @@
 }
 
 .vs-sideNav-left-logo {
+	background: #49c5b1;
   display: flex;
   height: 45px;
 }
@@ -52,7 +57,8 @@
 }
 
 .vs-logo .vs-cj-logo {
-  width: 35px;
+  fill: white;
+  width: 32px;
 }
 
 .vs-app-name {
@@ -65,13 +71,31 @@
 }
 
 .vs-sidenav-user-menu, .vs-toggle-icon {
+  background-color: #2A3038;
   position: fixed;
   width: inherit;
-  background-color: #151c23;
+}
+
+.vs-sidenav .vs-sidenav-user-menu > a {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+}
+.vs-sidenav.collapsed .vs-sidenav-user-menu > a .vs-sidenav-container-chevron {
+/*   opacity: 0; */
+}
+
+.vs-sidenav .vs-sidenav-user-menu a:focus,
+.vs-sidenav .vs-sidenav-user-menu a:hover {
+	color: #fff;
 }
 
 .vs-sidenav-user-menu {
-  bottom: 45px;
+  bottom: 48px;
+}
+
+.vs-sidenav .vs-sidenav-user-menu.vs-sidenav-container ul {
+	transition: .3s max-height ease-in-out;
 }
 
 .vs-toggle-icon {
@@ -80,12 +104,17 @@
 
 .vs-sidenav-toggle-icon {
   text-align: center;
-  border-top: 1px solid #4a4a4a;
+  border-top: 1px solid rgba(255,255,255,.08);
 }
 
+.vs-sidenav-toggle-icon .fa {
+	font-size: .8em;
+	margin: 0 auto;
+}
+	
 .vs-sidenav.collapsed .vs-sidenav-container ul li a {
   padding-left: 56px;
-  transition: all .3s ease-out;
+  transition: all .2s ease-in-out;
 }
 
 .vs-sidenav.collapsed .vs-sidenav-link span,
@@ -94,7 +123,7 @@
 .vs-sidenav.collapsed .vs-app-name,
 .vs-sidenav.collapsed .vs-sidenav-container-label {
   opacity: 0;
-  transition: opacity .3s ease-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .vs-sidenav.active .vs-sidenav-link span,
@@ -103,7 +132,7 @@
 .vs-sidenav.active .vs-sidenav-container-label {
   opacity: 1;
   display: inline-block;
-  transition: all .5s ease-out;
+  transition: all .1s ease-in-out;
 }
 
 .vs-sidenav .vs-sidenav-link a:active span {
@@ -126,23 +155,56 @@
 }
 
 .vs-sidenav a {
+  align-items: center;
+  border-bottom: 1px solid #2A3038;
+  color: #bfc3c8;
+  display: flex;
+  height: 48px;
   padding: 12px 18px;
   text-decoration: none;
-  display: block;
-  height: 45px;
-  color: #cfd5dc;
+  transition: .1s all ease-in-out;
 }
 
 .vs-sidenav .vs-link-group-children {
-  background-color: #090c11;
+  background-color: #20252B;
+}
+
+.vs-sidenav .vs-link-group-children a {
+	border-bottom-color: #20252B;
+}
+
+.vs-sidenav .vs-link-group-children a .vs-sidenav-link-label {
+	margin-left: 18px;
+	width: 184px;
+}
+
+.vs-sidenav .vs-link-group-children a:focus,
+.vs-sidenav .vs-link-group-children a:hover {
+	background: #272c33;
 }
 
 .vs-sidenav a:focus,
 .vs-sidenav a:hover {
-  background-color: #4e545c;
-  color: #FFFFFF;
+  background-color: #373D46;
   cursor: pointer;
-  transition-duration: .1s;
+}
+
+.vs-sidenav a:focus svg,
+.vs-sidenav a:hover svg {
+  fill: #fff;
+  transition: .1s all ease-in-out;
+}
+
+.vs-sidenav a:focus .vs-sidenav-link-label,
+.vs-sidenav a:hover .vs-sidenav-link-label {
+  color: #FFFFFF;
+	transition: .1s all ease-in-out;
+}
+
+.vs-sidenav a:focus svg,
+.vs-sidenav .expanded > a.vs-sidenav-container-row svg {
+	fill: #49c5b1;
+	transition: .2s all ease-in-out;
 }
 
 .vs-sidenav-container-label {
@@ -153,17 +215,18 @@
 }
 
 .vs-sidenav .expanded > a.vs-sidenav-container-row {
-  background-color: #30343a;
+  background-color: #373D46;
   color: #FFFFFF;
+	transition: .2s all ease-in-out;
 }
 
 .vs-sidenav-link {
-  height: 45px;
+  height: 48px;
 }
 
 .vs-sidenav .vs-sidenav-container-row {
   display: flex;
-  height: 45px;
+  height: 48px;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -193,12 +256,13 @@
 .vs-sidenav .vs-sidenav-container ul {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s ease-out;
+/*   transition: .3s max-height ease-in-out; */
+  transition: .4s max-height cubic-bezier(0.22, 0.61, 0.36, 1);
   padding: 0;
 }
 
 .vs-sidenav .vs-sidenav-container.expanded ul {
-  max-height: 500px;
+  max-height: 768px;
 }
 
 .vs-sidenav.collapsed .vs-sidenav-header,
@@ -206,7 +270,7 @@
   height: 0;
   opacity: 0;
   padding: 0;
-  transition: all .3s ease-in;
+  transition: all .2s ease-in;
 }
 
 @media (min-width: 40em) {
@@ -216,7 +280,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,.5);
     font-size: 11px;
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     opacity: 1;
   }
 }
@@ -250,14 +314,13 @@
 }
 
 .vs-sidenav-svg-icon {
-  margin-left: -2px;
-  margin-right: 19px;
+  margin-right: 16px;
   display: flex;
 }
 
 .vs-placeholder-icon,
 .vs-sidenav-svg-icon svg {
-  width: 22px;
+  width: 18px;
 }
 
 .vs-sidenav-svg-icon svg {
@@ -265,21 +328,23 @@
 }
 
 .vs-user-icon-circle {
+	background: #49c5b1;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  margin-right: 15px;
-  margin-left: -6px;
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+  margin-left: -4px;
   display:flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   color: #FFF;
+  text-align: center;
 }
-
 
 .vs-user-icon-first,
 .vs-user-icon-last {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
+  margin: 0 .5px;
 }
