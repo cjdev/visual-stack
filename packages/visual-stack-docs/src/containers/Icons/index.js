@@ -10,12 +10,17 @@ import './index.css';
 
 import {
   AccountIcon,
+  AppIcon,
   BarGraphIcon,
+  CodeIcon,
+  CompareIcon,
   CountedIcon,
+  DocIcon,
+  LegacyIcon,
   LogoutIcon,
   PercentIcon,
-  CompareIcon,
   ProductIcon,
+  TokenIcon,
 } from '@cjdev/visual-stack/lib/components/Icons';
 
 const IconDisplay = ({ icon, snippets, tag }) => {
@@ -67,6 +72,29 @@ const countedIconRed =
   /* s7:start */
   <AccountIcon className="cj-green" />
   /* s7:end */;
+const appIcon =
+  /* s10:start */
+  <AppIcon />;
+  /* s10:end */;
+const codeIcon =
+  /* s11:start */
+  <CodeIcon />;
+  /* s11:end */;
+const legacyIcon =
+  /* s12:start */
+  <LegacyIcon />;
+  /* s12:end */;
+const docIcon =
+  /* s13:start */
+  <DocIcon />;
+  /* s13:end */;
+const tokenIcon =
+  /* s14:start */
+  <TokenIcon />;
+  /* s14:end */;
+  
+  
+  
 
 const Icons = () => (
   <Demo srcFile="/samples/src/containers/Icons/index.js">
@@ -84,6 +112,11 @@ const Icons = () => (
               <Panel>
                 <Body>
                   <div className="icon-grid">
+                    { makeDisplay(appIcon, 's10') }
+                    { makeDisplay(codeIcon, 's11') }
+                    { makeDisplay(legacyIcon, 's12') }
+                    { makeDisplay(docIcon, 's13') }
+                    { makeDisplay(tokenIcon, 's14') }
                     { makeDisplay(accountIcon, 's1') }
                     { makeDisplay(barGraphIcon, 's3') }
                     { makeDisplay(countedIcon, 's6') }
