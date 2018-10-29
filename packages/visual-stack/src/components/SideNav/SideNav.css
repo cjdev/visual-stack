@@ -2,7 +2,7 @@
 .vs-sidenav {
   background-color: #2A3038;
   list-style: none;
-  width: 55px;
+  width: 48px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -13,11 +13,11 @@
   font-weight: 400;
   user-select:none;
   margin: 0;
-  padding: 0 0 100px 0;
+  padding: 0 0 96px 0;
 }
 
 .vs-sidenav ul {
-  padding-bottom: 100px;
+  padding-bottom: 96px;
 }
 
 .vs-sidenav h1,
@@ -28,12 +28,12 @@
 }
 
 .vs-sidenav.active {
-  width: 255px;
+  width: 256px;
 }
 
 @media (min-width: 40em) {
   .vs-sidenav.collapsed {
-    width: 55px;
+    width: 48px;
     transition: .4s width ease-out;
 /* 	  transition: .4s width cubic-bezier(0.22, 0.61, 0.36, 1); */
   }
@@ -49,7 +49,7 @@
 .vs-sideNav-left-logo {
 	background: #49c5b1;
   display: flex;
-  height: 45px;
+  height: 48px;
 }
 
 .vs-sideNav-left-logo a.vs-sidenav-container-row:hover,
@@ -71,12 +71,12 @@
 .vs-sidenav .vs-sideNav-left-logo .vs-sidenav-container-row  {
 }
 .vs-logo {
-  padding: 10px;
+  padding: 8px;
 }
 
 .vs-logo .vs-cj-logo {
-  width: 32px;
   fill: white;
+  width: 34px;
 }
 
 .vs-app-name {
@@ -178,7 +178,7 @@
   color: #bfc3c8;
   display: flex;
   height: 48px;
-  padding: 12px 18px;
+  padding: 15px;
   text-decoration: none;
   transition: .1s all ease-in-out;
 }
@@ -319,7 +319,7 @@
 }
 
 .vs-stacked-icon {
-  margin-right: 9px;
+  margin-right: 8px;
 }
 
 .vs-sidenav-link-content-wrapper {
@@ -351,7 +351,7 @@
   height: 24px;
   width: 24px;
   margin-right: 16px;
-  margin-left: -4px;
+  margin-left: -3px;
   display:flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -364,5 +364,5 @@
 .vs-user-icon-last {
   font-size: 12px;
   font-weight: 300;
-  margin: 0 .5px;
+  margin: 0 .4px;
 }

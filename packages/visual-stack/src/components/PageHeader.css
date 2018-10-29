@@ -7,22 +7,22 @@
   justify-content: space-between;
   z-index: 90;
   align-items: center;
-  min-height: 45px;
+  min-height: 48px;
   padding: 0 16px;
   position: relative;
-  box-shadow: 0 1px 2px rgba(0,0,0,.16);
-/* 						  0 2px 3px rgba(0,0,0,.1); */
-/* 						  0 3px 4px -1px rgba(0,0,0,.1); */
+  box-shadow: 0 1px 2px rgba(0,0,0,.08),
+/*							0 2px 3px rgba(0,0,0,.1),  */
+						  0 3px 4px -1px rgba(0,0,0,.08);
 	z-index: 2;
 }
 
 @media (min-width: 40em) {
   .vs-page-heading--title {
-    width: calc(100% - 255px);
+    width: calc(100% - 256px);
   }
 
   .vs-application-layout-side-collapsed+.vs-application-layout-content .vs-page-heading--title {
-    width: calc(100% - 50px);
+    width: calc(100% - 48px);
   }
 }
 
@@ -42,9 +42,9 @@
 }
 
 .vs-page-heading--description {
-  padding-left: 15px;
   border-left: 1px solid rgb(195, 195, 195);
   font-size: 13px;
-  margin-left: 15px;
   font-weight: 400;
+  margin-left: 16px;
+  padding-left: 16px;
 }

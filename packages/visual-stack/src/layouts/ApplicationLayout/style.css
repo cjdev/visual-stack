@@ -27,7 +27,7 @@ body {
 .vs-application-layout-side {
   flex: 0 0 auto;
   overflow: auto;
-  margin-left: 50px;
+  margin-left: 48px;
   transition: all .4s ease-out;
 }
 
@@ -40,13 +40,13 @@ body {
 
 @media (min-width: 40em) {
   .vs-application-layout-side {
-    flex: 0 0 255px;
+    flex: 0 0 256px;
     margin-left: 0px;
     transition: all .4s ease-out;
   }
 
   .vs-application-layout-side-collapsed {
-    flex: 0 0 55px;
+    flex: 0 0 48px;
     margin-left: 0px;
     transition: all .4s ease-out;
   }
