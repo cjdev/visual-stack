@@ -1,99 +1,28 @@
-/* CJ Button - primary styles*/
-
-.vs-default-btn {
-  border: 2px solid #B6B6B6;
-  color: #B6B6B6;
-}
-
-.vs-primary-btn {
-  border: 2px solid #00AF66;
-  color: #00AF66;
-}
-
-.vs-info-btn {
-  border: 2px solid #34657F;
-  color: #34657F;
-}
-
-.vs-danger-btn {
-  border: 2px solid #E1523D;
-  color: #E1523D;
-}
-
-.vs-warning-btn {
-  border: 2px solid #FFB500;
-  color: #FFB500;
-}
-
-.vs-success-btn {
-  border: 2px solid #49C5B1;
-  color: #49C5B1;
-}
-
-.vs-default-btn, .vs-primary-btn, .vs-info-btn, .vs-danger-btn, .vs-warning-btn, .vs-success-btn {
-  background: #FFFFFF;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.vs-solid-primary-btn {
-  background: #00AF66;
-  border: 2px solid #00AF66;
-  color: #FFFFFF;
-}
-
-a.vs-btn-d:hover, .vs-btn-d a:hover {
-  text-decoration: none;
-}
-
-.vs-default-btn:hover {
-  background: rgba(133, 133, 133, 0.1);
-  box-shadow: none;
-}
-
-.vs-primary-btn:hover {
-  background: rgba(0, 175, 102, 0.1);
-  box-shadow: none;
-}
-
-.vs-info-btn:hover {
-  background: rgba(52, 101, 127, 0.1);
-  box-shadow: none;
-}
-
-.vs-danger-btn:hover {
-  background: rgba(221, 56, 52, 0.1);
-  box-shadow: none;
-}
-
-.vs-warning-btn:hover  {
-  background: rgba(255, 181, 20, 0.1);
-  box-shadow: none;
-}
-
-.vs-success-btn:hover {
-  background: rgba(73, 197, 177, 0.1);
-  box-shadow: none;
-}
 
 /* global button styles */
 
 .vs-btn-d  {
-  display: inline-block;
-  margin: 5px 0;
-  min-width: 50px;
-  width: auto;
   border-collapse: separate;
-  border-radius: 4px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 1em;
-  cursor: pointer;
-  line-height: 20px;
-  overflow: hidden;
+  border-radius: 3px;
   box-shadow: none;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  line-height: 20px;
+  margin: 4px;
+  min-height: 32px;
+  min-width: 32px;
+  overflow: hidden;
+  text-align: center;
   text-shadow: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: auto;
 }
+
 
 .vs-btn-d:focus, a.vs-btn-d:focus {
   outline: none;
@@ -131,3 +60,258 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 .vs-default-btn.disabled, .vs-default-btn[disabled], .vs-default-btn.disabled:hover, .vs-default-btn[disabled]:hover {
   background: rgba(133, 133, 133, 0.1);
 }
+
+
+
+
+
+/* CJ Button - primary styles*/
+
+.vs-default-btn {
+  border: 1px solid #B6B6B6;
+  color: #B6B6B6;
+}
+
+.vs-primary-btn {
+  border: 1px solid #49c5b1;
+  color: #49c5b1;
+}
+
+.vs-info-btn {
+  border: 1px solid #34657F;
+  color: #34657F;
+}
+
+.vs-danger-btn {
+  border: 1px solid #E1523D;
+  color: #E1523D;
+}
+
+.vs-warning-btn {
+  border: 1px solid #FFB500;
+  color: #FFB500;
+}
+
+.vs-success-btn {
+  border: 1px solid #49C5B1;
+  color: #49C5B1;
+}
+
+.vs-default-btn, .vs-primary-btn, .vs-info-btn, .vs-danger-btn, .vs-warning-btn, .vs-success-btn {
+  background: #FFFFFF;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.vs-solid-primary-btn {
+  background: #49c5b1;
+  border: 1px solid #49c5b1;
+  color: #FFFFFF;
+}
+
+a.vs-btn-d:hover, .vs-btn-d a:hover {
+  text-decoration: none;
+}
+
+.vs-default-btn:hover {
+  background: rgba(133, 133, 133, 0.1);
+  box-shadow: none;
+}
+
+.vs-primary-btn:hover {
+  background: rgba(0, 175, 102, 0.1);
+  box-shadow: none;
+}
+
+.vs-info-btn:hover {
+  background: rgba(52, 101, 127, 0.1);
+  box-shadow: none;
+}
+
+.vs-danger-btn:hover {
+  background: rgba(221, 56, 52, 0.1);
+  box-shadow: none;
+}
+
+.vs-warning-btn:hover  {
+  background: rgba(255, 181, 20, 0.1);
+  box-shadow: none;
+}
+
+.vs-success-btn:hover {
+  background: rgba(73, 197, 177, 0.1);
+  box-shadow: none;
+}
+
+
+
+
+
+
+/* Platform Buttons */
+
+
+.vs-btn-d svg {
+	fill: #ADB1B6;
+	transition: .2s all ease-in-out;
+	vertical-align: middle;
+}
+.vs-btn-d:hover svg {
+	fill: #49c5b1;
+}
+
+
+
+
+.vs-solid-primary-btn,
+.vs-solid-secondary-btn,
+.vs-outline-primary-btn,
+.vs-outline-secondary-btn,
+.vs-rounded-solid-btn,
+.vs-rounded-outline-btn,
+.vs-text-btn,
+.vs-icon-btn {
+	border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+	height: 32px;
+  min-height: 32px;
+  letter-spacing: .4px;
+  line-height: 16px;
+  margin: 8px 4px;
+  min-width: 32px;
+  overflow: hidden;
+  padding: 8px 16px;
+  text-align: center;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: .2s all ease-in-out;
+  vertical-align: middle;
+  width: auto;
+}
+
+
+
+
+.vs-solid-primary-btn {
+  background: #49c5b1;
+  color: #fff;
+}
+.vs-solid-primary-btn:hover {
+  background: #35B09C;
+}
+
+
+
+.vs-solid-secondary-btn {
+  background: #616C78;
+  color: #fff;
+}
+.vs-solid-secondary-btn:hover {
+  background: #48535F;
+}
+
+
+
+.vs-outline-primary-btn {
+  background: transparent;
+  border-color: #49c5b1;
+  color: #49c5b1;
+}
+.vs-outline-primary-btn:hover {
+  background: rgba(73, 197, 176, 0.1);
+  color: #35B09C;
+}
+
+
+
+
+.vs-outline-secondary-btn,
+.vs-rounded-outline-btn {
+	border-color: #ADB1B6;
+  color: #686F78;
+}
+.vs-outline-secondary-btn:hover,
+.vs-rounded-outline-btn:hover {
+	background: rgba(172, 176, 181, 0.1);
+  color: #414346;
+}
+
+
+
+.vs-rounded-solid-btn {
+  background: #49c5b1;
+	border-radius: 16px;
+  color: #fff;
+  height: 32px;
+  padding: 0;
+  width: 32px;
+}
+.vs-rounded-solid-btn:hover {
+	background: #35B09C;
+}
+
+
+
+.vs-rounded-outline-btn {
+	border-radius: 16px;
+  height: 32px;
+  padding: 0;
+  width: 32px;
+}
+.vs-rounded-outline-btn:hover {
+	background: rgba(172, 176, 181, 0.1);
+  color: #6F7376;
+}
+
+
+
+
+.vs-text-btn {
+	background: transparent;
+	border-color: transparent;
+  color: #6F7376;
+  align-items: center;
+}
+.vs-text-btn:hover {
+	background: rgba(111,115,118,0.1);
+  color: #414346;
+}
+.vs-text-btn svg {
+	margin-top: -4px;
+}
+
+
+
+
+.vs-icon-btn {
+	background: transparent;
+	border-color: transparent;
+	border-radius: 16px;
+  color: #6F7376;
+  height: 32px;
+  padding: 3px;
+  vertical-align: middle;
+  width: 32px;
+}
+.vs-icon-btn:hover {
+	background: rgba(111,115,118,0.1);
+  color: #414346;
+}
+
+
+
+
+
+
+
+
+
+
+
+
