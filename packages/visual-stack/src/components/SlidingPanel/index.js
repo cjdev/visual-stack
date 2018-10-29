@@ -5,11 +5,11 @@ import './SlidingPanel.css';
 import FilterVariantIcon from 'mdi-react/FilterVariantIcon';
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon';
 
-export const ToggleIcon = ({ onClick, hoverText, toggleIconState }) => {
+export const ToggleIcon = ({ onClick, hoverText, toggleIconState, className, ...restProps }) => {
   const Icon = toggleIconState ? ArrowRightIcon : FilterVariantIcon;
 
   return (
-    <a className={'vs-sliding-panel-toggle-icon'} onClick={onClick} title={hoverText}>
+    <a className={`vs-sliding-panel-toggle-icon ${className}`} onClick={onClick} title={hoverText} {...restProps}>
       <div className="vs-sliding-panel-section-icon-btn"><Icon className="vs-sliding-panel-section-icon" /></div>
     </a>
   );

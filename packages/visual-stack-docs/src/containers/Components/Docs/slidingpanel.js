@@ -47,7 +47,7 @@ class SlidingPanelDemo extends React.Component {
                 </Header>
                 <Body>
                   {/* s4:start */}
-                  <div style={{ display: 'flex', width: 'calc(100% + 15px)', marginTop: '-15px', marginRight: '-15px', marginBottom: '-15px' }}>
+                  <div style={{ display: 'flex', width: 'calc(100%)', marginTop: '-15px', marginRight: '-15px', marginBottom: '-15px' }}>
                     <div style={{ flexGrow: 1, paddingTop: '15px', paddingRight: '15px', paddingBottom: '15px' }}>
                       {/* s4:end */}
                       { /* s2:start */}

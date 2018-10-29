@@ -20,7 +20,7 @@
   color: #333;
 }
 
-.vs-sliding-panel-section-container a:not(.sliding-panel-section-container-label) {
+.vs-sliding-panel-section-container a:not(.vs-sliding-panel-section-container-label) {
   display: block;
 }
 
@@ -69,11 +69,6 @@
   display: inline;
 }
 
-.vs-sliding-panel-section-icon {
-  height: 14px;
-  fill: #748aa1;
-}
-
 .vs-sliding-panel-section-icon-btn {
   width: 36px;
   height: 36px;
@@ -97,6 +92,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 20px;
+  fill: #748aa1;
 }
 
 .vs-force-sliding-panel-width {

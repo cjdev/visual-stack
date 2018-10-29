@@ -11,8 +11,8 @@ import {
 } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 import { toggleSlidingPanel, toggleFilterDropdown } from '../actions';
 
-const slidingPanelLens = R.lensPath(['visualStack', 'slidingPanel']);
-const slidingPanelActiveLens = R.compose(slidingPanelLens, R.lensPath(['active']));
+export const slidingPanelLens = R.lensPath(['visualStack', 'slidingPanel']);
+export const slidingPanelActiveLens = R.compose(slidingPanelLens, R.lensPath(['active']));
 
 export class InternalSlidingPanel extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ InternalSlidingPanel.propTypes = {
 };
 
 export const SlidingPanel = connect(
-  state => { console.log('state', state); return ({ active: R.view(slidingPanelActiveLens, state) }); },
+  state =>  ({ active: R.view(slidingPanelActiveLens, state) }),
   { toggleSlidingPanel }
 )(InternalSlidingPanel);
 
@@ -55,7 +55,7 @@ export class InternalToggleIcon extends Component {
   }
   render() {
     return (
-      <BaseToggleIcon {...this.props} onClick={e => this.handleClick(e)} />
+      <BaseToggleIcon {...R.dissoc('toggleSlidingPanel', this.props)} onClick={e => this.handleClick(e)} />
     );
   }
 }
