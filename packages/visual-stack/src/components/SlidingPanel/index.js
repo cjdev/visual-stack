@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './SlidingPanel.css';
-import FilterIcon from 'mdi-react/FilterIcon';
+import FilterVariantIcon from 'mdi-react/FilterVariantIcon';
+import ArrowRightIcon from 'mdi-react/ArrowRightIcon';
 
-export const ToggleIcon = ({ onClick, hoverText, toggleIconState, label }) => {
-  const iconState = (toggleIconState) ? ' active' : '';
+export const ToggleIcon = ({ onClick, hoverText, toggleIconState }) => {
+  const Icon = toggleIconState ? ArrowRightIcon : FilterVariantIcon;
+
   return (
-    <a className={'vs-sliding-panel-toggle-icon' + iconState} onClick={onClick} title={hoverText}>
-        <div className="vs-filter-icn-btn"><FilterIcon className="filterIcon"/><span>{ label || 'Show Filters' }</span></div>
-    </a>
-  );
+        <a className={'vs-sliding-panel-toggle-icon'} onClick={onClick} title={hoverText}>
+            <div className="vs-sliding-panel-section-icon-btn"><Icon className="vs-sliding-panel-section-icon" /></div>
+        </a>
+    );
 };
 ToggleIcon.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -19,50 +21,55 @@ ToggleIcon.propTypes = {
   label: PropTypes.string,
 };
 
-export const SlidingPanelHeader = ({ children }) => {
+export const SlidingPanel = ({ children, active }) => {
   return (
-    <li className="vs-sliding-panel-header">
-      { children }
-    </li>
-  );
+        <div className={classNames('vs-sliding-panel', { 'vs-active': active })}>
+            <ul className="vs-force-sliding-panel-width">
+                {children}
+            </ul>
+        </div>
+    );
+};
+SlidingPanel.propTypes = {
+  children: PropTypes.any,
+  active: PropTypes.bool,
+};
+
+export const SlidingPanelHeader = ({ className = '', children }) => {
+  return (<li className={`${className} vs-sliding-panel-header`}>{children}</li>);
+};
+SlidingPanelHeader.propTypes = {
+  children: PropTypes.any,
+  className: PropTypes.string,
 };
 
 export const SlidingPanelSection = ({ children }) => {
-  return (
-    <li className="vs-sliding-panel-section">
-      { children }
-    </li>
-  );
+  return (<li className="vs-sliding-panel-section">{children}</li>);
 };
-
-export const SlidingPanel = ({ children, active }) => {
-  return (
-    <div className={ classNames('vs-sliding-panel', { active })}>
-      <ul>
-        { children }
-      </ul>
-    </div>
-  );
+SlidingPanelSection.propTypes = {
+  children: PropTypes.any,
 };
 
 export const SlidingPanelDropdown = ({ label, children, onClick, expanded }) => {
-  const containerClasses = classNames('vs-filter-container', { expanded });
-  const optionsClasses = classNames('vs-filter-options', { expanded });
+  const containerClasses = classNames('vs-sliding-panel-section-container', { 'vs-expanded': expanded });
+  const optionsClasses = classNames('vs-sliding-panel-section-options', { 'vs-expanded': expanded });
   return (
-    <ul className={containerClasses}>
-      <a className="vs-filter-container-label" onClick={onClick}>
-        <div>{ label }</div>
-        <i className="fa fa-chevron-right"></i>
-      </a>
-      <ul>
-        <div className={optionsClasses}>
-          { children }
-        </div>
-      </ul>
-    </ul>
-  );
+        <ul className={containerClasses}>
+            <a className="vs-sliding-panel-section-container-label" onClick={onClick}>
+                <div>{label}</div>
+                <i className="fa fa-chevron-right"></i>
+            </a>
+            <ul>
+                <div className={optionsClasses}>
+                    {children}
+                </div>
+            </ul>
+        </ul>
+    );
 };
-
-SlidingPanel.propTypes = {
-  active: PropTypes.bool,
+SlidingPanelDropdown.propTypes = {
+  children: PropTypes.any,
+  label: PropTypes.any,
+  onClick: PropTypes.func,
+  expanded: PropTypes.bool,
 };
