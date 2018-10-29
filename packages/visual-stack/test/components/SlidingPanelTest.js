@@ -1,29 +1,29 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { equal } from 'assert';
+import { expect } from 'chai';
 import { SlidingPanel, ToggleIcon } from '../../src/components/SlidingPanel';
 
 describe('SlidingPanel', () => {
   it('should render', () => {
     const wrapper = shallow(
-      <SlidingPanel />
-    );
-    equal(wrapper.find('.vs-sliding-panel').length, 1);
+            <SlidingPanel />
+        );
+    expect(wrapper.find('.vs-sliding-panel').length).to.equal(1);
   });
 
   it('should render active', () => {
     const wrapper = shallow(
-      <SlidingPanel active={true} />
-    );
-    equal(wrapper.find('.vs-sliding-panel.active').length, 1);
+            <SlidingPanel active={true} />
+        );
+    expect(wrapper.find('.vs-sliding-panel.vs-active').length).to.equal(1);
   });
 });
 
 describe('ToggleIcon', () => {
   it('should render', () => {
     const wrapper = shallow(
-      <ToggleIcon />
-    );
-    equal(wrapper.find('.vs-sliding-panel-toggle-icon').length, 1);
+            <ToggleIcon />
+        );
+    expect(wrapper.find('.vs-sliding-panel-toggle-icon').length).to.equal(1);
   });
 });

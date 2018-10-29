@@ -1,8 +1,8 @@
-import { defaultTo, lensPath, lensProp, set, assoc, not, over, map, view } from 'ramda';
+import R from 'ramda';
 import { createAction, handleActions } from 'redux-actions';
 
-const defaultToEmpty = defaultTo({});
-const collapse = set(lensProp('expanded'), false);
+const defaultToEmpty = R.defaultTo({});
+const collapse = R.set(R.lensProp('expanded'), false);
 
 const OPEN_DROPDOWN = '@cjdev/visual-stack-redux/OPEN_DROPDOWN';
 const CLOSE_DROPDOWN = '@cjdev/visual-stack-redux/CLOSE_DROPDOWN';
@@ -41,46 +41,46 @@ export const selectTab = createAction(SELECT_TAB);
 
 export default handleActions({
   [OPEN_DROPDOWN]: (state, { payload: { menuBarName, dropDownName } }) =>
-    set(lensPath(['menuBar', menuBarName, dropDownName, 'open']), true, state),
+    R.set(R.lensPath(['menuBar', menuBarName, dropDownName, 'open']), true, state),
 
   [CLOSE_DROPDOWN]: (state, { payload: { menuBarName, dropDownName } }) =>
-    set(lensPath(['menuBar', menuBarName, dropDownName, 'open']), false, state),
+    R.set(R.lensPath(['menuBar', menuBarName, dropDownName, 'open']), false, state),
 
   [OPEN_MODAL]: (state, { payload }) =>
-    set(lensProp('modal'), payload, state),
+    R.set(R.lensProp('modal'), payload, state),
 
   [CLOSE_MODAL]: state =>
-    set(lensProp('modal'), emptyModalState, state),
+    R.set(R.lensProp('modal'), emptyModalState, state),
 
   [REGISTER_DROPDOWN]: (state, { payload }) =>
-    over(lensProp('navGroupDropdown'), assoc(payload, false), state),
+    R.over(R.lensProp('navGroupDropdown'), R.assoc(payload, false), state),
 
   [TOGGLE_DROPDOWN]: (state, { payload }) =>
-    over(lensPath(['navGroupDropdown', payload]), not, state),
+    R.over(R.lensPath(['navGroupDropdown', payload]), R.not, state),
 
   [TOGGLE_SIDENAV]: (state, { payload: { collapsed } }) =>
-    set(lensPath(['sideNav', 'collapsed']), collapsed, state),
+    R.set(R.lensPath(['sideNav', 'collapsed']), collapsed, state),
 
   [TOGGLE_SIDENAV_LINKGROUP]: (state, { payload: { expanded, linkGroupName } }) => {
-    const linkGroups = defaultToEmpty(view(lensPath(['sideNav', 'linkGroups']), state));
-    const stateWithResetLinkGroups = set(
-      lensPath(['sideNav', 'linkGroups']),
-      map(v => collapse(v))(linkGroups),
+    const linkGroups = defaultToEmpty(R.view(R.lensPath(['sideNav', 'linkGroups']), state));
+    const stateWithResetLinkGroups = R.set(
+      R.lensPath(['sideNav', 'linkGroups']),
+      R.map(v => collapse(v))(linkGroups),
       state);
-    return set(
-      lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']),
+    return R.set(
+      R.lensPath(['sideNav', 'linkGroups', linkGroupName, 'expanded']),
       expanded,
       stateWithResetLinkGroups);
   },
 
   [TOGGLE_SLIDING_PANEL]: state =>
-    over(lensPath(['slidingPanel', 'active']), not, state),
+    R.over(R.lensPath(['slidingPanel', 'active']), R.not, state),
 
   [TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN]: (state, { payload: { filterLabel } }) =>
-    over(lensPath(['slidingPanel', filterLabel, 'expanded']), not, state),
+    R.over(R.lensPath(['slidingPanel', filterLabel, 'expanded']), R.not, state),
 
   [SELECT_TAB]: (state, { payload: { tabLayoutId, index } }) => {
-    return set(lensPath(['tabLayout', tabLayoutId, 'index']), index, state);
+    return R.set(R.lensPath(['tabLayout', tabLayoutId, 'index']), index, state);
   },
 
 }, {
@@ -91,4 +91,3 @@ export default handleActions({
   slidingPanel: {},
   tabLayout: {},
 });
-

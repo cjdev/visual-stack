@@ -9,10 +9,10 @@ export const ToggleIcon = ({ onClick, hoverText, toggleIconState }) => {
   const Icon = toggleIconState ? ArrowRightIcon : FilterVariantIcon;
 
   return (
-        <a className={'vs-sliding-panel-toggle-icon'} onClick={onClick} title={hoverText}>
-            <div className="vs-sliding-panel-section-icon-btn"><Icon className="vs-sliding-panel-section-icon" /></div>
-        </a>
-    );
+    <a className={'vs-sliding-panel-toggle-icon'} onClick={onClick} title={hoverText}>
+      <div className="vs-sliding-panel-section-icon-btn"><Icon className="vs-sliding-panel-section-icon" /></div>
+    </a>
+  );
 };
 ToggleIcon.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -23,12 +23,12 @@ ToggleIcon.propTypes = {
 
 export const SlidingPanel = ({ children, active }) => {
   return (
-        <div className={classNames('vs-sliding-panel', { 'vs-active': active })}>
-            <ul className="vs-force-sliding-panel-width">
-                {children}
-            </ul>
-        </div>
-    );
+    <div className={classNames('vs-sliding-panel', { 'vs-active': active })}>
+      <ul className="vs-force-sliding-panel-width">
+        {children}
+      </ul>
+    </div>
+  );
 };
 SlidingPanel.propTypes = {
   children: PropTypes.any,
@@ -54,18 +54,18 @@ export const SlidingPanelDropdown = ({ label, children, onClick, expanded }) => 
   const containerClasses = classNames('vs-sliding-panel-section-container', { 'vs-expanded': expanded });
   const optionsClasses = classNames('vs-sliding-panel-section-options', { 'vs-expanded': expanded });
   return (
-        <ul className={containerClasses}>
-            <a className="vs-sliding-panel-section-container-label" onClick={onClick}>
-                <div>{label}</div>
-                <i className="fa fa-chevron-right"></i>
-            </a>
-            <ul>
-                <div className={optionsClasses}>
-                    {children}
-                </div>
-            </ul>
-        </ul>
-    );
+    <ul className={containerClasses}>
+      <a className="vs-sliding-panel-section-container-label" onClick={onClick}>
+        <div>{label}</div>
+        <i className="fa fa-chevron-right"></i>
+      </a>
+      <ul>
+        <div className={optionsClasses}>
+          {children}
+        </div>
+      </ul>
+    </ul>
+  );
 };
 SlidingPanelDropdown.propTypes = {
   children: PropTypes.any,

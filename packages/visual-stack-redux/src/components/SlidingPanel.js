@@ -11,31 +11,36 @@ import {
 } from '@cjdev/visual-stack/lib/components/SlidingPanel';
 import { toggleSlidingPanel, toggleFilterDropdown } from '../actions';
 
+const slidingPanelLens = R.lensPath(['visualStack', 'slidingPanel']);
+const slidingPanelActiveLens = R.compose(slidingPanelLens, R.lensPath(['active']));
+
 export class InternalSlidingPanel extends Component {
-  static propTypes = {
-    active: PropTypes.bool,
-    initialActive: PropTypes.bool,
-  };
   constructor(props) {
     super(props);
-    if (this.props.initialActive)  {
+    if (this.props.initialActive) {
       this.props.toggleSlidingPanel();
     }
   }
 
   render() {
     return (
-      <div >
-        <BaseSlidingPanel
-          active={this.props.active || false} >
-          { this.props.children }
+      <div>
+        <BaseSlidingPanel active={this.props.active || false} >
+          {this.props.children}
         </BaseSlidingPanel>
       </div>
     );
   }
 }
+InternalSlidingPanel.propTypes = {
+  active: PropTypes.bool,
+  initialActive: PropTypes.bool,
+  children: PropTypes.any,
+  toggleSlidingPanel: PropTypes.func,
+};
+
 export const SlidingPanel = connect(
-  state => ({ active: state.visualStack.slidingPanel.active }),
+  state => { console.log('state', state); return ({ active: R.view(slidingPanelActiveLens, state) }); },
   { toggleSlidingPanel }
 )(InternalSlidingPanel);
 
@@ -50,48 +55,57 @@ export class InternalToggleIcon extends Component {
   }
   render() {
     return (
-      <BaseToggleIcon {...this.props} onClick={this.handleClick} />
+      <BaseToggleIcon {...this.props} onClick={e => this.handleClick(e)} />
     );
   }
 }
+InternalToggleIcon.propTypes = {
+  toggleSlidingPanel: PropTypes.func,
+};
 
+const makeExpandedLens = ({ id }) => R.lensPath([id, 'expanded']);
 export class InternalSlidingPanelDropdown extends Component {
-  static propTypes = {
-    slidingPanel: PropTypes.object,
-    id: PropTypes.string.isRequired,
-    initialActive: PropTypes.bool,
-  };
   constructor(props) {
     super(props);
-    if (this.props.initialActive)  {
+    if (this.props.initialActive) {
       this.props.toggleFilterDropdown(this.props.id);
     }
   }
   render() {
-    const expanded = R.view(R.lensPath([this.props.id, 'expanded']), this.props.slidingPanel);
+    const expanded = R.view(makeExpandedLens(this.props), this.props.slidingPanel);
     return (
       <BaseSlidingPanelDropdown
+        styles={this.props.styles}
         label={this.props.label}
         expanded={expanded}
         onClick={() => this.props.toggleFilterDropdown(this.props.id)}
-        >
-        { this.props.children }
+      >
+        {this.props.children}
       </BaseSlidingPanelDropdown>
     );
   }
 }
+InternalSlidingPanelDropdown.propTypes = {
+  slidingPanel: PropTypes.object,
+  id: PropTypes.string.isRequired,
+  initialActive: PropTypes.bool,
+  label: PropTypes.any,
+  children: PropTypes.any,
+  toggleFilterDropdown: PropTypes.func,
+  styles: PropTypes.object,
+};
+
 export const SlidingPanelDropdown = connect(
-  state => ({ slidingPanel: state.visualStack.slidingPanel }),
-    { toggleFilterDropdown }
+  state => ({ slidingPanel: R.view(slidingPanelLens, state) }),
+  { toggleFilterDropdown }
 )(InternalSlidingPanelDropdown);
 
 
 export const ToggleIcon = connect(
-  state => ({ toggleIconState: state.visualStack.slidingPanel.active }),
+  state => ({ toggleIconState: R.view(slidingPanelActiveLens, state) }),
   { toggleSlidingPanel }
 )(InternalToggleIcon);
 
 export const SlidingPanelHeader = BaseSlidingPanelHeader;
 export const SlidingPanelSection = BaseSlidingPanelSection;
-
 

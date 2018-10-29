@@ -39,15 +39,17 @@ class SlidingPanelDemo extends React.Component {
               <Panel>
                 <Header>
                   <div>
-                   The SlidingPanel displays and hides based on the <code>active</code> prop.
+                    The SlidingPanel displays and hides based on the <code>active</code> prop.
                    It expects to be inside a flex container and that the <em>other</em> elements
-                    in the container are configured to take up all available space. (e.g. in a two-element
-                   layout, the other element should have <code>flex-grow: 1</code>)
+                     in the container are configured to take up all available space. (e.g. in a two-element
+                   layout, the other element should have <code>flex-grow: 1</code>
                   </div>
                 </Header>
                 <Body>
+                  {/* s4:start */}
                   <div style={{ display: 'flex', width: 'calc(100% + 15px)', marginTop: '-15px', marginRight: '-15px', marginBottom: '-15px' }}>
                     <div style={{ flexGrow: 1, paddingTop: '15px', paddingRight: '15px', paddingBottom: '15px' }}>
+                      {/* s4:end */}
                       { /* s2:start */}
                       <ToggleIcon
                         label="Toggle It"
@@ -70,6 +72,8 @@ class SlidingPanelDemo extends React.Component {
                       <Snippet tag="s2" src={snippets} />
                       <div>Mock structure of Panel, with Dropdown</div>
                       <Snippet tag="s3" src={snippets} />
+                      <div>Structure of the element that contains the Sliding Panel</div>
+                      <Snippet tag="s4" src={snippets} />
                     </div>
                     { /* s3:start */}
                     <SlidingPanel active={this.state.panelActive}>
@@ -122,30 +126,32 @@ class VSRSlidingPanelDemo extends React.Component {
                     SlidingPanel (redux)
                   </Header>
                   <Body>
-                    <div>When using the Redux Sliding Panel, the Redux Application Layout will be subscribe to its expanded redux state.</div>
-                    <div>Meaning, you can create and render your Sliding Panel anywhere. The caveat with this is that, if your Toggle Panel is clicked, and there is no Sliding Panel to display, the Application Layout will still change the size of the Page Conent, and everything will Look Ugly.</div>
-                    { /* s9:start */}
-                    <VSRToggleIcon hoverText={'hey look at me!'} />
-                    { /* s9:end*/}
-                    <Snippet tag="s5" src={snippets} />
-                    <Snippet tag="s9" src={snippets} />
-                    <Snippet tag="s8" src={snippets} />
-                    { /* s8:start */}
-                    <VSPanel
-                      initialActive={false}
-                    >
-                      <VSHeader>
-                        reduxified sliding panel header
-                      </VSHeader>
-                      <VSDropdown
-                        id="id1"
-                        label="My Redux CIDs"
-                        initialActive={true}
-                      >
-                        <div>something</div>
-                      </VSDropdown>
-                    </VSPanel>
-                    { /* s8:end*/}
+                    <div style={{ display: 'flex', width: 'calc(100% + 15px)', marginTop: '-15px', marginRight: '-15px', marginBottom: '-15px' }}>
+                      <div style={{ flexGrow: 1, paddingTop: '15px', paddingRight: '15px', paddingBottom: '15px' }}>
+                        <div>When using the Redux Sliding Panel, the Redux Application Layout will be subscribe to its expanded redux state.</div>
+                        <div>Meaning, you can create and render your Sliding Panel anywhere. The caveat with this is that, if your Toggle Panel is clicked, and there is no Sliding Panel to display, the Application Layout will still change the size of the Page Conent, and everything will Look Ugly.</div>
+                        { /* s9:start */}
+                        <VSRToggleIcon hoverText={'hey look at me!'} />
+                        { /* s9:end*/}
+                        <Snippet tag="s5" src={snippets} />
+                        <Snippet tag="s9" src={snippets} />
+                        <Snippet tag="s8" src={snippets} />
+                      </div>
+                      { /* s8:start */}
+                      <VSPanel initialActive={false}>
+                        <VSHeader>
+                          reduxified sliding panel header
+                          </VSHeader>
+                        <VSDropdown
+                          id="id1"
+                          label="My Redux CIDs"
+                          initialActive={true}
+                        >
+                          <div>something</div>
+                        </VSDropdown>
+                      </VSPanel>
+                      { /* s8:end*/}
+                    </div>
                   </Body>
                 </Panel>
               </div>

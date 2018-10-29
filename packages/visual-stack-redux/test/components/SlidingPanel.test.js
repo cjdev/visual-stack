@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
+import { expect } from 'chai';
 
 import { InternalSlidingPanel, InternalToggleIcon, InternalSlidingPanelDropdown } from '../../src/components/SlidingPanel';
 import { SlidingPanel, SlidingPanelHeader, SlidingPanelDropdown } from '@cjdev/visual-stack/lib/components/SlidingPanel';
-
 
 describe('SlidingPanel', () => {
   describe('SlidingPanel', () => {
@@ -54,7 +54,7 @@ describe('SlidingPanel', () => {
       const title = 'My CIDs';
       const slidingPanel = shallow(
         <InternalSlidingPanel>
-          <InternalSlidingPanelDropdown label={title}/>
+          <InternalSlidingPanelDropdown label={title} />
         </InternalSlidingPanel>
       );
       const dropdown = slidingPanel.find(InternalSlidingPanelDropdown);
@@ -67,13 +67,14 @@ describe('SlidingPanel', () => {
       const slidingPanel = mount(
         <InternalSlidingPanelDropdown
           label="MyCids"
-          toggleFilterDropdown={handleDropdown}>
+          toggleFilterDropdown={handleDropdown}
+         >
           <div>Something</div>
         </InternalSlidingPanelDropdown>
       );
       const dropdown = slidingPanel.find(SlidingPanelDropdown);
-      dropdown.find('a.vs-filter-container-label').simulate('click');
-      expect(dropdown.find('div.vs-filter-options')).to.have.length(1);
+      dropdown.find('a.vs-sliding-panel-section-container-label').simulate('click');
+      expect(dropdown.find('div.vs-sliding-panel-section-options')).to.have.length(1);
       expect(handleDropdown).to.have.property('callCount', 1);
     });
   });
