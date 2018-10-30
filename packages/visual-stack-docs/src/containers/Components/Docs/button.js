@@ -2,8 +2,7 @@ import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
-import { AccountIcon, CodeIcon, LogoutIcon } from '@cjdev/visual-stack/lib/components/Icons';
-
+import { AccountIcon, CodeIcon } from '@cjdev/visual-stack/lib/components/Icons';
 export default () =>
     <Demo srcFile="/samples/src/containers/Components/Docs/button.js">
     { snippets => {
