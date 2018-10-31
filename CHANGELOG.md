@@ -1,5 +1,5 @@
 # 3.0.0 (Oct 29, 2018)
-## Styling Changes 
+## Styling Changes
 - Updated sidenav styles.
 - Updated topnav styles.
 - Forced all Areas to use CJTeal.  
