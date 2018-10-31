@@ -1,72 +1,48 @@
-.vs-active .vs-sliding-panel-section-icon {
-  fill: #3ABDA7;
-}
-
-.vs-sliding-panel.vs-active {
-  width: 300px;
-  border-left: 1px solid #d1d1d2;
-}
-
-.vs-sliding-panel-section-container .vs-sliding-panel-section-container-label i {
-  color: #999;
-  font-size: 10px;
-  transform: rotate(0);
-  transition: .3s all ease-in-out;
-}
-
-.vs-sliding-panel-section-container a,
-.vs-sliding-panel-section-container:hover a {
-  text-decoration: none;
+.vs-sliding-panel {
+  background-color: #fff;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0);
   color: #333;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  transition: all 0.5s;
+  width: 0px;
+  z-index: 89;
+  border-left: 0px solid #d1d1d2;
 }
 
-.vs-sliding-panel-section-container a:not(.vs-sliding-panel-section-container-label) {
-  display: block;
+.vs-sliding-panel-header {
+  font-weight: 600;
+  padding: 14px 15px;
+  text-transform: capitalize;
 }
 
-.vs-sliding-panel-section-container ul {
-  max-height: 0;
-  overflow: hidden;
-  transition: .5s max-height ease-out;
+.vs-sliding-panel-header, .vs-sliding-panel-section {
+  border-bottom: 1px solid #d1d1d2;
 }
 
+.vs-force-sliding-panel-width {
+  width: 300px;
+}
+
+.vs-sliding-panel-toggle-icon {
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+}
 .vs-sliding-panel-section-container {
   border-top: 1px solid #d1d1d2;
 }
 
-.vs-sliding-panel-section-container-label a {
-  display: block;
-  padding: 8px 16px;
-}
-
-.vs-sliding-panel-section-container-label div {
-  font-weight: 600;
-  opacity: .54;
-  transition: .3s all ease-in-out;
-}
-
 .vs-sliding-panel-section-container-label {
-  padding: 12px;
-  padding-right: 16px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  padding-right: 16px;
   user-select: none;
-}
-
-.vs-sliding-panel-section-container-label:hover div,
-.vs-sliding-panel-section-container.vs-expanded .vs-sliding-panel-section-container-label div {
-  opacity: 1;
-}
-
-.vs-sliding-panel-section-container.vs-expanded .vs-sliding-panel-section-container-label i {
-  color: rgb(58, 189, 167);
-  transform: rotate(90deg);
-}
-
-.vs-sliding-panel-section-container.vs-expanded ul {
-  display: inline;
 }
 
 .vs-sliding-panel-section-icon-btn {
@@ -96,8 +72,9 @@
   fill: #748aa1;
 }
 
-.vs-force-sliding-panel-width {
+.vs-sliding-panel.vs-active {
   width: 300px;
+  border-left-width: 1px;
 }
 
 .vs-sliding-panel ul {
@@ -106,34 +83,53 @@
   padding: 0;
 }
 
-.vs-sliding-panel {
-  background-color: #fff;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0);
+.vs-sliding-panel.vs-active .vs-sliding-panel-section-icon {
+  fill: #3ABDA7;
+}
+
+.vs-sliding-panel-section-container a {
   color: #333;
-  width: 0px;
-  height: 100%;
-  z-index: 89;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0;
-  transition: all 0.5s;
-}
-
-.vs-sliding-panel-header {
-  background-color: #fff;
-  border-bottom: 1px solid #d1d1d2;
-  color: #333;
-  text-transform: capitalize;
-  padding: 14px 15px;
-  font-weight: 600;
-}
-
-.vs-sliding-panel-section {
-  border-bottom: 1px solid #d1d1d2;
-}
-
-.vs-sliding-panel-toggle-icon {
-  cursor: pointer;
   text-decoration: none;
-  display: flex;
+}
+
+.vs-sliding-panel-section-container ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: .5s max-height ease-out;
+}
+
+.vs-sliding-panel-section-container-label a {
+  display: block;
+  padding: 8px 16px;
+}
+
+.vs-sliding-panel-section-container-label div {
+  font-weight: 600;
+  opacity: .54;
+  transition: .3s all ease-in-out;
+}
+
+.vs-sliding-panel-section-container a:not(.vs-sliding-panel-section-container-label) {
+  display: block;
+}
+
+.vs-sliding-panel-section-container .vs-sliding-panel-section-container-label i {
+  color: #999;
+  font-size: 10px;
+  transform: rotate(0);
+  transition: .3s all ease-in-out;
+}
+
+.vs-sliding-panel-section-container-label:hover div,
+.vs-sliding-panel-section-container.vs-expanded .vs-sliding-panel-section-container-label div {
+  opacity: 1;
+}
+
+.vs-sliding-panel-section-container.vs-expanded ul {
+  display: inline;
+}
+
+.vs-sliding-panel-section-container.vs-expanded .vs-sliding-panel-section-container-label i {
+  color: #3abda7;
+  transform: rotate(90deg);
 }

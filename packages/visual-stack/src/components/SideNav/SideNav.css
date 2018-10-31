@@ -57,8 +57,8 @@
 }
 
 .vs-logo .vs-cj-logo {
-  fill: white;
   width: 32px;
+  fill: white;
 }
 
 .vs-app-name {
@@ -111,7 +111,7 @@
 	font-size: .8em;
 	margin: 0 auto;
 }
-	
+
 .vs-sidenav.collapsed .vs-sidenav-container ul li a {
   padding-left: 56px;
   transition: all .2s ease-in-out;
