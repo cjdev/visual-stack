@@ -9,7 +9,11 @@ import {
   SlidingPanelDropdown as BaseSlidingPanelDropdown,
   ToggleIcon as BaseToggleIcon,
 } from '@cjdev/visual-stack/lib/components/SlidingPanel';
-import { toggleSlidingPanel, toggleFilterDropdown } from '../actions';
+import {
+  toggleSlidingPanel,
+  toggleFilterDropdown,
+  setSlidingPanelActiveState,
+} from '../actions';
 
 export const slidingPanelLens = R.lensPath(['visualStack', 'slidingPanel']);
 export const slidingPanelActiveLens = R.compose(slidingPanelLens, R.lensPath(['active']));
@@ -18,7 +22,7 @@ export class InternalSlidingPanel extends Component {
   constructor(props) {
     super(props);
     if (this.props.initialActive) {
-      this.props.toggleSlidingPanel();
+      this.props.setSlidingPanelActiveState(this.props.initialActive);
     }
   }
 
@@ -37,11 +41,12 @@ InternalSlidingPanel.propTypes = {
   initialActive: PropTypes.bool,
   children: PropTypes.any,
   toggleSlidingPanel: PropTypes.func,
+  setSlidingPanelActiveState: PropTypes.func,
 };
 
 export const SlidingPanel = connect(
   state =>  ({ active: R.view(slidingPanelActiveLens, state) }),
-  { toggleSlidingPanel }
+  { toggleSlidingPanel, setSlidingPanelActiveState }
 )(InternalSlidingPanel);
 
 export class InternalToggleIcon extends Component {
@@ -108,4 +113,3 @@ export const ToggleIcon = connect(
 
 export const SlidingPanelHeader = BaseSlidingPanelHeader;
 export const SlidingPanelSection = BaseSlidingPanelSection;
-

@@ -2,6 +2,7 @@ import reducer, {
   toggleSideNav,
   toggleSideNavLinkGroup,
   toggleSlidingPanel,
+  setSlidingPanelActiveState,
   selectTab,
 } from '../src/actions';
 
@@ -98,5 +99,20 @@ describe('reducer', () => {
       },
     };
     expect(reducer(beforeState, selectTab({ tabLayoutId: 'ID123', index: 0 }))).to.deep.equal(afterState);
+  });
+
+  it('should set SlidingPanel active state to desired state', () => {
+    const beforeState = {
+      slidingPanel: {
+        active: false,
+      },
+    };
+    const afterState = {
+      slidingPanel: {
+        active: true,
+      },
+    };
+    expect(reducer(beforeState, setSlidingPanelActiveState(true))).to.deep.equal(afterState);
+    expect(reducer(afterState, setSlidingPanelActiveState(false))).to.deep.equal(beforeState);
   });
 });

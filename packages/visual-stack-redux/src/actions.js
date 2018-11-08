@@ -36,6 +36,9 @@ export const toggleSlidingPanel = createAction(TOGGLE_SLIDING_PANEL);
 const TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN = '@cjdev/visual-stack-redux/TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN';
 export const toggleFilterDropdown = createAction(TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN, filterLabel => ({ filterLabel }));
 
+const SET_SLIDING_PANEL_ACTIVE_STATE = '@cjdev/visual-stack-redux/SET_SLIDING_PANEL_ACTIVE_STATE';
+export const setSlidingPanelActiveState = createAction(SET_SLIDING_PANEL_ACTIVE_STATE);
+
 const SELECT_TAB = '@cjdev/visual-stack-redux/SELECT_TAB';
 export const selectTab = createAction(SELECT_TAB);
 
@@ -78,6 +81,9 @@ export default handleActions({
 
   [TOGGLE_SLIDING_PANEL_FILTER_DROPDOWN]: (state, { payload: { filterLabel } }) =>
     R.over(R.lensPath(['slidingPanel', filterLabel, 'expanded']), R.not, state),
+
+  [SET_SLIDING_PANEL_ACTIVE_STATE]: (state, { payload: newActiveState }) =>
+    R.set(R.lensPath(['slidingPanel', 'active']), newActiveState, state),
 
   [SELECT_TAB]: (state, { payload: { tabLayoutId, index } }) => {
     return R.set(R.lensPath(['tabLayout', tabLayoutId, 'index']), index, state);
