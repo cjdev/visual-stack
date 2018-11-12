@@ -21,6 +21,7 @@ import SlidingPanelDocs from './slidingpanel';
 import SpinnerDocs from './spinner';
 import TableDocs from './table';
 import TabLayoutDocs from './tablayout';
+import CardDocs from './card';
 
 // 2. add your demo to the routeComponentMap
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
@@ -35,6 +36,7 @@ addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
+addComponentRoute('card', 'Card', <CardDocs />);
 
 const ComponentDocs = ({ params }) => {
   const routeData = routeComponentMap[params.componentName];
