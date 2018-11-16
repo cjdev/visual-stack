@@ -30,7 +30,7 @@ class App extends React.Component {
     const sideNav = <SideNav logoBackground="#00AF66"
                         logo={<CJLogo />}
                         appName="YOUR APP NAME HERE!!" >
-                        <Link hoverTest="Almost there">
+                        <Link hoverText="Almost there">
                           <a href="this/link/goes/somewhere">
                             <LinkContentWrapper icon={<SettingsIcon/>} label="Where will I go?" />
                           </a>

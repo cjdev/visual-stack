@@ -31,11 +31,13 @@ From a fresh clone of the repo, start by bootstrapping the project from the root
 
 To run a dev instance of VSD:
 ```
-cd visual-stack-docs
+cd packages/visual-stack-docs
 npm run docs
 ```
 
 This works well in conjunction with `npm run watch` in both the VS and VSR packages to setup hot reloading while developing, integrating, and documenting components.
+
+To run these with a single command, from the root directory run `npm run start-all`
 
 ## Opening a PR
 

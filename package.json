@@ -3,6 +3,8 @@
   "name": "visual-stack-monorepo",
   "scripts": {
     "bootstrap": "lerna bootstrap && lerna run build",
+    "start-all": "npm run bootstrap && npx foreman start",
+    "link": "(cd packages/visual-stack && npm link) && (cd packages/visual-stack-redux && npm link)",
     "test": "lerna run test",
     "precommit": "CI=true lerna run test && lerna run lint"
   },

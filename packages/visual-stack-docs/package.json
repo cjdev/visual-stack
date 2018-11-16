@@ -42,6 +42,7 @@
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "server": "concurrently npm-watch \"node ./server\"",
-    "docs": "concurrently \"npm run start\" \"npm run server\""
+    "docs": "concurrently \"npm run start\" \"npm run server\"",
+    "watch": "concurrently \"npm run start\" \"npm run server\""
   }
 }
