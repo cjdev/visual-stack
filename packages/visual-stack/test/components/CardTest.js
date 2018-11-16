@@ -4,10 +4,17 @@ import { equal } from 'assert';
 import { mount } from 'enzyme';
 
 describe("Card", () => {
-    it("should render a tag with children", () => {
+    it("should render a tag with children, if given href", () => {
+        const content = "hello";
+        const wrapper = mount(<Card href="something">{content}</Card>);
+        const aTagChildren = wrapper.find('a').props().children;
+        equal(aTagChildren, content);
+    });
+
+    it("should render div with children by default", () => {
         const content = "hello";
         const wrapper = mount(<Card>{content}</Card>);
-        const aTagChildren = wrapper.find('a').props().children;
+        const aTagChildren = wrapper.find('div').props().children;
         equal(aTagChildren, content);
     });
 

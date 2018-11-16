@@ -1,9 +1,8 @@
-.vs-card {
+.vs-card,
+.vs-card-clickable {
   background-color: #fff;
   border-radius: 1px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  padding: 15px 5px;
-  margin-bottom: 30px;
   color: inherit;
   padding: 20px;
   margin: 10px 20px 10px 0;
@@ -12,9 +11,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+.vs-card-clickable {
   cursor: pointer;
 }
 
-.vs-card:hover {
+.vs-card-clickable:hover {
   text-decoration: none;
 }
