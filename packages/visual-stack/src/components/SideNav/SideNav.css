@@ -52,6 +52,24 @@
   height: 45px;
 }
 
+.vs-sideNav-left-logo a.vs-sidenav-container-row:hover,
+.vs-sideNav-left-logo a.vs-sidenav-container-row {
+  display: flex;
+	background: #49c5b1;
+  height: inherit;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0px;
+  border: 0px;
+}
+
+.vs-sideNav-left-logo a.vs-sidenav-container-row:active svg {
+  fill: white;
+}
+
+
+.vs-sidenav .vs-sideNav-left-logo .vs-sidenav-container-row  {
+}
 .vs-logo {
   padding: 10px;
 }

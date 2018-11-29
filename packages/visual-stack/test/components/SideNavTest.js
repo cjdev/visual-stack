@@ -34,6 +34,28 @@ describe('SideNav', () => {
     equal(wrapper.find('.vs-sidenav .collapsed').length, 1);
   });
 
+  it('should give default home page if no homeLink is given', () => {
+    const wrapper = mount(
+      <SideNav
+        onClick={() => {}}
+        collapsed={true}
+        />
+    );
+    equal(wrapper.find('a.vs-sidenav-container-row').props().href, '/');
+  });
+
+  it('should correctly set the homeLink if one is given', () => {
+    const homeLink = 'somewhere/else';
+    const wrapper = mount(
+      <SideNav
+        onClick={() => {}}
+        collapsed={true}
+        homeLink={homeLink}
+        />
+    );
+    equal(wrapper.find('a.vs-sidenav-container-row').props().href, homeLink);
+  });
+
   describe('Header', () => {
     it('should render with children', () => {
       const wrapper = mount(

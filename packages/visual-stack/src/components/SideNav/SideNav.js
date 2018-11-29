@@ -55,6 +55,7 @@ class SideNavP extends React.Component {
       collapsed,
       children,
       userMenu,
+      homeLink
     } = this.props;
 
     const logoBg = logoBackground ? logoBackground : 'transparent';
@@ -64,10 +65,10 @@ class SideNavP extends React.Component {
     return (
       <ul className={'vs-sidenav' + (collapsed ? ' collapsed' : ' active')}>
         <li className="vs-sideNav-left-logo">
-          <div className="vs-sidenav-container-row">
+          <a href={`${(homeLink) ? homeLink : '\/'}`} className="vs-sidenav-container-row">
             <div className="vs-logo">{this.props.logo}</div>
             <span className="vs-app-name">{capAppName}</span>
-          </div>
+          </a>
         </li>
         {children}
         {userMenuWithColor}

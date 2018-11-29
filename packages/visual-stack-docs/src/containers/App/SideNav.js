@@ -52,6 +52,7 @@ export default class AppSideNav extends React.Component {
       <SideNav
         userMenu={userMenu}
         initializedCollapsed={false}
+        homeLink={'this/defaults/to/"/"'}
         logoBackground="#00AF66"
         logo={<CJLogo />}
         appName="VISUAL STACK"
