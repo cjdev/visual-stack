@@ -26,6 +26,20 @@ export const Button = mkButton('button');
 export const SubmitButton = mkButton('submit');
 
 Button.propTypes = SubmitButton.propTypes = {
-  type: PropTypes.oneOf(['primary', 'success', 'info', 'default', 'warning', 'danger', 'solid-primary']).isRequired,
+  type: PropTypes.oneOf(['primary', 
+    'success', 
+    'info', 
+    'default', 
+    'warning', 
+    'danger', 
+    'solid-primary', 
+    'solid-secondary', 
+    'outline-primary', 
+    'outline-secondary',
+    'rounded-solid',
+    'rounded-outline',
+    'icon',
+    'text',
+  ]).isRequired,
   large: PropTypes.bool,
 };
