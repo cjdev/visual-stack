@@ -26,7 +26,6 @@
   "dependencies": {
     "@material-ui/core": "^3.3.2",
     "@material-ui/icons": "^3.0.1",
-    "bootstrap": "^3.3.6",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "mdi-react": "^2.0.46",
