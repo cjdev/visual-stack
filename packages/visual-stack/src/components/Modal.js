@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Modal = ({ children }) =>
-   <div className="modal" style={{ display: 'block' }}>
-     {children}
-   </div>;
+const backgroundClick = (event, onBackgroundClick) => {
+  if (event.target.matches('.modal')) {
+    onBackgroundClick();
+  }
+};
+
+export const Modal = ({ children, onBackgroundClick }) =>
+  <div className="modal" style={{ display: 'block' }} onClick={event => onBackgroundClick ? backgroundClick(event, onBackgroundClick) : {} }>
+    {children}
+  </div>;
 
 export const Header = ({ title, children }) =>
   <div className="modal-header">
     {title && <legend>{title}</legend>}
     {children}
   </div>;
+
 Header.propTypes = {
   title: PropTypes.string,
 };

@@ -37,6 +37,27 @@ const ModalButton = ({ openModal, closeModal, takeAction }) =>
 const OpenModalButton = connect(null, { openModal, closeModal })(ModalButton);
 /* s3:end */
 
+/* s6:start */
+const OptionsModalDialog = ({ takeAction, closeModal }) =>
+  <M.Modal onBackgroundClick={closeModal}>
+    <M.Dialog>
+      <M.Content>
+        <M.Header title="Header Title" />
+        <M.Body>Click outside the modal to close me</M.Body>
+        <M.Footer>
+          <Button type="primary" onClick={() => closeModal()}>Cancel</Button>
+          <Button type="danger" onClick={() => { takeAction(); closeModal(); }}>Take Action</Button>
+        </M.Footer>
+      </M.Content>
+    </M.Dialog>
+  </M.Modal>;
+/* s6:end */
+
+const OptionsModalButton = ({ openModal, closeModal, takeAction }) =>
+  <Button type="primary" onClick={() => openModal(OptionsModalDialog, { takeAction, closeModal })}>Open Options Modal</Button>;
+
+const OpenOptionsModalButton = connect(null, { openModal, closeModal })(OptionsModalButton);
+
 export default () =>
   <Demo srcFile="/samples/src/containers/Components/Docs/modal.js">
     { snippets => {
@@ -63,6 +84,20 @@ export default () =>
               <Snippet tag="s3" src={snippets} />
               <Snippet tag="s4" src={snippets} />
               <Snippet tag="s5" src={snippets} />
+            </Body>
+          </Panel>
+          <Panel>
+            <Header>
+              Modal Options
+            </Header>
+            <Body>
+              <div>
+                The Modal component can be passed an 'onBackgroundClick' prop (function) to define what should happen when a click occurs outside the Modal.
+                Typically this would be used to pass in the 'closeModal' function.
+              </div>
+              <OpenOptionsModalButton/>
+              <Snippet tag="s6" src={snippets} />
+
             </Body>
           </Panel>
         </div>
