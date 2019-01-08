@@ -8,8 +8,6 @@ export default () =>
     { snippets => {
       return (
         <div>
-        
-        
           <Panel>
             <Header>
               <b>New</b> Platform Buttons (in progress)
@@ -29,7 +27,6 @@ export default () =>
               <Snippet tag="s3" src={snippets} />
             </Body>
           </Panel>
-        
           <Panel>
             <Header>
               Default Buttons

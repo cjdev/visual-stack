@@ -19,45 +19,45 @@ import '@cjdev/visual-stack/lib/global';
 export default class DemoCode extends React.Component {
   render() {
     /* s2:start */
-const reducer = combineReducers({
-  visualStack: visualStackReducer,
-});
+    const reducer = combineReducers({
+      visualStack: visualStackReducer,
+    });
 
-const store = createStore(reducer);
+    const store = createStore(reducer);
 
-class App extends React.Component {
-  render() {
-    const sideNav = <SideNav logoBackground="#00AF66"
-                        logo={<CJLogo />}
-                        appName="YOUR APP NAME HERE!!" >
-                        <Link hoverText="Almost there">
-                          <a href="this/link/goes/somewhere">
-                            <LinkContentWrapper icon={<SettingsIcon/>} label="Where will I go?" />
-                          </a>
-                        </Link>
-                    </SideNav>;
+    class App extends React.Component {
+      render() {
+        const sideNav = <SideNav logoBackground="#00AF66"
+                            logo={<CJLogo />}
+                            appName="YOUR APP NAME HERE!!" >
+                            <Link hoverText="Almost there">
+                              <a href="this/link/goes/somewhere">
+                                <LinkContentWrapper icon={<SettingsIcon/>} label="Where will I go?" />
+                              </a>
+                            </Link>
+                        </SideNav>;
 
-    return (
-      <div>
-        <Provider store={store} >
-            <Layout
-                sideNav={sideNav}>
-                <PageHeader>
-                    <PageTitle> WOW! Page Header
-                        <PageDescription>
-                            Neato description
-                        </PageDescription>
-                    </PageTitle>
-                </PageHeader>
-                <PageContent>
-                    <div>Some Sweet Page Content</div>
-                </PageContent>
-            </Layout>
-        </Provider>
-      </div>
-     );
-  }
-}
-/* s2:end */
+        return (
+          <div>
+            <Provider store={store} >
+                <Layout
+                    sideNav={sideNav}>
+                    <PageHeader>
+                        <PageTitle> WOW! Page Header
+                            <PageDescription>
+                                Neato description
+                            </PageDescription>
+                        </PageTitle>
+                    </PageHeader>
+                    <PageContent>
+                        <div>Some Sweet Page Content</div>
+                    </PageContent>
+                </Layout>
+            </Provider>
+          </div>
+        );
+      }
+    }
+    /* s2:end */
   }
 }
