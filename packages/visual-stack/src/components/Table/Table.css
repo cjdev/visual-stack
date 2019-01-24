@@ -1,28 +1,34 @@
 .vs-table-container {
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  margin: 10px 0;
+  border: 1px solid #c8ccce;
+  border-radius: 3px;
+  padding: 1.6rem;
+  margin: 0 0 3.2rem;
+}
+
+.vs-table-container .vs-table {
+	margin-bottom: 0;
 }
 
 .vs-table-title {
-  line-height: 1em;
-  font-variant: all-small-caps;
-  font-weight: 600;
-  font-size: 1.5em;
-  color: #333;
-  padding-bottom: 3px;
-  border-bottom: 0px solid #f0f0f0;
-  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  border-bottom: 0px solid #c8ccce;
+  margin-bottom: 0.8rem;
 }
 
 .vs-table {
   border-collapse: collapse;
   text-align: left;
+  margin: 0 0 3.2rem;
   width: 100%;
 }
 
+.vs-table:last-child {
+	margin-bottom: 0;
+}
+
 .vs-table > tbody > tr:hover {
-  background-color: #f6f6f6;
+  background-color: #fafafa;
  }
 
 .vs-tbody {
@@ -35,18 +41,20 @@
 }
 
 .vs-thead .vs-cell {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #c8ccce;
+  font-size: 1.3rem;
 }
 
 .vs-tfoot .vs-cell {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #c8ccce;
+  font-size: 1.3rem;
 }
 
 
 .vs-cell {
   border-top: 1px solid #eee;
   vertical-align: top;
-  padding: 4px 5px;
+  padding: 4px;
   margin: 0;
 }
 

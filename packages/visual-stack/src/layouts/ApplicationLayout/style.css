@@ -4,10 +4,6 @@ body,
   height: 100%;
 }
 
-body {
-  margin: 0;
-}
-
 .vs-application-layout {
   height: 100%;
   display: flex;
@@ -19,7 +15,6 @@ body {
   flex: 1 1 auto;
   display: flex;
   overflow: hidden;
-  background-color: #f6f6f6;
   transition: all .5s ease-out;
 }
 

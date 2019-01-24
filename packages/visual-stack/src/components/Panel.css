@@ -1,29 +1,30 @@
-/* START BOOTSTRAP STYLES (need to cleanup) */
+/* START BOOTSTRAP STYLE TRANSFER (need to cleanup) */
 .panel {
-  margin-bottom: 20px;
+  margin-bottom: 2.4rem;
   background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08), /*	0 2px 3px rgba(0,0,0,.1), */ 0 2px 3px -1px rgba(0,0,0,.08);
 }
 .panel-body {
-  padding: 15px;
+  padding: 16px;
 }
 .panel-heading {
-  padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 12px 16px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }
 .panel-title {
+  color: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
-  color: inherit;
 }
 .panel-title > a,
 .panel-title > small,
@@ -33,11 +34,12 @@
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
+/*   background-color: #f9f9f9; */
+/*   border-top: 1px solid #ddd; */
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+  font-size: 1.3rem;
+  padding: 16px;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
@@ -68,14 +70,22 @@
   border-top-width: 0;
 }
 .panel-default {
-  border-color: #ddd;
+/*   border-color: #c8ccce; */
 }
 .panel-default > .panel-heading {
   color: #333;
   background-color: #f5f5f5;
-  border-color: #ddd;
+  border-color: #c8ccce;
 }
 
+.panel-body:before, .panel-body:after {
+  display: table;
+  content: " ";
+}
+
+.panel-body:after {
+  clear: both;
+}
 /* END BOOTSTRAP STYLES */
 
 
@@ -87,8 +97,8 @@
 .cj-panel.panel-heading legend {
     text-transform: uppercase;
     color: #bbb;
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: 500;
+    font-size: 1.6rem;
     border: none;
     padding-top: 0px;
     margin-bottom: 0px;
@@ -96,5 +106,5 @@
 
 .cj-panel.panel .cj-panel.panel-body:not(:last-child) {
     border-bottom: 1px solid transparent;
-    border-color: #ddd;
+    border-color: #c8ccce;
 }

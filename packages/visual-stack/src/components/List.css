@@ -1,37 +1,43 @@
 .vs-list-toolbar {
-  border: 1px solid #CCC;
-  padding: 0 15px 0 15px;
+  border: 1px solid #c8ccce;
+  padding: 0 1.6rem 0 1.6rem;
   border-bottom-width: 0;
 }
 
 .vs-list-toolbar-title {
-  height: 45px;
-  line-height: 45px;
-  font-size: 12px;
-  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .vs-list-header {
-  background-color: #f7f7f7;
-  border: 1px solid #CCC;
+  background-color: #fafafa;
+  border: 1px solid #c8ccce;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   border-bottom: 0 transparent;
+  padding: 0.4rem 0;
   pointer-events:none;
 }
 
 .vs-list-header-label {
-  font-weight: 600;
-  white-space: nowrap;
+	font-size: 1.3rem;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .vs-list-rows {
-  border: 1px solid #CCC;
+  border: 1px solid #c8ccce;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .vs-list-row {
-  padding: 15px 0;
-  border-top: 1px dashed #CCC;
+  padding: 0.8rem 0;
+  border-top: 1px dashed #c8ccce;
 }
 
 .vs-list-row:first-child {
@@ -39,16 +45,16 @@
 }
 
 .vs-list-row:hover {
-  background: #F9F9F9;
+  background: #fafafa;
   cursor: hand;
 }
 
 .vs-list-header-pull-down {
-  margin-top: 1em;
+  margin-top: 0.8rem;
 }
 
 .vs-list-cell {
-  border-right: 1px solid #CCC;
+  border-right: 1px solid #c8ccce;
 }
 
 .vs-list-cell:last-child  {

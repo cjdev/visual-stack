@@ -9,12 +9,12 @@ export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/tablayout.js">
     {
       snippets => {
-        const FullPageWrapper = ({ ...props }) => <div style={{ margin: '-15px -1em -1em' }}>{props.children}</div>;
+        const FullPageWrapper = ({ ...props }) => <div style={{ margin: '-24px' }}>{props.children}</div>;
         const DivWithBorder = props => <div style={{ border: '1px solid #e1e1e1' }} >{props.children}</div>;
         return (
           <FullPageWrapper>
             {/* s7:start */}
-            <TabLayout tabLayoutId={'floatingTabLayout'} floatingHeader={true} headerHeight={'49px'} headerWidth={'100%'}>
+            <TabLayout tabLayoutId={'floatingTabLayout'} floatingHeader={true} headerHeight={'48px'} headerWidth={'100%'}>
             {/* s7:end */}
               <Tab
                 label={<TabLabelContent>Tab 1</TabLabelContent>}
@@ -66,7 +66,7 @@ export default () => (
                         <Snippet tag="s6" src={snippets} />
                         {/* s6:start */}
                         <DivWithBorder>
-                          <TabLayout tabLayoutId={'tabLayout3'} onTabClick={() => { /* function body */ }} themeColor={'#048BC6'}>
+                          <TabLayout tabLayoutId={'tabLayout3'} onTabClick={() => { /* function body */ }} themeColor={'#49c5b1'}>
                             <Tab label={<TabLabelContent>Tab 1</TabLabelContent>} content={<TabContent>Tab Content 1</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 2</TabLabelContent>} content={<TabContent>Tab Content 2</TabContent>} />
                             <Tab label={<TabLabelContent>Tab 3</TabLabelContent>} content={<TabContent>Tab Content 3</TabContent>} />

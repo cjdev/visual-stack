@@ -1,10 +1,15 @@
 .vs-page-content {
   display: flex;
   flex-direction: column;
-  background-color: #F1F4F8;
   margin: 0;
   padding: 24px;
   overflow: auto;
   height: calc(100vh - 48px);
+  transition: .4s padding ease-in-out;
 }
 
+@media (min-width: 1200px) {
+	.vs-page-content {
+/* 	  padding: 24px 48px; */
+	}
+}

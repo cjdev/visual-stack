@@ -15,7 +15,7 @@ export const Modal = ({ children, onBackgroundClick }) =>
 
 export const Header = ({ title, children }) =>
   <div className="modal-header">
-    {title && <legend>{title}</legend>}
+    {title && <h1>{title}</h1>}
     {children}
   </div>;
 

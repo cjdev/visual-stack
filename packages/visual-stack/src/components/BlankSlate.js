@@ -8,20 +8,22 @@ export const Wrapper = ({ children, title, subTitle, subTitle2, bubbleImg }) => 
   const titleText = title || 'You do not have any content.';
   const subTitle2El = subTitle2 && <div className="bs-subtitle">{subTitle2}</div>;
   return (
-    <div className="row vs-blankslate">
-      <div className="col-xs-2" />
-      <div className="vs-blank-slate col-xs-8">
-        <div className="vs-blank-slate-img-wrapper">
-          <div className="vs-bs-bubble-img">
-            <img src={imgSrc} />
-          </div>
-        </div>
-        <div className="vs-blankslate-title">{titleText}</div>
-        <div className="vs-bs-subtitle">{subTitle}</div>
-        {subTitle2El}
-        {children}
+    <div className="container vs-blankslate">
+	    <div className="row vs-blankslate">
+	      <div className="col-1" />
+	      <div className="vs-blank-slate col-10">
+	        <div className="vs-blank-slate-img-wrapper">
+	          <div className="vs-bs-bubble-img">
+	            <img src={imgSrc} />
+	          </div>
+	        </div>
+	        <div className="vs-blankslate-title">{titleText}</div>
+	        <div className="vs-bs-subtitle">{subTitle}</div>
+	        {subTitle2El}
+	        {children}
+	      </div>
+	      <div className="col-1" />
       </div>
-      <div className="col-xs-2" />
     </div>);
 };
 Wrapper.propTypes = {
