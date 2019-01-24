@@ -77,7 +77,7 @@ class TabLabel extends React.Component {
       : selected ? 'vs-tab-label-clicked' : '';
     const labelClassName = `vs-tab-label ${labelStateClassName}`;
 
-    const accentColor = themeColor || '#49c5b1';
+    const accentColor = themeColor || '#00af65';
 
     const hoverStyle = disabled
       ? {}
