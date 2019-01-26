@@ -129,12 +129,15 @@ h6, .h6 {
 }
 
 h1:first-child,
-h2:first-child,
+h2:first-child {
+  margin-top: 0;
+}
+
 h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-	margin-top: 0;
+  margin-top: 0.8rem;
 }
 
 p {
@@ -392,10 +395,6 @@ select {
 
 button[disabled], html input[disabled] {
   cursor: default;
-}
-
-input, select {
-    vertical-align:middle;
 }
 
 button,

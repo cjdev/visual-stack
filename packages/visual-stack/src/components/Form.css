@@ -134,3 +134,25 @@ fieldset.group ul.checkbox li.focus  {
     border: 1px gray solid;
     width: 12em;
 }
+
+.vs-validation-error {
+  color: #E1523D;
+  font-size: 1.3rem;
+  margin-top: -4px;
+}
+
+.vs-labeled-component-help {
+  color: #777;
+  font-size: 1.3rem;
+  margin-top: -4px;
+}
+
+.vs-labeled-component {
+  margin-bottom: 16px;
+}
+
+.vs-labeled-component-optional {
+  color: #777;
+  font-size: 1.3rem;
+  font-style: italic;
+}

@@ -16,7 +16,7 @@ label {
   font-size: 1.3rem;
   font-weight: 500;
   max-width: 100%;
-  margin: 0.4rem 0;;
+  margin: 0 0 0.4rem;
 }
 
 label span {
@@ -78,29 +78,50 @@ input[type="color"] {
 }
 
 select:focus,
-textarea:focus, 
-input[type="file"]:focus, 
-input[type="text"]:focus, 
-input[type="password"]:focus, 
-input[type="datetime"]:focus, 
-input[type="datetime-local"]:focus, 
-input[type="date"]:focus, 
-input[type="month"]:focus, 
-input[type="time"]:focus, 
-input[type="week"]:focus, 
-input[type="number"]:focus, 
-input[type="email"]:focus, 
-input[type="url"]:focus, 
-input[type="search"]:focus, 
-input[type="tel"]:focus, 
+textarea:focus,
+input[type="file"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
 input[type="color"]:focus {
-	outline: 1px solid rgba(73, 197, 176, 0.2);
+  outline: 1px solid rgba(73, 197, 176, 0.2);
   border-color: #49c5b1;
   box-shadow: 0 0 4px rgba(73, 197, 176, 0.4);
 }
 
+select.input-error,
+textarea.input-error,
+input.input-error[type="file"],
+input.input-error[type="text"],
+input.input-error[type="password"],
+input.input-error[type="datetime"],
+input.input-error[type="datetime-local"],
+input.input-error[type="date"],
+input.input-error[type="month"],
+input.input-error[type="time"],
+input.input-error[type="week"],
+input.input-error[type="number"],
+input.input-error[type="email"],
+input.input-error[type="url"],
+input.input-error[type="search"],
+input.input-error[type="tel"],
+input.input-error[type="color"] {
+  border-color: #E1523D;
+  box-shadow: 0 0 4px rgba(225, 82, 61, 0.4);
+}
 
-input[type="radio"] + label, 
+
+input[type="radio"] + label,
 input[type="checkbox"] + label {
 	font-weight: 400;
 	margin: 0 1.6rem 0 0;
