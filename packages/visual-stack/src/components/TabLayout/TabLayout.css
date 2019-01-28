@@ -7,7 +7,7 @@
 
 .vs-tab-header.vs-tab-header-floating {
   position: fixed;
-  box-shadow: 0 0px 32px 0 rgba(136,136,136,0.25);
+  box-shadow: 0 1px 2px 0 rgba(136,136,136,0.15);
 }
 
 .vs-tab-label {
@@ -25,15 +25,15 @@
 }
 
 .vs-tab-label.vs-tab-label-clicked  {
-  color: #555;
+  color: #333;
   padding-bottom: 0px;
 }
 
 .vs-tab-label-content.standard {
-  padding: 15px 32px 11px;
+  padding: 12px 32px 8px;
   text-align: center;
 }
 
 .vs-tab-content.standard {
-  padding: 20px;
+  padding: 16px;
 }

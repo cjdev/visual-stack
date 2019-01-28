@@ -3,6 +3,16 @@
     margin-left: 0;
 }
 
+.form-horizontal .form-group:before, 
+.form-horizontal .form-group:after {
+  display: table;
+  content: " ";
+}
+
+.form-horizontal .form-group:after {
+  clear: both;
+}
+
 .form-group-buttons {
     text-align: right;
 }

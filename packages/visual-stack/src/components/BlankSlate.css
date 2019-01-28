@@ -4,6 +4,7 @@
     border-radius: 8px;
     padding: 60px;
     margin-top: 90px;
+    margin-bottom: 32px;
     position: relative;
 }
 
@@ -17,7 +18,7 @@
 }
 .vs-blankslate-title {
     font-weight: 500;
-    font-size: 2em;
+    font-size: 2.4rem;
     padding: 1.5em 0 .3em;
 }
 
@@ -68,7 +69,7 @@
 
 .vs-bs-subtitle {
     color: #858585;
-    margin-bottom: 2em;
+    margin-bottom: 1.6rem;
     white-space: normal;
 }
 

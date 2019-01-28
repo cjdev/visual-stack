@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Modal.css';
 
 const backgroundClick = (event, onBackgroundClick) => {
   if (event.target.matches('.modal')) {

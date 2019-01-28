@@ -9,7 +9,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: .4px;
   line-height: 20px;
   margin: 4px;
@@ -177,7 +177,7 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
   color: #333;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
 	height: 32px;
   min-height: 32px;

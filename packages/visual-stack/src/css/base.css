@@ -1,4 +1,5 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('//fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
 /* @license
  * MyFonts Webfont Build ID 2691808, 2013-11-19T16:06:51-0500
@@ -27,15 +28,378 @@
     font-style: normal;
 }
 
-body, p, div, td, th, span {
-  font-family: "Open Sans",sans-serif;
-  font-size: 13px;
+/* 
+GLOBAL COLOR VARIABLES:
+border-color: #c8ccce;
+Brand Primary: #49c5b1
+Brand Dark Blue: #151c23
+Pink <code>: #eb3366
+*/
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body, p, td, th, h1, h2, h3, h4, h5 {
-  color: #585858;
+html {
+  font-size: 62.5%;
 }
 
-th, b, strong {
-  font-weight: 600;
+body {
+  background-color: #f6f6f6;
+  color: #333;
+  font-family: 'Roboto', -system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+
+::selection {
+	background-color: #49c5b1;
+	background-color: rgba(73, 197, 176, 0.4);
+	color: #000;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background-color: rgba(73, 197, 176, 0.4);
+	color: #000;
+	text-shadow: none;
+}
+
+
+/* Reset Styles */
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+pre, pre code {
+  display: block;
+  hyphens: none;
+}
+
+code {
+  background-color: #f9f2f4;
+  border-radius: 3px;
+  color: #c7254e;
+	display: inline-block;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #C8CCCE;
+  border-radius: 2px;
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin: 0 0 1.6rem;
+  overflow: auto;
+  padding: 0.8rem 1.6rem;
+  white-space: pre;
+	word-break: break-all;
+	word-wrap: break-word;
+	
+}
+
+pre code {
+  background-color: transparent;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: 1.6rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e1e1e1;
+  box-sizing: content-box;
+  height: 0;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  overflow: visible;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+
+ol, ul {
+	padding-left: 3.2rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 0.8rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1.6rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  border-left: 4px solid #e1e1e1;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+figure {
+  margin: 0 0 1.6rem;
+}
+
+caption {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+	font-weight: 500;
+  text-align: inherit;
+}
+
+
+/* Headings and Text Styling */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #333;
+  font-family: inherit;
+  font-weight: bold;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 3.2rem 0 1.6rem;
+}
+
+h1, .h1 {
+  font-size: 2.8rem;
+  margin-bottom: 2.4rem;
+}
+
+h2, .h2 {
+  font-size: 2.4rem;
+}
+
+h3, .h3 {
+  font-size: 2rem;
+}
+
+h4, .h4 {
+  font-size: 1.8rem;
+}
+
+h5, .h5 {
+  font-size: 1.6rem;
+}
+
+h6, .h6 {
+  font-size: 1.4rem;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+
+.lead {
+	color: #777;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+a {
+  color: #28BCA4;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #28BCA4;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 4px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+
+
+
+
+/* Helper Classes */
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+       -o-transition: opacity .15s linear;
+          transition: opacity .15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
 }
