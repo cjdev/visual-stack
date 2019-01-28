@@ -8,10 +8,10 @@ export const Wrapper = ({ children, title, subTitle, subTitle2, bubbleImg }) => 
   const titleText = title || 'You do not have any content.';
   const subTitle2El = subTitle2 && <div className="bs-subtitle">{subTitle2}</div>;
   return (
-    <div className="container vs-blankslate">
+    <div className="container-fluid vs-blankslate">
 	    <div className="row vs-blankslate">
-	      <div className="col-1" />
-	      <div className="vs-blank-slate col-10">
+	      <div className="col-xs-1" />
+	      <div className="vs-blank-slate col-xs-10">
 	        <div className="vs-blank-slate-img-wrapper">
 	          <div className="vs-bs-bubble-img">
 	            <img src={imgSrc} />
@@ -22,7 +22,7 @@ export const Wrapper = ({ children, title, subTitle, subTitle2, bubbleImg }) => 
 	        {subTitle2El}
 	        {children}
 	      </div>
-	      <div className="col-1" />
+	      <div className="col-xs-1" />
       </div>
     </div>);
 };
