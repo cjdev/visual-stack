@@ -342,9 +342,10 @@ p {
 }
 
 a {
-  color: #28BCA4;
+  color: #2893bc;
   text-decoration: none;
   background-color: transparent;
+  transition: .2s all ease-in-out;
 }
 
 a:hover {

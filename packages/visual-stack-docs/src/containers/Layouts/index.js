@@ -428,14 +428,6 @@ const Layouts = () =>
         </Body>
       </Panel>
       
-			<Panel>
-				<Body>
-					<div id="example-devportal-1">
-					</div>
-				</Body>
-			</Panel>
-
-  
     </PageContent>
   </div>;
 
