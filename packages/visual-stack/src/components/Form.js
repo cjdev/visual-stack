@@ -46,7 +46,7 @@ FormGroup.propTypes = {
 };
 
 // Component that renders a label and error/help message
-export const LabeledComponent = ({label, error, help, optional, optionalLabel = "Optional", className, children}) => (
+export const Field = ({label, error, help, optional, optionalLabel = "Optional", className, children}) => (
   <div className="vs-labeled-component">
     <Label>{label} <span className="vs-labeled-component-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
     <div className={className}>
@@ -57,14 +57,14 @@ export const LabeledComponent = ({label, error, help, optional, optionalLabel = 
 );
 
 // Input with label and error/help message
-export const InputField = ({name, label, error, help, value, ...otherProps}) => (
-  <LabeledComponent label={label} error={error} help={help} {...otherProps}>
+export const TextField = ({name, label, error, help, value, ...otherProps}) => (
+  <Field label={label} error={error} help={help} {...otherProps}>
     <Input className={ error ? "input-error" : ""} name={name} value={value} {...otherProps}/>
-  </LabeledComponent>
+  </Field>
 );
 
 // Just radio button and label
-export const ChoiceField = ({type = "radio", name, value, label, error, help, checked, className, style, ...otherProps}) => (
+export const ChoiceInput = ({type = "radio", name, value, label, error, help, checked, className, style, ...otherProps}) => (
   <div className={className} style={style}>
     <Label>
       <Input type={type} name={name} value={value} checked={checked} {...otherProps}/>

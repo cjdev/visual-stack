@@ -3,7 +3,7 @@ import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 /* s3:start */
-import { Form, FormGroup, Label, Input, Legend, InputField, LabeledComponent, ChoiceField } from '@cjdev/visual-stack/lib/components/Form';
+import { Form, FormGroup, Label, Input, Legend, TextField, Field, ChoiceInput } from '@cjdev/visual-stack/lib/components/Form';
 /* s3:end */
 
 /* s11:start */
@@ -75,11 +75,11 @@ export default () =>
             </Body>
           </Panel>
 
-          <PanelComponent header="InputField Labeled Components">
+          <PanelComponent header="TextField Labeled Components">
             <PanelComponent>
               { /* s4:start */ }
               <Form>
-                  <InputField label="Some Label"
+                  <TextField label="Some Label"
                               help="this is some field"
                               placeholder="placeholder text"/>
               </Form>
@@ -89,7 +89,7 @@ export default () =>
             <PanelComponent>
                 { /* s5:start */ }
               <Form>
-                  <InputField label="Another Label (Does not display help when error)"
+                  <TextField label="Another Label (Does not display help when error)"
                               value="value with validation error"
                               error="Please enter correct value"
                               help="help will be replaced with error when present"/>
@@ -100,7 +100,7 @@ export default () =>
             <PanelComponent>
               { /* s6:start */ }
               <Form>
-                <InputField label="Not required"
+                <TextField label="Not required"
                                 optional={true}
                                 optionalLabel="Optional"
                                 help="this is some field"
@@ -111,16 +111,16 @@ export default () =>
             </PanelComponent>
           </PanelComponent>
 
-          <PanelComponent header="Labeled Components">
+          <PanelComponent header="Labeled Fields">
 
             <PanelComponent>
                 { /* s7:start */ }
                 <Form>
-                  <LabeledComponent label="Simple radio group"
+                  <Field label="Simple radio group"
                               help="A group of radio buttons">
-                    <ChoiceField name="radio1" label="Radio 1" value="radio1" checked={true}/>
-                    <ChoiceField name="radio1" label="Radio 2" value="radio2"/>
-                  </LabeledComponent>
+                    <ChoiceInput name="radio1" label="Radio 1" value="radio1" checked={true}/>
+                    <ChoiceInput name="radio1" label="Radio 2" value="radio2"/>
+                  </Field>
                 </Form>
                   { /* s7:end */ }
                 <Snippet tag="s7" src={snippets} />
@@ -129,12 +129,12 @@ export default () =>
             <PanelComponent>
               {/* s8:start */}
               <Form>
-                  <LabeledComponent label="Radio group with error"
+                  <Field label="Radio group with error"
                                     help="A group of radio buttons"
                                     error="Somehow something went wrong">
-                      <ChoiceField name="radio2" label="Radio 1" value="radio1"/>
-                      <ChoiceField name="radio2" label="Radio 2" value="radio2"/>
-                  </LabeledComponent>
+                      <ChoiceInput name="radio2" label="Radio 1" value="radio1"/>
+                      <ChoiceInput name="radio2" label="Radio 2" value="radio2"/>
+                  </Field>
               </Form>
               {/* s8:end */}
               <Snippet tag="s8" src={snippets}/>
@@ -143,13 +143,13 @@ export default () =>
             <PanelComponent>
               {/* s9:start */}
               <Form>
-                  <LabeledComponent label="Checkbox group with optional label"
+                  <Field label="Checkbox group with optional label"
                                     help="A group of Checkboxes"
                                     optional={true}
                                     optionalLabel="Optional">
-                      <ChoiceField name="checkbox1" type="checkbox" label="Checkbox 1" value="checkbox1"/>
-                      <ChoiceField name="checkbox2" type="checkbox" label="Checkbox 2" value="checkbox2"/>
-                  </LabeledComponent>
+                      <ChoiceInput name="checkbox1" type="checkbox" label="Checkbox 1" value="checkbox1"/>
+                      <ChoiceInput name="checkbox2" type="checkbox" label="Checkbox 2" value="checkbox2"/>
+                  </Field>
               </Form>
               {/* s9:end */}
               <Snippet tag="s9" src={snippets}/>
@@ -157,18 +157,18 @@ export default () =>
 
           </PanelComponent>
 
-        <PanelComponent header="Complicated Labeled Components">
+        <PanelComponent header="Complicated Labeled Fields">
             {/* s10:start */}
             <Form>
-                <LabeledComponent label="Some complicated stuff goin' on here"
+                <Field label="Some complicated stuff goin' on here"
                                   help="A group of radio buttons with complications">
-                    <ChoiceField label="To be" value="complicated"/>
+                    <ChoiceInput label="To be" value="complicated"/>
                     <div style={inlineOtherTextBoxStyle}>
-                        <ChoiceField label="Not to be" value="simple" style={inlineOtherTextBoxStyle}/>
+                        <ChoiceInput label="Not to be" value="simple" style={inlineOtherTextBoxStyle}/>
                         <Input name="numberOfReferrals.days" style={makeTextBoxSmallerStyle}/>
                         <Label>something</Label>
                     </div>
-                </LabeledComponent>
+                </Field>
             </Form>
             {/* s10:end */}
             <Snippet tag="s10" src={snippets}/>
@@ -177,23 +177,23 @@ export default () =>
         <PanelComponent header="All together with some grid stuff">
             {/* s12:start */}
             <Form>
-                <InputField name="name" label="Enter Name" help="Enter first name and last name" placeholder="First Last"/>
-                <InputField name="country" label="Country" optional={true} optionalLabel="Optional"
+                <TextField name="name" label="Enter Name" help="Enter first name and last name" placeholder="First Last"/>
+                <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
                             value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
                 <div style={gridItUp}>
-                    <LabeledComponent name="vacationDays" label="# of vacation days" help="Enter vacation rules">
-                        <ChoiceField label="Unlimited" value="unlimited"/>
+                    <Field name="vacationDays" label="# of vacation days" help="Enter vacation rules">
+                        <ChoiceInput label="Unlimited" value="unlimited"/>
                         <div style={inlineOtherTextBoxStyle}>
-                            <ChoiceField label="Limit to" value="limitTo" style={inlineOtherTextBoxStyle}/>
+                            <ChoiceInput label="Limit to" value="limitTo" style={inlineOtherTextBoxStyle}/>
                             <Input name="days" style={makeTextBoxSmallerStyle}/>
                             <Label>days</Label>
                         </div>
-                    </LabeledComponent>
-                    <LabeledComponent name="vacationtypes" label="Vacation Type" help="Choose all applicable"
+                    </Field>
+                    <Field name="vacationtypes" label="Vacation Type" help="Choose all applicable"
                                       optional={true} optionalLabel="Optional">
-                        <ChoiceField name="vacationtypes.cruise" type="checkbox" label="Cruise" value="cruise"/>
-                        <ChoiceField name="vacationtypes.hiking" type="checkbox" label="Hiking" value="hiking"/>
-                    </LabeledComponent>
+                        <ChoiceInput name="vacationtypes.cruise" type="checkbox" label="Cruise" value="cruise"/>
+                        <ChoiceInput name="vacationtypes.hiking" type="checkbox" label="Hiking" value="hiking"/>
+                    </Field>
                     <div/>
                 </div>
             </Form>
