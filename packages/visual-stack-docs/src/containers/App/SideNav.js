@@ -22,12 +22,19 @@ import {
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 /* s3:end */
 import { routeComponentMap } from '../Components/Docs/';
+import { layoutsRouteMap } from '../Layouts';
 
 const componentLinks = R.pipe(
   R.mapObjIndexed((val, key) => ({ key, ...val })),
   R.values,
   R.sortBy(R.prop('linkName'))
 )(routeComponentMap);
+
+const layoutLinks = R.pipe(
+  R.mapObjIndexed((val, key) => ({ key, ...val })),
+  R.values,
+  R.sortBy(R.prop('linkName'))
+)(layoutsRouteMap);
 
 export default class AppSideNav extends React.Component {
   render() {
@@ -71,11 +78,16 @@ export default class AppSideNav extends React.Component {
             <LinkContentWrapper icon={<IconsIcon />} label="Icons" />
           </RRLink>
         </Link>
-        <Link hoverText="Layouts">
-          <RRLink to="/layouts">
-            <LinkContentWrapper icon={<LayoutIcon />} label="Layouts" />
-          </RRLink>
-        </Link>
+        <LinkGroup label="Layouts" svgIcon={<LayoutIcon />}>
+          {layoutLinks.map(link => (
+            <Link key={link.key}>
+              <RRLink to={`/layouts/${link.key}`}>
+                <LinkContentWrapper label={link.linkName} />
+              </RRLink>
+            </Link>
+          ))}
+        </LinkGroup>
+
         <Link hoverText="Getting Started">
           <RRLink to="/gettingStarted">
             <LinkContentWrapper icon={<GettingStartedIcon/>} label="Getting Started" />

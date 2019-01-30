@@ -12,7 +12,7 @@ import Home from './containers/Home/';
 import Components from './containers/Components/';
 import ComponentDocs from './containers/Components/Docs/';
 import Icons from './containers/Icons/';
-import Layouts from './containers/Layouts/';
+import Layouts, {LayoutsDocs} from './containers/Layouts';
 import GettingStarted from './containers/GettingStarted/';
 import './index.css';
 
@@ -36,7 +36,9 @@ ReactDOM.render(
           <Route path=":componentName" component={ComponentDocs} />
         </Route>
         <Route path="icons" component={Icons}/>
-        <Route path="layouts" component={Layouts}/>
+        <Route path="layouts" component={Layouts}>
+          <Route path=":layoutName" component={LayoutsDocs} />
+        </Route>
         <Route path="gettingStarted" component={GettingStarted}/>
       </Route>
     </Router>

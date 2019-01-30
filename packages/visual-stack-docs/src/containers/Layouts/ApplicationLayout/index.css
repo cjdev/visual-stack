@@ -1,0 +1,25 @@
+/* 
+ * CSS Grid for VS Docs Form Layout Example
+ */
+
+.vs-grid-wrapper {
+	padding: 16px;
+}
+.vs-grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 32px;
+}
+.vs-grid-container-2 {
+	display: grid;
+	grid-template-columns: auto 96px 64px;
+/* 	grid-template-rows: auto auto; */
+	grid-column-gap: 8px;
+}
+
+
+
+/* Testing styles for dev portal page text */
+#example-devportal-1 {
+	padding: 16px;
+}
