@@ -157,34 +157,17 @@ export default () =>
 
           </PanelComponent>
 
-        <PanelComponent header="Complicated Labeled Fields">
-            {/* s10:start */}
-            <Form>
-                <Field label="Some complicated stuff goin' on here"
-                                  help="A group of radio buttons with complications">
-                    <ChoiceInput label="To be" value="complicated"/>
-                    <div style={inlineOtherTextBoxStyle}>
-                        <ChoiceInput label="Not to be" value="simple" style={inlineOtherTextBoxStyle}/>
-                        <Input name="numberOfReferrals.days" style={makeTextBoxSmallerStyle}/>
-                        <Label>something</Label>
-                    </div>
-                </Field>
-            </Form>
-            {/* s10:end */}
-            <Snippet tag="s10" src={snippets}/>
-            <Snippet tag="s11" src={snippets}/>
-        </PanelComponent>
         <PanelComponent header="All together with some grid stuff">
-            {/* s12:start */}
+            {/* s10:start */}
             <Form>
                 <TextField name="name" label="Enter Name" help="Enter first name and last name" placeholder="First Last"/>
                 <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
                             value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
                 <div style={gridItUp}>
-                    <Field name="vacationDays" label="# of vacation days" help="Enter vacation rules">
-                        <ChoiceInput label="Unlimited" value="unlimited"/>
+                    <Field label="# of vacation days" help="Enter vacation rules">
+                        <ChoiceInput name="vacationDays" label="Unlimited" value="unlimited"/>
                         <div style={inlineOtherTextBoxStyle}>
-                            <ChoiceInput label="Limit to" value="limitTo" style={inlineOtherTextBoxStyle}/>
+                            <ChoiceInput name="vacationDays" label="Limit to" value="limitTo" style={inlineOtherTextBoxStyle}/>
                             <Input name="days" style={makeTextBoxSmallerStyle}/>
                             <Label>days</Label>
                         </div>
@@ -197,8 +180,8 @@ export default () =>
                     <div/>
                 </div>
             </Form>
-            {/* s12:end */}
-            <Snippet tag="s12" src={snippets}/>
+            {/* s10:end */}
+            <Snippet tag="s10" src={snippets}/>
             <Snippet tag="s11" src={snippets}/>
         </PanelComponent>
         </div>
