@@ -12,8 +12,8 @@ export const UserMenu = ({ onLogout, label, firstInitial, lastInitial, color, ch
     label={label}
     icon={<UserIcon firstInitial={firstInitial} lastInitial={lastInitial} color={color} />}
   >
-    <LogoutLink onLogout={onLogout} label={logoutLabel}/>
     {children}
+    <LogoutLink onLogout={onLogout} label={logoutLabel}/>
   </LinkGroup>
 );
 
