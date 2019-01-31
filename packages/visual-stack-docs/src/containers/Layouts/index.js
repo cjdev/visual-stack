@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-import ApplicationLayout from "./ApplicationLayout";
+import ApplicationLayout from './ApplicationLayout';
+import DialogLayoutParent from './DialogLayout';
 
 const layoutsRouteMap = {};
 
@@ -12,6 +13,7 @@ const addComponentRoute = (path, linkName, component) => {
 
 // 2. add your demo to the layoutsRoutesMap
 addComponentRoute('applicationLayout', 'Application Layout', <ApplicationLayout />);
+addComponentRoute('dialogLayout', 'Dialog Layout', <DialogLayoutParent />);
 
 export { layoutsRouteMap };
 

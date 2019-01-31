@@ -12,9 +12,10 @@ import Home from './containers/Home/';
 import Components from './containers/Components/';
 import ComponentDocs from './containers/Components/Docs/';
 import Icons from './containers/Icons/';
-import Layouts, {LayoutsDocs} from './containers/Layouts';
+import Layouts, { LayoutsDocs } from './containers/Layouts';
 import GettingStarted from './containers/GettingStarted/';
 import './index.css';
+import { DialogLayout } from './containers/Layouts/DialogLayout';
 
 const reducer = combineReducers({
   visualStack: vsReducer,
@@ -30,6 +31,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
+      <Route path="/dialog-layout" component={DialogLayout}/>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="components" component={Components}>
