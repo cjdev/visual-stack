@@ -5,25 +5,27 @@ import CloseIcon from 'mdi-react/CloseIcon';
 
 import "./index.css";
 
-export const DialogLayout = ({title, cancelButtonText, submitButtonText, onCancel, onSubmit, Logo, children}) =>(
+export const DialogLayout = ({title, cancelButtonText, submitButtonText, onCancel, onSubmit, logo, children}) =>(
     <div>
-        <div className="dialog-header">
-            <div className="page-title">
-                <div className="logo-container">
-                    <Logo className="vs-cj-logo" />
+        <div className="vs-dialog-layout-header">
+            <div className="vs-dialog-layout-page-title">
+                <div className="vs-dialog-layout-logo-container">
+                    <span className="vs-cj-logo">
+                        {logo}
+                    </span>
                 </div>
-                <h1 className="title">{title}</h1>
-                <CloseIcon className="icon-close" onClick={onCancel}/>
+                <h1 className="vs-dialog-layout-title">{title}</h1>
+                <CloseIcon className="vs-dialog-layout-icon-close" onClick={onCancel}/>
             </div>
         </div>
-        <div className="dialog-content">
+        <div className="vs-dialog-layout-content">
             <Panel>
                 {children}
             </Panel>
         </div>
-        <div className="dialog-footer">
-            <Button type="text" onClick={onCancel}>{cancelButtonText}</Button>
-            <Button type="solid-primary" onClick={onSubmit}>{submitButtonText}</Button>
+        <div className="vs-dialog-layout-footer">
+            <Button id="vs-dialog-layout-cancel" type="text" onClick={onCancel}>{cancelButtonText}</Button>
+            <Button id="vs-dialog-layout-submit" type="solid-primary" onClick={onSubmit}>{submitButtonText}</Button>
         </div>
     </div>
 );

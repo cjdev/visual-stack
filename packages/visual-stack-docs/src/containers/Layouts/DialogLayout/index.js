@@ -60,7 +60,7 @@ export class DialogLayoutDemo extends React.Component {
                               submitButtonText={"Save Program Terms"}
                               cancelButtonText={"cancel"}
                               onCancel={() => this.props.router.push("/layouts/dialogLayout")}
-                              Logo={CJLogo}>
+                              logo={<CJLogo/>}>
                     <DemoContent/>
                     <DemoForm/>
                 </DialogLayout>

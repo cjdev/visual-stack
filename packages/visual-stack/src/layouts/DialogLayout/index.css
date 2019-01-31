@@ -1,4 +1,4 @@
-.dialog-header {
+.vs-dialog-layout-header {
   position: fixed;
   top:0;
   left:0;
@@ -10,28 +10,28 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.16);
 }
 
-.page-title {
+.vs-dialog-layout-page-title {
   font-size: 24px;
 }
 
-.page-title .logo-container {
+.vs-dialog-layout-page-title .vs-dialog-layout-logo-container {
   display:inline-block;
   margin-right: 12px;
 }
-.page-title .vs-cj-logo {
+.vs-dialog-layout-page-title .vs-cj-logo {
   width: 40px;
   height: 40px;
   margin-top: -6px;
 }
 
-.page-title .title {
+.vs-dialog-layout-page-title .vs-dialog-layout-title {
   display: inline-block;
   margin: 0;
   font-size: 2.2rem;
 }
 
 
-.page-title .icon-close {
+.vs-dialog-layout-page-title .vs-dialog-layout-icon-close {
   float:right;
   margin-top: 4px;
   width: 32px;
@@ -41,34 +41,34 @@
   transition: .2s all ease-in-out;
   cursor: pointer;
 }
-.page-title .icon-close:hover {
+.vs-dialog-layout-page-title .vs-dialog-layout-icon-close:hover {
   opacity:1;
   fill: #333;
 }
 
 
-.dialog-content {
+.vs-dialog-layout-content {
   padding: 112px 24px;
   margin:0 auto;
 }
 
-.dialog-content p {
+.vs-dialog-layout-content p {
   max-width: 580px;
 }
 
 @media (min-width: 992px ) {
-  .dialog-content {
+  .vs-dialog-layout-content {
     max-width: 960px;
     padding: 112px 48px;
   }
 }
 
 @media (min-width: 1280px ) {
-  .dialog-content {
+  .vs-dialog-layout-content {
     max-width: 1280px;
   }
 }
-.dialog-footer {
+.vs-dialog-layout-footer {
   position: fixed;
   bottom: 0;
   left:0;
@@ -82,11 +82,11 @@
   box-shadow: 0 -2px 3px rgba(0,0,0,.16);
 
 }
-.dialog-footer .vs-text-btn{
+.vs-dialog-layout-footer .vs-text-btn{
   color: #fff;
   opacity: .64;
 }
-.dialog-footer .vs-text-btn:hover{
+.vs-dialog-layout-footer .vs-text-btn:hover{
   color: #fff;
   opacity: 1;
 }
