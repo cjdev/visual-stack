@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Router, withRouter} from 'react-router';
+import {Route, withRouter} from 'react-router';
 
 import { Button } from "@cjdev/visual-stack/lib/components/Button";
 import DialogLayout from '@cjdev/visual-stack/lib/layouts/DialogLayout';
@@ -51,7 +51,7 @@ class DialogLayoutParent extends React.Component {
   }
 }
 
-{ /* s1:start */ }
+/* s1:start */
 export class DialogLayoutDemo extends React.Component {
     render() {
         return (
@@ -68,7 +68,7 @@ export class DialogLayoutDemo extends React.Component {
         );
     }
 }
-{ /* s1:end */ }
+/* s1:end */
 
 const NotRenderedComponent = () => (
     <div>
@@ -77,8 +77,11 @@ const NotRenderedComponent = () => (
         { /* s3:end */ }
     </div>
 );
+// Stop Travis from complaining...
+NotRenderedComponent.propTypes = {
+};
 
-{ /* s2:start */ }
+/* s2:start */
 const inlineOtherTextBoxStyle = {
     display: "inline",
     marginRight: "8px"
@@ -143,6 +146,6 @@ export const DemoContent = () => (
             officia deserunt mollit anim id est laborum.</p>
     </Body>
 );
-{ /* s2:end */ }
+/* s2:end */
 
 export default withRouter(DialogLayoutParent);
