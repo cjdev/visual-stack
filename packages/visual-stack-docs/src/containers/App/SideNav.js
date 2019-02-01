@@ -24,17 +24,17 @@ import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import { routeComponentMap } from '../Components/Docs/';
 import { layoutsRouteMap } from '../Layouts';
 
-const componentLinks = R.pipe(
-  R.mapObjIndexed((val, key) => ({ key, ...val })),
-  R.values,
-  R.sortBy(R.prop('linkName'))
-)(routeComponentMap);
+const toLinks = (map) => (
+    R.pipe(
+        R.mapObjIndexed((val, key) => ({ key, ...val })),
+        R.values,
+        R.sortBy(R.prop('linkName'))
+    )(map)
+);
 
-const layoutLinks = R.pipe(
-  R.mapObjIndexed((val, key) => ({ key, ...val })),
-  R.values,
-  R.sortBy(R.prop('linkName'))
-)(layoutsRouteMap);
+const componentLinks = toLinks(routeComponentMap);
+const layoutLinks = toLinks(layoutsRouteMap);
+
 
 export default class AppSideNav extends React.Component {
   render() {
