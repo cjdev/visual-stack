@@ -62,39 +62,34 @@ class DialogLayoutParent extends React.Component {
 }
 
 /* s1:start */
-export class DialogLayoutDemo extends React.Component {
-    render() {
-        return (
-            <div>
-                <DialogLayout title={"Create Program Term"}
-                              submitButtonText={"Save Program Terms"}
-                              cancelButtonText={"cancel"}
-                              onCancel={() => this.props.router.push("/layouts/dialogLayout")}
-                              onSubmit={() => {
-                                  alert("Success!");
-                                  this.props.router.push("/layouts/dialogLayout");
-                              }}
-                              logo={<CJLogo/>}>
-                    <Panel>
-                      <DemoContent/>
-                    </Panel>
-                    <Panel>
-                      <DemoForm/>
-                    </Panel>
-                </DialogLayout>
-            </div>
-        );
-    }
-}
+export const DialogLayoutDemo = ({router}) => (
+    <div>
+        <DialogLayout title={"Create Program Term"}
+                      submitButtonText={"Save Program Terms"}
+                      cancelButtonText={"cancel"}
+                      onCancel={() => router.push("/layouts/dialogLayout")}
+                      onSubmit={() => {
+                          alert("Success!");
+                          router.push("/layouts/dialogLayout");
+                      }}
+                      logo={<CJLogo/>}>
+            <Panel>
+              <DemoContent/>
+            </Panel>
+            <Panel>
+              <DemoForm/>
+            </Panel>
+        </DialogLayout>
+    </div>
+);
 /* s1:end */
 
 const NotRenderedComponent = () => (
-    <div>
-        { /* s3:start */ }
-        <Route path="/dialogLayout" component={DialogLayoutDemo}/>
-        { /* s3:end */ }
-    </div>
+    /* s3:start */
+    <Route path="/dialogLayout" component={DialogLayoutDemo}/>
+    /* s3:end */
 );
+
 // Stop Travis from complaining...
 NotRenderedComponent.propTypes = {
 };
