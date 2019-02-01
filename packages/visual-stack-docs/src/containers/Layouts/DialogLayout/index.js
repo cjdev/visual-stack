@@ -14,10 +14,12 @@ import {
 } from "@cjdev/visual-stack/lib/components/Form";
 import {Demo, Snippet} from "../../../components/Demo";
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
+import "./index.css";
 
 class DialogLayoutParent extends React.Component {
   render() {
     return (
+        <div>
         <Demo srcFile="/samples/src/containers/Layouts/DialogLayout/index.js">
             {snippets => (
                 <div>
@@ -37,16 +39,24 @@ class DialogLayoutParent extends React.Component {
                     </Panel>
                     <Panel>
                         <Header>
-                            Dialog content example
+                            Dialog content
                         </Header>
                         <Body>
                         <Snippet tag="s2" src={snippets}/>
                         </Body>
+                        <Demo srcFile="/samples/src/containers/Layouts/DialogLayout/index.css">
+                            {cssSnippet => (
+                                <Body>
+                                <div>css</div>
+                                <Snippet tag="s1" src={cssSnippet}/>
+                                </Body>
+                            )}
+                        </Demo>
                     </Panel>
-
                 </div>
             )}
         </Demo>
+        </div>
     );
   }
 }
@@ -60,6 +70,10 @@ export class DialogLayoutDemo extends React.Component {
                               submitButtonText={"Save Program Terms"}
                               cancelButtonText={"cancel"}
                               onCancel={() => this.props.router.push("/layouts/dialogLayout")}
+                              onSubmit={() => {
+                                  alert("Success!");
+                                  this.props.router.push("/layouts/dialogLayout");
+                              }}
                               logo={<CJLogo/>}>
                     <Panel>
                       <DemoContent/>
@@ -86,22 +100,6 @@ NotRenderedComponent.propTypes = {
 };
 
 /* s2:start */
-const inlineOtherTextBoxStyle = {
-    display: "inline",
-    marginRight: "8px"
-};
-const makeTextBoxSmallerStyle = {
-    width: "50px",
-    display: "inline",
-    marginRight: "8px"
-
-};
-const gridItUp ={
-    display: "grid",
-    gridTemplateColumns: "3fr 3fr 3fr",
-    gridColumnGap: "8px"
-};
-
 export const DemoForm = () => (
     <Body>
         <Form>
@@ -109,13 +107,13 @@ export const DemoForm = () => (
                        placeholder="First Last"/>
             <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
                        value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
-            <div style={gridItUp}>
+            <div className="grid-it-up">
                 <Field label="# of vacation days" help="Enter vacation rules">
                     <ChoiceInput name="vacationDays" label="Unlimited" value="unlimited"/>
-                    <div style={inlineOtherTextBoxStyle}>
+                    <div className="inline-other-text-box-style">
                         <ChoiceInput name="vacationDays" label="Limit to" value="limitTo"
-                                     style={inlineOtherTextBoxStyle}/>
-                        <Input name="days" style={makeTextBoxSmallerStyle}/>
+                                     className="inline-other-text-box-style"/>
+                        <Input name="days" className="make-text-box-smaller-style"/>
                         <Label>days</Label>
                     </div>
                 </Field>

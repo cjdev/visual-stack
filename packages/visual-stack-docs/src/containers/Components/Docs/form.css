@@ -1,0 +1,19 @@
+/* s1:start */
+.inline-other-text-box-style {
+    display: inline;
+    margin-right: 8px;
+}
+
+.make-text-box-smaller-style {
+    width: 50px;
+    display: inline;
+    margin-right: 8px;
+
+}
+
+.grid-it-up {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-column-gap: 8px;
+}
+/* s1:end */

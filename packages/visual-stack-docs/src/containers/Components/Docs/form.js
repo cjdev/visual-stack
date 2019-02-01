@@ -2,28 +2,11 @@
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
+import "./form.css";
+
 /* s3:start */
 import { Form, FormGroup, Label, Input, Legend, TextField, Field, ChoiceInput } from '@cjdev/visual-stack/lib/components/Form';
 /* s3:end */
-
-/* s11:start */
-// Styles used above
-const inlineOtherTextBoxStyle = {
-  display: "inline",
-  marginRight: "8px"
-};
-const makeTextBoxSmallerStyle = {
-  width: "50px",
-  display: "inline",
-  marginRight: "8px"
-
-};
-const gridItUp ={
-    display: "grid",
-    gridTemplateColumns: "3fr 3fr 3fr",
-    gridColumnGap: "8px"
-};
-/* s11:end */
 
 const PanelComponent =({header, children}) => (
     <Panel>
@@ -160,20 +143,22 @@ export default () =>
         <PanelComponent header="All together with some grid stuff">
             {/* s10:start */}
             <Form>
-                <TextField name="name" label="Enter Name" help="Enter first name and last name" placeholder="First Last"/>
+                <TextField name="name" label="Enter Name" help="Enter first name and last name"
+                           placeholder="First Last"/>
                 <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
-                            value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
-                <div style={gridItUp}>
+                           value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
+                <div className="grid-it-up">
                     <Field label="# of vacation days" help="Enter vacation rules">
                         <ChoiceInput name="vacationDays" label="Unlimited" value="unlimited"/>
-                        <div style={inlineOtherTextBoxStyle}>
-                            <ChoiceInput name="vacationDays" label="Limit to" value="limitTo" style={inlineOtherTextBoxStyle}/>
-                            <Input name="days" style={makeTextBoxSmallerStyle}/>
+                        <div className="inline-other-text-box-style">
+                            <ChoiceInput name="vacationDays" label="Limit to" value="limitTo"
+                                         className="inline-other-text-box-style"/>
+                            <Input name="days" className="make-text-box-smaller-style"/>
                             <Label>days</Label>
                         </div>
                     </Field>
                     <Field name="vacationtypes" label="Vacation Type" help="Choose all applicable"
-                                      optional={true} optionalLabel="Optional">
+                           optional={true} optionalLabel="Optional">
                         <ChoiceInput name="vacationtypes.cruise" type="checkbox" label="Cruise" value="cruise"/>
                         <ChoiceInput name="vacationtypes.hiking" type="checkbox" label="Hiking" value="hiking"/>
                     </Field>
@@ -182,7 +167,13 @@ export default () =>
             </Form>
             {/* s10:end */}
             <Snippet tag="s10" src={snippets}/>
-            <Snippet tag="s11" src={snippets}/>
+            <Demo srcFile="/samples/src/containers/Components/Docs/form.css">
+                {cssSnippet => (
+                    <div>css
+                    <Snippet tag="s1" src={cssSnippet}/>
+                    </div>
+                )}
+            </Demo>
         </PanelComponent>
         </div>
       );
