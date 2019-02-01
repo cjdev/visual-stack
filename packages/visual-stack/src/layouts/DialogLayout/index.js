@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from "../../components/Button";
-import { Panel } from "../../components/Panel";
 import CloseIcon from 'mdi-react/CloseIcon';
 
 import "./index.css";
@@ -19,9 +18,7 @@ export const DialogLayout = ({title, cancelButtonText, submitButtonText, onCance
             </div>
         </div>
         <div className="vs-dialog-layout-content">
-            <Panel>
-                {children}
-            </Panel>
+              {children}
         </div>
         <div className="vs-dialog-layout-footer">
             <Button id="vs-dialog-layout-cancel" type="text" onClick={onCancel}>{cancelButtonText}</Button>

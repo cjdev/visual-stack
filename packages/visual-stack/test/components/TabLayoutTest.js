@@ -127,7 +127,7 @@ describe('TabLayout', () => {
       const tabLabelClicked = wrapper.find('.vs-tab-label.vs-tab-label-clicked');
       const tabLabelContent = tabLabelClicked.at(0);
       const tabLabelContentWrapper = tabLabelContent.children().at(0);
-      deepEqual(tabLabelContentWrapper.props().style, { borderBottom: '4px solid #00af65' });
+      deepEqual(tabLabelContentWrapper.props().style, { borderBottom: '4px solid #49c5b1' });
 
       const tabLabelInactive = wrapper.find('.vs-tab-label');
       const tabLabelContentInactive = tabLabelInactive.at(1);
@@ -146,7 +146,7 @@ describe('TabLayout', () => {
       const tabLabels = wrapper.find('.vs-tab-label');
       const tabLabelInactive = tabLabels.at(1);
       tabLabelInactive.simulate('mouseOver');
-      deepEqual(tabLabelInactive.props().style, { color: '#00af65', cursor: 'pointer' });
+      deepEqual(tabLabelInactive.props().style, { color: '#49c5b1', cursor: 'pointer' });
 
       tabLabelInactive.simulate('mouseLeave');
       deepEqual(tabLabelInactive.props().style, { color: '#888' });

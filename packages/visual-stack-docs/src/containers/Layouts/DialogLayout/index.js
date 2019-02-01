@@ -61,8 +61,12 @@ export class DialogLayoutDemo extends React.Component {
                               cancelButtonText={"cancel"}
                               onCancel={() => this.props.router.push("/layouts/dialogLayout")}
                               logo={<CJLogo/>}>
-                    <DemoContent/>
-                    <DemoForm/>
+                    <Panel>
+                      <DemoContent/>
+                    </Panel>
+                    <Panel>
+                      <DemoForm/>
+                    </Panel>
                 </DialogLayout>
             </div>
         );
