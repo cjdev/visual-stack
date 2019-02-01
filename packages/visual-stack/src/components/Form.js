@@ -46,10 +46,10 @@ FormGroup.propTypes = {
 };
 
 // Component that renders a label and error/help message
-export const Field = ({label, error, help, optional, optionalLabel, className, children}) => (
+export const Field = ({label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
   <div className="vs-labeled-component">
     <Label>{label} <span className="vs-labeled-component-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
-    <div className={className}>
+    <div className={classNameForChildren}>
       {children}
     </div>
     {error ? <div className="vs-validation-error">{error}</div> : <div className="vs-labeled-component-help">{help}</div>}
@@ -57,8 +57,8 @@ export const Field = ({label, error, help, optional, optionalLabel, className, c
 );
 
 // Input with label and error/help message
-export const TextField = ({name, label, error, help, value, ...otherProps}) => (
-  <Field label={label} error={error} help={help} {...otherProps}>
+export const TextField = ({name, value, label, error, help, optional, optionalLabel, ...otherProps}) => (
+  <Field label={label} error={error} help={help}  optional={optional} optionalLabel={optionalLabel} {...otherProps}>
     <Input className={ error ? "input-error" : ""} name={name} value={value} {...otherProps}/>
   </Field>
 );
