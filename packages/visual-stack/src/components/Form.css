@@ -3,7 +3,7 @@
     margin-left: 0;
 }
 
-.form-horizontal .form-group:before, 
+.form-horizontal .form-group:before,
 .form-horizontal .form-group:after {
   display: table;
   content: " ";
@@ -141,17 +141,17 @@ fieldset.group ul.checkbox li.focus  {
   margin-top: -4px;
 }
 
-.vs-labeled-component-help {
+.vs-field-help {
   color: #777;
   font-size: 1.3rem;
   margin-top: -4px;
 }
 
-.vs-labeled-component {
+.vs-field {
   margin-bottom: 16px;
 }
 
-.vs-labeled-component-optional {
+.vs-field-optional {
   color: #777;
   font-size: 1.3rem;
   font-style: italic;

@@ -46,26 +46,26 @@ FormGroup.propTypes = {
 };
 
 // Component that renders a label and error/help message
-export const Field = ({label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
-  <div className="vs-labeled-component">
-    <Label>{label} <span className="vs-labeled-component-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
+export const Field = ({classes, label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
+  <div className={`vs-field ${classes ? classes : ''}`}>
+    <Label>{label} <span className="vs-field-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
     <div className={classNameForChildren}>
       {children}
     </div>
-    {error ? <div className="vs-validation-error">{error}</div> : <div className="vs-labeled-component-help">{help}</div>}
+    {error ? <div className="vs-validation-error">{error}</div> : <div className="vs-field-help">{help}</div>}
   </div>
 );
 
 // Input with label and error/help message
-export const TextField = ({name, value, label, error, help, optional, optionalLabel, ...otherProps}) => (
-  <Field label={label} error={error} help={help}  optional={optional} optionalLabel={optionalLabel} {...otherProps}>
+export const TextField = ({classes, name, value, label, error, help, optional, optionalLabel, ...otherProps}) => (
+  <Field classes={`vs-text-field ${classes ? classes : ''}`} label={label} error={error} help={help}  optional={optional} optionalLabel={optionalLabel} {...otherProps}>
     <Input className={ error ? "input-error" : ""} name={name} value={value} {...otherProps}/>
   </Field>
 );
 
 // Just radio button and label
-export const ChoiceInput = ({type = "radio", name, value, label, error, help, checked, className, style, ...otherProps}) => (
-  <div className={className} style={style}>
+export const ChoiceInput = ({classes, type = "radio", name, value, label, error, help, checked, style, ...otherProps}) => (
+  <div className={`vs-choice-input ${classes ? classes : ''}`} style={style}>
     <Label>
       <Input type={type} name={name} value={value} checked={checked} {...otherProps}/>
       {label}
