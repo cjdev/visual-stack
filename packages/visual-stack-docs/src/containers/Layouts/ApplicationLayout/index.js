@@ -17,7 +17,7 @@ import './index.css';
 const Layouts = () =>
   <div>
     <PageHeader>
-      <PageTitle>Layouts</PageTitle>
+      <PageTitle>Application Layouts</PageTitle>
       <PageHeaderSection>Test to see that Right Aligned is not cut off</PageHeaderSection>
     </PageHeader>
     <PageContent>

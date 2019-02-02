@@ -15,6 +15,8 @@ import {
 import {Demo, Snippet} from "../../../components/Demo";
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import "./index.css";
+import {PageHeader, PageTitle} from "@cjdev/visual-stack/lib/components/PageHeader";
+import PageContent from "@cjdev/visual-stack/lib/components/PageContent";
 
 class DialogLayoutParent extends React.Component {
   render() {
@@ -23,6 +25,10 @@ class DialogLayoutParent extends React.Component {
         <Demo srcFile="/samples/src/containers/Layouts/DialogLayout/index.js">
             {snippets => (
                 <div>
+                  <PageHeader>
+                    <PageTitle>Dialog Layout</PageTitle>
+                  </PageHeader>
+                  <PageContent>
                     <Panel>
                         <Header>
                             Full page DialogLayout Demo
@@ -53,6 +59,7 @@ class DialogLayoutParent extends React.Component {
                             )}
                         </Demo>
                     </Panel>
+                  </PageContent>
                 </div>
             )}
         </Demo>
