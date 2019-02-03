@@ -4,8 +4,8 @@ import CloseIcon from 'mdi-react/CloseIcon';
 
 import "./index.css";
 
-export const DialogLayout = ({classes, title, cancelButtonText, submitButtonText, onCancel, onSubmit, logo, children}) =>(
-    <div className={`vs-dialog-layout ${classes ? classes : ''}`}>
+export const DialogLayout = ({className, title, cancelButtonText, submitButtonText, onCancel, onSubmit, logo, children}) =>(
+    <div className={`vs-dialog-layout ${className ? className : ''}`}>
         <div className="vs-dialog-layout-header">
             <div className="vs-dialog-layout-page-title">
                 <div className="vs-dialog-layout-logo-container">

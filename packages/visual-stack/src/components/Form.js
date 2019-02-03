@@ -46,26 +46,32 @@ FormGroup.propTypes = {
 };
 
 // Component that renders a label and error/help message
-export const Field = ({classes, label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
-  <div className={`vs-field ${classes ? classes : ''}`}>
+export const Field = ({className, label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
+  <div className={`vs-field ${className ? className : ''}`}>
     <Label>{label} <span className="vs-field-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
-    <div className={classNameForChildren}>
       {children}
-    </div>
     {error ? <div className="vs-validation-error">{error}</div> : <div className="vs-field-help">{help}</div>}
   </div>
 );
 
+export const FieldContent = ({className, children}) => (
+    <div className={`vs-field-content ${className ? className : ''}`}>
+        {children}
+    </div>
+);
+
 // Input with label and error/help message
-export const TextField = ({classes, name, value, label, error, help, optional, optionalLabel, ...otherProps}) => (
-  <Field classes={`vs-text-field ${classes ? classes : ''}`} label={label} error={error} help={help}  optional={optional} optionalLabel={optionalLabel} {...otherProps}>
-    <Input className={ error ? "input-error" : ""} name={name} value={value} {...otherProps}/>
+export const TextField = ({className, name, value, label, error, help, optional, optionalLabel, ...otherProps}) => (
+  <Field classes={`vs-text-field ${className ? className : ''}`} label={label} error={error} help={help} optional={optional} optionalLabel={optionalLabel} {...otherProps}>
+    <FieldContent>
+        <Input className={ error ? "input-error" : ""} name={name} value={value} {...otherProps}/>
+    </FieldContent>
   </Field>
 );
 
 // Just radio button and label
-export const ChoiceInput = ({classes, type = "radio", name, value, label, error, help, checked, style, ...otherProps}) => (
-  <div className={`vs-choice-input ${classes ? classes : ''}`} style={style}>
+export const ChoiceInput = ({className, type = "radio", name, value, label, error, help, checked, style, ...otherProps}) => (
+  <div className={`vs-choice-input ${className ? className : ''}`} style={style}>
     <Label>
       <Input type={type} name={name} value={value} checked={checked} {...otherProps}/>
       {label}

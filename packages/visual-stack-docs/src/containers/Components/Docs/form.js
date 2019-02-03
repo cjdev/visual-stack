@@ -5,7 +5,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import "./form.css";
 
 /* s3:start */
-import { Form, FormGroup, Label, Input, Legend, TextField, Field, ChoiceInput } from '@cjdev/visual-stack/lib/components/Form';
+import { Form, FormGroup, Label, Input, Legend, TextField, Field, FieldContent, ChoiceInput } from '@cjdev/visual-stack/lib/components/Form';
 /* s3:end */
 
 const PanelComponent =({header, children}) => (
@@ -101,8 +101,10 @@ export default () =>
                 <Form>
                   <Field label="Simple radio group"
                               help="A group of radio buttons">
-                    <ChoiceInput name="radio1" label="Radio 1" value="radio1" checked={true}/>
-                    <ChoiceInput name="radio1" label="Radio 2" value="radio2"/>
+                      <FieldContent>
+                        <ChoiceInput name="radio1" label="Radio 1" value="radio1" checked={true}/>
+                        <ChoiceInput name="radio1" label="Radio 2" value="radio2"/>
+                      </FieldContent>
                   </Field>
                 </Form>
                   { /* s7:end */ }
@@ -115,8 +117,10 @@ export default () =>
                   <Field label="Radio group with error"
                                     help="A group of radio buttons"
                                     error="Somehow something went wrong">
-                      <ChoiceInput name="radio2" label="Radio 1" value="radio1"/>
-                      <ChoiceInput name="radio2" label="Radio 2" value="radio2"/>
+                      <FieldContent>
+                          <ChoiceInput name="radio2" label="Radio 1" value="radio1"/>
+                          <ChoiceInput name="radio2" label="Radio 2" value="radio2"/>
+                      </FieldContent>
                   </Field>
               </Form>
               {/* s8:end */}
@@ -130,8 +134,10 @@ export default () =>
                                     help="A group of Checkboxes"
                                     optional={true}
                                     optionalLabel="Optional">
-                      <ChoiceInput name="checkbox1" type="checkbox" label="Checkbox 1" value="checkbox1"/>
-                      <ChoiceInput name="checkbox2" type="checkbox" label="Checkbox 2" value="checkbox2"/>
+                      <FieldContent>
+                          <ChoiceInput name="checkbox1" type="checkbox" label="Checkbox 1" value="checkbox1"/>
+                          <ChoiceInput name="checkbox2" type="checkbox" label="Checkbox 2" value="checkbox2"/>
+                      </FieldContent>
                   </Field>
               </Form>
               {/* s9:end */}
@@ -149,18 +155,22 @@ export default () =>
                            value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
                 <div className="grid-it-up">
                     <Field label="# of vacation days" help="Enter vacation rules">
-                        <ChoiceInput name="vacationDays" label="Unlimited" value="unlimited"/>
-                        <div className="inline-other-text-box-style">
-                            <ChoiceInput name="vacationDays" label="Limit to" value="limitTo"
-                                         className="inline-other-text-box-style"/>
-                            <Input name="days" className="make-text-box-smaller-style"/>
-                            <Label>days</Label>
-                        </div>
+                        <FieldContent>
+                            <ChoiceInput name="vacationDays" label="Unlimited" value="unlimited"/>
+                            <div>
+                                <ChoiceInput name="vacationDays" label="Limit to" value="limitTo"
+                                             className="inline-other-text-box-style"/>
+                                <Input name="days" className="make-text-box-smaller-style"/>
+                                <Label>days</Label>
+                            </div>
+                        </FieldContent>
                     </Field>
                     <Field name="vacationtypes" label="Vacation Type" help="Choose all applicable"
                            optional={true} optionalLabel="Optional">
-                        <ChoiceInput name="vacationtypes.cruise" type="checkbox" label="Cruise" value="cruise"/>
-                        <ChoiceInput name="vacationtypes.hiking" type="checkbox" label="Hiking" value="hiking"/>
+                        <FieldContent>
+                            <ChoiceInput name="vacationtypes.cruise" type="checkbox" label="Cruise" value="cruise"/>
+                            <ChoiceInput name="vacationtypes.hiking" type="checkbox" label="Hiking" value="hiking"/>
+                        </FieldContent>
                     </Field>
                     <div/>
                 </div>
