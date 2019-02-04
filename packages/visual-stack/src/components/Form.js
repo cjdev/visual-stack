@@ -46,7 +46,7 @@ FormGroup.propTypes = {
 };
 
 // Component that renders a label and error/help message
-export const Field = ({className, label, error, help, optional, optionalLabel, classNameForChildren, children}) => (
+export const Field = ({className, label, error, help, optional, optionalLabel, children}) => (
   <div className={`vs-field ${className ? className : ''}`}>
     <Label>{label} <span className="vs-field-optional">{optional ? `- ${optionalLabel}` : null}</span></Label>
       {children}
