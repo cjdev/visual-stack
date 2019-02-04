@@ -2,11 +2,6 @@ import React from 'react';
 import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHeader';
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 
-const routeComponentMap = {};
-
-const addComponentRoute = (path, linkName, component) => {
-  routeComponentMap[path] = { path, linkName, component };
-};
 
 // 1. add an import for your demo
 import BlankSlateDocs from './blankslate';
@@ -22,6 +17,12 @@ import SpinnerDocs from './spinner';
 import TableDocs from './table';
 import TabLayoutDocs from './tablayout';
 import CardDocs from './card';
+
+const routeComponentMap = {};
+
+const addComponentRoute = (path, linkName, component) => {
+  routeComponentMap[path] = { path, linkName, component };
+};
 
 // 2. add your demo to the routeComponentMap
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
@@ -54,4 +55,3 @@ const ComponentDocs = ({ params }) => {
 
 export { routeComponentMap };
 export default ComponentDocs;
-

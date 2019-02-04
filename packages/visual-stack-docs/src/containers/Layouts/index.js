@@ -21,7 +21,7 @@ const Layouts = () =>
       <PageHeaderSection>Test to see that Right Aligned is not cut off</PageHeaderSection>
     </PageHeader>
     <PageContent>
-    
+
       <Panel>
         <Header>
           Application Layout
@@ -30,7 +30,7 @@ const Layouts = () =>
           ApplicationLayout includes the SideNav component and necessary CSS to render a full page application.
         </Body>
       </Panel>
-        
+
       <Panel>
         <Body>
           <h2>Headings and Paragraphs</h2>
@@ -72,7 +72,7 @@ const Layouts = () =>
       				</Tr>
 	        	</TBody>
         	</Table>
-        	
+
           <h2>Inline Text Elements</h2>
         	<Table>
         		<THead>
@@ -96,7 +96,7 @@ const Layouts = () =>
 							</Tr>
 							<Tr>
 								<Td>Link</Td>
-								<Td><a href="#" title="Link">Link</a></Td>
+                <Td><a href="/layouts" title="Link">Link</a></Td>
 							</Tr>
 							<Tr>
 								<Td>Strong</Td>
@@ -123,8 +123,8 @@ const Layouts = () =>
 								<Td><kbd>ctrl + C</kbd></Td>
 							</Tr>
 	        	</TBody>
-        	</Table> 
-        	
+        	</Table>
+
           <h2>Block Elements</h2>
 					<Table>
 						<THead>
@@ -140,7 +140,7 @@ const Layouts = () =>
 							</Tr>
 							<Tr>
 								<Td>Preformatted Code</Td>
-								<Td><pre><code>First line of code. 
+								<Td><pre><code>First line of code.
 								   Second line of code</code></pre></Td>
 							</Tr>
 							<Tr>
@@ -225,7 +225,7 @@ const Layouts = () =>
 							</Tr>
 						</TBody>
 					</Table>
-					
+
 	        <h2>Form Elements</h2>
         	<Table>
         		<THead>
@@ -350,18 +350,18 @@ const Layouts = () =>
         	</Table>
         </Body>
       </Panel>
-      
-      
+
+
       <Panel>
         <Body>
 					<div className="vs-grid-wrapper">
 	        	<h2 className="h3">Organization Information</h2>
 		        <div className="vs-grid-container">
 		        	<div className="vs-grid-item vs-grid-item-1">
-			        	
+
 								<label>Organization Name</label>
 								<input type="text" placeholder="" />
-								
+
 								<label>Street Address</label>
 								<input type="text" placeholder="" />
 
@@ -381,37 +381,37 @@ const Layouts = () =>
 										<input type="text" placeholder="" />
 									</div>
 								</div>
-								
+
 								<label>Country</label>
 								<select>
 								  <option>Select Country</option>
 								</select>
-								
+
 								<h2 className="h3">Location Settings</h2>
-								
+
 								<label>Functional Currency</label>
         				<select>
 								  <option>Select</option>
 								</select>
-								
+
 								<label>Language</label>
         				<select>
 								  <option>Select</option>
 								</select>
-								
+
 								<label>Date Format</label>
         				<select>
 								  <option>Select</option>
 								</select>
-								
+
 		          	<label>
 			          	<input type="checkbox" />
 									<span>Limit initial search results to country of location</span>
 								</label>
-								
+
 								<br />
 								<br />
-								
+
 		          	<Button type="solid-primary" className="no-gutters">Save</Button>
 		          	<Button type="text" className="">Cancel</Button>
 
@@ -419,7 +419,7 @@ const Layouts = () =>
 		        	<div className="vs-grid-item vs-grid-item-2">
 								<label>Phone Number</label>
 								<input type="text" placeholder="" />
-								
+
 								<label>Fax</label>
 								<input type="text" placeholder="" />
 		        	</div>
@@ -427,7 +427,7 @@ const Layouts = () =>
 	        </div>
         </Body>
       </Panel>
-      
+
 			<Panel>
 				<Body>
 					<div id="example-devportal-1">
@@ -452,13 +452,13 @@ const Layouts = () =>
 						<p>The <a href="https://developers.cj.com/docs/rest-apis/automated-offer-feed">Automated Offer Feed</a> via our Link Search API is a REST API that enables you to access specific credit card content, links and images from our financial advertisers.</p>
 						<h2 id="rest-errors-for-all-apis">REST Errors For All APIs</h2>
 						<p>The HTTP Response Code for the following errors is <strong>401</strong>.</p>
-						
+
 						<table className="vs-table"><thead className="vs-thead"><tr className="vs-row"><th className="vs-cell vs-table-header" align="left">Message</th><th className="vs-cell vs-table-header" align="left">Description</th></tr></thead><tbody className="vs-tbody"><tr className="vs-row"><td className="vs-cell" align="left">None</td><td className="vs-cell" align="left">Incorrect resource URL</td></tr><tr className="vs-row"><td className="vs-cell" align="left">"You must specify a developer key."</td><td className="vs-cell" align="left">No developer key specified</td></tr><tr className="vs-row"><td className="vs-cell" align="left">"Not Authenticated: xxxxxx" (where xxxxxx is the echo of the developer key used).</td><td className="vs-cell" align="left">Invalid developer key specified</td></tr></tbody></table>
 					</div>
 				</Body>
 			</Panel>
 
-  
+
     </PageContent>
   </div>;
 
