@@ -10,6 +10,7 @@
     "npm-watch": "^0.1.9",
     "prettier": "^1.13.7",
     "react-scripts": "^0.9.5",
+    "ramda": "^0.26.1",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
@@ -20,7 +21,6 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "mdi-react": "^2.1.19",
     "morgan": "^1.9.0",
-    "ramda": "^0.23.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-redux": "^5.0.7",

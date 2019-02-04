@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /** @prettier */
 import React from 'react';
-import R from 'ramda';
+import * as R from 'ramda';
 
 import { Link as RRLink } from 'react-router';
 import LayoutIcon from 'mdi-react/TelevisionGuideIcon';

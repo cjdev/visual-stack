@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 
 export const parse = (src = '') => {
   const parseResult = R.pipe(
@@ -65,4 +65,3 @@ export const trimLeadingWhiteSpace = rawLines => {
   // reduce the whitespace of every line by minLeadingWhiteSpace
   return R.map(line => line.slice(minLeadingWhiteSpace))(rawLines);
 };
-
