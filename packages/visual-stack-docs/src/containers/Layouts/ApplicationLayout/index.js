@@ -96,7 +96,7 @@ const Layouts = () =>
 							</Tr>
 							<Tr>
 								<Td>Link</Td>
-								<Td><a href="#" title="Link">Link</a></Td>
+                <Td><a href="/layouts" title="Link">Link</a></Td>
 							</Tr>
 							<Tr>
 								<Td>Strong</Td>
