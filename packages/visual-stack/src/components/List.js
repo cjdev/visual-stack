@@ -71,7 +71,7 @@ const ExpandedRowPanel = ({ children }) =>
   </div>;
 
 export const Cell = ({ width, children }) =>
-  <div className={`vs-list-cell col-${width || 1}`}>
+  <div className={`vs-list-cell col-xs-${width || 1}`}>
     {children}
   </div>;
 Cell.propTypes = {
