@@ -16,4 +16,8 @@ input.make-text-box-smaller-style {
     grid-template-columns: 3fr 3fr 3fr;
     grid-column-gap: 8px;
 }
+
+.dialog-actions {
+    text-align: right;
+}
 /* s1:end */

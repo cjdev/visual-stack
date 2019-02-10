@@ -151,8 +151,20 @@ fieldset.group ul.checkbox li.focus  {
   margin-bottom: 16px;
 }
 
+.vs-field-content-width-normal {
+    max-width: 400px;
+}
+
 .vs-field-optional {
   color: #777;
   font-size: 1.3rem;
   font-style: italic;
+}
+
+.vs-label-font-bold {
+    font-weight: 500;
+}
+
+.vs-label-font-normal {
+    font-weight: normal;
 }

@@ -105,6 +105,7 @@ NotRenderedComponent.propTypes = {
 export const DemoForm = () => (
     <Body>
         <Form>
+            <Body>
             <TextField name="name" label="Enter Name" help="Enter first name and last name"
                        placeholder="First Last"/>
             <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
@@ -126,6 +127,13 @@ export const DemoForm = () => (
                 </Field>
                 <div/>
             </div>
+            </Body>
+            <Body>
+            <div className="dialog-actions">
+                <Button type="text">Cancel</Button>
+                <Button type="solid-primary">Add</Button>
+            </div>
+            </Body>
         </Form>
     </Body>
 );
