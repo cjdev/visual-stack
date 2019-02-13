@@ -12,8 +12,8 @@ export const Footer = ({ children }) =>
     {children}
   </div>;
 
-export const Body = ({ children }) =>
-  <div className="cj-panel panel-body">
+export const Body = ({ children, paddingSize}) =>
+  <div className={`cj-panel panel-body ${paddingSize ? `cj-panel-body-padding-${paddingSize}` : ""}`}>
     {children}
   </div>;
 

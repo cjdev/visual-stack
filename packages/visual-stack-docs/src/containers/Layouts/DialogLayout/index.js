@@ -3,7 +3,7 @@ import {Route, withRouter} from 'react-router';
 
 import { Button } from "@cjdev/visual-stack/lib/components/Button";
 import DialogLayout from '@cjdev/visual-stack/lib/layouts/DialogLayout';
-import { Body, Header, Panel } from "@cjdev/visual-stack/lib/components/Panel";
+import { Body, Header, Panel, Footer } from "@cjdev/visual-stack/lib/components/Panel";
 import {
     ChoiceInput,
     Field,
@@ -80,12 +80,12 @@ export const DialogLayoutDemo = ({router}) => (
                           router.push("/layouts/dialogLayout");
                       }}
                       logo={<CJLogo/>}>
-            <Panel>
-              <DemoContent/>
-            </Panel>
-            <Panel>
+            {/*<Panel>*/}
+              {/*<DemoContent/>*/}
+            {/*</Panel>*/}
+            {/*<Panel>*/}
               <DemoForm/>
-            </Panel>
+            {/*</Panel>*/}
         </DialogLayout>
     </div>
 );
@@ -101,11 +101,13 @@ const NotRenderedComponent = () => (
 NotRenderedComponent.propTypes = {
 };
 
+
 /* s2:start */
 export const DemoForm = () => (
-    <Body>
-        <Form>
-            <Body>
+    <Form>
+        <Panel>
+            <Body paddingSize="large">
+            <h3>Program Details</h3>
             <TextField name="name" label="Enter Name" help="Enter first name and last name"
                        placeholder="First Last"/>
             <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
@@ -128,14 +130,23 @@ export const DemoForm = () => (
                 <div/>
             </div>
             </Body>
-            <Body>
-            <div className="dialog-actions">
-                <Button type="text">Cancel</Button>
-                <Button type="solid-primary">Add</Button>
-            </div>
+        </Panel>
+        <Panel>
+            <Body paddingSize="large">
+                <h3>Action Terms</h3>
+                <TextField name="name" label="Enter Name" help="Enter first name and last name"
+                           placeholder="First Last"/>
+                <TextField name="country" label="Country" optional={true} optionalLabel="Optional"
+                           value="Degobah" error="Enter valid country name on planet Earth" help="Enter Country"/>
             </Body>
-        </Form>
-    </Body>
+            <Footer>
+                <div className="dialog-actions">
+                    <Button type="text">Cancel</Button>
+                    <Button type="solid-primary">Add</Button>
+                </div>
+            </Footer>
+        </Panel>
+    </Form>
 );
 
 export const DemoContent = () => (

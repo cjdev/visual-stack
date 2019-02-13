@@ -108,3 +108,10 @@
     border-bottom: 1px solid transparent;
     border-color: #c8ccce;
 }
+.cj-panel-body-padding-large.panel-body {
+    padding: 32px;
+}
+
+.cj-panel-body-padding-none.panel-body {
+    padding: 0;
+}
