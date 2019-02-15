@@ -12,7 +12,7 @@ export default () =>
             <Header>
               Panel Header
             </Header>
-            <Body paddingSize="large">
+            <Body paddingSize="wide">
             This is the Panel Body with 32px padding.
             <Snippet tag="s1" src={snippets}/>
             </Body>

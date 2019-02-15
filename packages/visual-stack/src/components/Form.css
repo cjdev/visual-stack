@@ -152,24 +152,24 @@ fieldset.group ul.checkbox li.focus  {
 }
 
 @media (max-width: 40em) {
-    .vs-field-content-width-normal {
+    .vs-field-content {
         max-width: 100%;
     }
 }
 
 @media (min-width: 768px ) {
-    .vs-field-content-width-normal {
+    .vs-field-content {
         max-width: 75%;
     }
 }
 @media (min-width: 992px ) {
-    .vs-field-content-width-normal {
+    .vs-field-content {
         max-width: 60%;
     }
 }
 
 @media (min-width: 1280px ) {
-    .vs-field-content-width-normal {
+    .vs-field-content {
         max-width: 45%;
     }
 }

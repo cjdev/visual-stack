@@ -25,3 +25,7 @@ export const Header = ({ title, children }) =>
 Header.propTypes = {
   title: PropTypes.string,
 };
+
+Body.propTypes = {
+  paddingSize: PropTypes.oneOf(["none", "wide"])
+};

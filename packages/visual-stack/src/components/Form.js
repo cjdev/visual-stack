@@ -12,8 +12,8 @@ Input.propTypes = {
   type: PropTypes.string,
 };
 
-export const Label = ({ children, className, required, vertical, weight, ...otherProps }) =>
-  <label className={`form-label control-label form-label-${vertical ? 'vertical' : 'horizontal'} ${weight ? `vs-label-font-${weight}` : ""} ${className || ''}`} {...otherProps}>
+export const Label = ({ children, className, required, vertical, fontWeight, ...otherProps }) =>
+  <label className={`form-label control-label form-label-${vertical ? 'vertical' : 'horizontal'} ${fontWeight ? `vs-label-font-${fontWeight}` : ""} ${className || ''}`} {...otherProps}>
     {children}
     {required && <span className="form-group-required-sign">*</span>}
   </label>;
@@ -54,8 +54,8 @@ export const Field = ({className, label, error, help, optional, optionalLabel, c
   </div>
 );
 
-export const FieldContent = ({className, children, width}) => (
-    <div className={`vs-field-content vs-field-content-width-${width ? width : "normal"} ${className ? className : ''}`}>
+export const FieldContent = ({className, children}) => (
+    <div className={`vs-field-content ${className ? className : ''}`}>
         {children}
     </div>
 );
@@ -72,7 +72,7 @@ export const TextField = ({className, name, value, label, error, help, optional,
 // Just radio button and label
 export const ChoiceInput = ({className, type = "radio", name, value, label, error, help, checked, style, ...otherProps}) => (
   <div className={`vs-choice-input ${className ? className : ''}`} style={style}>
-    <Label weight="normal">
+    <Label fontWeight="normal">
       <Input type={type} name={name} value={value} checked={checked} {...otherProps}/>
       {label}
     </Label>
