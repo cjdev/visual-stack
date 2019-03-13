@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactSelect from 'react-select';
 import './Form.css';
 
 export const Input = ({ className, type, ...otherProps }) =>
@@ -49,6 +50,17 @@ FormGroup.propTypes = {
   required: PropTypes.bool,
 };
 
+export const Select = ({name, className, error, value, onChange, onBlur, disabled, ...otherProps}) => (
+  <ReactSelect className={(error ? "input-error" : "") + " default-react-select " + (className ? className : "")}
+               classNamePrefix={"react-select"}
+               name={name}
+               value={value}
+               onChange={onChange}
+               isDisabled={disabled}
+               onBlur={onBlur}
+               {...otherProps}/>
+);
+
 // Component that renders a label and error/help message
 export const Field = ({className, label, error, help, optional, optionalLabel, children}) => (
   <div className={`vs-field ${className ? className : ''}`}>
@@ -83,4 +95,15 @@ export const ChoiceInput = ({className, type = "radio", name, value, label, chec
   </div>
 );
 
-
+export const SelectField = ({name, label, error, help, value, onChange, onBlur, ...otherProps}) => (
+  <Field label={label} error={error} help={help} {...otherProps}>
+    <FieldContent>
+      <Select name={name}
+              error={error}
+              value={value}
+              onChange={onChange}
+              onBlur={onBlur}
+              {...otherProps}/>
+    </FieldContent>
+  </Field>
+);

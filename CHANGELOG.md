@@ -1,4 +1,6 @@
 ## Upcoming
+#### New components
+- Added Select and SelectField components
 
 # 3.5.0 (Mar 13, 2019)
 #### Upgrades

@@ -1,11 +1,23 @@
 /* eslint */
 import React from 'react';
-import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
+import {Demo, Snippet} from '../../../components/Demo';
 import "./form.css";
-
 /* s3:start */
-import { Form, FormGroup, Label, Input, Legend, TextField, Field, FieldContent, ChoiceInput, TextArea } from '@cjdev/visual-stack/lib/components/Form';
+import {
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Legend,
+  TextField,
+  Field,
+  FieldContent,
+  ChoiceInput,
+  TextArea,
+  Select,
+  SelectField,
+} from '@cjdev/visual-stack/lib/components/Form';
 /* s3:end */
 
 const PanelComponent =({header, children}) => (
@@ -145,9 +157,37 @@ export default () =>
             </PanelComponent>
 
           </PanelComponent>
+          <PanelComponent header="Dropdown powered by React Select">
+            {/* s10:start */}
+            <Form>
+              <Select
+                options={[
+                  {value: 'chocolate', label: 'Chocolate'},
+                  {value: 'strawberry', label: 'Strawberry'},
+                  {value: 'vanilla', label: 'Vanilla'},
+                ]}/>
+              <SelectField label={"Select Field Component with help"}
+                           options={[
+                             {value: 'excalibur', label: 'Excalibur'},
+                             {value: 'durandal', label: 'Durandal'},
+                             {value: 'arondight', label: 'Arondight'},
+                           ]}
+                           help={"It's dangerous to go alone, take one of these"}/>
+              <SelectField label={"Select Field Component with error"}
+                           options={[
+                             {value: 'dmb', label: 'Darkmoon Blades'},
+                             {value: 'sb', label: 'Warriors of Sunlight'},
+                             {value: 'gl', label: 'Gravelords'},
+                           ]}
+                           placeholder={"Choose your faction"}
+                           error={"Something is wrong"}/>
+            </Form>
+            {/* s10:end */}
+            <Snippet tag="s10" src={snippets}/>
+          </PanelComponent>
 
         <PanelComponent header="All together with some grid stuff">
-            {/* s10:start */}
+            {/* s11:start */}
             <Form>
                 <TextField name="name" label="Enter Name" help="Enter first name and last name"
                            placeholder="First Last"/>
@@ -175,8 +215,8 @@ export default () =>
                     <div/>
                 </div>
             </Form>
-            {/* s10:end */}
-            <Snippet tag="s10" src={snippets}/>
+            {/* s11:end */}
+            <Snippet tag="s11" src={snippets}/>
             <Demo srcFile="/samples/src/containers/Components/Docs/form.css">
                 {cssSnippet => (
                     <div>css
@@ -191,14 +231,14 @@ export default () =>
               Text Area
             </Header>
             <Body>
-            { /* s11:start */ }
+            { /* s12:start */ }
             <Form>
               <FieldContent>
                 <TextArea placeholder="Enter some text here..." style={{height: "64px"}}/>
               </FieldContent>
             </Form>
-            { /* s11:end */ }
-            <Snippet tag="s11" src={snippets} />
+            { /* s12:end */ }
+            <Snippet tag="s12" src={snippets} />
             </Body>
           </Panel>
         </div>
