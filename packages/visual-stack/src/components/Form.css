@@ -230,6 +230,7 @@ div.react-select__indicator {
 
 div.react-select__option {
   padding: 6px 12px;
+  word-break: break-all;
 }
 
 div.input-error,
