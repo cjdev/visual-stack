@@ -167,6 +167,7 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 .vs-rounded-solid-btn,
 .vs-rounded-outline-btn,
 .vs-text-btn,
+.vs-text-link-btn,
 .vs-icon-btn {
 	border: 1px solid transparent;
   border-radius: 3px;
@@ -284,6 +285,16 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 }
 
 
+.vs-text-link-btn {
+  color: #6F7376;
+  padding-left: 0;
+  padding-right: 0;
+  border-color: transparent;
+}
+.vs-text-link-btn:hover {
+  background: transparent;
+  color: #414346;
+}
 
 
 .vs-icon-btn {
@@ -355,6 +366,12 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 .vs-text-btn.disabled:hover,
 .vs-text-btn[disabled]:hover {
   background: transparent;
+  color: #ccd1d7;
+}
+.vs-text-link-btn.disabled,
+.vs-text-link-btn[disabled],
+.vs-text-link-btn.disabled:hover,
+.vs-text-link-btn[disabled]:hover {
   color: #ccd1d7;
 }
 

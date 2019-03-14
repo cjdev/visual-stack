@@ -1,8 +1,9 @@
 import React from 'react';
-import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
-import { Button } from '@cjdev/visual-stack/lib/components/Button';
-import { AccountIcon, CodeIcon } from '@cjdev/visual-stack/lib/components/Icons';
+import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
+import {Demo, Snippet} from '../../../components/Demo';
+import {Button} from '@cjdev/visual-stack/lib/components/Button';
+import {AccountIcon, CodeIcon} from '@cjdev/visual-stack/lib/components/Icons';
+
 export default () =>
     <Demo srcFile="/samples/src/containers/Components/Docs/button.js">
     { snippets => {
@@ -23,6 +24,7 @@ export default () =>
               <Button type="icon"><AccountIcon /></Button>
               <Button type="text">Text</Button>
               <Button type="text"><CodeIcon /> Icon and Text</Button>
+              <Button type="text-link">Text Link</Button>
               { /* s3:end */ }
               <Snippet tag="s3" src={snippets} />
             </Body>
@@ -41,6 +43,7 @@ export default () =>
             <Button type="outline-secondary" disabled>Disabled</Button>
             <Button type="icon" disabled><AccountIcon /></Button>
             <Button type="text" disabled>Text</Button>
+            <Button type="text-link" disabled>Text Link</Button>
             { /* s4:end */ }
             <Snippet tag="s4" src={snippets} />
             </Body>

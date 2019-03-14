@@ -1,4 +1,6 @@
 ## Upcoming
+#### Upgrades
+- New text-link button type
 #### New components
 - Added Select and SelectField components
 

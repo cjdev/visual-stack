@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { concat, reduce, unapply } from 'ramda';
+import {concat, reduce, unapply} from 'ramda';
 import './Button.css';
 
 const concatAll = unapply(reduce(concat, []));
@@ -40,6 +40,7 @@ Button.propTypes = SubmitButton.propTypes = {
     'rounded-outline',
     'icon',
     'text',
+    'text-link',
   ]).isRequired,
   large: PropTypes.bool,
 };
