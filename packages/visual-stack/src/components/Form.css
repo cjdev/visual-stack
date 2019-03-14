@@ -245,3 +245,17 @@ div.react-select__control[disabled] {
   background-color: #eee;
   border-color: #e1e1e1;
 }
+
+div.react-select__option--is-focused {
+  background-color: #d4f6f1
+}
+
+div.react-select__option:active,
+div.react-select__option--is-focused:active {
+  background-color: #ace6dc
+}
+
+div.react-select__option.react-select__option--is-selected,
+div.react-select__option.react-select__option--is-selected:active {
+  background-color: #29c3aa
+}
