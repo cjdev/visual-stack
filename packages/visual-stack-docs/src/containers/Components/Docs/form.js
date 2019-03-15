@@ -2,6 +2,7 @@
 import React from 'react';
 import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
 import {Demo, Snippet} from '../../../components/Demo';
+import Select from '@cjdev/visual-stack/lib/components/Select';
 import "./form.css";
 /* s3:start */
 import {
@@ -15,7 +16,6 @@ import {
   FieldContent,
   ChoiceInput,
   TextArea,
-  Select,
   SelectField,
 } from '@cjdev/visual-stack/lib/components/Form';
 /* s3:end */
