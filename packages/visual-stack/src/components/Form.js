@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactSelect from 'react-select';
+import Select from './Select';
 import './Form.css';
 
 export const Input = ({ className, type, ...otherProps }) =>
@@ -49,17 +49,6 @@ FormGroup.propTypes = {
   label: PropTypes.node,
   required: PropTypes.bool,
 };
-
-export const Select = ({name, className, error, value, onChange, onBlur, disabled, ...otherProps}) => (
-  <ReactSelect className={(error ? "input-error" : "") + " default-react-select " + (className ? className : "")}
-               classNamePrefix={"react-select"}
-               name={name}
-               value={value}
-               onChange={onChange}
-               isDisabled={disabled}
-               onBlur={onBlur}
-               {...otherProps}/>
-);
 
 // Component that renders a label and error/help message
 export const Field = ({className, label, error, help, optional, optionalLabel, children}) => (
