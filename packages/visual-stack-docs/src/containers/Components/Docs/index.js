@@ -1,8 +1,6 @@
 import React from 'react';
-import { PageHeader, PageTitle } from '@cjdev/visual-stack/lib/components/PageHeader';
+import {PageHeader, PageTitle} from '@cjdev/visual-stack/lib/components/PageHeader';
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
-
-
 // 1. add an import for your demo
 import BlankSlateDocs from './blankslate';
 import ButtonDocs from './button';
@@ -11,6 +9,7 @@ import ListDocs from './list';
 import ModalDocs from './modal';
 import PanelDocs from './panel';
 import PageHeaderDocs from './pageheader';
+import SelectDocs from './select';
 import SideNavDocs from './sidenav';
 import SlidingPanelDocs from './slidingpanel';
 import SpinnerDocs from './spinner';
@@ -33,6 +32,7 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
+addComponentRoute('select', 'Select', <SelectDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
