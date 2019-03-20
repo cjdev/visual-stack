@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from '../Select';
+import Select from '../index';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
