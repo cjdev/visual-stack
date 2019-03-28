@@ -1,4 +1,6 @@
 ## Upcoming
+#### Updated styling
+- Dialog layout defaults to a smaller width
 
 # 4.0.0 (Mar 20, 2019)
 #### Upgrades
