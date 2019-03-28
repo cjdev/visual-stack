@@ -53,24 +53,13 @@
   padding: 112px 24px;
   margin:0 auto;
   z-index: 10;
+  max-width: 800px;
 }
 
 .vs-dialog-layout-content p {
   max-width: 580px;
 }
 
-@media (min-width: 992px ) {
-  .vs-dialog-layout-content {
-    max-width: 960px;
-    padding: 112px 48px;
-  }
-}
-
-@media (min-width: 1280px ) {
-  .vs-dialog-layout-content {
-    max-width: 1280px;
-  }
-}
 .vs-dialog-layout-footer {
   position: fixed;
   bottom: 0;

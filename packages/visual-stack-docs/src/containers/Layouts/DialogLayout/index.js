@@ -136,7 +136,7 @@ NotRenderedComponent.propTypes = {
 export const DemoForm = () => (
     <Form>
         <Panel>
-            <Body paddingSize="large">
+            <Body paddingSize="wide">
             <h3>Program Details</h3>
             <TextField name="name" label="Enter Name" help="Enter first name and last name"
                        placeholder="First Last"/>
@@ -162,7 +162,7 @@ export const DemoForm = () => (
             </Body>
         </Panel>
         <Panel>
-            <Body paddingSize="large">
+            <Body paddingSize="wide">
                 <h3>Action Terms</h3>
                 <TextField name="name" label="Enter Name" help="Enter first name and last name"
                            placeholder="First Last"/>
