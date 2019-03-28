@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.vs-collapsible-panel-header-title {
+  user-select: none;
+}
+
 .vs-collapsible-panel + .vs-collapsible-panel {
   border-top: 1px solid #C8CCCE;
 }
