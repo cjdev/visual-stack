@@ -2,7 +2,8 @@
 import React from 'react';
 import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
 import {Demo, Snippet} from '../../../components/Demo';
-import Select, {CreatableSelect} from '@cjdev/visual-stack/lib/components/Select';
+import Select from '@cjdev/visual-stack/lib/components/Select';
+import CreatableSelect from '@cjdev/visual-stack/lib/components/CreatableSelect';
 import "./form.css";
 /* s3:start */
 import {
