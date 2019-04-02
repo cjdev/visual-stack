@@ -2,7 +2,7 @@
 import React from 'react';
 import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
 import {Demo, Snippet} from '../../../components/Demo';
-import Select from '@cjdev/visual-stack/lib/components/Select';
+import Select, {CreatableSelect} from '@cjdev/visual-stack/lib/components/Select';
 import "./form.css";
 /* s3:start */
 import {
@@ -186,8 +186,18 @@ export default () =>
             <Snippet tag="s10" src={snippets}/>
           </PanelComponent>
 
-        <PanelComponent header="All together with some grid stuff">
+          <PanelComponent header="Creatable Select by React Select">
             {/* s11:start */}
+            <Form>
+              <CreatableSelect placeholder={"Enter items..."}
+                               handleUpdate={(item)=> console.log("options: ", item)}/>
+            </Form>
+            {/* s11:end */}
+            <Snippet tag="s11" src={snippets}/>
+          </PanelComponent>
+
+        <PanelComponent header="All together with some grid stuff">
+            {/* s12:start */}
             <Form>
                 <TextField name="name" label="Enter Name" help="Enter first name and last name"
                            placeholder="First Last"/>
@@ -215,7 +225,7 @@ export default () =>
                     <div/>
                 </div>
             </Form>
-            {/* s11:end */}
+            {/* s12:end */}
             <Snippet tag="s11" src={snippets}/>
             <Demo srcFile="/samples/src/containers/Components/Docs/form.css">
                 {cssSnippet => (
@@ -231,13 +241,13 @@ export default () =>
               Text Area
             </Header>
             <Body>
-            { /* s12:start */ }
+            { /* s13:start */ }
             <Form>
               <FieldContent>
                 <TextArea placeholder="Enter some text here..." style={{height: "64px"}}/>
               </FieldContent>
             </Form>
-            { /* s12:end */ }
+            { /* s13:end */ }
             <Snippet tag="s12" src={snippets} />
             </Body>
           </Panel>
