@@ -1,6 +1,7 @@
 import React from "react";
 import {Demo, Snippet} from '../../../components/Demo';
 import Select from '@cjdev/visual-stack/lib/components/Select';
+import CreatableSelect from '@cjdev/visual-stack/lib/components/CreatableSelect';
 import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel';
 
 
@@ -53,6 +54,15 @@ export default () =>
               disabled={true}/>
             {/* s3:end */}
             <Snippet tag="s3" src={snippets}/>
+          </PanelComponent>
+          <PanelComponent header="Creatable Select powered by React Select">
+            {/* s4:start */}
+            <CreatableSelect isMulti
+                             components={{DropdownIndicator: null}}
+                             placeholder={"Enter items..."}
+                             onChange={(value, actionMeta) => console.log(value, actionMeta)}/>
+            {/* s4:end */}
+            <Snippet tag="s4" src={snippets}/>
           </PanelComponent>
         </div>
       );
