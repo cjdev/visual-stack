@@ -1,11 +1,9 @@
 /* eslint-disable */
 import React, {Component} from 'react';
 import ReactSelect, {components} from 'react-select';
-
 import ReactCreatableSelect from 'react-select/lib/Creatable';
 import cn from 'classnames';
 import './Select.css';
-import styled from "styled-components";
 
 const createOption = (label) => ({
     label,
@@ -20,28 +18,7 @@ const Select = ({className, error, disabled, ...otherProps}) => (
                {...otherProps}/>
 );
 
-const styles = {
-    control: (base) => ({
-        ...base,
-        boxShadow: "none",
-        backgroundColor: "white",
-        '&:hover': { borderColor: '#29c3aa' },
-        border: '1px solid lightgray',
-    })
-};
-
-const Input = styled(components.Input)`
-    input[type=text]{
-        margin-bottom: 0px;
-        :focus {
-            border: 0px;
-            box-shadow: 0 0 0px 0 lightgray;
-        }
-    }
-`;
-
 export class CreatableSelect extends Component {
-
     constructor(props) {
         super(props);
 
@@ -50,7 +27,6 @@ export class CreatableSelect extends Component {
             value: [],
         };
     }
-
 
     handleChange = (value) => {
         this.setState({ value });
@@ -64,7 +40,7 @@ export class CreatableSelect extends Component {
     handleNums = (event) => {
         const { inputValue, value } = this.state;
         if (!inputValue) return;
-        const parsedInt = parseInt(inputValue)
+        const parsedInt = parseInt(inputValue);
         switch (event.key) {
             case 'Enter':
             case 'Tab':
@@ -113,8 +89,9 @@ export class CreatableSelect extends Component {
         const { inputValue, value } = this.state;
         return (
             <ReactCreatableSelect
-                styles={styles}
-                components={{Input, DropdownIndicator: null}}
+                className={cn("vs-default-react-select", this.props.className)}
+                classNamePrefix={"vs-react-select"}
+                components={{DropdownIndicator: null}}
                 inputValue={inputValue}
                 isClearable
                 isMulti
