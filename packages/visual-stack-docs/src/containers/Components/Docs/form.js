@@ -186,7 +186,7 @@ export default () =>
             <Snippet tag="s10" src={snippets}/>
           </PanelComponent>
 
-          <PanelComponent header="Creatable Select by React Select">
+          <PanelComponent header="Creatable Select powered by React Select">
             {/* s11:start */}
             <Form>
               <CreatableSelect placeholder={"Enter items..."}
