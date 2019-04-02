@@ -50,12 +50,13 @@ describe('CreatableSelect', () => {
     const placeholder = "Test placeholder...";
     const handleUpdateFunction = jest.fn(x => x);
     const component = mount(
-        <CreatableSelect handleUpdate={handleUpdateFunction} placeholder={placeholder}/>
+        <CreatableSelect handleUpdate={handleUpdateFunction} placeholder={placeholder} handleNums/>
     );
     const componentProps = component.props();
 
 
     expect(componentProps.placeholder).toBe(placeholder);
+    expect(componentProps.handleNums).toBe(true);
     component.instance().handleChange();
     expect(handleUpdateFunction.mock.calls.length).toBe(1);
   });

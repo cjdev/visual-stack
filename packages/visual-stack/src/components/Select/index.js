@@ -1,9 +1,11 @@
 /* eslint-disable */
 import React, {Component} from 'react';
-import ReactSelect from 'react-select';
+import ReactSelect, {components} from 'react-select';
+
 import ReactCreatableSelect from 'react-select/lib/Creatable';
 import cn from 'classnames';
 import './Select.css';
+import styled from "styled-components";
 
 const createOption = (label) => ({
     label,
@@ -25,8 +27,18 @@ const styles = {
         backgroundColor: "white",
         '&:hover': { borderColor: '#29c3aa' },
         border: '1px solid lightgray',
-})
+    })
 };
+
+const Input = styled(components.Input)`
+    input[type=text]{
+        margin-bottom: 0px;
+        :focus {
+            border: 0px;
+            box-shadow: 0 0 0px 0 lightgray;
+        }
+    }
+`;
 
 export class CreatableSelect extends Component {
 
@@ -49,7 +61,30 @@ export class CreatableSelect extends Component {
         this.setState({ inputValue });
     };
 
-    handleKeyDown = (event) => {
+    handleNums = (event) => {
+        const { inputValue, value } = this.state;
+        if (!inputValue) return;
+        const parsedInt = parseInt(inputValue)
+        switch (event.key) {
+            case 'Enter':
+            case 'Tab':
+                if(parsedInt) {
+                    this.setState({
+                        inputValue: '',
+                        value: [...value, createOption(parsedInt)],
+                    });
+                    event.preventDefault();
+                    this.props.handleUpdate([...value, createOption(parsedInt)]);
+                } else {
+                    this.setState({
+                        inputValue: ''
+                    });
+                }
+        }
+
+    };
+
+    handleStrings = (event) => {
         const { inputValue, value } = this.state;
         if (!inputValue) return;
         switch (event.key) {
@@ -65,12 +100,21 @@ export class CreatableSelect extends Component {
 
     };
 
+    handleKeyDown = (event) => {
+        if(this.props.handleNums) {
+            this.handleNums(event)
+        } else{
+            this.handleStrings(event)
+        }
+    };
+
+
     render() {
         const { inputValue, value } = this.state;
         return (
             <ReactCreatableSelect
                 styles={styles}
-                components={{DropdownIndicator: null}}
+                components={{Input, DropdownIndicator: null}}
                 inputValue={inputValue}
                 isClearable
                 isMulti

@@ -189,7 +189,8 @@ export default () =>
           <PanelComponent header="Creatable Select powered by React Select">
             {/* s11:start */}
             <Form>
-              <CreatableSelect placeholder={"Enter items..."}
+              <CreatableSelect handleNums
+                               placeholder={"Enter items..."}
                                handleUpdate={(item)=> console.log("options: ", item)}/>
             </Form>
             {/* s11:end */}
