@@ -1,66 +1,66 @@
-div.vs-react-select__input input {
+div.vs-react-select-creatable__input input {
     margin-bottom: 0px;
     padding: 0px;
 }
 
-div.vs-react-select__input input:focus {
+div.vs-react-select-creatable__input input:focus {
     box-shadow: none;
     border: none;
 }
 
-div.vs-default-react-select {
+div.vs-default-react-select-creatable {
     margin-bottom: 0.8rem;
 }
 
-div.vs-react-select__control {
+div.vs-react-select-creatable__control {
     min-height: 32px;
 }
 
-div.vs-react-select__control--is-focused,
-div.vs-react-select__control--is-focused:hover {
+div.vs-react-select-creatable__control--is-focused,
+div.vs-react-select-creatable__control--is-focused:hover {
     outline: 1px solid rgba(73, 197, 176, 0.2);
     border-color: #49c5b1;
     box-shadow: 0 0 4px rgba(73, 197, 176, 0.4);
 }
 
-.vs-react-select__value-container div{
+.vs-react-select-creatable__value-container div{
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0;
 }
 
-div.vs-react-select__value-container {
+div.vs-react-select-creatable__value-container {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-div.vs-react-select__indicator {
+div.vs-react-select-creatable__indicator {
     padding: 6px;
 }
 
-div.vs-react-select__option {
+div.vs-react-select-creatable__option {
     padding: 6px 12px;
     word-break: break-all;
 }
 
-div.vs-react-select__control.vs-react-select__control--is-disabled,
-div.vs-react-select__control[disabled] {
+div.vs-react-select-creatable__control.vs-react-select-creatable__control--is-disabled,
+div.vs-react-select-creatable__control[disabled] {
     color: #888;
     cursor: not-allowed;
     background-color: #eee;
     border-color: #e1e1e1;
 }
 
-div.vs-react-select__option--is-focused {
+div.vs-react-select-creatable__option--is-focused {
     background-color: #d4f6f1
 }
 
-div.vs-react-select__option:active,
-div.vs-react-select__option--is-focused:active {
+div.vs-react-select-creatable__option:active,
+div.vs-react-select-creatable__option--is-focused:active {
     background-color: #ace6dc
 }
 
-div.vs-react-select__option.vs-react-select__option--is-selected,
-div.vs-react-select__option.vs-react-select__option--is-selected:active {
+div.vs-react-select-creatable__option.vs-react-select-creatable__option--is-selected,
+div.vs-react-select-creatable__option.vs-react-select-creatable__option--is-selected:active {
     background-color: #29c3aa
 }

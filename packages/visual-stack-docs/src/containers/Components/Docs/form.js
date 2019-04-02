@@ -190,9 +190,10 @@ export default () =>
           <PanelComponent header="Creatable Select powered by React Select">
             {/* s11:start */}
             <Form>
-              <CreatableSelect handleNums
+              <CreatableSelect isMulti
+                               components={{DropdownIndicator: null}}
                                placeholder={"Enter items..."}
-                               handleUpdate={(item)=> console.log("options: ", item)}/>
+                               onChange={(value, actionMeta) => console.log(value, actionMeta)}/>
             </Form>
             {/* s11:end */}
             <Snippet tag="s11" src={snippets}/>
