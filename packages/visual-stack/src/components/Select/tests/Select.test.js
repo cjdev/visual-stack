@@ -46,19 +46,35 @@ describe('CreatableSelect', () => {
       expect(wrapper.find(CreatableSelect).length).toEqual(1);
   });
 
-  test('should accept props', () => {
-    const placeholder = "Test placeholder...";
+  test('should pass handleUpdateFunction to react creatable select', () => {
     const handleUpdateFunction = jest.fn(x => x);
     const component = mount(
-        <CreatableSelect handleUpdate={handleUpdateFunction} placeholder={placeholder} handleNums/>
+        <CreatableSelect handleUpdate={handleUpdateFunction}/>
+    );
+
+    component.instance().handleChange();
+    expect(handleUpdateFunction.mock.calls.length).toBe(1);
+  });
+
+  test('should pass placeholder to react creatable select', () => {
+    const placeholder = "Test placeholder...";
+
+    const component = mount(
+        <CreatableSelect handleUpdate={() => "doesn't matter"} placeholder={placeholder}/>
     );
     const componentProps = component.props();
 
-
     expect(componentProps.placeholder).toBe(placeholder);
+  });
+
+  test('should pass handleNums to react creatable select', () => {
+    const component = mount(
+        <CreatableSelect handleUpdate={() => "doesn't matter"} handleNums={true}/>
+    );
+
+    const componentProps = component.props();
     expect(componentProps.handleNums).toBe(true);
-    component.instance().handleChange();
-    expect(handleUpdateFunction.mock.calls.length).toBe(1);
+
   });
 });
 
