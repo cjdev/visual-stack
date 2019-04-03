@@ -11,7 +11,7 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: .4px;
-  line-height: 20px;
+  line-height: 1;
   margin: 4px;
   min-height: 32px;
   min-width: 32px;
@@ -169,6 +169,7 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 .vs-text-btn,
 .vs-text-link-btn,
 .vs-icon-btn {
+	background-color: transparent;
 	border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: none;
@@ -286,6 +287,7 @@ a.vs-btn-d:hover, .vs-btn-d a:hover {
 
 
 .vs-text-link-btn {
+	background-color: transparent;
   color: #6F7376;
   padding-left: 0;
   padding-right: 0;
