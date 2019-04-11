@@ -16,17 +16,27 @@ const makeProps = (overrides = {}) => ({
 class Tester {
   pagingValue = -1;
   wrapper = null;
-  rowsPerPageWrapper = null;
+  rowsPerPageSelectWrapper = null;
+  pagingInformationWrapper = null;
 
-  constructor() {
+  constructor({ numberOfRows }) {
     const onPageChange = value => {
       // eslint-disable-next-line no-invalid-this
       this.pagingValue = value;
     };
-    this.wrapper = mount(<Pagination {...makeProps({ onPageChange })} />);
+    this.wrapper = mount(
+      <Pagination {...makeProps({ onPageChange, numberOfRows })} />
+    );
+
     this.rowsPerPageSelectWrapper = this.wrapper
       .find(Select)
       .filterWhere(node => node.props().name === 'rows-per-page');
+    this.pagingInformationWrapper = this.wrapper.find(
+      'div.vs-pagination-paging'
+    );
+    this.paginationTotalRecordsWrapper = this.wrapper.find(
+      'div.vs-pagination-total-records'
+    );
   }
 
   getRowsPerPageOptions = () => {
@@ -40,24 +50,44 @@ class Tester {
     const { onChange } = rowsPerPageSelectWrapper.props();
     onChange({ value });
   };
+
+  getTotalRecords = () => {
+    // eslint-disable-next-line no-invalid-this
+    return this.paginationTotalRecordsWrapper.text();
+  };
+
+  getRowsPerPageDropdownValue = () => {
+    // eslint-disable-next-line no-invalid-this
+    return this.rowsPerPageSelectWrapper.props().value;
+  };
+
+  getPagingInformation = () => {
+    // eslint-disable-next-line no-invalid-this
+    return this.pagingInformationWrapper.text();
+  };
 }
+
+const defaultOptions = {
+  numberOfRows: 20,
+};
+
+const createTesterWithOptions = options =>
+  new Tester({ ...defaultOptions, ...options });
+
+const createTester = () => createTesterWithOptions({});
+
+const createTesterWithNumberOfRows = numberOfRows =>
+  createTesterWithOptions({ numberOfRows });
 
 describe('Pagination', () => {
   it('should display total records', () => {
-    const wrapper = mount(<Pagination {...makeProps()} />);
-    const pagninationInformation = wrapper
-      .find('div.vs-pagination-total-records')
-      .text();
-    expect(pagninationInformation).toEqual(`${numberOfRows} total records`);
+    const tester = createTesterWithNumberOfRows(27);
+    expect(tester.getTotalRecords()).toEqual(`27 total records`);
   });
 
   it('should have default value for rows per page', () => {
-    const wrapper = mount(<Pagination {...makeProps()} />);
-    const rowsPerPage = wrapper
-      .find(Select)
-      .filterWhere(node => node.props().name === 'rows-per-page')
-      .props().value;
-    expect(rowsPerPage).toEqual({
+    const tester = createTester();
+    expect(tester.getRowsPerPageDropdownValue()).toEqual({
       value: 10,
       label: '10 per page',
     });
@@ -65,7 +95,7 @@ describe('Pagination', () => {
 
   it('should display the rows per page options', () => {
     // given
-    const tester = new Tester();
+    const tester = createTester();
 
     // then
     expect(tester.getRowsPerPageOptions()).toEqual([
@@ -86,9 +116,8 @@ describe('Pagination', () => {
 
   it('should display paging information', () => {
     const numberOfRows = 50;
-    const wrapper = mount(<Pagination {...makeProps({ numberOfRows })} />);
-    const paging = wrapper.find('div.vs-pagination-paging').text();
-    expect(paging).toEqual('1/5');
+    const tester = createTesterWithOptions({ numberOfRows });
+    expect(tester.getPagingInformation()).toEqual('1/5');
   });
 
   it('should display paging information that cant be divided evenly', () => {
@@ -100,7 +129,7 @@ describe('Pagination', () => {
 
   it('should callback with the selected paging value', () => {
     // given
-    const tester = new Tester();
+    const tester = createTester();
 
     // when
     tester.changePageValue(50);
