@@ -58,13 +58,19 @@ describe('DialogLayout', () => {
     expect(submitButton.prop('disabled')).toEqual(true);
   });
 
-  test('should not render submit or cancel buttons when not configured', () => {
+  test('should not render submit button when not configured', () => {
     const component = shallow(<DialogLayout/>);
 
     const submitButton = component.find('#vs-dialog-layout-submit');
-    const cancelButton = component.find('#vs-dialog-layout-cancel');
 
     expect(submitButton).toHaveLength(0);
+  });
+
+  test('should not render cancel button when not configured', () => {
+    const component = shallow(<DialogLayout/>);
+
+    const cancelButton = component.find('#vs-dialog-layout-cancel');
+
     expect(cancelButton).toHaveLength(0);
   });
 

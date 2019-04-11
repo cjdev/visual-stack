@@ -52,8 +52,10 @@ export const DialogLayout = ({
         type="solid-primary"
         disabled={disableSubmit === true}
         onClick={onSubmit}>
+
         {getSubmitButtonText(submitButtonText, showSubmitButtonSpinner)}
       </Button>}
+
     </div>
   </div>
 );

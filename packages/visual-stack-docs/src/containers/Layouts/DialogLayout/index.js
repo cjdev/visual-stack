@@ -1,29 +1,14 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router';
+import {Route, withRouter} from 'react-router';
 
-import { Button } from '@cjdev/visual-stack/lib/components/Button';
+import {Button} from '@cjdev/visual-stack/lib/components/Button';
 import DialogLayout from '@cjdev/visual-stack/lib/layouts/DialogLayout';
-import {
-  Body,
-  Header,
-  Panel,
-  Footer,
-} from '@cjdev/visual-stack/lib/components/Panel';
-import {
-  ChoiceInput,
-  Field,
-  Form,
-  Input,
-  Label,
-  TextField,
-} from '@cjdev/visual-stack/lib/components/Form';
-import { Demo, Snippet } from '../../../components/Demo';
+import {Body, Footer, Header, Panel,} from '@cjdev/visual-stack/lib/components/Panel';
+import {ChoiceInput, Field, Form, Input, Label, TextField,} from '@cjdev/visual-stack/lib/components/Form';
+import {Demo, Snippet} from '../../../components/Demo';
 import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import './index.css';
-import {
-  PageHeader,
-  PageTitle,
-} from '@cjdev/visual-stack/lib/components/PageHeader';
+import {PageHeader, PageTitle,} from '@cjdev/visual-stack/lib/components/PageHeader';
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 
 class DialogLayoutParent extends React.Component {
@@ -72,6 +57,24 @@ class DialogLayoutParent extends React.Component {
                       showSubmitButtonSpinner and disableSubmit prop
                     </p>
                     <Snippet tag="s4" src={snippets} />
+                  </Body>
+                </Panel>
+                <Panel>
+                  <Header>DialogLayout with no footer buttons</Header>
+                  <Body>
+                  <Button
+                    type="solid-primary"
+                    onClick={() =>
+                      this.props.router.push('/noFooterDialogLayout')
+                    }
+                  >
+                    Show the DialogLayout with no footer
+                  </Button>
+                  <p>
+                    On readonly views, you might not want buttons at the bottom.
+                    If you don't pass text for these buttons, they won't render.
+                  </p>
+                  <Snippet tag="s5" src={snippets} />
                   </Body>
                 </Panel>
                 <Panel>
@@ -138,6 +141,25 @@ export const SubmittingDialogLayoutDemo = ({ router }) => (
   </div>
 );
 /* s4:end */
+
+/* s5:start */
+export const NoFooterDialogLayoutDemo = ({ router }) => (
+  <div>
+    <DialogLayout
+      title={'Create Program Term'}
+      onCancel={() => router.push('/layouts/dialogLayout')}
+      logo={<CJLogo />}
+    >
+      <Panel>
+        <Header>Panel Header</Header>
+        <Body>
+        This is the Panel Body.
+        </Body>
+      </Panel>
+    </DialogLayout>
+  </div>
+);
+/* s5:end */
 
 const NotRenderedComponent = () => (
   /* s3:start */
