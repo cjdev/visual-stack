@@ -69,4 +69,16 @@ describe('Pagination', () => {
     const paging = wrapper.find('div.vs-pagination-paging').text();
     expect(paging).toEqual('1/6');
   });
+
+  it('should callback with the selected paging value', () => {
+    const onPageChange = jest.fn();
+    const wrapper = mount(<Pagination {...makeProps({ onPageChange })} />);
+    const rowsPerPageSelectWrapper = wrapper
+      .find(Select)
+      .filterWhere(node => node.props().name === 'rows-per-page');
+    const { onChange } = rowsPerPageSelectWrapper.props();
+    onChange({ value: 50, label: '25 per page' });
+    const pagingValue = onPageChange.mock.calls[0][0];
+    expect(pagingValue).toEqual(50);
+  });
 });

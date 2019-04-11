@@ -19,12 +19,13 @@ const rowsPerPageOptions = [
   },
 ];
 
-const Pagination = ({ numberOfRows }) => (
+const Pagination = ({ numberOfRows, onPageChange }) => (
   <div>
     <Select
       name="rows-per-page"
       value={defaultRowsPerPage}
       options={rowsPerPageOptions}
+      onChange={({ value }) => onPageChange(value)}
     />
     <div className="vs-pagination-total-records">
       {numberOfRows} total records
