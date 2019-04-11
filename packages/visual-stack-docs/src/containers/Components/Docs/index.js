@@ -22,6 +22,7 @@ import CardDocs from './card';
 import ListViewDocs from './listview';
 
 import CollapsiblePanelDocs from './collapsiblepanel';
+import PaginationDocs from './pagination';
 
 const routeComponentMap = {};
 
@@ -45,6 +46,7 @@ addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
 addComponentRoute('card', 'Card', <CardDocs />);
 addComponentRoute('listview', 'List View', <ListViewDocs />);
+addComponentRoute('pagination', 'Pagination', <PaginationDocs />);
 addComponentRoute(
   'collapsiblepanel',
   'Collapsible Panel',
