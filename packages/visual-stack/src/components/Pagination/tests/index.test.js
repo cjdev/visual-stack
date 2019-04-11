@@ -13,6 +13,35 @@ const makeProps = (overrides = {}) => ({
   ...overrides,
 });
 
+class Tester {
+  pagingValue = -1;
+  wrapper = null;
+  rowsPerPageWrapper = null;
+
+  constructor() {
+    const onPageChange = value => {
+      // eslint-disable-next-line no-invalid-this
+      this.pagingValue = value;
+    };
+    this.wrapper = mount(<Pagination {...makeProps({ onPageChange })} />);
+    this.rowsPerPageSelectWrapper = this.wrapper
+      .find(Select)
+      .filterWhere(node => node.props().name === 'rows-per-page');
+  }
+
+  getRowsPerPageOptions = () => {
+    // eslint-disable-next-line no-invalid-this
+    return this.rowsPerPageSelectWrapper.props().options;
+  };
+
+  changePageValue = value => {
+    // eslint-disable-next-line no-invalid-this
+    const rowsPerPageSelectWrapper = this.rowsPerPageSelectWrapper;
+    const { onChange } = rowsPerPageSelectWrapper.props();
+    onChange({ value });
+  };
+}
+
 describe('Pagination', () => {
   it('should display total records', () => {
     const wrapper = mount(<Pagination {...makeProps()} />);
@@ -35,12 +64,11 @@ describe('Pagination', () => {
   });
 
   it('should display the rows per page options', () => {
-    const wrapper = mount(<Pagination {...makeProps()} />);
-    const { options } = wrapper
-      .find(Select)
-      .filterWhere(node => node.props().name === 'rows-per-page')
-      .props();
-    expect(options).toEqual([
+    // given
+    const tester = new Tester();
+
+    // then
+    expect(tester.getRowsPerPageOptions()).toEqual([
       {
         value: 10,
         label: '10 per page',
@@ -71,14 +99,13 @@ describe('Pagination', () => {
   });
 
   it('should callback with the selected paging value', () => {
-    const onPageChange = jest.fn();
-    const wrapper = mount(<Pagination {...makeProps({ onPageChange })} />);
-    const rowsPerPageSelectWrapper = wrapper
-      .find(Select)
-      .filterWhere(node => node.props().name === 'rows-per-page');
-    const { onChange } = rowsPerPageSelectWrapper.props();
-    onChange({ value: 50, label: '25 per page' });
-    const pagingValue = onPageChange.mock.calls[0][0];
-    expect(pagingValue).toEqual(50);
+    // given
+    const tester = new Tester();
+
+    // when
+    tester.changePageValue(50);
+
+    // then
+    expect(tester.pagingValue).toEqual(50);
   });
 });
