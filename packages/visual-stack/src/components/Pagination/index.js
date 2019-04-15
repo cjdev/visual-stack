@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import LeftIcon from 'mdi-react/ChevronLeftIcon';
 import RightIcon from 'mdi-react/ChevronRightIcon';
 import { groupBy, head, prop, pipe } from 'ramda';
+import './style.css';
 
 const defaultRowsPerPage = {
   value: 10,
@@ -39,43 +40,47 @@ const Pagination = ({
 }) => {
   const maxPage = Math.ceil(numberOfRows / rowsPerPage);
   return (
-    <div>
-      <Select
-        name="rows-per-page"
-        value={getRowsPerPageOption(rowsPerPage)}
-        options={rowsPerPageOptions}
-        onChange={({ value }) => onRowsPerPageChange(value)}
-      />
+    <div className="vs-pagination">
+      <div className="vs-rows-per-page-container">
+        <Select
+          name="rows-per-page"
+          value={getRowsPerPageOption(rowsPerPage)}
+          options={rowsPerPageOptions}
+          onChange={({ value }) => onRowsPerPageChange(value)}
+        />
+      </div>
+      <div className="vs-page-control">
+        <Button
+          type="icon"
+          className="vs-previous-page"
+          onClick={() => {
+            const nextPage = currentPage - 1;
+            if (nextPage > 0) {
+              onPageChange(nextPage);
+            }
+          }}
+        >
+          <LeftIcon />
+        </Button>
+        <div className="vs-pagination-paging">
+          {currentPage}/{maxPage}
+        </div>
+        <Button
+          type="icon"
+          className="vs-next-page"
+          onClick={() => {
+            const nextPage = currentPage + 1;
+            if (nextPage <= maxPage) {
+              onPageChange(nextPage);
+            }
+          }}
+        >
+          <RightIcon />
+        </Button>
+      </div>
       <div className="vs-pagination-total-records">
         {numberOfRows} total records
       </div>
-      <Button
-        type="icon"
-        className="vs-previous-page"
-        onClick={() => {
-          const nextPage = currentPage - 1;
-          if (nextPage > 0) {
-            onPageChange(nextPage);
-          }
-        }}
-      >
-        <LeftIcon />
-      </Button>
-      <div className="vs-pagination-paging">
-        {currentPage}/{maxPage}
-      </div>
-      <Button
-        type="icon"
-        className="vs-next-page"
-        onClick={() => {
-          const nextPage = currentPage + 1;
-          if (nextPage <= maxPage) {
-            onPageChange(nextPage);
-          }
-        }}
-      >
-        <RightIcon />
-      </Button>
     </div>
   );
 };

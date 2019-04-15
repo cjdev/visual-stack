@@ -1,0 +1,33 @@
+.vs-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  height: 64px;
+  border-top: 1px solid #e3e6e8;
+}
+
+.vs-page-control {
+  display: flex;
+  align-items: center;
+}
+
+.vs-page-control > * {
+  margin: 0 4px;
+}
+
+.vs-pagination-paging {
+  font-size: 14px;
+}
+
+.vs-rows-per-page-container {
+  width: 150px;
+}
+
+.vs-react-select-rows-per-page {
+  margin-bottom: 0;
+}
+
+.vs-rows-per-page-container > div {
+  margin-bottom: 0;
+}
