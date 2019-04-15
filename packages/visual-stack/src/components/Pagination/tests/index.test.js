@@ -2,6 +2,7 @@ import React from 'react';
 import Pagination from '../index';
 import Enzyme, { mount } from 'enzyme';
 import Select from '../../Select';
+import { Button } from '../../Button';
 
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -15,17 +16,23 @@ const makeProps = (overrides = {}) => ({
 
 class Tester {
   pagingValue = -1;
+  page = null;
   wrapper = null;
   rowsPerPageSelectWrapper = null;
   pagingInformationWrapper = null;
 
-  constructor({ numberOfRows }) {
-    const onPageChange = value => {
+  constructor(props) {
+    const onRowsPerPageChange = value => {
       // eslint-disable-next-line no-invalid-this
       this.pagingValue = value;
     };
+    const onPageChange = value => {
+      this.page = value;
+    };
     this.wrapper = mount(
-      <Pagination {...makeProps({ onPageChange, numberOfRows })} />
+      <Pagination
+        {...makeProps({ onRowsPerPageChange, onPageChange, ...props })}
+      />
     );
 
     this.rowsPerPageSelectWrapper = this.wrapper
@@ -44,7 +51,7 @@ class Tester {
     return this.rowsPerPageSelectWrapper.props().options;
   };
 
-  changePageValue = value => {
+  changeRowsPerPage = value => {
     // eslint-disable-next-line no-invalid-this
     const rowsPerPageSelectWrapper = this.rowsPerPageSelectWrapper;
     const { onChange } = rowsPerPageSelectWrapper.props();
@@ -64,6 +71,29 @@ class Tester {
   getPagingInformation = () => {
     // eslint-disable-next-line no-invalid-this
     return this.pagingInformationWrapper.text();
+  };
+
+  clickOnNextPage = () => {
+    // eslint-disable-next-line no-invalid-this
+    this.wrapper
+      .find(Button)
+      .filterWhere(node => node.props().className === 'vs-next-page')
+      .props()
+      .onClick();
+  };
+
+  clickOnPreviousPage = () => {
+    // eslint-disable-next-line no-invalid-this
+    this.wrapper
+      .find(Button)
+      .filterWhere(node => node.props().className === 'vs-previous-page')
+      .props()
+      .onClick();
+  };
+
+  getNextPage = () => {
+    // eslint-disable-next-line no-invalid-this
+    return this.page;
   };
 }
 
@@ -90,6 +120,17 @@ describe('Pagination', () => {
     expect(tester.getRowsPerPageDropdownValue()).toEqual({
       value: 10,
       label: '10 per page',
+    });
+  });
+
+  it('should set rows per page', () => {
+    const rowsPerPage = 25;
+    const tester = createTesterWithOptions({
+      rowsPerPage,
+    });
+    expect(tester.getRowsPerPageDropdownValue()).toEqual({
+      value: 25,
+      label: '25 per page',
     });
   });
 
@@ -136,14 +177,108 @@ describe('Pagination', () => {
     expect(tester.getPagingInformation()).toEqual('1/6');
   });
 
-  it('should callback with the selected paging value', () => {
+  it('should display paging information for different rowsPerPage', () => {
+    // given
+    const rowsPerPage = 25;
+    const numberOfRows = 100;
+
+    // when
+    const tester = createTesterWithOptions({
+      rowsPerPage,
+      numberOfRows,
+    });
+
+    // then
+    expect(tester.getPagingInformation()).toEqual('1/4');
+  });
+
+  it('should display the current page', () => {
+    // given
+    const numberOfRows = 100;
+    const currentPage = 2;
+
+    // when
+    const tester = createTesterWithOptions({
+      numberOfRows,
+      currentPage,
+    });
+
+    // then
+    expect(tester.getPagingInformation()).toEqual('2/10');
+  });
+
+  it('should callback with the selecting rowsPerPage value', () => {
     // given
     const tester = createTester();
 
     // when
-    tester.changePageValue(50);
+    tester.changeRowsPerPage(50);
 
     // then
     expect(tester.pagingValue).toEqual(50);
+  });
+
+  it('should onPageChange with next page', () => {
+    // given
+    const currentPage = 2;
+    const rowsPerPage = 25;
+    const numberOfRows = 1000;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+      rowsPerPage,
+      numberOfRows,
+    });
+    tester.clickOnNextPage();
+
+    // then
+    expect(tester.getNextPage()).toEqual(3);
+  });
+
+  it('should onPageChange with previous page', () => {
+    // given
+    const currentPage = 2;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+    });
+    tester.clickOnPreviousPage();
+
+    // then
+    expect(tester.getNextPage()).toEqual(1);
+  });
+
+  it('should not call onPageChange when page number is below 1', () => {
+    // given
+    const currentPage = 1;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+    });
+    tester.clickOnPreviousPage();
+
+    // then
+    expect(tester.getNextPage()).toEqual(null);
+  });
+
+  it('should not call onPageChange when next page number is above the max allowed page number', () => {
+    // given
+    const currentPage = 5;
+    const numberOfRows = 125;
+    const rowsPerPage = 25;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+      numberOfRows,
+      rowsPerPage,
+    });
+    tester.clickOnNextPage();
+
+    // then
+    expect(tester.getNextPage()).toEqual(null);
   });
 });

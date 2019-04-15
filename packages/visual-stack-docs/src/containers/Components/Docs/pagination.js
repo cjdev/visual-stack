@@ -16,7 +16,11 @@ export default () => (
               <Snippet tag="s1" src={snippets} />
               <Snippet tag="s2" src={snippets} />
               {/* s2:start */}
-              <Pagination numberOfRows={201} onPageChange={console.log} />
+              <Pagination
+                numberOfRows={201}
+                onPageChange={console.log}
+                onRowsPerPageChange={console.log}
+              />
               {/* s2:end */}
             </Body>
           </Panel>
