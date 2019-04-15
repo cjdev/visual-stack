@@ -115,16 +115,25 @@ describe('Pagination', () => {
   });
 
   it('should display paging information', () => {
+    // given
     const numberOfRows = 50;
+
+    // when
     const tester = createTesterWithOptions({ numberOfRows });
+
+    // then
     expect(tester.getPagingInformation()).toEqual('1/5');
   });
 
   it('should display paging information that cant be divided evenly', () => {
+    // given
     const numberOfRows = 52;
-    const wrapper = mount(<Pagination {...makeProps({ numberOfRows })} />);
-    const paging = wrapper.find('div.vs-pagination-paging').text();
-    expect(paging).toEqual('1/6');
+
+    // when
+    const tester = createTesterWithOptions({ numberOfRows });
+
+    // then
+    expect(tester.getPagingInformation()).toEqual('1/6');
   });
 
   it('should callback with the selected paging value', () => {
