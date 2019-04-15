@@ -281,4 +281,40 @@ describe('Pagination', () => {
     // then
     expect(tester.getNextPage()).toEqual(null);
   });
+
+  it('should change page to the max allowed page when I change rowsPerPage', () => {
+    // given
+    const currentPage = 9;
+    const numberOfRows = 100;
+    const rowsPerPage = 10;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+      numberOfRows,
+      rowsPerPage,
+    });
+    tester.changeRowsPerPage(50);
+
+    // then
+    expect(tester.getNextPage()).toEqual(2);
+  });
+
+  it('should not change the page number when I change rowsPerPage and the current page is not greater than the max allowed page', () => {
+    // given
+    const currentPage = 1;
+    const numberOfRows = 100;
+    const rowsPerPage = 10;
+
+    // when
+    const tester = createTesterWithOptions({
+      currentPage,
+      numberOfRows,
+      rowsPerPage,
+    });
+    tester.changeRowsPerPage(50);
+
+    // then
+    expect(tester.getNextPage()).toEqual(null);
+  });
 });

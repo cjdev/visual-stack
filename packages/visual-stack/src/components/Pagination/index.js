@@ -46,7 +46,13 @@ const Pagination = ({
           name="rows-per-page"
           value={getRowsPerPageOption(rowsPerPage)}
           options={rowsPerPageOptions}
-          onChange={({ value }) => onRowsPerPageChange(value)}
+          onChange={({ value: nextRowsPerPage }) => {
+            const nextMaxPage = Math.ceil(numberOfRows / nextRowsPerPage);
+            if (currentPage > nextMaxPage) {
+              onPageChange(nextMaxPage);
+            }
+            onRowsPerPageChange(nextRowsPerPage);
+          }}
         />
       </div>
       <div className="vs-page-control">

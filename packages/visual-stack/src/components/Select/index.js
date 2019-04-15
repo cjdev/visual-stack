@@ -15,4 +15,5 @@ const Select = ({ className, error, disabled, ...otherProps }) => (
     {...otherProps}
   />
 );
+
 export default Select;
