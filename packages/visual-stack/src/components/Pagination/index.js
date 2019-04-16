@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import LeftIcon from 'mdi-react/ChevronLeftIcon';
 import RightIcon from 'mdi-react/ChevronRightIcon';
 import { groupBy, head, prop, pipe } from 'ramda';
+import { withErrorBoundary } from '../ErrorBoundary';
 import './style.css';
 
 const defaultRowsPerPage = {
@@ -99,4 +100,4 @@ Pagination.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default Pagination;
+export default withErrorBoundary(Pagination);
