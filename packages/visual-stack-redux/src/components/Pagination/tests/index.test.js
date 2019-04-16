@@ -10,20 +10,25 @@ const paginationValue = {
   page: 1,
 };
 
+const numberOfRows = 100;
+
+const defaultProps = {
+  paginationValue,
+  numberOfRows,
+};
+
 describe('PaginationPure', () => {
   test('should initialize pagination data', () => {
     // given
     const initializePagination = jest.fn();
     const paginationId = '123';
-    const numberOfRows = 100;
 
     // when
     mount(
       <PaginationPure
         paginationId={paginationId}
-        numberOfRows={numberOfRows}
         initializePagination={initializePagination}
-        paginationValue={paginationValue}
+        {...defaultProps}
       />
     );
 
@@ -39,24 +44,21 @@ describe('PaginationPure', () => {
 
   test('should forward the pagination value to visual stack pagination component', () => {
     const initializePagination = jest.fn();
-    const rowsPerPage = paginationValue.rowsPerPage;
-    const page = paginationValue.page;
-    const numberOfRows = 100;
     const setPaginationValue = jest.fn();
 
     // when
     const wrapper = mount(
       <PaginationPure
-        numberOfRows={numberOfRows}
         initializePagination={initializePagination}
         setPaginationValue={setPaginationValue}
         paginationValue={paginationValue}
+        {...defaultProps}
       />
     );
 
     expect(wrapper.find(PaginationFromVS).props()).toEqual({
-      rowsPerPage,
-      page,
+      rowsPerPage: paginationValue.rowsPerPage,
+      page: paginationValue.page,
       numberOfRows,
       onChange: expect.any(Function),
     });
@@ -74,11 +76,10 @@ describe('PaginationPure', () => {
     // when
     const wrapper = mount(
       <PaginationPure
-        numberOfRows={100}
         paginationId={paginationId}
         initializePagination={initializePagination}
         setPaginationValue={setPaginationValue}
-        paginationValue={paginationValue}
+        {...defaultProps}
       />
     );
     wrapper
