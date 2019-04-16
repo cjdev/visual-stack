@@ -52,6 +52,12 @@ export const setSlidingPanelActiveState = createAction(
 const SELECT_TAB = '@cjdev/visual-stack-redux/SELECT_TAB';
 export const selectTab = createAction(SELECT_TAB);
 
+const INITIALIZE_PAGINATION = '@cjdev/visual-stack-redux/INITIALIZE_PAGINATION';
+export const initializePagination = createAction(INITIALIZE_PAGINATION);
+
+const SET_PAGINATION_VALUE = '@cjdev/visual-stack-redux/SET_PAGINATION_VALUE';
+export const setPaginationValue = createAction(SET_PAGINATION_VALUE);
+
 export default handleActions(
   {
     [OPEN_MODAL]: (state, { payload }) =>
@@ -110,6 +116,33 @@ export default handleActions(
         state
       );
     },
+    [INITIALIZE_PAGINATION]: (
+      state,
+      { payload: { paginationId, numberOfRows } }
+    ) => {
+      return R.set(
+        R.lensPath(['pagination', paginationId]),
+        {
+          numberOfRows,
+          page: 1,
+          rowsPerPage: 10,
+        },
+        state
+      );
+    },
+    [SET_PAGINATION_VALUE]: (
+      state,
+      { payload: { paginationId, page, rowsPerPage } }
+    ) => {
+      return R.set(
+        R.lensPath(['pagination', paginationId]),
+        {
+          page,
+          rowsPerPage,
+        },
+        state
+      );
+    },
   },
   {
     menuBar: {},
@@ -118,5 +151,6 @@ export default handleActions(
     sideNav: {},
     slidingPanel: {},
     tabLayout: {},
+    pagination: {},
   }
 );

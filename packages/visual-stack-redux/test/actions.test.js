@@ -4,9 +4,24 @@ import reducer, {
   toggleSlidingPanel,
   setSlidingPanelActiveState,
   selectTab,
+  initializePagination,
+  setPaginationValue,
 } from '../src/actions';
 
 describe('reducer', () => {
+  test('initial state', () => {
+    const initialState = reducer(undefined, {});
+    expect(initialState).toEqual({
+      menuBar: {},
+      modal: expect.any(Object),
+      navGroupDropdown: {},
+      sideNav: {},
+      slidingPanel: {},
+      tabLayout: {},
+      pagination: {},
+    });
+  });
+
   test('should toggle SideNav with given state', () => {
     const beforeState = {
       sideNav: {
@@ -124,5 +139,45 @@ describe('reducer', () => {
     expect(reducer(afterState, setSlidingPanelActiveState(false))).toEqual(
       beforeState
     );
+  });
+
+  test('set initial value for pagination', () => {
+    const paginationId = 'sample';
+    const numberOfRows = 200;
+    const beforeState = {
+      pagination: {},
+    };
+
+    const afterState = reducer(
+      beforeState,
+      initializePagination({ paginationId, numberOfRows })
+    );
+
+    expect(afterState.pagination[paginationId]).toEqual({
+      numberOfRows,
+      page: 1,
+      rowsPerPage: 10,
+    });
+  });
+
+  test('set pagination value', () => {
+    const paginationId = 'sample';
+    const rowsPerPage = 10;
+    const page = 2;
+    const beforeState = {
+      pagination: {
+        paginationId: {},
+      },
+    };
+
+    const afterState = reducer(
+      beforeState,
+      setPaginationValue({ paginationId, rowsPerPage, page })
+    );
+
+    expect(afterState.pagination[paginationId]).toEqual({
+      rowsPerPage,
+      page,
+    });
   });
 });

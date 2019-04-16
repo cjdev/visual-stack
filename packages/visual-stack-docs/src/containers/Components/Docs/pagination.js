@@ -3,7 +3,7 @@ import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 
 /* s1:start */
-import Pagination from '@cjdev/visual-stack/lib/components/Pagination';
+import Pagination from '@cjdev/visual-stack-redux/lib/components/Pagination';
 /* s1:end */
 
 class PaginationDocs extends React.Component {
