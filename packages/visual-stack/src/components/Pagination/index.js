@@ -31,13 +31,7 @@ const getRowsPerPageOption = pageValue =>
     head
   )(rowsPerPageOptionsMap);
 
-const Pagination = ({
-  numberOfRows,
-  onPageChange,
-  rowsPerPage,
-  currentPage,
-  onRowsPerPageChange,
-}) => {
+const Pagination = ({ numberOfRows, rowsPerPage, page, onChange }) => {
   const maxPage = Math.ceil(numberOfRows / rowsPerPage);
   return (
     <div className="vs-pagination">
@@ -48,10 +42,14 @@ const Pagination = ({
           options={rowsPerPageOptions}
           onChange={({ value: nextRowsPerPage }) => {
             const nextMaxPage = Math.ceil(numberOfRows / nextRowsPerPage);
-            if (currentPage > nextMaxPage) {
-              onPageChange(nextMaxPage);
+            const paginationValue = {
+              page: page,
+              rowsPerPage: nextRowsPerPage,
+            };
+            if (page > nextMaxPage) {
+              paginationValue.page = nextMaxPage;
             }
-            onRowsPerPageChange(nextRowsPerPage);
+            onChange(paginationValue);
           }}
         />
       </div>
@@ -60,24 +58,24 @@ const Pagination = ({
           type="icon"
           className="vs-previous-page"
           onClick={() => {
-            const nextPage = currentPage - 1;
+            const nextPage = page - 1;
             if (nextPage > 0) {
-              onPageChange(nextPage);
+              onChange({ page: nextPage, rowsPerPage });
             }
           }}
         >
           <LeftIcon />
         </Button>
         <div className="vs-pagination-paging">
-          {currentPage}/{maxPage}
+          {page}/{maxPage}
         </div>
         <Button
           type="icon"
           className="vs-next-page"
           onClick={() => {
-            const nextPage = currentPage + 1;
+            const nextPage = page + 1;
             if (nextPage <= maxPage) {
-              onPageChange(nextPage);
+              onChange({ page: nextPage, rowsPerPage });
             }
           }}
         >
@@ -92,15 +90,14 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
-  currentPage: PropTypes.number,
+  page: PropTypes.number,
   rowsPerPage: PropTypes.number,
   numberOfRows: PropTypes.number.isRequired,
-  onRowsPerPageChange: PropTypes.func.isRequired,
-  onPageChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 Pagination.defaultProps = {
-  currentPage: 1,
+  page: 1,
   rowsPerPage: defaultRowsPerPage.value,
 };
 

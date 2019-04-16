@@ -50,7 +50,6 @@ describe('PaginationPure', () => {
     );
 
     expect(wrapper.find(PaginationFromVS).props()).toEqual({
-      currentPage: 1,
       rowsPerPage,
       page,
       onChange: expect.any(Function),

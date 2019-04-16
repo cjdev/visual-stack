@@ -15,24 +15,22 @@ const makeProps = (overrides = {}) => ({
 });
 
 class Tester {
-  pagingValue = -1;
+  paginationValue = null;
   page = null;
   wrapper = null;
   rowsPerPageSelectWrapper = null;
   pagingInformationWrapper = null;
 
   constructor(props) {
-    const onRowsPerPageChange = value => {
+    const onChange = value => {
       // eslint-disable-next-line no-invalid-this
-      this.pagingValue = value;
+      this.paginationValue = value;
     };
     const onPageChange = value => {
       this.page = value;
     };
     this.wrapper = mount(
-      <Pagination
-        {...makeProps({ onRowsPerPageChange, onPageChange, ...props })}
-      />
+      <Pagination {...makeProps({ onChange, onPageChange, ...props })} />
     );
 
     this.rowsPerPageSelectWrapper = this.wrapper
@@ -195,12 +193,12 @@ describe('Pagination', () => {
   it('should display the current page', () => {
     // given
     const numberOfRows = 100;
-    const currentPage = 2;
+    const page = 2;
 
     // when
     const tester = createTesterWithOptions({
       numberOfRows,
-      currentPage,
+      page,
     });
 
     // then
@@ -215,106 +213,109 @@ describe('Pagination', () => {
     tester.changeRowsPerPage(50);
 
     // then
-    expect(tester.pagingValue).toEqual(50);
+    expect(tester.paginationValue).toEqual({ rowsPerPage: 50, page: 1 });
   });
 
   it('should onPageChange with next page', () => {
     // given
-    const currentPage = 2;
+    const page = 2;
     const rowsPerPage = 25;
     const numberOfRows = 1000;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
       rowsPerPage,
       numberOfRows,
     });
     tester.clickOnNextPage();
 
     // then
-    expect(tester.getNextPage()).toEqual(3);
+    expect(tester.paginationValue).toEqual({ page: 3, rowsPerPage: 25 });
   });
 
-  it('should onPageChange with previous page', () => {
+  it('should onChange with previous page', () => {
     // given
-    const currentPage = 2;
+    const page = 2;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
     });
     tester.clickOnPreviousPage();
 
     // then
-    expect(tester.getNextPage()).toEqual(1);
+    expect(tester.paginationValue).toEqual({
+      page: 1,
+      rowsPerPage: 10,
+    });
   });
 
-  it('should not call onPageChange when page number is below 1', () => {
+  it('should not call onChange when page number is below 1', () => {
     // given
-    const currentPage = 1;
+    const page = 1;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
     });
     tester.clickOnPreviousPage();
 
     // then
-    expect(tester.getNextPage()).toEqual(null);
+    expect(tester.paginationValue).toEqual(null);
   });
 
-  it('should not call onPageChange when next page number is above the max allowed page number', () => {
+  it('should not call onChange when next page number is above the max allowed page number', () => {
     // given
-    const currentPage = 5;
+    const page = 5;
     const numberOfRows = 125;
     const rowsPerPage = 25;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
       numberOfRows,
       rowsPerPage,
     });
     tester.clickOnNextPage();
 
     // then
-    expect(tester.getNextPage()).toEqual(null);
+    expect(tester.paginationValue).toEqual(null);
   });
 
   it('should change page to the max allowed page when I change rowsPerPage', () => {
     // given
-    const currentPage = 9;
+    const page = 9;
     const numberOfRows = 100;
     const rowsPerPage = 10;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
       numberOfRows,
       rowsPerPage,
     });
     tester.changeRowsPerPage(50);
 
     // then
-    expect(tester.getNextPage()).toEqual(2);
+    expect(tester.paginationValue).toEqual({ page: 2, rowsPerPage: 50 });
   });
 
   it('should not change the page number when I change rowsPerPage and the current page is not greater than the max allowed page', () => {
     // given
-    const currentPage = 1;
+    const page = 1;
     const numberOfRows = 100;
     const rowsPerPage = 10;
 
     // when
     const tester = createTesterWithOptions({
-      currentPage,
+      page,
       numberOfRows,
       rowsPerPage,
     });
     tester.changeRowsPerPage(50);
 
     // then
-    expect(tester.getNextPage()).toEqual(null);
+    expect(tester.paginationValue).toEqual({ page: 1, rowsPerPage: 50 });
   });
 });
