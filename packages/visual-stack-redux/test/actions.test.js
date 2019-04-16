@@ -143,18 +143,16 @@ describe('reducer', () => {
 
   test('set initial value for pagination', () => {
     const paginationId = 'sample';
-    const numberOfRows = 200;
     const beforeState = {
       pagination: {},
     };
 
     const afterState = reducer(
       beforeState,
-      initializePagination({ paginationId, numberOfRows })
+      initializePagination({ paginationId })
     );
 
     expect(afterState.pagination[paginationId]).toEqual({
-      numberOfRows,
       page: 1,
       rowsPerPage: 10,
     });

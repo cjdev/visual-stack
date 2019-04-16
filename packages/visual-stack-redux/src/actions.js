@@ -57,6 +57,10 @@ export const initializePagination = createAction(INITIALIZE_PAGINATION);
 
 const SET_PAGINATION_VALUE = '@cjdev/visual-stack-redux/SET_PAGINATION_VALUE';
 export const setPaginationValue = createAction(SET_PAGINATION_VALUE);
+export const selectPaginationValue = (state, ownProps) =>
+  R.defaultTo({ rowsPerPage: 10, page: 1 })(
+    state.visualStack.pagination[ownProps.paginationId]
+  );
 
 export default handleActions(
   {
@@ -116,14 +120,10 @@ export default handleActions(
         state
       );
     },
-    [INITIALIZE_PAGINATION]: (
-      state,
-      { payload: { paginationId, numberOfRows } }
-    ) => {
+    [INITIALIZE_PAGINATION]: (state, { payload: { paginationId } }) => {
       return R.set(
         R.lensPath(['pagination', paginationId]),
         {
-          numberOfRows,
           page: 1,
           rowsPerPage: 10,
         },

@@ -11,6 +11,8 @@ Enzyme.configure({ adapter: new Adapter() });
 const numberOfRows = 200;
 const makeProps = (overrides = {}) => ({
   numberOfRows,
+  rowsPerPage: 10,
+  page: 1,
   ...overrides,
 });
 

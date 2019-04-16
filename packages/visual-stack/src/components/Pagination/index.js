@@ -33,6 +33,33 @@ const getRowsPerPageOption = pageValue =>
 
 const Pagination = ({ numberOfRows, rowsPerPage, page, onChange }) => {
   const maxPage = Math.ceil(numberOfRows / rowsPerPage);
+
+  const handleRowsPerPage = ({ value: nextRowsPerPage }) => {
+    const nextMaxPage = Math.ceil(numberOfRows / nextRowsPerPage);
+    const paginationValue = {
+      page: page,
+      rowsPerPage: nextRowsPerPage,
+    };
+    if (page > nextMaxPage) {
+      paginationValue.page = nextMaxPage;
+    }
+    onChange(paginationValue);
+  };
+
+  const handlePreviousPage = () => {
+    const nextPage = page - 1;
+    if (nextPage > 0) {
+      onChange({ page: nextPage, rowsPerPage });
+    }
+  };
+
+  const handleNextPage = () => {
+    const nextPage = page + 1;
+    if (nextPage <= maxPage) {
+      onChange({ page: nextPage, rowsPerPage });
+    }
+  };
+
   return (
     <div className="vs-pagination">
       <div className="vs-rows-per-page-container">
@@ -40,45 +67,21 @@ const Pagination = ({ numberOfRows, rowsPerPage, page, onChange }) => {
           name="rows-per-page"
           value={getRowsPerPageOption(rowsPerPage)}
           options={rowsPerPageOptions}
-          onChange={({ value: nextRowsPerPage }) => {
-            const nextMaxPage = Math.ceil(numberOfRows / nextRowsPerPage);
-            const paginationValue = {
-              page: page,
-              rowsPerPage: nextRowsPerPage,
-            };
-            if (page > nextMaxPage) {
-              paginationValue.page = nextMaxPage;
-            }
-            onChange(paginationValue);
-          }}
+          onChange={handleRowsPerPage}
         />
       </div>
       <div className="vs-page-control">
         <Button
           type="icon"
           className="vs-previous-page"
-          onClick={() => {
-            const nextPage = page - 1;
-            if (nextPage > 0) {
-              onChange({ page: nextPage, rowsPerPage });
-            }
-          }}
+          onClick={handlePreviousPage}
         >
           <LeftIcon />
         </Button>
         <div className="vs-pagination-paging">
           {page}/{maxPage}
         </div>
-        <Button
-          type="icon"
-          className="vs-next-page"
-          onClick={() => {
-            const nextPage = page + 1;
-            if (nextPage <= maxPage) {
-              onChange({ page: nextPage, rowsPerPage });
-            }
-          }}
-        >
+        <Button type="icon" className="vs-next-page" onClick={handleNextPage}>
           <RightIcon />
         </Button>
       </div>
@@ -94,11 +97,6 @@ Pagination.propTypes = {
   rowsPerPage: PropTypes.number,
   numberOfRows: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
-};
-
-Pagination.defaultProps = {
-  page: 1,
-  rowsPerPage: defaultRowsPerPage.value,
 };
 
 export default Pagination;
