@@ -6,6 +6,7 @@ import reducer, {
   selectTab,
   initializePagination,
   setPaginationValue,
+  selectPaginationValue,
 } from '../src/actions';
 
 describe('reducer', () => {
@@ -177,5 +178,44 @@ describe('reducer', () => {
       rowsPerPage,
       page,
     });
+  });
+
+  test('select default pagination value from redux state', () => {
+    const state = {
+      visualStack: {
+        pagination: {},
+      },
+    };
+
+    const ownProps = {
+      paginationId: 'test',
+    };
+
+    const paginationValue = selectPaginationValue(state, ownProps);
+    expect(paginationValue).toEqual({
+      page: 1,
+      rowsPerPage: 10,
+    });
+  });
+
+  test('select existing pagination value from redux state', () => {
+    const existingPaginationValue = {
+      page: 2,
+      rowsPerPage: 25,
+    };
+    const state = {
+      visualStack: {
+        pagination: {
+          test: existingPaginationValue,
+        },
+      },
+    };
+
+    const ownProps = {
+      paginationId: 'test',
+    };
+
+    const paginationValue = selectPaginationValue(state, ownProps);
+    expect(paginationValue).toEqual(existingPaginationValue);
   });
 });
