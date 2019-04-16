@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Pagination from '@cjdev/visual-stack/lib/components/Pagination';
+import PropTypes from 'prop-types';
 import {
   initializePagination,
   setPaginationValue,
@@ -36,6 +37,14 @@ export class PaginationPure extends React.Component {
     );
   }
 }
+
+PaginationPure.propTypes = {
+  paginationValue: PropTypes.object.isRequired,
+  numberOfRows: PropTypes.number.isRequired,
+  setPaginationValue: PropTypes.func.isRequired,
+  paginationId: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = { initializePagination, setPaginationValue };
 
