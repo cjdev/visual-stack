@@ -285,7 +285,7 @@ describe('Pagination', () => {
     expect(tester.paginationValue).toEqual(null);
   });
 
-  it('should change page to the max allowed page when I change rowsPerPage', () => {
+  it('should change page back to the first page e when I change rowsPerPage', () => {
     // given
     const page = 9;
     const numberOfRows = 100;
@@ -300,7 +300,7 @@ describe('Pagination', () => {
     tester.changeRowsPerPage(50);
 
     // then
-    expect(tester.paginationValue).toEqual({ page: 2, rowsPerPage: 50 });
+    expect(tester.paginationValue).toEqual({ page: 1, rowsPerPage: 50 });
   });
 
   it('should not change the page number when I change rowsPerPage and the current page is not greater than the max allowed page', () => {

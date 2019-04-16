@@ -36,14 +36,10 @@ const Pagination = ({ numberOfRows, rowsPerPage, page, onChange }) => {
   const maxPage = Math.ceil(numberOfRows / rowsPerPage);
 
   const handleRowsPerPage = ({ value: nextRowsPerPage }) => {
-    const nextMaxPage = Math.ceil(numberOfRows / nextRowsPerPage);
     const paginationValue = {
-      page: page,
+      page: 1,
       rowsPerPage: nextRowsPerPage,
     };
-    if (page > nextMaxPage) {
-      paginationValue.page = nextMaxPage;
-    }
     onChange(paginationValue);
   };
 
