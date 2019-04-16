@@ -21,6 +21,7 @@ export class PaginationPure extends React.Component {
       numberOfRows,
       setPaginationValue,
       paginationId,
+      onChange,
     } = this.props;
     return (
       <Pagination
@@ -28,6 +29,7 @@ export class PaginationPure extends React.Component {
         page={page}
         numberOfRows={numberOfRows}
         onChange={paginationValue => {
+          onChange(paginationValue);
           setPaginationValue({ ...paginationValue, paginationId });
         }}
       />

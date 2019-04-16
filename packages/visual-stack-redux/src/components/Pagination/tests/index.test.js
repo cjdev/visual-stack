@@ -14,6 +14,9 @@ const numberOfRows = 100;
 
 const defaultProps = {
   paginationValue,
+  initializePagination: () => {},
+  setPaginationValue: () => {},
+  onChange: () => {},
   numberOfRows,
 };
 
@@ -26,9 +29,9 @@ describe('PaginationPure', () => {
     // when
     mount(
       <PaginationPure
+        {...defaultProps}
         paginationId={paginationId}
         initializePagination={initializePagination}
-        {...defaultProps}
       />
     );
 
@@ -43,18 +46,8 @@ describe('PaginationPure', () => {
   });
 
   test('should forward the pagination value to visual stack pagination component', () => {
-    const initializePagination = jest.fn();
-    const setPaginationValue = jest.fn();
-
     // when
-    const wrapper = mount(
-      <PaginationPure
-        initializePagination={initializePagination}
-        setPaginationValue={setPaginationValue}
-        paginationValue={paginationValue}
-        {...defaultProps}
-      />
-    );
+    const wrapper = mount(<PaginationPure {...defaultProps} />);
 
     expect(wrapper.find(PaginationFromVS).props()).toEqual({
       rowsPerPage: paginationValue.rowsPerPage,
@@ -65,7 +58,6 @@ describe('PaginationPure', () => {
   });
 
   test('should call setPaginationValue when onChange handler is called from Pagination component', () => {
-    const initializePagination = jest.fn();
     const setPaginationValue = jest.fn();
     const paginationId = 'hello';
     const nextPaginationValue = {
@@ -76,10 +68,9 @@ describe('PaginationPure', () => {
     // when
     const wrapper = mount(
       <PaginationPure
-        paginationId={paginationId}
-        initializePagination={initializePagination}
-        setPaginationValue={setPaginationValue}
         {...defaultProps}
+        paginationId={paginationId}
+        setPaginationValue={setPaginationValue}
       />
     );
     wrapper
@@ -96,5 +87,26 @@ describe('PaginationPure', () => {
         },
       ],
     ]);
+  });
+
+  it('should call onChange with pagination value when pagination changes', () => {
+    // given
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <PaginationPure {...defaultProps} onChange={onChange} />
+    );
+    const nextPaginationValue = {
+      page: 1,
+      rowsPerPage: 10,
+    };
+
+    // when
+    wrapper
+      .find(PaginationFromVS)
+      .props()
+      .onChange(nextPaginationValue);
+
+    // then
+    expect(onChange.mock.calls).toEqual([[nextPaginationValue]]);
   });
 });
