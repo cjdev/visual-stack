@@ -272,7 +272,7 @@
 }
 
 .vs-sidenav .vs-sidenav-container.expanded ul {
-  max-height: 768px;
+  max-height: none;
 }
 
 .vs-sidenav.collapsed .vs-sidenav-header,
