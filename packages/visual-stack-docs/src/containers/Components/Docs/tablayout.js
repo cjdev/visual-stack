@@ -111,7 +111,7 @@ export default () => (
                           onTabClick={() => {
                             /* function body */
                           }}
-                          themeColor={'#49c5b1'}
+                          themeColor={'#ff00ff'}
                         >
                           <Tab
                             label={<TabLabelContent>Tab 1</TabLabelContent>}
