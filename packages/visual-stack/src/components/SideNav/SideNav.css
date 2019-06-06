@@ -264,15 +264,15 @@
 }
 
 .vs-sidenav .vs-sidenav-container ul {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
-  /*   transition: .3s max-height ease-in-out; */
-  transition: 0.4s all cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: .3s max-height ease-in-out;
+  /* transition: 0.4s all cubic-bezier(0.22, 0.61, 0.36, 1); */
   padding: 0;
 }
 
 .vs-sidenav .vs-sidenav-container.expanded ul {
-  height: auto;
+  max-height: 960px;
 }
 
 .vs-sidenav.collapsed .vs-sidenav-header,
