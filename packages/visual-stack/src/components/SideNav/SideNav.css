@@ -1,4 +1,3 @@
-/** @prettier */
 .vs-sidenav {
   background-color: #2a3038;
   font-size: 1.3rem;
@@ -267,12 +266,11 @@
   max-height: 0;
   overflow: hidden;
   transition: .3s max-height ease-in-out;
-  /* transition: 0.4s all cubic-bezier(0.22, 0.61, 0.36, 1); */
   padding: 0;
 }
 
 .vs-sidenav .vs-sidenav-container.expanded ul {
-  max-height: 960px;
+  max-height: 1152px;
 }
 
 .vs-sidenav.collapsed .vs-sidenav-header,
