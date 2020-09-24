@@ -1,3 +1,9 @@
+# Upcoming
+
+## New Component
+
+- Add Tooltip based on HoverPopover
+
 # 6.9.0
 
 ## New Component

@@ -33,7 +33,7 @@ const Popover = ({
           >
             {({ ref, style, placement, arrowProps }) => (
               <div
-                className={cn('vs-popover-container', className)}
+                className={cn(className, 'vs-popover-container')}
                 ref={ref}
                 style={style}
                 data-placement={placement}
@@ -59,10 +59,6 @@ export class HoverPopover extends React.Component {
     shown: false,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   onMouseOver() {
     this.setState({ shown: true });
   }
@@ -72,6 +68,8 @@ export class HoverPopover extends React.Component {
   }
 
   render() {
+    const { className, ...restProps } = this.props;
+
     return (
       <Popover
         shown={this.state.shown}
@@ -81,10 +79,9 @@ export class HoverPopover extends React.Component {
         onMouseLeave={() => {
           this.onMouseLeave();
         }}
-        {...this.props}
-      >
-        {this.props.children}
-      </Popover>
+        className={cn(className, 'vs-hover-popover')}
+        {...restProps}
+      />
     );
   }
 }

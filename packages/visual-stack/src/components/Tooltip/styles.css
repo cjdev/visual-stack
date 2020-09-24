@@ -1,0 +1,41 @@
+.vs-popover-wrapper .vs-popover-container.vs-tooltip .vs-popover-content {
+  color: #fff;
+  background-color: #4d5051;
+  font-size: 1.2rem;
+  border-left: 4px solid #4d5051;
+}
+
+.vs-popover-wrapper .vs-popover-container.vs-tooltip .vs-popover-arrow {
+  font-size: 1.2rem;
+}
+
+.vs-popover-wrapper
+  .vs-popover-container.vs-tooltip
+  .vs-popover-arrow[data-placement='bottom'] {
+  border-bottom-color: #4d5051;
+}
+
+.vs-popover-wrapper
+  .vs-popover-container.vs-tooltip
+  .vs-popover-arrow[data-placement='top'] {
+  border-top-color: #4d5051;
+}
+
+.vs-popover-wrapper
+  .vs-popover-container.vs-tooltip
+  .vs-popover-arrow[data-placement='left'] {
+  border-left-color: #4d5051;
+}
+
+.vs-popover-wrapper
+  .vs-popover-container.vs-tooltip
+  .vs-popover-arrow[data-placement='right'] {
+  border-right-color: #4d5051;
+}
+
+.vs-popover-wrapper
+  .vs-popover-container.vs-tooltip
+  .vs-popover-content
+  .vs-text {
+  color: #fff;
+}
