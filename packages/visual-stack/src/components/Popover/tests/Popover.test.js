@@ -94,7 +94,7 @@ describe('Popover', () => {
         enabled: false,
       },
     };
-    const positionFixed = true;
+    const positionFixed = false;
 
     const wrapper = mount(
       <Popover
