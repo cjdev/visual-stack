@@ -11,6 +11,9 @@ export const Tooltip = ({ className, ...restProps }) => (
       preventOverflow: {
         boundariesElement: 'viewport',
       },
+      offset: {
+        offset: '0, 4',
+      },
     }}
     className={cn(className, 'vs-tooltip')}
     {...restProps}
