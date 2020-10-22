@@ -7,6 +7,11 @@ import { PropTypes } from 'prop-types';
 export const Tooltip = ({ className, ...restProps }) => (
   <HoverPopover
     placement="top"
+    modifiers={{
+      preventOverflow: {
+        boundariesElement: 'viewport',
+      },
+    }}
     className={cn(className, 'vs-tooltip')}
     {...restProps}
   />
