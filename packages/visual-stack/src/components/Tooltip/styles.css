@@ -2,7 +2,10 @@
   color: #fff;
   background-color: #4d5051;
   font-size: 1.2rem;
-  border-left: 4px solid #4d5051;
+  font-weight: 400;
+  border: 0;
+  text-align: center;
+  padding: 8px 12px;
 }
 
 .vs-popover-wrapper .vs-popover-container.vs-tooltip .vs-popover-arrow {
