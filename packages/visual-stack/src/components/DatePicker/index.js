@@ -120,8 +120,13 @@ const DatePickerSidebar = ({
   onNamedRangeSelect,
   ...restProps
 }) => {
+  const domProps = R.omit(
+    ['dispatch', 'selectedRanges', 'onCalendarRangeUpdate'],
+    restProps
+  );
+  
   return (
-    <div {...restProps} className={'vs-date-picker-sidebar'}>
+    <div {...domProps} className={'vs-date-picker-sidebar'}>
       {R.addIndex(R.zipWith)(
         (config, selected, index) => (
           <SidebarRangeSection
